@@ -21,6 +21,7 @@ namespaceVariableStatement
 |packageStatement
 |protocolStatement
 |packageFunctionStatement
+|packageControlStatement
 |packageNewStatement
 |enumStatement
 |typeAliasStatement
@@ -40,8 +41,8 @@ enumSupportStatement: id (Equal (add)? integerExpr)? end;
 // 命名空间变量
 namespaceVariableStatement: (annotationSupport)? id (Colon_Equal expression|Colon typeType (Equal expression)?) end;
 // 命名空间控制
-namespaceControlStatement: (annotationSupport)? id left_paren right_paren (Colon_Equal expression|Colon typeType (Equal expression)?) 
-(Right_Arrow (packageControlSubStatement)+)? end;
+namespaceControlStatement: (annotationSupport)? id Colon typeType (Equal expression)?
+Right_Arrow (packageControlSubStatement)+ end;
 // 命名空间常量
 namespaceConstantStatement: (annotationSupport)? id (Colon typeType Colon|Colon_Colon) expression end;
 // 命名空间函数
@@ -55,7 +56,6 @@ packageStatement: (annotationSupport)? id (templateDefine)? Right_Arrow left_bra
 packageSupportStatement:
 includeStatement
 |packageVariableStatement
-|packageControlStatement
 |packageEventStatement
 |New_Line
 ;
@@ -71,10 +71,10 @@ parameterClauseOut left_brace (functionSupportStatement)* right_brace end;
 // 定义变量
 packageVariableStatement: (annotationSupport)? id (Colon_Equal expression|Colon typeType (Equal expression)?) end;
 // 定义控制
-packageControlStatement: (annotationSupport)? id left_paren right_paren (Colon_Equal expression|Colon typeType (Equal expression)?)
-(Right_Arrow (packageControlSubStatement)+ )? end;
+packageControlStatement: (annotationSupport)? parameterClauseSelf (n='_')? id 
+ Colon typeType Right_Arrow (packageControlSubStatement)+ end;
 // 定义子方法
-packageControlSubStatement: id left_brace (functionSupportStatement)+ right_brace;
+packageControlSubStatement: id (left_paren id right_paren)? left_brace (functionSupportStatement)+ right_brace;
 // 定义包事件
 packageEventStatement: id Colon left_brack Question right_brack nameSpaceItem end;
 // 协议
@@ -87,8 +87,8 @@ includeStatement
 |New_Line
 ;
 // 定义控制
-protocolControlStatement: (annotationSupport)? id left_paren right_paren Colon typeType
- (Right_Arrow protocolControlSubStatement (Comma protocolControlSubStatement)*)? end;
+protocolControlStatement: (annotationSupport)? id Colon typeType
+ Right_Arrow protocolControlSubStatement (Comma protocolControlSubStatement)* end;
 // 定义子方法
 protocolControlSubStatement: id;
 // 函数
