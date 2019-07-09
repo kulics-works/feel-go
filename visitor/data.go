@@ -214,9 +214,7 @@ func (sf *LiteVisitor) VisitFloatExpr(ctx *parser.FloatExprContext) interface{} 
 
 func (sf *LiteVisitor) VisitIntegerExpr(ctx *parser.IntegerExprContext) interface{} {
 	number := ""
-	for _, item := range ctx.AllNumberLiteral() {
-		number += item.GetText()
-	}
+	number += ctx.NumberLiteral().GetText()
 	return number
 }
 

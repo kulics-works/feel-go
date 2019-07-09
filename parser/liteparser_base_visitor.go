@@ -76,15 +76,7 @@ func (v *BaseLiteParserVisitor) VisitPackageNewStatement(ctx *PackageNewStatemen
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitPackageFunctionStatement(ctx *PackageFunctionStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitPackageVariableStatement(ctx *PackageVariableStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitPackageControlStatement(ctx *PackageControlStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -93,6 +85,38 @@ func (v *BaseLiteParserVisitor) VisitPackageControlSubStatement(ctx *PackageCont
 }
 
 func (v *BaseLiteParserVisitor) VisitPackageEventStatement(ctx *PackageEventStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitImplementStatement(ctx *ImplementStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitImplementSupportStatement(ctx *ImplementSupportStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitImplementFunctionStatement(ctx *ImplementFunctionStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitImplementControlStatement(ctx *ImplementControlStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitOverrideStatement(ctx *OverrideStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitOverrideSupportStatement(ctx *OverrideSupportStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitOverrideFunctionStatement(ctx *OverrideFunctionStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitOverrideControlStatement(ctx *OverrideControlStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

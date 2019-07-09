@@ -72,33 +72,3 @@ func (sf *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariable
 	obj += Wrap
 	return obj
 }
-
-func (sf *LiteVisitor) VisitPackageFunctionStatement(ctx *parser.PackageFunctionStatementContext) interface{} {
-	id := sf.Visit(ctx.Id()).(Result)
-	obj := ""
-	// if ctx.AnnotationSupport() >< () {
-	// 	obj += Visit(context.annotationSupport())
-	// }
-	// 异步
-	// if ctx.GetT().GetTokenType() == parser.XsLexerRight_Flow {
-	// pout := Visit(ctx.ParameterClauseOut()).(string)
-	// obj += ""id.permission" async static "pout" "id.text""
-	// } else {
-	// 	obj += Func + id.Text  + sf.Visit(ctx.ParameterClauseOut()).(string)
-	// }
-
-	// 泛型
-	// templateContract := ""
-	// if context.templateDefine() >< () {
-	// 	template := Visit(context.templateDefine()):TemplateItem
-	// 	obj += template.Template
-	// 	templateContract = template.Contract
-	// }
-	Self := sf.Visit(ctx.ParameterClauseSelf()).(Parameter)
-	obj += Func + "(" + Self.Id + " " + Self.Type + ")" +
-		id.Text + sf.Visit(ctx.ParameterClauseIn()).(string) +
-		sf.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
-	obj += BlockRight + Wrap
-	return obj
-}

@@ -59,20 +59,38 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#packageNewStatement.
 	VisitPackageNewStatement(ctx *PackageNewStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#packageFunctionStatement.
-	VisitPackageFunctionStatement(ctx *PackageFunctionStatementContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#packageVariableStatement.
 	VisitPackageVariableStatement(ctx *PackageVariableStatementContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#packageControlStatement.
-	VisitPackageControlStatement(ctx *PackageControlStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#packageControlSubStatement.
 	VisitPackageControlSubStatement(ctx *PackageControlSubStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#packageEventStatement.
 	VisitPackageEventStatement(ctx *PackageEventStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#implementStatement.
+	VisitImplementStatement(ctx *ImplementStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#implementSupportStatement.
+	VisitImplementSupportStatement(ctx *ImplementSupportStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#implementFunctionStatement.
+	VisitImplementFunctionStatement(ctx *ImplementFunctionStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#implementControlStatement.
+	VisitImplementControlStatement(ctx *ImplementControlStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#overrideStatement.
+	VisitOverrideStatement(ctx *OverrideStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#overrideSupportStatement.
+	VisitOverrideSupportStatement(ctx *OverrideSupportStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#overrideFunctionStatement.
+	VisitOverrideFunctionStatement(ctx *OverrideFunctionStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#overrideControlStatement.
+	VisitOverrideControlStatement(ctx *OverrideControlStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#protocolStatement.
 	VisitProtocolStatement(ctx *ProtocolStatementContext) interface{}
