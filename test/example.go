@@ -39,14 +39,25 @@ func testJudge() {
 		{
 			a += 1
 		}
+
 	case 2:
 		{
 			a += 2
 		}
+	case 3:
+		{
+			a += 2
+		}
+	case 4:
+		{
+			a += 2
+		}
+
 	default:
 		{
 			a += 0
 		}
+
 	}
 }
 func testLoop() {

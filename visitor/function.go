@@ -74,11 +74,11 @@ func (sf *LiteVisitor) VisitFunctionSupportStatement(ctx *parser.FunctionSupport
 }
 
 func (sf *LiteVisitor) VisitReturnStatement(ctx *parser.ReturnStatementContext) interface{} {
-	r := sf.Visit(ctx.Tuple()).(Result)
-	if r.Text == "()" {
-		r.Text = ""
+	if ctx.ExpressionList() != nil {
+		r := sf.Visit(ctx.ExpressionList()).(Result)
+		return "return " + r.Text + Wrap
 	}
-	return "return " + r.Text + Wrap
+	return "return " + Wrap
 }
 
 func (sf *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInContext) interface{} {

@@ -131,14 +131,11 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#judgeCaseStatement.
 	VisitJudgeCaseStatement(ctx *JudgeCaseStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#caseDefaultStatement.
-	VisitCaseDefaultStatement(ctx *CaseDefaultStatementContext) interface{}
+	// Visit a parse tree produced by LiteParser#caseStatement.
+	VisitCaseStatement(ctx *CaseStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#caseExprStatement.
 	VisitCaseExprStatement(ctx *CaseExprStatementContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#caseStatement.
-	VisitCaseStatement(ctx *CaseStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#judgeStatement.
 	VisitJudgeStatement(ctx *JudgeStatementContext) interface{}

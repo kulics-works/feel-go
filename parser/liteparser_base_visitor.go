@@ -172,15 +172,11 @@ func (v *BaseLiteParserVisitor) VisitJudgeCaseStatement(ctx *JudgeCaseStatementC
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitCaseDefaultStatement(ctx *CaseDefaultStatementContext) interface{} {
+func (v *BaseLiteParserVisitor) VisitCaseStatement(ctx *CaseStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseLiteParserVisitor) VisitCaseExprStatement(ctx *CaseExprStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitCaseStatement(ctx *CaseStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
