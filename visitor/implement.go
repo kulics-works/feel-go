@@ -29,7 +29,9 @@ func (sf *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementCon
 	// }
 	self = sf.Visit(ctx.ParameterClauseSelf()).(Parameter)
 	for _, item := range ctx.AllImplementSupportStatement() {
-		obj += sf.Visit(item).(string)
+		if v, ok := sf.Visit(item).(string); ok {
+			obj += v
+		}
 	}
 	self = Parameter{}
 	return obj

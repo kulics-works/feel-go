@@ -42,6 +42,37 @@ func (sf *LiteVisitor) VisitCallElement(ctx *parser.CallElementContext) interfac
 	return r
 }
 
+func (sf *LiteVisitor) VisitSlice(ctx *parser.SliceContext) interface{} {
+	return sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
+}
+
+func (sf *LiteVisitor) VisitSliceFull(ctx *parser.SliceFullContext) interface{} {
+	attach := ""
+	switch ctx.GetOp().GetText() {
+	case "<=":
+		attach = "+1"
+	}
+	expr1 := sf.Visit(ctx.Expression(0)).(Result)
+	expr2 := sf.Visit(ctx.Expression(1)).(Result)
+	return "[" + expr1.Text + ":" + expr2.Text + attach + "]"
+}
+
+func (sf *LiteVisitor) VisitSliceStart(ctx *parser.SliceStartContext) interface{} {
+	attach := ""
+	expr := sf.Visit(ctx.Expression()).(Result)
+	return "[" + expr.Text + ":" + attach + "]"
+}
+
+func (sf *LiteVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) interface{} {
+	attach := ""
+	switch ctx.GetOp().GetText() {
+	case "<=":
+		attach = "+1"
+	}
+	expr := sf.Visit(ctx.Expression()).(Result)
+	return "[:" + expr.Text + attach + "]"
+}
+
 func (sf *LiteVisitor) VisitCallFunc(ctx *parser.CallFuncContext) interface{} {
 	r := Result{Data: "var"}
 	id := sf.Visit(ctx.Id()).(Result)
