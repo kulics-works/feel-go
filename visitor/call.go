@@ -7,38 +7,33 @@ import (
 )
 
 func (sf *LiteVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) interface{} {
-	count := ctx.GetChildCount()
-	r := Result{}
-	if count == 3 {
-		e1 := sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
-		op := sf.Visit(ctx.GetChild(1).(antlr.ParseTree))
-		e2 := sf.Visit(ctx.GetChild(2).(antlr.ParseTree)).(Result)
-		r.Text = e1.Text + op.(string) + e2.Text
-	} else if count == 1 {
-		r = sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
+	r := sf.Visit(ctx.Id()).(Result)
+	r.Text = "." + r.Text
+	if ctx.CallFunc() != nil {
+		e2 := sf.Visit(ctx.CallFunc()).(Result)
+		r.Text = r.Text + e2.Text
+	} else if ctx.CallElement() != nil {
+		e2 := sf.Visit(ctx.CallElement()).(Result)
+		r.Text = r.Text + e2.Text
+	} else if ctx.CallChannel() != nil {
+		e2 := sf.Visit(ctx.CallChannel()).(Result)
+		r.Text = e2.Text + r.Text
 	}
 	return r
 }
 
 func (sf *LiteVisitor) VisitCallChannel(ctx *parser.CallChannelContext) interface{} {
-	id := sf.Visit(ctx.Id()).(Result)
-	if ctx.GetOp() != nil && ctx.GetOp().GetTokenType() == parser.LiteLexerQuestion {
-		id.Text += "?"
-	}
-	id.Text = "<-" + id.Text
-	return id
+	r := Result{}
+	r.Text = "<-"
+	return r
 }
 
 func (sf *LiteVisitor) VisitCallElement(ctx *parser.CallElementContext) interface{} {
-	id := sf.Visit(ctx.Id()).(Result)
-	if ctx.GetOp() != nil && ctx.GetOp().GetTokenType() == parser.LiteLexerQuestion {
-		id.Text += "?"
-	}
 	if ctx.Expression() == nil {
-		return Result{Text: id.Text + sf.Visit(ctx.Slice()).(string)}
+		return Result{Text: sf.Visit(ctx.Slice()).(string)}
 	}
 	r := sf.Visit(ctx.Expression()).(Result)
-	r.Text = id.Text + "[" + r.Text + "]"
+	r.Text = "[" + r.Text + "]"
 	return r
 }
 
@@ -75,11 +70,6 @@ func (sf *LiteVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) interface{} {
 
 func (sf *LiteVisitor) VisitCallFunc(ctx *parser.CallFuncContext) interface{} {
 	r := Result{Data: "var"}
-	id := sf.Visit(ctx.Id()).(Result)
-	r.Text += id.Text
-	if ctx.TemplateCall() != nil {
-		r.Text += sf.Visit(ctx.TemplateCall()).(string)
-	}
 	if ctx.Tuple() != nil {
 		r.Text += "(" + sf.Visit(ctx.Tuple()).(Result).Text + ")"
 	} else {

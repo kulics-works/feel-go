@@ -65,11 +65,23 @@ func (sf *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) interface{
 		r.Text = e1.Text + op.(string) + e2.(Result).Text
 	} else if count == 2 {
 		r = sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
-		if _, ok := ctx.GetChild(1).(parser.TypeConversionContext); ok {
+		if _, ok := ctx.GetChild(1).(*parser.TypeConversionContext); ok {
 			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(string)
 			r.Data = e2
 			r.Text = e2 + "(" + r.Text + ")"
-		} else {
+		} else if _, ok := ctx.GetChild(1).(*parser.CallExpressionContext); ok {
+			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			r.Text = r.Text + e2.Text
+		} else if _, ok := ctx.GetChild(1).(*parser.CallFuncContext); ok {
+			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			r.Text = r.Text + e2.Text
+		} else if _, ok := ctx.GetChild(1).(*parser.CallElementContext); ok {
+			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			r.Text = r.Text + e2.Text
+		} else if _, ok := ctx.GetChild(1).(*parser.CallChannelContext); ok {
+			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			r.Text = e2.Text + r.Text
+		} else if ctx.GetOp() != nil {
 			if ctx.GetOp().GetTokenType() == parser.LiteLexerBang {
 				r.Text = "*" + r.Text
 			} else if ctx.GetOp().GetTokenType() == parser.LiteLexerQuestion {
