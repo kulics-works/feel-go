@@ -79,6 +79,7 @@ Slash:  '\\';
 
 And:    '&';
 Or:     '|';
+Xor:    '^';
 
 TypeI8: 'I8';
 TypeU8: 'U8';

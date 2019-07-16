@@ -41,8 +41,8 @@ enumSupportStatement: id (Equal (add)? integerExpr)? end;
 // 命名空间变量
 namespaceVariableStatement: (annotationSupport)? id (Colon_Equal expression|Colon typeType (Equal expression)?) end;
 // 命名空间控制
-namespaceControlStatement: (annotationSupport)? id Colon typeType (Equal expression)?
-left_brace (packageControlSubStatement)+ right_brace end;
+namespaceControlStatement: (annotationSupport)? left_paren expression? right_paren id Colon typeType
+(left_brace (packageControlSubStatement)+ right_brace)? end;
 // 命名空间常量
 namespaceConstantStatement: (annotationSupport)? id (Colon typeType Colon|Colon_Colon) expression end;
 // 命名空间函数
@@ -80,11 +80,11 @@ implementStatement: parameterClauseSelf Right_Arrow (typeType)? New_Line* left_b
 implementSupportStatement: implementFunctionStatement | implementControlStatement | New_Line;
 
 // 函数
-implementFunctionStatement: (annotationSupport)? (n='_')? id (templateDefine)? left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) New_Line*
+implementFunctionStatement: (annotationSupport)? id (templateDefine)? left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) New_Line*
 parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
 // 定义控制
-implementControlStatement: (annotationSupport)? (n='_')? id 
- Colon typeType left_brace (packageControlSubStatement)+ right_brace end;
+implementControlStatement: (annotationSupport)? left_paren expression? right_paren id 
+ Colon typeType (left_brace (packageControlSubStatement)+ right_brace)? end;
 
 // 重载
 overrideStatement: left_paren id right_paren parameterClauseSelf 
@@ -97,8 +97,8 @@ overrideSupportStatement: overrideFunctionStatement | overrideControlStatement |
 overrideFunctionStatement: (annotationSupport)? (n='_')? id (templateDefine)? left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) New_Line*
 parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
 // 定义控制
-overrideControlStatement: (annotationSupport)? (n='_')? id 
- Colon typeType left_brace (packageControlSubStatement)+ right_brace end;
+overrideControlStatement: (annotationSupport)? (n='_')? left_paren expression? right_paren id 
+ Colon typeType (left_brace (packageControlSubStatement)+ right_brace)? end;
 
 // 协议
 protocolStatement: (annotationSupport)? id (templateDefine)? Left_Arrow left_brace (protocolSupportStatement)* right_brace end;
@@ -110,8 +110,8 @@ includeStatement
 |New_Line
 ;
 // 定义控制
-protocolControlStatement: (annotationSupport)? id Colon typeType
- left_brace (protocolControlSubStatement)* right_brace end;
+protocolControlStatement: (annotationSupport)? left_paren right_paren id Colon typeType
+ (left_brace (protocolControlSubStatement)* right_brace)? end;
 // 定义子方法
 protocolControlSubStatement: id;
 // 函数
@@ -234,6 +234,7 @@ linq // 联合查询
 | pkgAnonymous // 匿名包
 | tupleExpression //元组表达式
 | plusMinus // 正负处理
+| bitwiseNotExpression // 位运算取反
 | negate // 取反
 | expression op=Bang // 引用判断
 | expression op=Question // 可空判断
@@ -244,6 +245,7 @@ linq // 联合查询
 | expression callElement // 访问元素
 | expression callExpression // 链式调用
 | expression judgeType typeType // 类型判断表达式
+| expression bitwise expression // 位运算表达式
 | expression judge expression // 判断型表达式
 | expression add expression // 和型表达式
 | expression mul expression // 积型表达式
@@ -338,6 +340,8 @@ plusMinus: add expression;
 
 negate: wave expression;
 
+bitwiseNotExpression: bitwiseNot expression;
+
 linq: linqHeadKeyword New_Line? expression Right_Arrow New_Line?  (linqItem)+ k=(LinqSelect|LinqBy) New_Line? expression;
 
 linqItem: linqKeyword (expression)? Right_Arrow New_Line?;
@@ -421,6 +425,14 @@ nilExpr: NilLiteral;
 boolExpr: t=TrueLiteral|t=FalseLiteral;
 
 judgeType: op=(Equal_Equal|Not_Equal) Colon;
+bitwise: (bitwiseAnd | bitwiseOr | bitwiseXor 
+| bitwiseLeftShift | bitwiseRightShift) (New_Line)?;
+bitwiseAnd: And And;
+bitwiseOr: Or Or;
+bitwiseNot: Wave Wave;
+bitwiseXor: Xor Xor;
+bitwiseLeftShift: Less Less;
+bitwiseRightShift: Greater Greater;
 judge: op=(Or | And | Equal_Equal | Not_Equal | Less_Equal | Greater_Equal | Less | Greater) (New_Line)?;
 assign: op=(Equal | Add_Equal | Sub_Equal | Mul_Equal | Div_Equal | Mod_Equal) (New_Line)?;
 add: op=(Add | Sub) (New_Line)?;

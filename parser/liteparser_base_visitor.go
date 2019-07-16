@@ -444,6 +444,10 @@ func (v *BaseLiteParserVisitor) VisitNegate(ctx *NegateContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitBitwiseNotExpression(ctx *BitwiseNotExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitLinq(ctx *LinqContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -553,6 +557,34 @@ func (v *BaseLiteParserVisitor) VisitBoolExpr(ctx *BoolExprContext) interface{} 
 }
 
 func (v *BaseLiteParserVisitor) VisitJudgeType(ctx *JudgeTypeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwise(ctx *BitwiseContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwiseAnd(ctx *BitwiseAndContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwiseOr(ctx *BitwiseOrContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwiseNot(ctx *BitwiseNotContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwiseXor(ctx *BitwiseXorContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwiseLeftShift(ctx *BitwiseLeftShiftContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitBitwiseRightShift(ctx *BitwiseRightShiftContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

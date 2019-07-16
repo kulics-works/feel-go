@@ -335,6 +335,9 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#negate.
 	VisitNegate(ctx *NegateContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#bitwiseNotExpression.
+	VisitBitwiseNotExpression(ctx *BitwiseNotExpressionContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#linq.
 	VisitLinq(ctx *LinqContext) interface{}
 
@@ -418,6 +421,27 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#judgeType.
 	VisitJudgeType(ctx *JudgeTypeContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwise.
+	VisitBitwise(ctx *BitwiseContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwiseAnd.
+	VisitBitwiseAnd(ctx *BitwiseAndContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwiseOr.
+	VisitBitwiseOr(ctx *BitwiseOrContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwiseNot.
+	VisitBitwiseNot(ctx *BitwiseNotContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwiseXor.
+	VisitBitwiseXor(ctx *BitwiseXorContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwiseLeftShift.
+	VisitBitwiseLeftShift(ctx *BitwiseLeftShiftContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#bitwiseRightShift.
+	VisitBitwiseRightShift(ctx *BitwiseRightShiftContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#judge.
 	VisitJudge(ctx *JudgeContext) interface{}
