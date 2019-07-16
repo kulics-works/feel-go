@@ -63,7 +63,7 @@ var parserATN = []uint16{
 	10, 428, 10, 10, 3, 10, 5, 10, 431, 10, 10, 3, 10, 3, 10, 3, 11, 5, 11,
 	436, 10, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 3, 11, 5, 11, 445,
 	10, 11, 5, 11, 447, 10, 11, 3, 11, 3, 11, 3, 12, 5, 12, 452, 10, 12, 3,
-	12, 3, 12, 5, 12, 456, 10, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12,
+	12, 3, 12, 3, 12, 5, 12, 457, 10, 12, 3, 12, 3, 12, 3, 12, 3, 12, 3, 12,
 	6, 12, 464, 10, 12, 13, 12, 14, 12, 465, 3, 12, 3, 12, 5, 12, 470, 10,
 	12, 3, 12, 3, 12, 3, 13, 5, 13, 475, 10, 13, 3, 13, 3, 13, 3, 13, 3, 13,
 	3, 13, 3, 13, 5, 13, 483, 10, 13, 3, 13, 3, 13, 3, 13, 3, 14, 5, 14, 489,
@@ -87,7 +87,7 @@ var parserATN = []uint16{
 	3, 24, 5, 24, 641, 10, 24, 3, 24, 3, 24, 3, 24, 3, 24, 7, 24, 647, 10,
 	24, 12, 24, 14, 24, 650, 11, 24, 3, 24, 3, 24, 3, 24, 3, 24, 7, 24, 656,
 	10, 24, 12, 24, 14, 24, 659, 11, 24, 3, 24, 3, 24, 3, 24, 3, 25, 5, 25,
-	665, 10, 25, 3, 25, 3, 25, 5, 25, 669, 10, 25, 3, 25, 3, 25, 3, 25, 3,
+	665, 10, 25, 3, 25, 3, 25, 3, 25, 5, 25, 670, 10, 25, 3, 25, 3, 25, 3,
 	25, 3, 25, 3, 25, 6, 25, 677, 10, 25, 13, 25, 14, 25, 678, 3, 25, 3, 25,
 	5, 25, 683, 10, 25, 3, 25, 3, 25, 3, 26, 3, 26, 3, 26, 3, 26, 3, 26, 3,
 	26, 7, 26, 693, 10, 26, 12, 26, 14, 26, 696, 11, 26, 3, 26, 3, 26, 7, 26,
@@ -97,7 +97,7 @@ var parserATN = []uint16{
 	28, 7, 28, 727, 10, 28, 12, 28, 14, 28, 730, 11, 28, 3, 28, 3, 28, 3, 28,
 	3, 28, 7, 28, 736, 10, 28, 12, 28, 14, 28, 739, 11, 28, 3, 28, 3, 28, 3,
 	28, 3, 29, 5, 29, 745, 10, 29, 3, 29, 5, 29, 748, 10, 29, 3, 29, 3, 29,
-	5, 29, 752, 10, 29, 3, 29, 3, 29, 3, 29, 3, 29, 3, 29, 3, 29, 6, 29, 760,
+	3, 29, 5, 29, 753, 10, 29, 3, 29, 3, 29, 3, 29, 3, 29, 3, 29, 6, 29, 760,
 	10, 29, 13, 29, 14, 29, 761, 3, 29, 3, 29, 5, 29, 766, 10, 29, 3, 29, 3,
 	29, 3, 30, 5, 30, 771, 10, 30, 3, 30, 3, 30, 5, 30, 775, 10, 30, 3, 30,
 	3, 30, 3, 30, 7, 30, 780, 10, 30, 12, 30, 14, 30, 783, 11, 30, 3, 30, 3,
@@ -351,9 +351,9 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 444, 445, 3, 2, 2, 2, 445, 447, 3, 2, 2, 2, 446, 438, 3, 2,
 	2, 2, 446, 440, 3, 2, 2, 2, 447, 448, 3, 2, 2, 2, 448, 449, 5, 310, 156,
 	2, 449, 21, 3, 2, 2, 2, 450, 452, 5, 140, 71, 2, 451, 450, 3, 2, 2, 2,
-	451, 452, 3, 2, 2, 2, 452, 453, 3, 2, 2, 2, 453, 455, 5, 318, 160, 2, 454,
-	456, 5, 132, 67, 2, 455, 454, 3, 2, 2, 2, 455, 456, 3, 2, 2, 2, 456, 457,
-	3, 2, 2, 2, 457, 458, 5, 320, 161, 2, 458, 459, 5, 306, 154, 2, 459, 460,
+	451, 452, 3, 2, 2, 2, 452, 453, 3, 2, 2, 2, 453, 454, 5, 306, 154, 2, 454,
+	456, 5, 318, 160, 2, 455, 457, 5, 132, 67, 2, 456, 455, 3, 2, 2, 2, 456,
+	457, 3, 2, 2, 2, 457, 458, 3, 2, 2, 2, 458, 459, 5, 320, 161, 2, 459, 460,
 	7, 50, 2, 2, 460, 469, 5, 248, 125, 2, 461, 463, 5, 314, 158, 2, 462, 464,
 	5, 38, 20, 2, 463, 462, 3, 2, 2, 2, 464, 465, 3, 2, 2, 2, 465, 463, 3,
 	2, 2, 2, 465, 466, 3, 2, 2, 2, 466, 467, 3, 2, 2, 2, 467, 468, 5, 316,
@@ -430,10 +430,10 @@ var parserATN = []uint16{
 	659, 3, 2, 2, 2, 657, 655, 3, 2, 2, 2, 657, 658, 3, 2, 2, 2, 658, 660,
 	3, 2, 2, 2, 659, 657, 3, 2, 2, 2, 660, 661, 5, 316, 159, 2, 661, 662, 5,
 	310, 156, 2, 662, 47, 3, 2, 2, 2, 663, 665, 5, 140, 71, 2, 664, 663, 3,
-	2, 2, 2, 664, 665, 3, 2, 2, 2, 665, 666, 3, 2, 2, 2, 666, 668, 5, 318,
-	160, 2, 667, 669, 5, 132, 67, 2, 668, 667, 3, 2, 2, 2, 668, 669, 3, 2,
-	2, 2, 669, 670, 3, 2, 2, 2, 670, 671, 5, 320, 161, 2, 671, 672, 5, 306,
-	154, 2, 672, 673, 7, 50, 2, 2, 673, 682, 5, 248, 125, 2, 674, 676, 5, 314,
+	2, 2, 2, 664, 665, 3, 2, 2, 2, 665, 666, 3, 2, 2, 2, 666, 667, 5, 306,
+	154, 2, 667, 669, 5, 318, 160, 2, 668, 670, 5, 132, 67, 2, 669, 668, 3,
+	2, 2, 2, 669, 670, 3, 2, 2, 2, 670, 671, 3, 2, 2, 2, 671, 672, 5, 320,
+	161, 2, 672, 673, 7, 50, 2, 2, 673, 682, 5, 248, 125, 2, 674, 676, 5, 314,
 	158, 2, 675, 677, 5, 38, 20, 2, 676, 675, 3, 2, 2, 2, 677, 678, 3, 2, 2,
 	2, 678, 676, 3, 2, 2, 2, 678, 679, 3, 2, 2, 2, 679, 680, 3, 2, 2, 2, 680,
 	681, 5, 316, 159, 2, 681, 683, 3, 2, 2, 2, 682, 674, 3, 2, 2, 2, 682, 683,
@@ -461,9 +461,9 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 740, 741, 5, 316, 159, 2, 741, 742, 5, 310, 156, 2, 742, 55,
 	3, 2, 2, 2, 743, 745, 5, 140, 71, 2, 744, 743, 3, 2, 2, 2, 744, 745, 3,
 	2, 2, 2, 745, 747, 3, 2, 2, 2, 746, 748, 7, 90, 2, 2, 747, 746, 3, 2, 2,
-	2, 747, 748, 3, 2, 2, 2, 748, 749, 3, 2, 2, 2, 749, 751, 5, 318, 160, 2,
-	750, 752, 5, 132, 67, 2, 751, 750, 3, 2, 2, 2, 751, 752, 3, 2, 2, 2, 752,
-	753, 3, 2, 2, 2, 753, 754, 5, 320, 161, 2, 754, 755, 5, 306, 154, 2, 755,
+	2, 747, 748, 3, 2, 2, 2, 748, 749, 3, 2, 2, 2, 749, 750, 5, 306, 154, 2,
+	750, 752, 5, 318, 160, 2, 751, 753, 5, 132, 67, 2, 752, 751, 3, 2, 2, 2,
+	752, 753, 3, 2, 2, 2, 753, 754, 3, 2, 2, 2, 754, 755, 5, 320, 161, 2, 755,
 	756, 7, 50, 2, 2, 756, 765, 5, 248, 125, 2, 757, 759, 5, 314, 158, 2, 758,
 	760, 5, 38, 20, 2, 759, 758, 3, 2, 2, 2, 760, 761, 3, 2, 2, 2, 761, 759,
 	3, 2, 2, 2, 761, 762, 3, 2, 2, 2, 762, 763, 3, 2, 2, 2, 763, 764, 5, 316,
@@ -479,8 +479,8 @@ var parserATN = []uint16{
 	2, 788, 792, 5, 66, 34, 2, 789, 792, 5, 62, 32, 2, 790, 792, 7, 94, 2,
 	2, 791, 787, 3, 2, 2, 2, 791, 788, 3, 2, 2, 2, 791, 789, 3, 2, 2, 2, 791,
 	790, 3, 2, 2, 2, 792, 61, 3, 2, 2, 2, 793, 795, 5, 140, 71, 2, 794, 793,
-	3, 2, 2, 2, 794, 795, 3, 2, 2, 2, 795, 796, 3, 2, 2, 2, 796, 797, 5, 318,
-	160, 2, 797, 798, 5, 320, 161, 2, 798, 799, 5, 306, 154, 2, 799, 800, 7,
+	3, 2, 2, 2, 794, 795, 3, 2, 2, 2, 795, 796, 3, 2, 2, 2, 796, 797, 5, 306,
+	154, 2, 797, 798, 5, 318, 160, 2, 798, 799, 5, 320, 161, 2, 799, 800, 7,
 	50, 2, 2, 800, 810, 5, 248, 125, 2, 801, 805, 5, 314, 158, 2, 802, 804,
 	5, 64, 33, 2, 803, 802, 3, 2, 2, 2, 804, 807, 3, 2, 2, 2, 805, 803, 3,
 	2, 2, 2, 805, 806, 3, 2, 2, 2, 806, 808, 3, 2, 2, 2, 807, 805, 3, 2, 2,
@@ -948,10 +948,10 @@ var parserATN = []uint16{
 	1950, 3, 2, 2, 2, 1952, 1953, 3, 2, 2, 2, 1953, 1955, 3, 2, 2, 2, 1954,
 	1952, 3, 2, 2, 2, 1955, 1956, 7, 48, 2, 2, 1956, 325, 3, 2, 2, 2, 201,
 	329, 334, 338, 344, 350, 357, 359, 366, 371, 373, 390, 403, 410, 418, 427,
-	430, 435, 444, 446, 451, 455, 465, 469, 474, 482, 488, 492, 500, 509, 516,
+	430, 435, 444, 446, 451, 456, 465, 469, 474, 482, 488, 492, 500, 509, 516,
 	520, 527, 537, 544, 554, 558, 564, 570, 579, 581, 590, 596, 612, 617, 624,
-	633, 636, 640, 648, 657, 664, 668, 678, 682, 694, 701, 710, 713, 716, 720,
-	728, 737, 744, 747, 751, 761, 765, 770, 774, 781, 791, 794, 805, 810, 817,
+	633, 636, 640, 648, 657, 664, 669, 678, 682, 694, 701, 710, 713, 716, 720,
+	728, 737, 744, 747, 752, 761, 765, 770, 774, 781, 791, 794, 805, 810, 817,
 	821, 829, 838, 846, 855, 863, 868, 875, 879, 886, 894, 901, 922, 929, 939,
 	946, 954, 958, 964, 974, 979, 986, 997, 1007, 1019, 1031, 1038, 1050, 1061,
 	1080, 1087, 1098, 1105, 1109, 1116, 1125, 1131, 1141, 1149, 1168, 1176,
@@ -3207,6 +3207,16 @@ func NewNamespaceControlStatementContext(parser antlr.Parser, parent antlr.Parse
 
 func (s *NamespaceControlStatementContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *NamespaceControlStatementContext) Id() IIdContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IIdContext)
+}
+
 func (s *NamespaceControlStatementContext) Left_paren() ILeft_parenContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILeft_parenContext)(nil)).Elem(), 0)
 
@@ -3225,16 +3235,6 @@ func (s *NamespaceControlStatementContext) Right_paren() IRight_parenContext {
 	}
 
 	return t.(IRight_parenContext)
-}
-
-func (s *NamespaceControlStatementContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IIdContext)
 }
 
 func (s *NamespaceControlStatementContext) Colon() antlr.TerminalNode {
@@ -3377,26 +3377,26 @@ func (p *LiteParser) NamespaceControlStatement() (localctx INamespaceControlStat
 	}
 	{
 		p.SetState(451)
+		p.Id()
+	}
+	{
+		p.SetState(452)
 		p.Left_paren()
 	}
-	p.SetState(453)
+	p.SetState(454)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LiteParserLinqFrom)|(1<<LiteParserLinqBy)|(1<<LiteParserLinqSelect)|(1<<LiteParserLinqWhere)|(1<<LiteParserLinqGroup)|(1<<LiteParserLinqInto)|(1<<LiteParserLinqOrderby)|(1<<LiteParserLinqJoin)|(1<<LiteParserLinqLet)|(1<<LiteParserLinqIn)|(1<<LiteParserLinqOn)|(1<<LiteParserLinqEquals)|(1<<LiteParserLinqAscending)|(1<<LiteParserLinqDescending))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(LiteParserLeft_Flow-36))|(1<<(LiteParserLess-36))|(1<<(LiteParserLeft_Paren-36))|(1<<(LiteParserLeft_Brace-36))|(1<<(LiteParserLeft_Brack-36))|(1<<(LiteParserQuestion-36))|(1<<(LiteParserBang-36))|(1<<(LiteParserWave-36))|(1<<(LiteParserAdd-36))|(1<<(LiteParserSub-36))|(1<<(LiteParserTypeI8-36))|(1<<(LiteParserTypeU8-36))|(1<<(LiteParserTypeI16-36))|(1<<(LiteParserTypeU16-36))|(1<<(LiteParserTypeI32-36))|(1<<(LiteParserTypeU32-36)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(LiteParserTypeI64-68))|(1<<(LiteParserTypeU64-68))|(1<<(LiteParserTypeF32-68))|(1<<(LiteParserTypeF64-68))|(1<<(LiteParserTypeChr-68))|(1<<(LiteParserTypeStr-68))|(1<<(LiteParserTypeBool-68))|(1<<(LiteParserTypeInt-68))|(1<<(LiteParserTypeNum-68))|(1<<(LiteParserTypeByte-68))|(1<<(LiteParserTypeAny-68))|(1<<(LiteParserNilLiteral-68))|(1<<(LiteParserTrueLiteral-68))|(1<<(LiteParserFalseLiteral-68))|(1<<(LiteParserUndefinedLiteral-68))|(1<<(LiteParserNumberLiteral-68))|(1<<(LiteParserTextLiteral-68))|(1<<(LiteParserCharLiteral-68))|(1<<(LiteParserIDPrivate-68))|(1<<(LiteParserIDPublic-68))|(1<<(LiteParserDiscard-68)))) != 0) {
 		{
-			p.SetState(452)
+			p.SetState(453)
 			p.expression(0)
 		}
 
 	}
 	{
-		p.SetState(455)
-		p.Right_paren()
-	}
-	{
 		p.SetState(456)
-		p.Id()
+		p.Right_paren()
 	}
 	{
 		p.SetState(457)
@@ -6110,6 +6110,16 @@ func NewImplementControlStatementContext(parser antlr.Parser, parent antlr.Parse
 
 func (s *ImplementControlStatementContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ImplementControlStatementContext) Id() IIdContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IIdContext)
+}
+
 func (s *ImplementControlStatementContext) Left_paren() ILeft_parenContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILeft_parenContext)(nil)).Elem(), 0)
 
@@ -6128,16 +6138,6 @@ func (s *ImplementControlStatementContext) Right_paren() IRight_parenContext {
 	}
 
 	return t.(IRight_parenContext)
-}
-
-func (s *ImplementControlStatementContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IIdContext)
 }
 
 func (s *ImplementControlStatementContext) Colon() antlr.TerminalNode {
@@ -6280,26 +6280,26 @@ func (p *LiteParser) ImplementControlStatement() (localctx IImplementControlStat
 	}
 	{
 		p.SetState(664)
+		p.Id()
+	}
+	{
+		p.SetState(665)
 		p.Left_paren()
 	}
-	p.SetState(666)
+	p.SetState(667)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LiteParserLinqFrom)|(1<<LiteParserLinqBy)|(1<<LiteParserLinqSelect)|(1<<LiteParserLinqWhere)|(1<<LiteParserLinqGroup)|(1<<LiteParserLinqInto)|(1<<LiteParserLinqOrderby)|(1<<LiteParserLinqJoin)|(1<<LiteParserLinqLet)|(1<<LiteParserLinqIn)|(1<<LiteParserLinqOn)|(1<<LiteParserLinqEquals)|(1<<LiteParserLinqAscending)|(1<<LiteParserLinqDescending))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(LiteParserLeft_Flow-36))|(1<<(LiteParserLess-36))|(1<<(LiteParserLeft_Paren-36))|(1<<(LiteParserLeft_Brace-36))|(1<<(LiteParserLeft_Brack-36))|(1<<(LiteParserQuestion-36))|(1<<(LiteParserBang-36))|(1<<(LiteParserWave-36))|(1<<(LiteParserAdd-36))|(1<<(LiteParserSub-36))|(1<<(LiteParserTypeI8-36))|(1<<(LiteParserTypeU8-36))|(1<<(LiteParserTypeI16-36))|(1<<(LiteParserTypeU16-36))|(1<<(LiteParserTypeI32-36))|(1<<(LiteParserTypeU32-36)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(LiteParserTypeI64-68))|(1<<(LiteParserTypeU64-68))|(1<<(LiteParserTypeF32-68))|(1<<(LiteParserTypeF64-68))|(1<<(LiteParserTypeChr-68))|(1<<(LiteParserTypeStr-68))|(1<<(LiteParserTypeBool-68))|(1<<(LiteParserTypeInt-68))|(1<<(LiteParserTypeNum-68))|(1<<(LiteParserTypeByte-68))|(1<<(LiteParserTypeAny-68))|(1<<(LiteParserNilLiteral-68))|(1<<(LiteParserTrueLiteral-68))|(1<<(LiteParserFalseLiteral-68))|(1<<(LiteParserUndefinedLiteral-68))|(1<<(LiteParserNumberLiteral-68))|(1<<(LiteParserTextLiteral-68))|(1<<(LiteParserCharLiteral-68))|(1<<(LiteParserIDPrivate-68))|(1<<(LiteParserIDPublic-68))|(1<<(LiteParserDiscard-68)))) != 0) {
 		{
-			p.SetState(665)
+			p.SetState(666)
 			p.expression(0)
 		}
 
 	}
 	{
-		p.SetState(668)
-		p.Right_paren()
-	}
-	{
 		p.SetState(669)
-		p.Id()
+		p.Right_paren()
 	}
 	{
 		p.SetState(670)
@@ -7140,6 +7140,16 @@ func (s *OverrideControlStatementContext) GetN() antlr.Token { return s.n }
 
 func (s *OverrideControlStatementContext) SetN(v antlr.Token) { s.n = v }
 
+func (s *OverrideControlStatementContext) Id() IIdContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IIdContext)
+}
+
 func (s *OverrideControlStatementContext) Left_paren() ILeft_parenContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILeft_parenContext)(nil)).Elem(), 0)
 
@@ -7158,16 +7168,6 @@ func (s *OverrideControlStatementContext) Right_paren() IRight_parenContext {
 	}
 
 	return t.(IRight_parenContext)
-}
-
-func (s *OverrideControlStatementContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IIdContext)
 }
 
 func (s *OverrideControlStatementContext) Colon() antlr.TerminalNode {
@@ -7328,26 +7328,26 @@ func (p *LiteParser) OverrideControlStatement() (localctx IOverrideControlStatem
 	}
 	{
 		p.SetState(747)
+		p.Id()
+	}
+	{
+		p.SetState(748)
 		p.Left_paren()
 	}
-	p.SetState(749)
+	p.SetState(750)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LiteParserLinqFrom)|(1<<LiteParserLinqBy)|(1<<LiteParserLinqSelect)|(1<<LiteParserLinqWhere)|(1<<LiteParserLinqGroup)|(1<<LiteParserLinqInto)|(1<<LiteParserLinqOrderby)|(1<<LiteParserLinqJoin)|(1<<LiteParserLinqLet)|(1<<LiteParserLinqIn)|(1<<LiteParserLinqOn)|(1<<LiteParserLinqEquals)|(1<<LiteParserLinqAscending)|(1<<LiteParserLinqDescending))) != 0) || (((_la-36)&-(0x1f+1)) == 0 && ((1<<uint((_la-36)))&((1<<(LiteParserLeft_Flow-36))|(1<<(LiteParserLess-36))|(1<<(LiteParserLeft_Paren-36))|(1<<(LiteParserLeft_Brace-36))|(1<<(LiteParserLeft_Brack-36))|(1<<(LiteParserQuestion-36))|(1<<(LiteParserBang-36))|(1<<(LiteParserWave-36))|(1<<(LiteParserAdd-36))|(1<<(LiteParserSub-36))|(1<<(LiteParserTypeI8-36))|(1<<(LiteParserTypeU8-36))|(1<<(LiteParserTypeI16-36))|(1<<(LiteParserTypeU16-36))|(1<<(LiteParserTypeI32-36))|(1<<(LiteParserTypeU32-36)))) != 0) || (((_la-68)&-(0x1f+1)) == 0 && ((1<<uint((_la-68)))&((1<<(LiteParserTypeI64-68))|(1<<(LiteParserTypeU64-68))|(1<<(LiteParserTypeF32-68))|(1<<(LiteParserTypeF64-68))|(1<<(LiteParserTypeChr-68))|(1<<(LiteParserTypeStr-68))|(1<<(LiteParserTypeBool-68))|(1<<(LiteParserTypeInt-68))|(1<<(LiteParserTypeNum-68))|(1<<(LiteParserTypeByte-68))|(1<<(LiteParserTypeAny-68))|(1<<(LiteParserNilLiteral-68))|(1<<(LiteParserTrueLiteral-68))|(1<<(LiteParserFalseLiteral-68))|(1<<(LiteParserUndefinedLiteral-68))|(1<<(LiteParserNumberLiteral-68))|(1<<(LiteParserTextLiteral-68))|(1<<(LiteParserCharLiteral-68))|(1<<(LiteParserIDPrivate-68))|(1<<(LiteParserIDPublic-68))|(1<<(LiteParserDiscard-68)))) != 0) {
 		{
-			p.SetState(748)
+			p.SetState(749)
 			p.expression(0)
 		}
 
 	}
 	{
-		p.SetState(751)
-		p.Right_paren()
-	}
-	{
 		p.SetState(752)
-		p.Id()
+		p.Right_paren()
 	}
 	{
 		p.SetState(753)
@@ -7807,6 +7807,16 @@ func NewProtocolControlStatementContext(parser antlr.Parser, parent antlr.Parser
 
 func (s *ProtocolControlStatementContext) GetParser() antlr.Parser { return s.parser }
 
+func (s *ProtocolControlStatementContext) Id() IIdContext {
+	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
+
+	if t == nil {
+		return nil
+	}
+
+	return t.(IIdContext)
+}
+
 func (s *ProtocolControlStatementContext) Left_paren() ILeft_parenContext {
 	var t = s.GetTypedRuleContext(reflect.TypeOf((*ILeft_parenContext)(nil)).Elem(), 0)
 
@@ -7825,16 +7835,6 @@ func (s *ProtocolControlStatementContext) Right_paren() IRight_parenContext {
 	}
 
 	return t.(IRight_parenContext)
-}
-
-func (s *ProtocolControlStatementContext) Id() IIdContext {
-	var t = s.GetTypedRuleContext(reflect.TypeOf((*IIdContext)(nil)).Elem(), 0)
-
-	if t == nil {
-		return nil
-	}
-
-	return t.(IIdContext)
 }
 
 func (s *ProtocolControlStatementContext) Colon() antlr.TerminalNode {
@@ -7967,15 +7967,15 @@ func (p *LiteParser) ProtocolControlStatement() (localctx IProtocolControlStatem
 	}
 	{
 		p.SetState(794)
-		p.Left_paren()
+		p.Id()
 	}
 	{
 		p.SetState(795)
-		p.Right_paren()
+		p.Left_paren()
 	}
 	{
 		p.SetState(796)
-		p.Id()
+		p.Right_paren()
 	}
 	{
 		p.SetState(797)
