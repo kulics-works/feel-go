@@ -39,12 +39,12 @@ enumStatement: (annotationSupport)? id Right_Arrow New_Line* typeType left_brack
 
 enumSupportStatement: id (Equal (add)? integerExpr)? end;
 // 命名空间变量
-namespaceVariableStatement: (annotationSupport)? id (Colon_Equal expression|Colon typeType (Equal expression)?) end;
+namespaceVariableStatement: (annotationSupport)? id (Equal expression| typeType (Equal expression)?) end;
 // 命名空间控制
-namespaceControlStatement: (annotationSupport)? id left_paren expression? right_paren Colon typeType
+namespaceControlStatement: (annotationSupport)? id left_paren expression? right_paren typeType
 (left_brace (packageControlSubStatement)+ right_brace)? end;
 // 命名空间常量
-namespaceConstantStatement: (annotationSupport)? id (Colon typeType Colon|Colon_Colon) expression end;
+namespaceConstantStatement: (annotationSupport)? id (typeType)? Colon expression end;
 // 命名空间函数
 namespaceFunctionStatement: (annotationSupport)? id (templateDefine)? left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) New_Line*
 parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
@@ -61,17 +61,17 @@ includeStatement
 ;
 
 // 包含
-includeStatement: Colon typeType end;
+includeStatement: Discard typeType end;
 // 包构造方法
 packageNewStatement: (annotationSupport)? parameterClauseSelf Less Greater left_paren parameterClauseIn right_paren
 (left_paren expressionList? right_paren)? left_brace (functionSupportStatement)* right_brace;
 // 定义变量
-packageVariableStatement: (annotationSupport)? id (Colon_Equal expression|Colon typeType (Equal expression)?) end;
+packageVariableStatement: (annotationSupport)? id (Equal expression| typeType (Equal expression)?) end;
 
 // 定义子方法
 packageControlSubStatement: id (left_paren id right_paren)? left_brace (functionSupportStatement)+ right_brace end;
 // 定义包事件
-packageEventStatement: id Colon left_brack Question right_brack nameSpaceItem end;
+packageEventStatement: id left_brack Question right_brack nameSpaceItem end;
 
 // 实现
 implementStatement: parameterClauseSelf Right_Arrow (typeType)? New_Line* left_brace (implementSupportStatement)* right_brace end;
@@ -84,7 +84,7 @@ implementFunctionStatement: (annotationSupport)? id (templateDefine)? left_paren
 parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
 // 定义控制
 implementControlStatement: (annotationSupport)? id left_paren expression? right_paren 
- Colon typeType (left_brace (packageControlSubStatement)+ right_brace)? end;
+ typeType (left_brace (packageControlSubStatement)+ right_brace)? end;
 
 // 重载
 overrideStatement: left_paren id right_paren parameterClauseSelf 
@@ -98,7 +98,7 @@ overrideFunctionStatement: (annotationSupport)? (n='_')? id (templateDefine)? le
 parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
 // 定义控制
 overrideControlStatement: (annotationSupport)? (n='_')? id left_paren expression? right_paren
- Colon typeType (left_brace (packageControlSubStatement)+ right_brace)? end;
+ typeType (left_brace (packageControlSubStatement)+ right_brace)? end;
 
 // 协议
 protocolStatement: (annotationSupport)? id (templateDefine)? Left_Arrow left_brace (protocolSupportStatement)* right_brace end;
@@ -110,7 +110,7 @@ includeStatement
 |New_Line
 ;
 // 定义控制
-protocolControlStatement: (annotationSupport)? id left_paren right_paren Colon typeType
+protocolControlStatement: (annotationSupport)? id left_paren right_paren typeType
  (left_brace (protocolControlSubStatement)* right_brace)? end;
 // 定义子方法
 protocolControlSubStatement: id;
@@ -122,15 +122,15 @@ t=(Right_Arrow|Right_Flow) New_Line* parameterClauseOut right_paren end;
 functionStatement: id (templateDefine)? left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) New_Line*
  parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
 // 返回
-returnStatement: Left_Arrow (expressionList)? end;
+returnStatement: Left_Arrow (tupleExpression)? end;
 // 入参
 parameterClauseIn: parameter? (more parameter)*;
 // 出参
 parameterClauseOut: parameter? (more parameter)*;
 // 接收器
-parameterClauseSelf: id Colon typeType;
+parameterClauseSelf: id typeType;
 // 参数结构
-parameter: (annotationSupport)? id Colon typeType (Equal expression)?;
+parameter: (annotationSupport)? id typeType (Equal expression)?;
 
 // 函数支持的语句
 functionSupportStatement:
@@ -159,7 +159,7 @@ functionSupportStatement:
 judgeCaseStatement: expression Question (caseStatement)+ end;
 // 判断条件声明
 caseStatement: caseExprStatement (more caseExprStatement)* left_brace (functionSupportStatement)* right_brace;
-caseExprStatement: Discard | expression | (id)? Colon typeType;
+caseExprStatement: Discard | expression | (id|Discard) typeType;
 // 判断
 judgeStatement:
 judgeIfStatement (judgeElseIfStatement)* judgeElseStatement end
@@ -187,9 +187,9 @@ checkStatement:
 Bang left_brace (functionSupportStatement)* right_brace (checkErrorStatement)* checkFinallyStatment end
 |Bang left_brace (functionSupportStatement)* right_brace (checkErrorStatement)+ end;
 // 定义检查变量
-usingStatement: expression Bang expression (Colon typeType)? end;
+usingStatement: Bang expression (typeType)? Equal expression end;
 // 错误处理
-checkErrorStatement: (id|id Colon typeType) left_brace (functionSupportStatement)* right_brace;
+checkErrorStatement: (id|id typeType) left_brace (functionSupportStatement)* right_brace;
 // 最终执行
 checkFinallyStatment: Discard left_brace (functionSupportStatement)* right_brace;
 
@@ -200,16 +200,20 @@ iteratorStatement: Left_Brack expression op=(Less|Less_Equal|Greater|Greater_Equ
  more expression Right_Brack | Left_Brack expression op=(Less|Less_Equal|Greater|Greater_Equal) expression Right_Brack;
 
 // 定义变量
-variableStatement: expression (Colon_Equal|Colon typeType Equal) expression end;
+variableStatement: idExpression typeType? Equal expression end;
 // 声明变量
-variableDeclaredStatement: expression Colon typeType end;
+variableDeclaredStatement: idExpression typeType end;
 // 通道赋值
 channelAssignStatement: expression Left_Brack Left_Arrow Right_Brack assign expression end;
 // 赋值
-assignStatement: expression assign expression end;
+assignStatement: tupleExpression assign tupleExpression end;
 
 expressionStatement: expression end;
 
+idExpression: idExprItem (more idExprItem)*;
+idExprItem: id | Discard;
+
+tupleExpression: expression (more expression)* ; // 元组
 // 基础表达式
 primaryExpression: 
 id (templateCall)?
@@ -232,7 +236,6 @@ linq // 联合查询
 | lambda // lambda表达式
 | functionExpression // 函数
 | pkgAnonymous // 匿名包
-| tupleExpression //元组表达式
 | plusMinus // 正负处理
 | bitwiseNotExpression // 位运算取反
 | negate // 取反
@@ -244,7 +247,7 @@ linq // 联合查询
 | expression callChannel // 调用通道
 | expression callElement // 访问元素
 | expression callExpression // 链式调用
-| expression judgeType typeType // 类型判断表达式
+| expression judgeType Less typeType Greater // 类型判断表达式
 | expression bitwise expression // 位运算表达式
 | expression judge expression // 判断型表达式
 | expression add expression // 和型表达式
@@ -279,9 +282,9 @@ callPkg: typeType left_brace (pkgAssign|listAssign|setAssign|dictionaryAssign)? 
 
 callNew: Less typeType Greater left_paren New_Line? expressionList? New_Line? right_paren; // 构造类对象
 
-getType: Question left_paren (expression|Colon typeType) right_paren;
+getType: Question left_paren typeType right_paren;
 
-typeConversion: Colon left_paren typeType right_paren; // 类型转化
+typeConversion: Dot left_paren typeType right_paren; // 类型转化
 
 pkgAssign: pkgAssignElement (more pkgAssignElement)* ; // 简化赋值
 
@@ -315,11 +318,11 @@ name: id (call New_Line? id)* ;
 
 templateDefine: Less templateDefineItem (more templateDefineItem)* Greater;
 
-templateDefineItem: id (Colon id)?; 
+templateDefineItem: id (id)?; 
 
 templateCall: Less typeType (more typeType)* Greater;
 
-lambda: left_brace (lambdaIn)? t=(Right_Arrow|Right_Flow) New_Line* expressionList right_brace
+lambda: left_brace (lambdaIn)? t=(Right_Arrow|Right_Flow) New_Line* tupleExpression right_brace
 | left_brace (lambdaIn)? t=(Right_Arrow|Right_Flow) New_Line* 
 (functionSupportStatement)* right_brace;
 
@@ -333,8 +336,6 @@ pkgAnonymousAssignElement: name Equal expression; // 简化赋值元素
 
 functionExpression: left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) New_Line*
 parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace;
-
-tupleExpression: left_paren expression (more expression)*  right_paren; // 元组
 
 plusMinus: add expression;
 
@@ -383,11 +384,12 @@ typeAny
 | typeFunction
 ;
 
-typeReference: Bang (typeNotNull | typeNullable);
-typeNullable: Question typeNotNull;
 typeType: typeNotNull | typeNullable | typeReference;
 
-typeTuple: left_paren typeType (more typeType)+ right_paren;
+typeReference: Bang (typeNotNull | typeNullable);
+typeNullable: Question typeNotNull;
+
+typeTuple: Less typeType (more typeType)+ Greater;
 typeArray: Left_Brack Colon Right_Brack typeType;
 typeList: Left_Brack Right_Brack typeType;
 typeSet: Left_Brack typeType Right_Brack;
@@ -424,7 +426,7 @@ nilExpr: NilLiteral;
 // bool值
 boolExpr: t=TrueLiteral|t=FalseLiteral;
 
-judgeType: op=(Equal_Equal|Not_Equal) Colon;
+judgeType: op=(Equal_Equal|Not_Equal);
 bitwise: (bitwiseAnd | bitwiseOr | bitwiseXor 
 | bitwiseLeftShift | bitwiseRightShift) (New_Line)?;
 bitwiseAnd: And And;
