@@ -31,20 +31,21 @@ test(x int, y str -> r1 str, r2 int) {
 }
 
 testJudge(->) {
-    ? 1 + 1 == 2 {
-
-    } 2 * 3 == 6 {
-
-    } _ {
-
-    }
     a = 5
-    a ? 1 {
-        a += 1
-    } 2, 3, 4 {
-        a += 2
+    ? 1 + 1 == 2 {
+        a = 2
+    } 2 * 3 == 6 {
+        a = 1
     } _ {
-        a += 0
+        a = 5
+    }
+    
+    a ? 1 {
+        a = a + 1
+    } 2, 3, 4 {
+        a = a + 2
+    } _ {
+        a = 0
     }
 }
 
@@ -113,37 +114,25 @@ testProtocol(w worker -> i any) {
     <- w
 }
 
-testGo(-> v int) {
-    async = (->) {
-        Println("async")
-    }
-    async() <~
-    channel = <[->]int>(1)
-    channel[<-] = 2
-    <- channel[<-]
-}
-
-testLambda(fn (int->str) ->) {
-    fn(1)
-}
-
-
 test_define(->) {
     a = 1
     ? a == 1 {
         b = 2
         b = 3
         a = 3
+        Println(b)
     } a == 2 {
         b = 2
         b = 3
         ? b == 2 {
             a = 1
         }
+        Println(b)
     } _ {
         b = 2
         b = 3
         a = 3
+        Println(b)
     }
     a ? 1 {
         b = 2
@@ -155,13 +144,12 @@ test_define(->) {
         } _ {
             a = 2
         }
-    } c int {
-        c = 2
-        a = 1
+        Println(b)
     } _ {
         b = 2
         b = 3
         a = 3
+        Println(b)
     }
     # loop can not assign temp id
     arr = {1,2,3}
@@ -176,4 +164,18 @@ test_define(->) {
     } e {
         e = Exception{}
     }#
+}
+
+testGo(-> v int) {
+    async = (->) {
+        Println("async")
+    }
+    async() <~
+    channel = <[->]int>(1)
+    channel[<-] = 2
+    <- channel[<-]
+}
+
+testLambda(fn (int->str) ->) {
+    fn(1)
 }

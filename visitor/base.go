@@ -1,6 +1,7 @@
 package visitor
 
 import (
+	"encoding/json"
 	"fmt"
 
 	"github.com/kulics/lite-go/parser"
@@ -146,8 +147,15 @@ func (me *LiteVisitor) add_current_set() {
 	me.CurrentIDSet.push(new_set_str())
 }
 func (me *LiteVisitor) delete_current_set() {
+	// printJSON(me.AllIDSet)
 	me.AllIDSet.except_with(me.CurrentIDSet.peek())
+	// printJSON(me.AllIDSet)
 	me.CurrentIDSet.pop()
+}
+
+func printJSON(i any) {
+	by, _ := json.Marshal(i)
+	fmt.Println(string(by))
 }
 
 func (me *LiteVisitor) Visit(tree antlr.ParseTree) any {

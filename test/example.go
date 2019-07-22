@@ -28,33 +28,36 @@ func test(x int, y string) (r1 string, r2 int) {
 	return "hello", a + b
 }
 func testJudge() {
-	if 1+1 == 2 {
-	} else if 2*3 == 6 {
-	} else {
-	}
 	a := 5
+	if 1+1 == 2 {
+		a = 2
+	} else if 2*3 == 6 {
+		a = 1
+	} else {
+		a = 5
+	}
 	switch a {
 	case 1:
 		{
-			a += 1
+			a = a + 1
 		}
 
 	case 2:
 		{
-			a += 2
+			a = a + 2
 		}
 	case 3:
 		{
-			a += 2
+			a = a + 2
 		}
 	case 4:
 		{
-			a += 2
+			a = a + 2
 		}
 
 	default:
 		{
-			a += 0
+			a = 0
 		}
 
 	}
@@ -118,6 +121,51 @@ func testProtocol(w worker) (i interface{}) {
 	w.doSomething("protocol")
 	return w
 }
+func test_define() {
+	a := 1
+	if a == 1 {
+		b := 2
+		b = 3
+		a = 3
+		Println(b)
+	} else if a == 2 {
+		b := 2
+		b = 3
+		if b == 2 {
+			a = 1
+		}
+		Println(b)
+	} else {
+		b := 2
+		b = 3
+		a = 3
+		Println(b)
+	}
+	switch a {
+	case 1:
+		{
+			b := 2
+			b = 3
+			a = 3
+			if a == 3 {
+				b = 1
+				a = 1
+			} else {
+				a = 2
+			}
+			Println(b)
+		}
+
+	default:
+		{
+			b := 2
+			b = 3
+			a = 3
+			Println(b)
+		}
+
+	}
+}
 func testGo() (v int) {
 	async := func() { Println("async") }
 	go async()
@@ -127,49 +175,4 @@ func testGo() (v int) {
 }
 func testLambda(fn func(int) string) {
 	fn(1)
-}
-func test_define() {
-	a := 1
-	if a == 1 {
-		b := 2
-		b := 3
-		a := 3
-	} else if a == 2 {
-		b := 2
-		b := 3
-		if b == 2 {
-			a := 1
-		}
-	} else {
-		b := 2
-		b := 3
-		a := 3
-	}
-	switch a {
-	case 1:
-		{
-			b := 2
-			b := 3
-			a := 3
-			if a == 3 {
-				b := 1
-				a := 1
-			} else {
-				a := 2
-			}
-		}
-
-		{
-			c := 2
-			a := 1
-		}
-
-	default:
-		{
-			b := 2
-			b := 3
-			a := 3
-		}
-
-	}
 }
