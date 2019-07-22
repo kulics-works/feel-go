@@ -2,23 +2,23 @@ package visitor
 
 import "github.com/kulics/lite-go/parser"
 
-func (sf *LiteVisitor) VisitTypeConversion(ctx *parser.TypeConversionContext) interface{} {
-	return sf.Visit(ctx.TypeType()).(string)
+func (me *LiteVisitor) VisitTypeConversion(ctx *parser.TypeConversionContext) any {
+	return me.Visit(ctx.TypeType()).(string)
 }
 
-func (sf *LiteVisitor) VisitCall(ctx *parser.CallContext) interface{} {
+func (me *LiteVisitor) VisitCall(ctx *parser.CallContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitWave(ctx *parser.WaveContext) interface{} {
+func (me *LiteVisitor) VisitWave(ctx *parser.WaveContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitJudgeType(ctx *parser.JudgeTypeContext) interface{} {
+func (me *LiteVisitor) VisitJudgeType(ctx *parser.JudgeTypeContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitJudge(ctx *parser.JudgeContext) interface{} {
+func (me *LiteVisitor) VisitJudge(ctx *parser.JudgeContext) any {
 	if ctx.GetOp().GetText() == "><" {
 		return "!="
 	} else if ctx.GetOp().GetText() == "&" {
@@ -29,30 +29,30 @@ func (sf *LiteVisitor) VisitJudge(ctx *parser.JudgeContext) interface{} {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitAdd(ctx *parser.AddContext) interface{} {
+func (me *LiteVisitor) VisitAdd(ctx *parser.AddContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitMul(ctx *parser.MulContext) interface{} {
+func (me *LiteVisitor) VisitMul(ctx *parser.MulContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitPow(ctx *parser.PowContext) interface{} {
+func (me *LiteVisitor) VisitPow(ctx *parser.PowContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitPlusMinus(ctx *parser.PlusMinusContext) interface{} {
+func (me *LiteVisitor) VisitPlusMinus(ctx *parser.PlusMinusContext) any {
 	r := Result{}
-	expr := sf.Visit(ctx.Expression()).(Result)
-	op := sf.Visit(ctx.Add()).(string)
+	expr := me.Visit(ctx.Expression()).(Result)
+	op := me.Visit(ctx.Add()).(string)
 	r.Data = expr.Data
 	r.Text = op + expr.Text
 	return r
 }
 
-func (sf *LiteVisitor) VisitNegate(ctx *parser.NegateContext) interface{} {
+func (me *LiteVisitor) VisitNegate(ctx *parser.NegateContext) any {
 	r := Result{}
-	expr := sf.Visit(ctx.Expression()).(Result)
+	expr := me.Visit(ctx.Expression()).(Result)
 	r.Data = expr.Data
 	r.Text = "!" + expr.Text
 	return r

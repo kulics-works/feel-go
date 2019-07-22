@@ -7,7 +7,7 @@ import (
 
 var self Parameter
 
-func (sf *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) interface{} {
+func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) any {
 	obj := ""
 	// if ctx.AnnotationSupport() >< () {
 	// 	obj += Visit(context.annotationSupport())
@@ -17,7 +17,7 @@ func (sf *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementCon
 	// pout := Visit(ctx.ParameterClauseOut()).(string)
 	// obj += ""id.permission" async static "pout" "id.text""
 	// } else {
-	// 	obj += Func + id.Text  + sf.Visit(ctx.ParameterClauseOut()).(string)
+	// 	obj += Func + id.Text  + me.Visit(ctx.ParameterClauseOut()).(string)
 	// }
 
 	// 泛型
@@ -27,9 +27,9 @@ func (sf *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementCon
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
-	self = sf.Visit(ctx.ParameterClauseSelf()).(Parameter)
+	self = me.Visit(ctx.ParameterClauseSelf()).(Parameter)
 	for _, item := range ctx.AllImplementSupportStatement() {
-		if v, ok := sf.Visit(item).(string); ok {
+		if v, ok := me.Visit(item).(string); ok {
 			obj += v
 		}
 	}
@@ -37,17 +37,17 @@ func (sf *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementCon
 	return obj
 }
 
-func (sf *LiteVisitor) VisitImplementSupportStatement(ctx *parser.ImplementSupportStatementContext) interface{} {
-	return sf.Visit(ctx.GetChild(0).(antlr.ParseTree))
+func (me *LiteVisitor) VisitImplementSupportStatement(ctx *parser.ImplementSupportStatementContext) any {
+	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (sf *LiteVisitor) VisitImplementFunctionStatement(ctx *parser.ImplementFunctionStatementContext) interface{} {
-	id := sf.Visit(ctx.Id()).(Result)
+func (me *LiteVisitor) VisitImplementFunctionStatement(ctx *parser.ImplementFunctionStatementContext) any {
+	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	obj += Func + "(" + self.Id + " " + self.Type + ")" +
-		id.Text + sf.Visit(ctx.ParameterClauseIn()).(string) +
-		sf.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+		id.Text + me.Visit(ctx.ParameterClauseIn()).(string) +
+		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	return obj
 }

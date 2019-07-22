@@ -8,25 +8,25 @@ main(->) {
     test(1, "2")
     testJudge()
     testLoop()
-    m := man{}
+    m = man{}
     testProtocol(m?)
-    testLambda( (a: int -> b: str) {
+    testLambda( (a int -> b str) {
         <- ""
     })
 }
 
-pi :: 3.14
-eight: int: 8
+pi : 3.14
+eight int : 8
 
-num1 := 1
-num2: num = 12.345678
+num1 = 1
+num2 num = 12.345678
 
 work => (str->)
-doWork -> (str->)
+# doWork -> (str->) #
 
-test(x: int, y: str -> r1: str, r2: int) {
-    a := x * 3
-    b: int = 2
+test(x int, y str -> r1 str, r2 int) {
+    a = x * 3
+    b int = 2
     <- "hello", a + b
 }
 
@@ -38,7 +38,7 @@ testJudge(->) {
     } _ {
 
     }
-    a := 5
+    a = 5
     a ? 1 {
         a += 1
     } 2, 3, 4 {
@@ -49,15 +49,15 @@ testJudge(->) {
 }
 
 testLoop(->) {
-    a := 0
-    arr := []int{1,2,3,4,5}
+    a = 0
+    arr = []int{1,2,3,4,5}
     arr @ i {
         a += i
     }
     arr @ [i]v {
         a += i + v
     }
-    dic := [str]int{["1"]1,["2"]2}
+    dic = [str]int{["1"]1,["2"]2}
     dic @ i {
         a += i
     }
@@ -79,50 +79,50 @@ testLoop(->) {
 }
 
 human -> {
-    name: str
+    name str
 }
 
-me: ?human -> {
-    sayName(-> n: str) {
+me ?human -> {
+    sayName(-> n str) {
         <- me.name
     }
 } 
 
 man -> {
-    :human
-    age: int
+    _ human
+    age int
 }
 
-me: ?man -> {
-    doSomething(work: str ->) {
+me ?man -> {
+    doSomething(work str ->) {
         Println(work)
     }
 }
 
 person <- {
-    sayName(-> n: str)
+    sayName(-> n str)
 }
 
 worker <- {
-    :person
-    doSomething(work: str ->)
+    _ person
+    doSomething(work str ->)
 }
 
-testProtocol(w: worker -> i: any) {
+testProtocol(w worker -> i any) {
     w.doSomething("protocol")
     <- w
 }
 
-testGo(-> v: int) {
-    async := (->) {
+testGo(-> v int) {
+    async = (->) {
         Println("async")
     }
     async() <~
-    channel := <[->]int>(1)
+    channel = <[->]int>(1)
     channel[<-] = 2
     <- channel[<-]
 }
 
-testLambda(fn: (int->str) ->) {
+testLambda(fn (int->str) ->) {
     fn(1)
 }

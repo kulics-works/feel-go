@@ -6,23 +6,23 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (sf *LiteVisitor) VisitExpressionStatement(ctx *parser.ExpressionStatementContext) interface{} {
-	r := sf.Visit(ctx.Expression()).(Result)
+func (me *LiteVisitor) VisitExpressionStatement(ctx *parser.ExpressionStatementContext) any {
+	r := me.Visit(ctx.Expression()).(Result)
 	return r.Text + Wrap
 }
 
-func (sf *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) interface{} {
+func (me *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 	count := ctx.GetChildCount()
 	r := Result{}
 	if count == 3 {
-		e1 := sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
-		e2 := sf.Visit(ctx.GetChild(2).(antlr.ParseTree))
-		op := sf.Visit(ctx.GetChild(1).(antlr.ParseTree))
+		e1 := me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
+		e2 := me.Visit(ctx.GetChild(2).(antlr.ParseTree))
+		op := me.Visit(ctx.GetChild(1).(antlr.ParseTree))
 
 		switch ctx.GetChild(1).(type) {
 		case parser.JudgeTypeContext:
 			// r.data = Bool
-			// e3 := sf.Visit(ctx.GetChild(2)).(string)
+			// e3 := me.Visit(ctx.GetChild(2)).(string)
 			// if op == "==" {
 			// 	r.text = "(" + e1.text + " is " + e3+")"
 			// } else if op == "><" {
@@ -64,22 +64,22 @@ func (sf *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) interface{
 		}
 		r.Text = e1.Text + op.(string) + e2.(Result).Text
 	} else if count == 2 {
-		r = sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
+		r = me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
 		if _, ok := ctx.GetChild(1).(*parser.TypeConversionContext); ok {
-			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(string)
+			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(string)
 			r.Data = e2
 			r.Text = e2 + "(" + r.Text + ")"
 		} else if _, ok := ctx.GetChild(1).(*parser.CallExpressionContext); ok {
-			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = r.Text + e2.Text
 		} else if _, ok := ctx.GetChild(1).(*parser.CallFuncContext); ok {
-			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = r.Text + e2.Text
 		} else if _, ok := ctx.GetChild(1).(*parser.CallElementContext); ok {
-			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = r.Text + e2.Text
 		} else if _, ok := ctx.GetChild(1).(*parser.CallChannelContext); ok {
-			e2 := sf.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
+			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = e2.Text + r.Text
 		} else if ctx.GetOp() != nil {
 			if ctx.GetOp().GetTokenType() == parser.LiteLexerBang {
@@ -91,18 +91,18 @@ func (sf *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) interface{
 			}
 		}
 	} else if count == 1 {
-		r = sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
+		r = me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
 	}
 	return r
 }
 
-func (sf *LiteVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) interface{} {
+func (me *LiteVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) any {
 	obj := ""
-	r1 := sf.Visit(ctx.Expression(0)).(Result)
-	r2 := sf.Visit(ctx.Expression(1)).(Result)
+	r1 := me.Visit(ctx.IdExpression()).(Result)
+	r2 := me.Visit(ctx.Expression()).(Result)
 	Type := ""
 	if ctx.TypeType() != nil {
-		Type = sf.Visit(ctx.TypeType()).(string)
+		Type = me.Visit(ctx.TypeType()).(string)
 		obj = Var + r1.Text + " " + Type + " = " + r2.Text + Wrap
 	} else {
 		obj = r1.Text + " := " + r2.Text + Wrap
@@ -110,58 +110,58 @@ func (sf *LiteVisitor) VisitVariableStatement(ctx *parser.VariableStatementConte
 	return obj
 }
 
-func (sf *LiteVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclaredStatementContext) interface{} {
+func (me *LiteVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclaredStatementContext) any {
 	obj := ""
-	Type := sf.Visit(ctx.TypeType()).(string)
-	r := sf.Visit(ctx.Expression()).(Result)
+	Type := me.Visit(ctx.TypeType()).(string)
+	r := me.Visit(ctx.IdExpression()).(Result)
 	obj = Var + r.Text + " " + Type + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitChannelAssignStatement(ctx *parser.ChannelAssignStatementContext) interface{} {
-	r1 := sf.Visit(ctx.Expression(0)).(Result)
-	r2 := sf.Visit(ctx.Expression(1)).(Result)
+func (me *LiteVisitor) VisitChannelAssignStatement(ctx *parser.ChannelAssignStatementContext) any {
+	r1 := me.Visit(ctx.Expression(0)).(Result)
+	r2 := me.Visit(ctx.Expression(1)).(Result)
 	obj := r1.Text + "<-" + r2.Text + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitAssignStatement(ctx *parser.AssignStatementContext) interface{} {
-	r1 := sf.Visit(ctx.Expression(0)).(Result)
-	r2 := sf.Visit(ctx.Expression(1)).(Result)
-	obj := r1.Text + sf.Visit(ctx.Assign()).(string) + r2.Text + Wrap
+func (me *LiteVisitor) VisitAssignStatement(ctx *parser.AssignStatementContext) any {
+	r1 := me.Visit(ctx.TupleExpression(0)).(Result)
+	r2 := me.Visit(ctx.TupleExpression(1)).(Result)
+	obj := r1.Text + me.Visit(ctx.Assign()).(string) + r2.Text + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitAssign(ctx *parser.AssignContext) interface{} {
+func (me *LiteVisitor) VisitAssign(ctx *parser.AssignContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (sf *LiteVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext) interface{} {
+func (me *LiteVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext) any {
 	if ctx.GetChildCount() == 1 {
 		c := ctx.GetChild(0)
 		if _, ok := c.(*parser.DataStatementContext); ok {
-			return sf.Visit(ctx.DataStatement())
+			return me.Visit(ctx.DataStatement())
 		} else if _, ok := c.(*parser.IdContext); ok {
-			return sf.Visit(ctx.Id())
+			return me.Visit(ctx.Id())
 		} else if ctx.GetT().GetTokenType() == parser.LiteLexerDot_Dot {
-			return Result{Text: "sf", Data: "var"}
+			return Result{Text: "me", Data: "var"}
 		} else if ctx.GetT().GetTokenType() == parser.LiteLexerDiscard {
 			return Result{Text: "_", Data: "var"}
 		}
 	} else if ctx.GetChildCount() == 2 {
-		id := sf.Visit(ctx.Id()).(Result)
-		template := sf.Visit(ctx.TemplateCall()).(string)
+		id := me.Visit(ctx.Id()).(Result)
+		template := me.Visit(ctx.TemplateCall()).(string)
 		return Result{Text: id.Text + template, Data: id.Text + template}
 	}
-	r := sf.Visit(ctx.Expression()).(Result)
+	r := me.Visit(ctx.Expression()).(Result)
 	return Result{Text: "(" + r.Text + ")", Data: r.Data}
 }
 
-func (sf *LiteVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) interface{} {
+func (me *LiteVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) any {
 	r := Result{}
 	obj := ""
 	for i := 0; i < len(ctx.AllExpression()); i++ {
-		temp := sf.Visit(ctx.Expression(i)).(Result)
+		temp := me.Visit(ctx.Expression(i)).(Result)
 		if i == 0 {
 			obj += temp.Text
 		} else {
@@ -173,10 +173,10 @@ func (sf *LiteVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) in
 	return r
 }
 
-func (sf *LiteVisitor) VisitStringExpression(ctx *parser.StringExpressionContext) interface{} {
+func (me *LiteVisitor) VisitStringExpression(ctx *parser.StringExpressionContext) any {
 	text := "bytes.Buffer{}.WriteString(" + ctx.TextLiteral().GetText() + ")"
 	for _, item := range ctx.AllStringExpressionElement() {
-		text += sf.Visit(item).(string)
+		text += me.Visit(item).(string)
 	}
 	text += ".String()"
 	return Result{
@@ -185,23 +185,23 @@ func (sf *LiteVisitor) VisitStringExpression(ctx *parser.StringExpressionContext
 	}
 }
 
-func (sf *LiteVisitor) VisitStringExpressionElement(ctx *parser.StringExpressionElementContext) interface{} {
-	r := sf.Visit(ctx.Expression()).(Result)
+func (me *LiteVisitor) VisitStringExpressionElement(ctx *parser.StringExpressionElementContext) any {
+	r := me.Visit(ctx.Expression()).(Result)
 	text := ctx.TextLiteral().GetText()
 	return ".WriteString(fmt.Sprint(" + r.Text + ").WriteString(" + text + ")"
 }
 
-func (sf *LiteVisitor) VisitDataStatement(ctx *parser.DataStatementContext) interface{} {
+func (me *LiteVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
 	r := Result{}
 	if ctx.NilExpr() != nil {
 		r.Data = Any
 		r.Text = "nil"
 	} else if ctx.FloatExpr() != nil {
 		r.Data = F64
-		r.Text = sf.Visit(ctx.FloatExpr()).(string)
+		r.Text = me.Visit(ctx.FloatExpr()).(string)
 	} else if ctx.IntegerExpr() != nil {
 		r.Data = I32
-		r.Text = sf.Visit(ctx.IntegerExpr()).(string)
+		r.Text = me.Visit(ctx.IntegerExpr()).(string)
 	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTextLiteral {
 		r.Data = Str
 		r.Text = ctx.TextLiteral().GetText()
@@ -218,22 +218,22 @@ func (sf *LiteVisitor) VisitDataStatement(ctx *parser.DataStatementContext) inte
 	return r
 }
 
-func (sf *LiteVisitor) VisitFloatExpr(ctx *parser.FloatExprContext) interface{} {
+func (me *LiteVisitor) VisitFloatExpr(ctx *parser.FloatExprContext) any {
 	number := ""
-	number += sf.Visit(ctx.IntegerExpr(0)).(string) + "." + sf.Visit(ctx.IntegerExpr(1)).(string)
+	number += me.Visit(ctx.IntegerExpr(0)).(string) + "." + me.Visit(ctx.IntegerExpr(1)).(string)
 	return number
 }
 
-func (sf *LiteVisitor) VisitIntegerExpr(ctx *parser.IntegerExprContext) interface{} {
+func (me *LiteVisitor) VisitIntegerExpr(ctx *parser.IntegerExprContext) any {
 	number := ""
 	number += ctx.NumberLiteral().GetText()
 	return number
 }
 
-func (sf *LiteVisitor) VisitTupleExpression(ctx *parser.TupleExpressionContext) interface{} {
+func (me *LiteVisitor) VisitTupleExpression(ctx *parser.TupleExpressionContext) any {
 	obj := ""
 	for i := 0; i < len(ctx.AllExpression()); i++ {
-		r := sf.Visit(ctx.Expression(i)).(Result)
+		r := me.Visit(ctx.Expression(i)).(Result)
 		if i == 0 {
 			obj += r.Text
 		} else {

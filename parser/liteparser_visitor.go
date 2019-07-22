@@ -200,6 +200,15 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#expressionStatement.
 	VisitExpressionStatement(ctx *ExpressionStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#idExpression.
+	VisitIdExpression(ctx *IdExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#idExprItem.
+	VisitIdExprItem(ctx *IdExprItemContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#tupleExpression.
+	VisitTupleExpression(ctx *TupleExpressionContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#primaryExpression.
 	VisitPrimaryExpression(ctx *PrimaryExpressionContext) interface{}
 
@@ -326,9 +335,6 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#functionExpression.
 	VisitFunctionExpression(ctx *FunctionExpressionContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#tupleExpression.
-	VisitTupleExpression(ctx *TupleExpressionContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#plusMinus.
 	VisitPlusMinus(ctx *PlusMinusContext) interface{}
 
@@ -371,14 +377,14 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#typeNotNull.
 	VisitTypeNotNull(ctx *TypeNotNullContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#typeType.
+	VisitTypeType(ctx *TypeTypeContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#typeReference.
 	VisitTypeReference(ctx *TypeReferenceContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#typeNullable.
 	VisitTypeNullable(ctx *TypeNullableContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#typeType.
-	VisitTypeType(ctx *TypeTypeContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#typeTuple.
 	VisitTypeTuple(ctx *TypeTupleContext) interface{}

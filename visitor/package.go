@@ -6,12 +6,12 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (sf *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext) interface{} {
-	return sf.Visit(ctx.TypeType()).(string) + Wrap
+func (me *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext) any {
+	return me.Visit(ctx.TypeType()).(string) + Wrap
 }
 
-func (sf *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) interface{} {
-	id := sf.Visit(ctx.Id()).(Result)
+func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
+	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	Init := ""
 
@@ -20,13 +20,13 @@ func (sf *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext
 	// 	Init += "public " id.text " " Visit(item):Str ""
 	// }
 	for _, item := range ctx.AllPackageSupportStatement() {
-		obj += sf.Visit(item).(string)
+		obj += me.Visit(item).(string)
 	}
 	obj = Init + obj
 	obj += BlockRight + Wrap
 	header := ""
 	if ctx.AnnotationSupport() != nil {
-		header += sf.Visit(ctx.AnnotationSupport()).(string)
+		header += me.Visit(ctx.AnnotationSupport()).(string)
 	}
 	header += "type " + id.Text + " struct"
 	// # 泛型 #
@@ -45,12 +45,12 @@ func (sf *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext
 	return obj
 }
 
-func (sf *LiteVisitor) VisitPackageSupportStatement(ctx *parser.PackageSupportStatementContext) interface{} {
-	return sf.Visit(ctx.GetChild(0).(antlr.ParseTree))
+func (me *LiteVisitor) VisitPackageSupportStatement(ctx *parser.PackageSupportStatementContext) any {
+	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (sf *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariableStatementContext) interface{} {
-	r1 := sf.Visit(ctx.Id()).(Result)
+func (me *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariableStatementContext) any {
+	r1 := me.Visit(ctx.Id()).(Result)
 	typ := ""
 	// r2:= Result{}
 	// if ctx.Expression() != nil {
@@ -58,11 +58,11 @@ func (sf *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariable
 	// 	typ = r2.data:Str
 	// }
 	if ctx.TypeType() != nil {
-		typ = sf.Visit(ctx.TypeType()).(string)
+		typ = me.Visit(ctx.TypeType()).(string)
 	}
 	obj := ""
 	if ctx.AnnotationSupport() != nil {
-		obj += sf.Visit(ctx.AnnotationSupport()).(string)
+		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
 
 	obj += r1.Text + " " + typ

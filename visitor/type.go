@@ -6,103 +6,103 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (sf *LiteVisitor) VisitTypeAliasStatement(ctx *parser.TypeAliasStatementContext) interface{} {
+func (me *LiteVisitor) VisitTypeAliasStatement(ctx *parser.TypeAliasStatementContext) any {
 	obj := ""
-	obj = Type + sf.Visit(ctx.Id()).(Result).Text + "=" + sf.Visit(ctx.TypeType()).(string) + Wrap
+	obj = Type + me.Visit(ctx.Id()).(Result).Text + "=" + me.Visit(ctx.TypeType()).(string) + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeRedefineStatement(ctx *parser.TypeRedefineStatementContext) interface{} {
+func (me *LiteVisitor) VisitTypeRedefineStatement(ctx *parser.TypeRedefineStatementContext) any {
 	obj := ""
-	obj = Type + sf.Visit(ctx.Id()).(Result).Text + " " + sf.Visit(ctx.TypeType()).(string) + Wrap
+	obj = Type + me.Visit(ctx.Id()).(Result).Text + " " + me.Visit(ctx.TypeType()).(string) + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeType(ctx *parser.TypeTypeContext) interface{} {
+func (me *LiteVisitor) VisitTypeType(ctx *parser.TypeTypeContext) any {
 	obj := ""
-	obj = sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
+	obj = me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeReference(ctx *parser.TypeReferenceContext) interface{} {
+func (me *LiteVisitor) VisitTypeReference(ctx *parser.TypeReferenceContext) any {
 	obj := "*"
 	if ctx.TypeNullable() != nil {
-		obj += sf.Visit(ctx.TypeNullable()).(string)
+		obj += me.Visit(ctx.TypeNullable()).(string)
 	} else if ctx.TypeNotNull() != nil {
-		obj += sf.Visit(ctx.TypeNotNull()).(string)
+		obj += me.Visit(ctx.TypeNotNull()).(string)
 	}
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeNullable(ctx *parser.TypeNullableContext) interface{} {
+func (me *LiteVisitor) VisitTypeNullable(ctx *parser.TypeNullableContext) any {
 	obj := ""
-	obj = "*" + sf.Visit(ctx.TypeNotNull()).(string)
+	obj = "*" + me.Visit(ctx.TypeNotNull()).(string)
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeNotNull(ctx *parser.TypeNotNullContext) interface{} {
+func (me *LiteVisitor) VisitTypeNotNull(ctx *parser.TypeNotNullContext) any {
 	obj := ""
-	obj = sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
+	obj = me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeTuple(ctx *parser.TypeTupleContext) interface{} {
+func (me *LiteVisitor) VisitTypeTuple(ctx *parser.TypeTupleContext) any {
 	obj := ""
 	obj += "("
 	for i := 0; i < len(ctx.AllTypeType()); i++ {
 		if i == 0 {
-			obj += sf.Visit(ctx.TypeType(i)).(string)
+			obj += me.Visit(ctx.TypeType(i)).(string)
 		} else {
-			obj += "," + sf.Visit(ctx.TypeType(i)).(string)
+			obj += "," + me.Visit(ctx.TypeType(i)).(string)
 		}
 	}
 	obj += ")"
 	return obj
 }
 
-func (sf *LiteVisitor) VisitGetType(ctx *parser.GetTypeContext) interface{} {
+func (me *LiteVisitor) VisitGetType(ctx *parser.GetTypeContext) any {
 	r := Result{Data: "System.Type"}
 	// if ctx.TypeType() == nil {
-	// 	r.Text = sf.Visit(ctx.Expression()).(Result).Text+".GetType()"
+	// 	r.Text = me.Visit(ctx.Expression()).(Result).Text+".GetType()"
 	// } else {
-	// 	r.Text = "typeof("+sf.Visit(ctx.typeType())+")"
+	// 	r.Text = "typeof("+me.Visit(ctx.typeType())+")"
 	// }
 	return r
 }
 
-func (sf *LiteVisitor) VisitTypeArray(ctx *parser.TypeArrayContext) interface{} {
-	return "[]" + sf.Visit(ctx.TypeType()).(string)
+func (me *LiteVisitor) VisitTypeArray(ctx *parser.TypeArrayContext) any {
+	return "[]" + me.Visit(ctx.TypeType()).(string)
 }
 
-func (sf *LiteVisitor) VisitTypeList(ctx *parser.TypeListContext) interface{} {
-	return "[]" + sf.Visit(ctx.TypeType()).(string)
+func (me *LiteVisitor) VisitTypeList(ctx *parser.TypeListContext) any {
+	return "[]" + me.Visit(ctx.TypeType()).(string)
 }
 
-func (sf *LiteVisitor) VisitTypeSet(ctx *parser.TypeSetContext) interface{} {
-	return "Set[]" + sf.Visit(ctx.TypeType()).(string)
+func (me *LiteVisitor) VisitTypeSet(ctx *parser.TypeSetContext) any {
+	return "Set[]" + me.Visit(ctx.TypeType()).(string)
 }
 
-func (sf *LiteVisitor) VisitTypeDictionary(ctx *parser.TypeDictionaryContext) interface{} {
-	return "map[" + sf.Visit(ctx.TypeType(0)).(string) + "]" + sf.Visit(ctx.TypeType(1)).(string)
+func (me *LiteVisitor) VisitTypeDictionary(ctx *parser.TypeDictionaryContext) any {
+	return "map[" + me.Visit(ctx.TypeType(0)).(string) + "]" + me.Visit(ctx.TypeType(1)).(string)
 }
 
-func (sf *LiteVisitor) VisitTypeChannel(ctx *parser.TypeChannelContext) interface{} {
-	return Chan + sf.Visit(ctx.TypeType()).(string)
+func (me *LiteVisitor) VisitTypeChannel(ctx *parser.TypeChannelContext) any {
+	return Chan + me.Visit(ctx.TypeType()).(string)
 }
 
-func (sf *LiteVisitor) VisitTypePackage(ctx *parser.TypePackageContext) interface{} {
+func (me *LiteVisitor) VisitTypePackage(ctx *parser.TypePackageContext) any {
 	obj := ""
-	obj += sf.Visit(ctx.NameSpaceItem()).(string)
+	obj += me.Visit(ctx.NameSpaceItem()).(string)
 	if ctx.TemplateCall() != nil {
-		obj += sf.Visit(ctx.TemplateCall()).(string)
+		obj += me.Visit(ctx.TemplateCall()).(string)
 	}
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeFunction(ctx *parser.TypeFunctionContext) interface{} {
+func (me *LiteVisitor) VisitTypeFunction(ctx *parser.TypeFunctionContext) any {
 	obj := ""
-	in := sf.Visit(ctx.TypeFunctionParameterClause(0)).(string)
-	out := sf.Visit(ctx.TypeFunctionParameterClause(1)).(string)
+	in := me.Visit(ctx.TypeFunctionParameterClause(0)).(string)
+	out := me.Visit(ctx.TypeFunctionParameterClause(1)).(string)
 	if ctx.GetT().GetTokenType() == parser.LiteLexerRight_Arrow {
 		obj = Func + "(" + in + ")" + "(" + out + ")"
 	} else {
@@ -111,14 +111,14 @@ func (sf *LiteVisitor) VisitTypeFunction(ctx *parser.TypeFunctionContext) interf
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeAny(ctx *parser.TypeAnyContext) interface{} {
+func (me *LiteVisitor) VisitTypeAny(ctx *parser.TypeAnyContext) any {
 	return Any
 }
 
-func (sf *LiteVisitor) VisitTypeFunctionParameterClause(ctx *parser.TypeFunctionParameterClauseContext) interface{} {
+func (me *LiteVisitor) VisitTypeFunctionParameterClause(ctx *parser.TypeFunctionParameterClauseContext) any {
 	obj := ""
 	for i := 0; i <= len(ctx.AllTypeType())-1; i++ {
-		p := sf.Visit(ctx.TypeType(i)).(string)
+		p := me.Visit(ctx.TypeType(i)).(string)
 		if i == 0 {
 			obj += p
 		} else {
@@ -128,7 +128,7 @@ func (sf *LiteVisitor) VisitTypeFunctionParameterClause(ctx *parser.TypeFunction
 	return obj
 }
 
-func (sf *LiteVisitor) VisitTypeBasic(ctx *parser.TypeBasicContext) interface{} {
+func (me *LiteVisitor) VisitTypeBasic(ctx *parser.TypeBasicContext) any {
 	obj := ""
 	if ctx.GetT().GetTokenType() == parser.LiteLexerTypeI8 {
 		obj = I8

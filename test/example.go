@@ -21,7 +21,6 @@ var num1 = 1
 var num2 float64 = 12.345678
 
 type work = func(string)
-type doWork func(string)
 
 func test(x int, y string) (r1 string, r2 int) {
 	a := x * 3

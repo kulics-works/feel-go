@@ -49,6 +49,9 @@ const (
 	Chan  = "chan "
 )
 
+type any = interface{}
+type str = string
+
 type errorListener struct {
 	*antlr.DefaultErrorListener
 
@@ -62,61 +65,109 @@ func NewErrorListener(file string) *errorListener {
 	}
 }
 
-func (sf *errorListener) Error() string {
-	if sf.Err == nil {
+func (me *errorListener) Error() string {
+	if me.Err == nil {
 		return ""
 	}
-	return sf.Err.Error()
+	return me.Err.Error()
 }
 
-func (sf *errorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol interface{}, line, column int, msg string, e antlr.RecognitionException) {
-	sf.Err = fmt.Errorf("[ERR %s:%d:%d] %s", sf.file, line, column, msg)
+func (me *errorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbol any, line, column int, msg string, e antlr.RecognitionException) {
+	me.Err = fmt.Errorf("[ERR %s:%d:%d] %s", me.file, line, column, msg)
 }
 
 type LiteVisitor struct {
 	parser.BaseLiteParserVisitor
+
+	AllIDSet     *list_str
+	CurrentIDSet *stack_str
 }
 
 type Result struct {
-	Data       interface{}
+	Data       any
 	Text       string
 	Permission string
 	IsVirtual  bool
+	IsDefine   bool
+}
+type list_str struct {
+	list []str
 }
 
-func (sf *LiteVisitor) Visit(tree antlr.ParseTree) interface{} {
-	return tree.Accept(sf)
+func (me *list_str) contains(id str) bool {
+	return true
+}
+func (me *list_str) add(id str) {
+	me.list = append(me.list, id)
+}
+func (me *list_str) except_with(t *list_str) {
+
 }
 
-func (sf *LiteVisitor) VisitChildren(tree antlr.RuleNode) interface{} {
-	return tree.Accept(sf)
+type stack_str struct {
+	stack []*list_str
 }
 
-// func (sf *LiteVisitor) VisitTerminal(tree antlr.TerminalNode) interface{} {
-// 	return tree.Accept(sf)
+func (me *stack_str) peek() *list_str {
+	return me.stack[len(me.stack)-1]
+}
+func (me *stack_str) push(new *list_str) {
+	me.stack = append(me.stack, new)
+}
+func (me *stack_str) pop() {
+	me.stack = me.stack[:len(me.stack)-2]
+}
+
+func (me *LiteVisitor) has_id(id str) bool {
+	return me.AllIDSet.contains(id) || me.CurrentIDSet.peek().contains(id)
+}
+func (me *LiteVisitor) add_id(id str) {
+	me.CurrentIDSet.peek().add(id)
+}
+func (me *LiteVisitor) add_current_set() {
+	for _, item := range me.CurrentIDSet.peek().list {
+		me.AllIDSet.add(item)
+	}
+	me.CurrentIDSet.push(&list_str{})
+}
+func (me *LiteVisitor) delete_current_set() {
+	me.AllIDSet.except_with(me.CurrentIDSet.peek())
+	me.CurrentIDSet.pop()
+}
+
+func (me *LiteVisitor) Visit(tree antlr.ParseTree) any {
+	return tree.Accept(me)
+}
+
+func (me *LiteVisitor) VisitChildren(tree antlr.RuleNode) any {
+	return tree.Accept(me)
+}
+
+// func (me *LiteVisitor) VisitTerminal(tree antlr.TerminalNode) any {
+// 	return tree.Accept(me)
 // }
 
-// func (sf *LiteVisitor) VisitErrorNode(tree antlr.ErrorNode) interface{} {
-// 	return tree.Accept(sf)
+// func (me *LiteVisitor) VisitErrorNode(tree antlr.ErrorNode) any {
+// 	return tree.Accept(me)
 // }
 
-func (sf *LiteVisitor) VisitProgram(ctx *parser.ProgramContext) interface{} {
+func (me *LiteVisitor) VisitProgram(ctx *parser.ProgramContext) any {
 	obj := ""
 	for _, item := range ctx.AllStatement() {
-		obj += sf.Visit(item).(string)
+		obj += me.Visit(item).(string)
 	}
 	return obj
 }
 
-func (sf *LiteVisitor) VisitId(ctx *parser.IdContext) interface{} {
+func (me *LiteVisitor) VisitId(ctx *parser.IdContext) any {
 	r := Result{Data: "var"}
-	first := sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
+	first := me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
 	r.Permission = first.Permission
 	r.Text = first.Text
 	r.IsVirtual = first.IsVirtual
 	if ctx.GetChildCount() >= 2 {
 		for i := 1; i < ctx.GetChildCount(); i++ {
-			other := sf.Visit(ctx.GetChild(i).(antlr.ParseTree)).(Result)
+			other := me.Visit(ctx.GetChild(i).(antlr.ParseTree)).(Result)
 			r.Text += "_" + other.Text
 		}
 	}
@@ -127,7 +178,7 @@ func (sf *LiteVisitor) VisitId(ctx *parser.IdContext) interface{} {
 	return r
 }
 
-func (sf *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) interface{} {
+func (me *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	r := Result{Data: "var"}
 	if ctx.TypeBasic() != nil {
 		r.Permission = "public"
@@ -137,7 +188,7 @@ func (sf *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) interface{} {
 		r.Text += ctx.TypeAny().GetText()
 	} else if ctx.LinqKeyword() != nil {
 		r.Permission = "public"
-		r.Text += sf.Visit(ctx.LinqKeyword()).(string)
+		r.Text += me.Visit(ctx.LinqKeyword()).(string)
 	} else if ctx.GetOp().GetTokenType() == parser.LiteLexerIDPublic {
 		r.Permission = "public"
 		r.Text += ctx.GetOp().GetText()
@@ -148,4 +199,37 @@ func (sf *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) interface{} {
 		// r.IsVirtual = r.Text[r.Text.find first({it -> it >< '_'})].is Upper()
 	}
 	return r
+}
+
+func (me *LiteVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
+	r := Result{Data: "var"}
+	if len(ctx.AllIdExprItem()) > 1 {
+		r.Text = "("
+		for i, v := range ctx.AllIdExprItem() {
+			subID := me.Visit(v).(Result).Text
+			if i != 0 {
+				r.Text += ", " + subID
+			} else {
+				r.Text += subID
+			}
+			if me.has_id(subID) {
+				r.IsDefine = true
+			} else {
+				me.add_id(subID)
+			}
+		}
+		r.Text += ")"
+	} else {
+		r = me.Visit(ctx.IdExprItem(0)).(Result)
+		if me.has_id(r.Text) {
+			r.IsDefine = true
+		} else {
+			me.add_id(r.Text)
+		}
+	}
+	return r
+}
+
+func (me *LiteVisitor) VisitIdExprItem(ctx *parser.IdExprItemContext) any {
+	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }

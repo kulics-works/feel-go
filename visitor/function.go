@@ -14,16 +14,16 @@ type Parameter struct {
 	Permission string
 }
 
-func (sf *LiteVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportStatementContext) string {
+func (me *LiteVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportStatementContext) string {
 	obj := ""
 	content := ""
 	// lazy := []string{}
 	// for _, item := range items {
 	// if item.GetChild(0) == :UsingStatementContext {
 	// 	lazy.add("}")
-	// 	content += "using (" + sf.Visit(item).(string) + ") " + BlockLeft + Wrap
+	// 	content += "using (" + me.Visit(item).(string) + ") " + BlockLeft + Wrap
 	// } else {
-	// content += sf.Visit(item).(string)
+	// content += me.Visit(item).(string)
 	// }
 	// }
 	// if lazy.Count > 0 {
@@ -32,7 +32,7 @@ func (sf *LiteVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportSta
 	// 	}
 	// }
 	for _, item := range items {
-		if v, ok := sf.Visit(item).(string); ok {
+		if v, ok := me.Visit(item).(string); ok {
 			content += v
 		}
 	}
@@ -40,8 +40,8 @@ func (sf *LiteVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportSta
 	return obj
 }
 
-func (sf *LiteVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementContext) interface{} {
-	id := sf.Visit(ctx.Id()).(Result)
+func (me *LiteVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementContext) any {
+	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	// 异步
 	// ? context.t.Type == Right Flow {
@@ -62,30 +62,30 @@ func (sf *LiteVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementConte
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
-	obj += id.Text + ":=" + Func + sf.Visit(ctx.ParameterClauseIn()).(string) + templateContract +
-		sf.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	obj += id.Text + ":=" + Func + me.Visit(ctx.ParameterClauseIn()).(string) + templateContract +
+		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitFunctionSupportStatement(ctx *parser.FunctionSupportStatementContext) interface{} {
-	return sf.Visit(ctx.GetChild(0).(antlr.ParseTree))
+func (me *LiteVisitor) VisitFunctionSupportStatement(ctx *parser.FunctionSupportStatementContext) any {
+	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (sf *LiteVisitor) VisitReturnStatement(ctx *parser.ReturnStatementContext) interface{} {
-	if ctx.ExpressionList() != nil {
-		r := sf.Visit(ctx.ExpressionList()).(Result)
+func (me *LiteVisitor) VisitReturnStatement(ctx *parser.ReturnStatementContext) any {
+	if ctx.TupleExpression() != nil {
+		r := me.Visit(ctx.TupleExpression()).(Result)
 		return "return " + r.Text + Wrap
 	}
 	return "return " + Wrap
 }
 
-func (sf *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInContext) interface{} {
+func (me *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInContext) any {
 	obj := "("
 	temp := []string{}
 	for i := len(ctx.AllParameter()) - 1; i >= 0; i-- {
-		p := sf.Visit(ctx.Parameter(i)).(Parameter)
+		p := me.Visit(ctx.Parameter(i)).(Parameter)
 		temp = append(temp, p.Annotation+" "+p.Id+" "+p.Type)
 	}
 	for i := len(temp) - 1; i >= 0; i-- {
@@ -99,11 +99,11 @@ func (sf *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInConte
 	return obj
 }
 
-func (sf *LiteVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutContext) interface{} {
+func (me *LiteVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutContext) any {
 	obj := "("
 	temp := []string{}
 	for i := len(ctx.AllParameter()) - 1; i >= 0; i-- {
-		p := sf.Visit(ctx.Parameter(i)).(Parameter)
+		p := me.Visit(ctx.Parameter(i)).(Parameter)
 		temp = append(temp, p.Annotation+" "+p.Id+" "+p.Type)
 	}
 	for i := len(temp) - 1; i >= 0; i-- {
@@ -117,34 +117,34 @@ func (sf *LiteVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutCon
 	return obj
 }
 
-func (sf *LiteVisitor) VisitParameterClauseSelf(ctx *parser.ParameterClauseSelfContext) interface{} {
+func (me *LiteVisitor) VisitParameterClauseSelf(ctx *parser.ParameterClauseSelfContext) any {
 	p := Parameter{}
-	id := sf.Visit(ctx.Id()).(Result)
+	id := me.Visit(ctx.Id()).(Result)
 	p.Id = id.Text
 	p.Permission = id.Permission
-	p.Type = sf.Visit(ctx.TypeType()).(string)
+	p.Type = me.Visit(ctx.TypeType()).(string)
 	return p
 }
 
-func (sf *LiteVisitor) VisitParameter(ctx *parser.ParameterContext) interface{} {
+func (me *LiteVisitor) VisitParameter(ctx *parser.ParameterContext) any {
 	p := Parameter{}
-	id := sf.Visit(ctx.Id()).(Result)
+	id := me.Visit(ctx.Id()).(Result)
 	p.Id = id.Text
 	p.Permission = id.Permission
 	if ctx.AnnotationSupport() != nil {
-		p.Annotation = sf.Visit(ctx.AnnotationSupport()).(string)
+		p.Annotation = me.Visit(ctx.AnnotationSupport()).(string)
 	}
 	if ctx.Expression() != nil {
-		p.Value = "=" + sf.Visit(ctx.Expression()).(Result).Text
+		p.Value = "=" + me.Visit(ctx.Expression()).(Result).Text
 	}
-	p.Type = sf.Visit(ctx.TypeType()).(string)
+	p.Type = me.Visit(ctx.TypeType()).(string)
 	return p
 }
 
-func (sf *LiteVisitor) VisitTuple(ctx *parser.TupleContext) interface{} {
+func (me *LiteVisitor) VisitTuple(ctx *parser.TupleContext) any {
 	obj := ""
 	for i := 0; i < len(ctx.AllExpression()); i++ {
-		r := sf.Visit(ctx.Expression(i)).(Result)
+		r := me.Visit(ctx.Expression(i)).(Result)
 		if i == 0 {
 			obj += r.Text
 		} else {
@@ -155,7 +155,7 @@ func (sf *LiteVisitor) VisitTuple(ctx *parser.TupleContext) interface{} {
 	return result
 }
 
-func (sf *LiteVisitor) VisitFunctionExpression(ctx *parser.FunctionExpressionContext) interface{} {
+func (me *LiteVisitor) VisitFunctionExpression(ctx *parser.FunctionExpressionContext) any {
 	r := Result{}
 	r.Data = "var"
 	// 异步
@@ -177,9 +177,9 @@ func (sf *LiteVisitor) VisitFunctionExpression(ctx *parser.FunctionExpressionCon
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
-	r.Text += Func + sf.Visit(ctx.ParameterClauseIn()).(string) + templateContract +
-		sf.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
-	r.Text += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	r.Text += Func + me.Visit(ctx.ParameterClauseIn()).(string) + templateContract +
+		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
+	r.Text += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	r.Text += BlockRight
 	return r
 }

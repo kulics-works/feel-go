@@ -264,6 +264,18 @@ func (v *BaseLiteParserVisitor) VisitExpressionStatement(ctx *ExpressionStatemen
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitIdExpression(ctx *IdExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitIdExprItem(ctx *IdExprItemContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitTupleExpression(ctx *TupleExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitPrimaryExpression(ctx *PrimaryExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -432,10 +444,6 @@ func (v *BaseLiteParserVisitor) VisitFunctionExpression(ctx *FunctionExpressionC
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitTupleExpression(ctx *TupleExpressionContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitPlusMinus(ctx *PlusMinusContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -492,15 +500,15 @@ func (v *BaseLiteParserVisitor) VisitTypeNotNull(ctx *TypeNotNullContext) interf
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitTypeType(ctx *TypeTypeContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitTypeReference(ctx *TypeReferenceContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseLiteParserVisitor) VisitTypeNullable(ctx *TypeNullableContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitTypeType(ctx *TypeTypeContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

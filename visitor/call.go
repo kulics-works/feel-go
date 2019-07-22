@@ -6,85 +6,85 @@ import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (sf *LiteVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) interface{} {
-	r := sf.Visit(ctx.Id()).(Result)
+func (me *LiteVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) any {
+	r := me.Visit(ctx.Id()).(Result)
 	r.Text = "." + r.Text
 	if ctx.CallFunc() != nil {
-		e2 := sf.Visit(ctx.CallFunc()).(Result)
+		e2 := me.Visit(ctx.CallFunc()).(Result)
 		r.Text = r.Text + e2.Text
 	} else if ctx.CallElement() != nil {
-		e2 := sf.Visit(ctx.CallElement()).(Result)
+		e2 := me.Visit(ctx.CallElement()).(Result)
 		r.Text = r.Text + e2.Text
 	} else if ctx.CallChannel() != nil {
-		e2 := sf.Visit(ctx.CallChannel()).(Result)
+		e2 := me.Visit(ctx.CallChannel()).(Result)
 		r.Text = e2.Text + r.Text
 	}
 	return r
 }
 
-func (sf *LiteVisitor) VisitCallChannel(ctx *parser.CallChannelContext) interface{} {
+func (me *LiteVisitor) VisitCallChannel(ctx *parser.CallChannelContext) any {
 	r := Result{}
 	r.Text = "<-"
 	return r
 }
 
-func (sf *LiteVisitor) VisitCallElement(ctx *parser.CallElementContext) interface{} {
+func (me *LiteVisitor) VisitCallElement(ctx *parser.CallElementContext) any {
 	if ctx.Expression() == nil {
-		return Result{Text: sf.Visit(ctx.Slice()).(string)}
+		return Result{Text: me.Visit(ctx.Slice()).(string)}
 	}
-	r := sf.Visit(ctx.Expression()).(Result)
+	r := me.Visit(ctx.Expression()).(Result)
 	r.Text = "[" + r.Text + "]"
 	return r
 }
 
-func (sf *LiteVisitor) VisitSlice(ctx *parser.SliceContext) interface{} {
-	return sf.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
+func (me *LiteVisitor) VisitSlice(ctx *parser.SliceContext) any {
+	return me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
 }
 
-func (sf *LiteVisitor) VisitSliceFull(ctx *parser.SliceFullContext) interface{} {
+func (me *LiteVisitor) VisitSliceFull(ctx *parser.SliceFullContext) any {
 	attach := ""
 	switch ctx.GetOp().GetText() {
 	case "<=":
 		attach = "+1"
 	}
-	expr1 := sf.Visit(ctx.Expression(0)).(Result)
-	expr2 := sf.Visit(ctx.Expression(1)).(Result)
+	expr1 := me.Visit(ctx.Expression(0)).(Result)
+	expr2 := me.Visit(ctx.Expression(1)).(Result)
 	return "[" + expr1.Text + ":" + expr2.Text + attach + "]"
 }
 
-func (sf *LiteVisitor) VisitSliceStart(ctx *parser.SliceStartContext) interface{} {
+func (me *LiteVisitor) VisitSliceStart(ctx *parser.SliceStartContext) any {
 	attach := ""
-	expr := sf.Visit(ctx.Expression()).(Result)
+	expr := me.Visit(ctx.Expression()).(Result)
 	return "[" + expr.Text + ":" + attach + "]"
 }
 
-func (sf *LiteVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) interface{} {
+func (me *LiteVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) any {
 	attach := ""
 	switch ctx.GetOp().GetText() {
 	case "<=":
 		attach = "+1"
 	}
-	expr := sf.Visit(ctx.Expression()).(Result)
+	expr := me.Visit(ctx.Expression()).(Result)
 	return "[:" + expr.Text + attach + "]"
 }
 
-func (sf *LiteVisitor) VisitCallFunc(ctx *parser.CallFuncContext) interface{} {
+func (me *LiteVisitor) VisitCallFunc(ctx *parser.CallFuncContext) any {
 	r := Result{Data: "var"}
 	if ctx.Tuple() != nil {
-		r.Text += "(" + sf.Visit(ctx.Tuple()).(Result).Text + ")"
+		r.Text += "(" + me.Visit(ctx.Tuple()).(Result).Text + ")"
 	} else {
-		r.Text += "(" + sf.Visit(ctx.Lambda()).(Result).Text + ")"
+		r.Text += "(" + me.Visit(ctx.Lambda()).(Result).Text + ")"
 	}
 	return r
 }
 
-func (sf *LiteVisitor) VisitCallNew(ctx *parser.CallNewContext) interface{} {
-	r := Result{Data: sf.Visit(ctx.TypeType())}
+func (me *LiteVisitor) VisitCallNew(ctx *parser.CallNewContext) any {
+	r := Result{Data: me.Visit(ctx.TypeType())}
 	param := ""
 	if ctx.ExpressionList() != nil {
-		param = sf.Visit(ctx.ExpressionList()).(Result).Text
+		param = me.Visit(ctx.ExpressionList()).(Result).Text
 	}
-	r.Text = "make(" + sf.Visit(ctx.TypeType()).(string)
+	r.Text = "make(" + me.Visit(ctx.TypeType()).(string)
 	if param != "" {
 		r.Text += "," + param
 	}
@@ -92,42 +92,42 @@ func (sf *LiteVisitor) VisitCallNew(ctx *parser.CallNewContext) interface{} {
 	return r
 }
 
-func (sf *LiteVisitor) VisitCallPkg(ctx *parser.CallPkgContext) interface{} {
-	r := Result{Data: sf.Visit(ctx.TypeType())}
-	r.Text = sf.Visit(ctx.TypeType()).(string)
+func (me *LiteVisitor) VisitCallPkg(ctx *parser.CallPkgContext) any {
+	r := Result{Data: me.Visit(ctx.TypeType())}
+	r.Text = me.Visit(ctx.TypeType()).(string)
 	if ctx.PkgAssign() != nil {
-		r.Text += sf.Visit(ctx.PkgAssign()).(string)
+		r.Text += me.Visit(ctx.PkgAssign()).(string)
 	} else if ctx.ListAssign() != nil {
-		r.Text += sf.Visit(ctx.ListAssign()).(string)
+		r.Text += me.Visit(ctx.ListAssign()).(string)
 	} else if ctx.SetAssign() != nil {
-		r.Text += sf.Visit(ctx.SetAssign()).(string)
+		r.Text += me.Visit(ctx.SetAssign()).(string)
 	} else if ctx.DictionaryAssign() != nil {
-		r.Text += sf.Visit(ctx.DictionaryAssign()).(string)
+		r.Text += me.Visit(ctx.DictionaryAssign()).(string)
 	} else {
 		r.Text += "{}"
 	}
 	return r
 }
 
-func (sf *LiteVisitor) VisitPkgAssign(ctx *parser.PkgAssignContext) interface{} {
+func (me *LiteVisitor) VisitPkgAssign(ctx *parser.PkgAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllPkgAssignElement()); i++ {
 		if i == 0 {
-			obj += sf.Visit(ctx.PkgAssignElement(i)).(string)
+			obj += me.Visit(ctx.PkgAssignElement(i)).(string)
 		} else {
-			obj += "," + sf.Visit(ctx.PkgAssignElement(i)).(string)
+			obj += "," + me.Visit(ctx.PkgAssignElement(i)).(string)
 		}
 	}
 	obj += "}"
 	return obj
 }
 
-func (sf *LiteVisitor) VisitListAssign(ctx *parser.ListAssignContext) interface{} {
+func (me *LiteVisitor) VisitListAssign(ctx *parser.ListAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllExpression()); i++ {
-		r := sf.Visit(ctx.Expression(i)).(Result)
+		r := me.Visit(ctx.Expression(i)).(Result)
 		if i == 0 {
 			obj += r.Text
 		} else {
@@ -138,11 +138,11 @@ func (sf *LiteVisitor) VisitListAssign(ctx *parser.ListAssignContext) interface{
 	return obj
 }
 
-func (sf *LiteVisitor) VisitSetAssign(ctx *parser.SetAssignContext) interface{} {
+func (me *LiteVisitor) VisitSetAssign(ctx *parser.SetAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllExpression()); i++ {
-		r := sf.Visit(ctx.Expression(i)).(Result)
+		r := me.Visit(ctx.Expression(i)).(Result)
 		if i == 0 {
 			obj += r.Text
 		} else {
@@ -153,11 +153,11 @@ func (sf *LiteVisitor) VisitSetAssign(ctx *parser.SetAssignContext) interface{} 
 	return obj
 }
 
-func (sf *LiteVisitor) VisitDictionaryAssign(ctx *parser.DictionaryAssignContext) interface{} {
+func (me *LiteVisitor) VisitDictionaryAssign(ctx *parser.DictionaryAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllDictionaryElement()); i++ {
-		r := sf.Visit(ctx.DictionaryElement(i)).(DicEle)
+		r := me.Visit(ctx.DictionaryElement(i)).(DicEle)
 		if i == 0 {
 			obj += r.Text
 		} else {
@@ -168,15 +168,15 @@ func (sf *LiteVisitor) VisitDictionaryAssign(ctx *parser.DictionaryAssignContext
 	return obj
 }
 
-func (sf *LiteVisitor) VisitPkgAssignElement(ctx *parser.PkgAssignElementContext) interface{} {
+func (me *LiteVisitor) VisitPkgAssignElement(ctx *parser.PkgAssignElementContext) any {
 	obj := ""
-	obj += sf.Visit(ctx.Name()).(string) + " = " + sf.Visit(ctx.Expression()).(Result).Text
+	obj += me.Visit(ctx.Name()).(string) + " = " + me.Visit(ctx.Expression()).(Result).Text
 	return obj
 }
 
-func (sf *LiteVisitor) VisitDictionaryElement(ctx *parser.DictionaryElementContext) interface{} {
-	r1 := sf.Visit(ctx.Expression(0)).(Result)
-	r2 := sf.Visit(ctx.Expression(1)).(Result)
+func (me *LiteVisitor) VisitDictionaryElement(ctx *parser.DictionaryElementContext) any {
+	r1 := me.Visit(ctx.Expression(0)).(Result)
+	r2 := me.Visit(ctx.Expression(1)).(Result)
 	r := DicEle{
 		Key:   r1.Data.(string),
 		Value: r2.Data.(string),

@@ -10,7 +10,7 @@ type Iterator struct {
 	Attach bool
 }
 
-func (sf *LiteVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) interface{} {
+func (me *LiteVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
 	it := Iterator{Order: true, Attach: false}
 	if ctx.GetOp().GetText() == ">=" || ctx.GetOp().GetText() == "<=" {
 		it.Attach = true
@@ -19,24 +19,24 @@ func (sf *LiteVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementConte
 		it.Order = false
 	}
 	if len(ctx.AllExpression()) == 2 {
-		it.Begin = sf.Visit(ctx.Expression(0)).(Result)
-		it.End = sf.Visit(ctx.Expression(1)).(Result)
+		it.Begin = me.Visit(ctx.Expression(0)).(Result)
+		it.End = me.Visit(ctx.Expression(1)).(Result)
 		it.Step = Result{Data: I32, Text: "1"}
 	} else {
-		it.Begin = sf.Visit(ctx.Expression(0)).(Result)
-		it.End = sf.Visit(ctx.Expression(1)).(Result)
-		it.Step = sf.Visit(ctx.Expression(2)).(Result)
+		it.Begin = me.Visit(ctx.Expression(0)).(Result)
+		it.End = me.Visit(ctx.Expression(1)).(Result)
+		it.Step = me.Visit(ctx.Expression(2)).(Result)
 	}
 	return it
 }
 
-func (sf *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) interface{} {
+func (me *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any {
 	obj := ""
 	id := "ea"
 	if ctx.Id() != nil {
-		id = sf.Visit(ctx.Id()).(Result).Text
+		id = me.Visit(ctx.Id()).(Result).Text
 	}
-	it := sf.Visit(ctx.IteratorStatement()).(Iterator)
+	it := me.Visit(ctx.IteratorStatement()).(Iterator)
 	order := ""
 	step := ""
 	if it.Order {
@@ -57,50 +57,50 @@ func (sf *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) inte
 	obj += "for " + id + " := " + it.Begin.Text + ";" + id + order + it.End.Text + ";" + id + step + it.Step.Text
 
 	obj += BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitLoopInfiniteStatement(ctx *parser.LoopInfiniteStatementContext) interface{} {
+func (me *LiteVisitor) VisitLoopInfiniteStatement(ctx *parser.LoopInfiniteStatementContext) any {
 	obj := "for " + BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitLoopEachStatement(ctx *parser.LoopEachStatementContext) interface{} {
+func (me *LiteVisitor) VisitLoopEachStatement(ctx *parser.LoopEachStatementContext) any {
 	obj := ""
-	arr := sf.Visit(ctx.Expression()).(Result)
+	arr := me.Visit(ctx.Expression()).(Result)
 	target := arr.Text
 	id := "ea"
 	if len(ctx.AllId()) == 2 {
-		id = sf.Visit(ctx.Id(0)).(Result).Text + "," + sf.Visit(ctx.Id(1)).(Result).Text
+		id = me.Visit(ctx.Id(0)).(Result).Text + "," + me.Visit(ctx.Id(1)).(Result).Text
 	} else if len(ctx.AllId()) == 1 {
-		id = "_," + sf.Visit(ctx.Id(0)).(Result).Text
+		id = "_," + me.Visit(ctx.Id(0)).(Result).Text
 	}
 
 	obj += "for " + id + " := range " + target
 	obj += BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitLoopCaseStatement(ctx *parser.LoopCaseStatementContext) interface{} {
+func (me *LiteVisitor) VisitLoopCaseStatement(ctx *parser.LoopCaseStatementContext) any {
 	obj := ""
-	expr := sf.Visit(ctx.Expression()).(Result)
+	expr := me.Visit(ctx.Expression()).(Result)
 	obj += "for " + expr.Text
 	obj += BlockLeft + Wrap
-	obj += sf.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	return obj
 }
 
-func (sf *LiteVisitor) VisitLoopJumpStatement(ctx *parser.LoopJumpStatementContext) interface{} {
+func (me *LiteVisitor) VisitLoopJumpStatement(ctx *parser.LoopJumpStatementContext) any {
 	return "break" + Wrap
 }
 
-func (sf *LiteVisitor) VisitLoopContinueStatement(ctx *parser.LoopContinueStatementContext) interface{} {
+func (me *LiteVisitor) VisitLoopContinueStatement(ctx *parser.LoopContinueStatementContext) any {
 	return "continue" + Wrap
 }
