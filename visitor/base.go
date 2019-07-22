@@ -79,8 +79,15 @@ func (me *errorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbo
 type LiteVisitor struct {
 	parser.BaseLiteParserVisitor
 
-	AllIDSet     *list_str
+	AllIDSet     *set_str
 	CurrentIDSet *stack_str
+}
+
+func NewLiteVisitor() LiteVisitor {
+	set := new_set_str()
+	stack := new_stack_str()
+	stack.push(set)
+	return LiteVisitor{AllIDSet: set, CurrentIDSet: stack}
 }
 
 type Result struct {
@@ -90,32 +97,40 @@ type Result struct {
 	IsVirtual  bool
 	IsDefine   bool
 }
-type list_str struct {
-	list []str
+type set_str struct {
+	set map[str]struct{}
 }
 
-func (me *list_str) contains(id str) bool {
-	return true
+func new_set_str() *set_str { return &set_str{make(map[str]struct{})} }
+func (me *set_str) contains(id str) bool {
+	_, has := me.set[id]
+	return has
 }
-func (me *list_str) add(id str) {
-	me.list = append(me.list, id)
+func (me *set_str) add(id str) {
+	me.set[id] = struct{}{}
 }
-func (me *list_str) except_with(t *list_str) {
-
+func (me *set_str) except_with(target *set_str) {
+	for k := range target.set {
+		if me.contains(k) {
+			delete(me.set, k)
+		}
+	}
 }
 
 type stack_str struct {
-	stack []*list_str
+	stack []*set_str
 }
 
-func (me *stack_str) peek() *list_str {
+func new_stack_str() *stack_str { return &stack_str{make([]*set_str, 0)} }
+
+func (me *stack_str) peek() *set_str {
 	return me.stack[len(me.stack)-1]
 }
-func (me *stack_str) push(new *list_str) {
+func (me *stack_str) push(new *set_str) {
 	me.stack = append(me.stack, new)
 }
 func (me *stack_str) pop() {
-	me.stack = me.stack[:len(me.stack)-2]
+	me.stack = me.stack[:len(me.stack)-1]
 }
 
 func (me *LiteVisitor) has_id(id str) bool {
@@ -125,10 +140,10 @@ func (me *LiteVisitor) add_id(id str) {
 	me.CurrentIDSet.peek().add(id)
 }
 func (me *LiteVisitor) add_current_set() {
-	for _, item := range me.CurrentIDSet.peek().list {
-		me.AllIDSet.add(item)
+	for k := range me.CurrentIDSet.peek().set {
+		me.AllIDSet.add(k)
 	}
-	me.CurrentIDSet.push(&list_str{})
+	me.CurrentIDSet.push(new_set_str())
 }
 func (me *LiteVisitor) delete_current_set() {
 	me.AllIDSet.except_with(me.CurrentIDSet.peek())

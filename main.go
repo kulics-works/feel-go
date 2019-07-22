@@ -44,7 +44,7 @@ func Compiled(dir string) error {
 
 			AST := Parser.Program()
 
-			Visitor := visitor.LiteVisitor{}
+			Visitor := visitor.NewLiteVisitor()
 			Result := Visitor.Visit(AST)
 			gopath := strings.Replace(path, ".lite", ".go", 1)
 			if err := ioutil.WriteFile(gopath, []byte(Result.(string)), 0644); err != nil {
