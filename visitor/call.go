@@ -174,6 +174,53 @@ func (me *LiteVisitor) VisitPkgAssignElement(ctx *parser.PkgAssignElementContext
 	return obj
 }
 
+func (me *LiteVisitor) VisitList(ctx *parser.ListContext) any {
+	typeName := "object"
+	result := Result{}
+	for index := 0; index < len(ctx.AllExpression()); index++ {
+		r := me.Visit(ctx.Expression(index)).(Result)
+		if index == 0 {
+			typeName = r.Data.(str)
+			result.Text += r.Text
+		} else {
+			if typeName != r.Data.(str) {
+				typeName = Any
+			}
+			result.Text += "," + r.Text
+		}
+	}
+	typeName = "[]" + typeName
+	result.Data = typeName
+	result.Text = result.Data.(str) + "{ " + result.Text + " }"
+	return result
+}
+
+func (me *LiteVisitor) VisitDictionary(ctx *parser.DictionaryContext) any {
+	key := Any
+	value := Any
+	result := Result{}
+	for index := 0; index < len(ctx.AllDictionaryElement()); index++ {
+		r := me.Visit(ctx.DictionaryElement(index)).(DicEle)
+		if index == 0 {
+			key = r.Key
+			value = r.Value
+			result.Text += r.Text
+		} else {
+			if key != r.Key {
+				key = Any
+			}
+			if value != r.Value {
+				value = Any
+			}
+			result.Text += "," + r.Text
+		}
+	}
+	typeName := "map[" + key + "]" + value
+	result.Data = typeName
+	result.Text = typeName + "{ " + result.Text + " }"
+	return result
+}
+
 func (me *LiteVisitor) VisitDictionaryElement(ctx *parser.DictionaryElementContext) any {
 	r1 := me.Visit(ctx.Expression(0)).(Result)
 	r2 := me.Visit(ctx.Expression(1)).(Result)

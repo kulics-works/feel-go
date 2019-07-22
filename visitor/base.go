@@ -36,9 +36,9 @@ const (
 
 	Chr = "rune"
 	Str = "string"
-	Lst = "Lst"
+	Lst = "List"
 	Set = "Set"
-	Dic = "Dic"
+	Dic = "Dictionary"
 
 	BlockLeft  = "{"
 	BlockRight = "}"

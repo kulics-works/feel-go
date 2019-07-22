@@ -201,10 +201,10 @@ func (me *LiteVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any 
 		r.Data = Any
 		r.Text = "nil"
 	} else if ctx.FloatExpr() != nil {
-		r.Data = F64
+		r.Data = Num
 		r.Text = me.Visit(ctx.FloatExpr()).(string)
 	} else if ctx.IntegerExpr() != nil {
-		r.Data = I32
+		r.Data = Int
 		r.Text = me.Visit(ctx.IntegerExpr()).(string)
 	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTextLiteral {
 		r.Data = Str

@@ -51,14 +51,14 @@ testJudge(->) {
 
 testLoop(->) {
     a = 0
-    arr = []int{1,2,3,4,5}
+    arr = {1,2,3,4,5}
     arr @ i {
         a += i
     }
     arr @ [i]v {
         a += i + v
     }
-    dic = [str]int{["1"]1,["2"]2}
+    dic = {["1"]1,["2"]2}
     dic @ i {
         a += i
     }
