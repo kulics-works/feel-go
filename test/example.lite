@@ -126,3 +126,54 @@ testGo(-> v int) {
 testLambda(fn (int->str) ->) {
     fn(1)
 }
+
+
+test_define(->) {
+    a = 1
+    ? a == 1 {
+        b = 2
+        b = 3
+        a = 3
+    } a == 2 {
+        b = 2
+        b = 3
+        ? b == 2 {
+            a = 1
+        }
+    } _ {
+        b = 2
+        b = 3
+        a = 3
+    }
+    a ? 1 {
+        b = 2
+        b = 3
+        a = 3
+        ? a == 3 {
+            b = 1
+            a = 1
+        } _ {
+            a = 2
+        }
+    } c int {
+        c = 2
+        a = 1
+    } _ {
+        b = 2
+        b = 3
+        a = 3
+    }
+    # loop can not assign temp id
+    arr = {1,2,3}
+    arr @ i {
+        i = 2
+    }
+    [0<1] @ i {
+        i = 2
+    } #
+    #! {
+        a = 2
+    } e {
+        e = Exception{}
+    }#
+}

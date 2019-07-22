@@ -62,10 +62,12 @@ func (me *LiteVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementConte
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
+	me.add_current_set()
 	obj += id.Text + ":=" + Func + me.Visit(ctx.ParameterClauseIn()).(string) + templateContract +
 		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }
 
@@ -87,6 +89,7 @@ func (me *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInConte
 	for i := len(ctx.AllParameter()) - 1; i >= 0; i-- {
 		p := me.Visit(ctx.Parameter(i)).(Parameter)
 		temp = append(temp, p.Annotation+" "+p.Id+" "+p.Type)
+		me.add_id(p.Id)
 	}
 	for i := len(temp) - 1; i >= 0; i-- {
 		if i == len(temp)-1 {
@@ -177,9 +180,11 @@ func (me *LiteVisitor) VisitFunctionExpression(ctx *parser.FunctionExpressionCon
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
+	me.add_current_set()
 	r.Text += Func + me.Visit(ctx.ParameterClauseIn()).(string) + templateContract +
 		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
 	r.Text += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	r.Text += BlockRight
+	me.delete_current_set()
 	return r
 }

@@ -36,10 +36,13 @@ func (me *LiteVisitor) VisitCaseExprStatement(ctx *parser.CaseExprStatementConte
 
 func (me *LiteVisitor) VisitCaseStatement(ctx *parser.CaseStatementContext) any {
 	obj := ""
-	process := BlockLeft + me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement()) + BlockRight
+
 	for _, item := range ctx.AllCaseExprStatement() {
 		r := me.Visit(item).(string)
+		me.add_current_set()
+		process := BlockLeft + me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement()) + BlockRight
 		obj += r + process + Wrap
+		me.delete_current_set()
 	}
 	return obj
 }
@@ -59,23 +62,29 @@ func (me *LiteVisitor) VisitJudgeStatement(ctx *parser.JudgeStatementContext) an
 
 func (me *LiteVisitor) VisitJudgeIfStatement(ctx *parser.JudgeIfStatementContext) any {
 	b := me.Visit(ctx.Expression()).(Result)
+	me.add_current_set()
 	obj := "if " + b.Text + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight
+	me.delete_current_set()
 	return obj
 }
 
 func (me *LiteVisitor) VisitJudgeElseIfStatement(ctx *parser.JudgeElseIfStatementContext) any {
 	b := me.Visit(ctx.Expression()).(Result)
 	obj := "else if " + b.Text + BlockLeft + Wrap
+	me.add_current_set()
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight
+	me.delete_current_set()
 	return obj
 }
 
 func (me *LiteVisitor) VisitJudgeElseStatement(ctx *parser.JudgeElseStatementContext) any {
+	me.add_current_set()
 	obj := "else " + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight
+	me.delete_current_set()
 	return obj
 }

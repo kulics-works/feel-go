@@ -94,9 +94,11 @@ func (me *LiteVisitor) VisitNamespaceFunctionStatement(ctx *parser.NamespaceFunc
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
+	me.add_current_set()
 	obj += Func + id.Text + me.Visit(ctx.ParameterClauseIn()).(string) + me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }
 
@@ -119,6 +121,7 @@ func (me *LiteVisitor) VisitNamespaceConstantStatement(ctx *parser.NamespaceCons
 
 func (me *LiteVisitor) VisitNamespaceVariableStatement(ctx *parser.NamespaceVariableStatementContext) any {
 	r1 := me.Visit(ctx.Id()).(Result)
+	me.add_id(r1.Text)
 	typ := ""
 
 	if ctx.TypeType() != nil {

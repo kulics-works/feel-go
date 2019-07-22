@@ -55,17 +55,20 @@ func (me *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any 
 		}
 	}
 	obj += "for " + id + " := " + it.Begin.Text + ";" + id + order + it.End.Text + ";" + id + step + it.Step.Text
-
+	me.add_current_set()
 	obj += BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }
 
 func (me *LiteVisitor) VisitLoopInfiniteStatement(ctx *parser.LoopInfiniteStatementContext) any {
+	me.add_current_set()
 	obj := "for " + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }
 
@@ -79,21 +82,24 @@ func (me *LiteVisitor) VisitLoopEachStatement(ctx *parser.LoopEachStatementConte
 	} else if len(ctx.AllId()) == 1 {
 		id = "_," + me.Visit(ctx.Id(0)).(Result).Text
 	}
-
+	me.add_current_set()
 	obj += "for " + id + " := range " + target
 	obj += BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }
 
 func (me *LiteVisitor) VisitLoopCaseStatement(ctx *parser.LoopCaseStatementContext) any {
 	obj := ""
 	expr := me.Visit(ctx.Expression()).(Result)
+	me.add_current_set()
 	obj += "for " + expr.Text
 	obj += BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }
 

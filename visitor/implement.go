@@ -44,10 +44,12 @@ func (me *LiteVisitor) VisitImplementSupportStatement(ctx *parser.ImplementSuppo
 func (me *LiteVisitor) VisitImplementFunctionStatement(ctx *parser.ImplementFunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
+	me.add_current_set()
 	obj += Func + "(" + self.Id + " " + self.Type + ")" +
 		id.Text + me.Visit(ctx.ParameterClauseIn()).(string) +
 		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
+	me.delete_current_set()
 	return obj
 }

@@ -128,3 +128,48 @@ func testGo() (v int) {
 func testLambda(fn func(int) string) {
 	fn(1)
 }
+func test_define() {
+	a := 1
+	if a == 1 {
+		b := 2
+		b := 3
+		a := 3
+	} else if a == 2 {
+		b := 2
+		b := 3
+		if b == 2 {
+			a := 1
+		}
+	} else {
+		b := 2
+		b := 3
+		a := 3
+	}
+	switch a {
+	case 1:
+		{
+			b := 2
+			b := 3
+			a := 3
+			if a == 3 {
+				b := 1
+				a := 1
+			} else {
+				a := 2
+			}
+		}
+
+		{
+			c := 2
+			a := 1
+		}
+
+	default:
+		{
+			b := 2
+			b := 3
+			a := 3
+		}
+
+	}
+}
