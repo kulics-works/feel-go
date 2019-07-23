@@ -236,10 +236,6 @@ func (v *BaseLiteParserVisitor) VisitCheckFinallyStatment(ctx *CheckFinallyStatm
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitReportStatement(ctx *ReportStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitIteratorStatement(ctx *IteratorStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -333,10 +329,6 @@ func (v *BaseLiteParserVisitor) VisitCallPkg(ctx *CallPkgContext) interface{} {
 }
 
 func (v *BaseLiteParserVisitor) VisitCallNew(ctx *CallNewContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitGetType(ctx *GetTypeContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

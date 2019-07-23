@@ -60,16 +60,6 @@ func (me *LiteVisitor) VisitTypeTuple(ctx *parser.TypeTupleContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitGetType(ctx *parser.GetTypeContext) any {
-	r := Result{Data: "System.Type"}
-	// if ctx.TypeType() == nil {
-	// 	r.Text = me.Visit(ctx.Expression()).(Result).Text+".GetType()"
-	// } else {
-	// 	r.Text = "typeof("+me.Visit(ctx.typeType())+")"
-	// }
-	return r
-}
-
 func (me *LiteVisitor) VisitTypeArray(ctx *parser.TypeArrayContext) any {
 	return "[]" + me.Visit(ctx.TypeType()).(string)
 }

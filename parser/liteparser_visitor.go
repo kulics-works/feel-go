@@ -179,9 +179,6 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#checkFinallyStatment.
 	VisitCheckFinallyStatment(ctx *CheckFinallyStatmentContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#reportStatement.
-	VisitReportStatement(ctx *ReportStatementContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#iteratorStatement.
 	VisitIteratorStatement(ctx *IteratorStatementContext) interface{}
 
@@ -253,9 +250,6 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#callNew.
 	VisitCallNew(ctx *CallNewContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#getType.
-	VisitGetType(ctx *GetTypeContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#typeConversion.
 	VisitTypeConversion(ctx *TypeConversionContext) interface{}
