@@ -63,7 +63,7 @@ includeStatement
 // 包含
 includeStatement: Discard typeType end;
 // 包构造方法
-packageNewStatement: (annotationSupport)? parameterClauseSelf Less Greater left_paren parameterClauseIn right_paren
+packageNewStatement: (annotationSupport)? parameterClauseSelf left_paren parameterClauseIn right_paren
 (left_paren expressionList? right_paren)? left_brace (functionSupportStatement)* right_brace;
 // 定义变量
 packageVariableStatement: (annotationSupport)? id (Equal expression| typeType (Equal expression)?) end;
@@ -171,9 +171,9 @@ judgeIfStatement: Question expression left_brace (functionSupportStatement)* rig
 // else if 判断
 judgeElseIfStatement: expression left_brace (functionSupportStatement)* right_brace;
 // 循环
-loopStatement: iteratorStatement At id left_brace (functionSupportStatement)* right_brace end;
+loopStatement: id At iteratorStatement left_brace (functionSupportStatement)* right_brace end;
 // 集合循环
-loopEachStatement: expression At (Left_Brack id Right_Brack)? id left_brace (functionSupportStatement)* right_brace end;
+loopEachStatement: (Left_Brack id Right_Brack)? id At expression left_brace (functionSupportStatement)* right_brace end;
 // 条件循环
 loopCaseStatement: At expression left_brace (functionSupportStatement)* right_brace end;
 // 无限循环
@@ -379,6 +379,7 @@ typeAny
 | typeSet
 | typeDictionary
 | typeChannel
+| typeStack
 | typeBasic
 | typePackage
 | typeFunction
@@ -395,6 +396,7 @@ typeList: Left_Brack Right_Brack typeType;
 typeSet: Left_Brack typeType Right_Brack;
 typeDictionary: Left_Brack typeType Right_Brack typeType;
 typeChannel: Left_Brack Right_Arrow Right_Brack typeType;
+typeStack: Left_Brack Xor Right_Brack typeType;
 typePackage: nameSpaceItem (templateCall)? ;
 typeFunction: left_paren typeFunctionParameterClause t=(Right_Arrow|Right_Flow) New_Line* typeFunctionParameterClause right_paren;
 typeAny: TypeAny;

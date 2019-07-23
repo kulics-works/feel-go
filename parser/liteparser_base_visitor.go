@@ -536,6 +536,10 @@ func (v *BaseLiteParserVisitor) VisitTypeChannel(ctx *TypeChannelContext) interf
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitTypeStack(ctx *TypeStackContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitTypePackage(ctx *TypePackageContext) interface{} {
 	return v.VisitChildren(ctx)
 }

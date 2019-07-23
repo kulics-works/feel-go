@@ -404,6 +404,9 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#typeChannel.
 	VisitTypeChannel(ctx *TypeChannelContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#typeStack.
+	VisitTypeStack(ctx *TypeStackContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#typePackage.
 	VisitTypePackage(ctx *TypePackageContext) interface{}
 
