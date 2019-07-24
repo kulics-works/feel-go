@@ -148,6 +148,14 @@ func (v *BaseLiteParserVisitor) VisitReturnStatement(ctx *ReturnStatementContext
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitYieldBreakStatement(ctx *YieldBreakStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitParameterClauseIn(ctx *ParameterClauseInContext) interface{} {
 	return v.VisitChildren(ctx)
 }

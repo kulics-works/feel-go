@@ -113,6 +113,12 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#returnStatement.
 	VisitReturnStatement(ctx *ReturnStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#yieldReturnStatement.
+	VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#yieldBreakStatement.
+	VisitYieldBreakStatement(ctx *YieldBreakStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#parameterClauseIn.
 	VisitParameterClauseIn(ctx *ParameterClauseInContext) interface{}
 
