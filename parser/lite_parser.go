@@ -503,9 +503,9 @@ var parserATN = []uint16{
 	2, 853, 854, 5, 316, 159, 2, 854, 69, 3, 2, 2, 2, 855, 857, 7, 36, 2, 2,
 	856, 858, 5, 136, 69, 2, 857, 856, 3, 2, 2, 2, 857, 858, 3, 2, 2, 2, 858,
 	859, 3, 2, 2, 2, 859, 860, 5, 316, 159, 2, 860, 71, 3, 2, 2, 2, 861, 862,
-	7, 36, 2, 2, 862, 863, 7, 52, 2, 2, 863, 864, 5, 136, 69, 2, 864, 865,
-	5, 316, 159, 2, 865, 73, 3, 2, 2, 2, 866, 867, 7, 36, 2, 2, 867, 868, 7,
-	52, 2, 2, 868, 869, 5, 316, 159, 2, 869, 75, 3, 2, 2, 2, 870, 872, 5, 82,
+	7, 52, 2, 2, 862, 863, 7, 36, 2, 2, 863, 864, 5, 136, 69, 2, 864, 865,
+	5, 316, 159, 2, 865, 73, 3, 2, 2, 2, 866, 867, 7, 52, 2, 2, 867, 868, 7,
+	36, 2, 2, 868, 869, 5, 316, 159, 2, 869, 75, 3, 2, 2, 2, 870, 872, 5, 82,
 	42, 2, 871, 870, 3, 2, 2, 2, 871, 872, 3, 2, 2, 2, 872, 878, 3, 2, 2, 2,
 	873, 874, 5, 318, 160, 2, 874, 875, 5, 82, 42, 2, 875, 877, 3, 2, 2, 2,
 	876, 873, 3, 2, 2, 2, 877, 880, 3, 2, 2, 2, 878, 876, 3, 2, 2, 2, 878,
@@ -8762,12 +8762,12 @@ func NewYieldReturnStatementContext(parser antlr.Parser, parent antlr.ParserRule
 
 func (s *YieldReturnStatementContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *YieldReturnStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(LiteParserLeft_Arrow, 0)
-}
-
 func (s *YieldReturnStatementContext) At() antlr.TerminalNode {
 	return s.GetToken(LiteParserAt, 0)
+}
+
+func (s *YieldReturnStatementContext) Left_Arrow() antlr.TerminalNode {
+	return s.GetToken(LiteParserLeft_Arrow, 0)
 }
 
 func (s *YieldReturnStatementContext) TupleExpression() ITupleExpressionContext {
@@ -8831,11 +8831,11 @@ func (p *LiteParser) YieldReturnStatement() (localctx IYieldReturnStatementConte
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(859)
-		p.Match(LiteParserLeft_Arrow)
+		p.Match(LiteParserAt)
 	}
 	{
 		p.SetState(860)
-		p.Match(LiteParserAt)
+		p.Match(LiteParserLeft_Arrow)
 	}
 	{
 		p.SetState(861)
@@ -8887,12 +8887,12 @@ func NewYieldBreakStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 
 func (s *YieldBreakStatementContext) GetParser() antlr.Parser { return s.parser }
 
-func (s *YieldBreakStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(LiteParserLeft_Arrow, 0)
-}
-
 func (s *YieldBreakStatementContext) At() antlr.TerminalNode {
 	return s.GetToken(LiteParserAt, 0)
+}
+
+func (s *YieldBreakStatementContext) Left_Arrow() antlr.TerminalNode {
+	return s.GetToken(LiteParserLeft_Arrow, 0)
 }
 
 func (s *YieldBreakStatementContext) End() IEndContext {
@@ -8946,11 +8946,11 @@ func (p *LiteParser) YieldBreakStatement() (localctx IYieldBreakStatementContext
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(864)
-		p.Match(LiteParserLeft_Arrow)
+		p.Match(LiteParserAt)
 	}
 	{
 		p.SetState(865)
-		p.Match(LiteParserAt)
+		p.Match(LiteParserLeft_Arrow)
 	}
 	{
 		p.SetState(866)
