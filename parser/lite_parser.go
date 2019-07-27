@@ -55,7 +55,7 @@ var parserATN = []uint16{
 	3, 3, 3, 7, 3, 349, 10, 3, 12, 3, 14, 3, 352, 11, 3, 3, 3, 7, 3, 355, 10,
 	3, 12, 3, 14, 3, 358, 11, 3, 3, 4, 3, 4, 3, 4, 3, 4, 7, 4, 364, 10, 4,
 	12, 4, 14, 4, 367, 11, 4, 3, 4, 3, 4, 3, 4, 3, 5, 5, 5, 373, 10, 5, 3,
-	5, 3, 5, 3, 5, 5, 5, 378, 10, 5, 5, 5, 380, 10, 5, 3, 5, 3, 5, 3, 6, 3,
+	5, 3, 5, 5, 5, 377, 10, 5, 5, 5, 379, 10, 5, 3, 5, 3, 5, 3, 5, 3, 6, 3,
 	6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 5,
 	6, 397, 10, 6, 3, 7, 3, 7, 3, 7, 3, 7, 3, 7, 3, 8, 3, 8, 3, 8, 3, 8, 3,
 	8, 3, 9, 5, 9, 410, 10, 9, 3, 9, 3, 9, 3, 9, 7, 9, 415, 10, 9, 12, 9, 14,
@@ -317,10 +317,10 @@ var parserATN = []uint16{
 	2, 2, 364, 367, 3, 2, 2, 2, 365, 363, 3, 2, 2, 2, 365, 366, 3, 2, 2, 2,
 	366, 368, 3, 2, 2, 2, 367, 365, 3, 2, 2, 2, 368, 369, 5, 322, 162, 2, 369,
 	370, 5, 316, 159, 2, 370, 7, 3, 2, 2, 2, 371, 373, 5, 148, 75, 2, 372,
-	371, 3, 2, 2, 2, 372, 373, 3, 2, 2, 2, 373, 374, 3, 2, 2, 2, 374, 379,
-	7, 86, 2, 2, 375, 377, 5, 312, 157, 2, 376, 378, 5, 308, 155, 2, 377, 376,
-	3, 2, 2, 2, 377, 378, 3, 2, 2, 2, 378, 380, 3, 2, 2, 2, 379, 375, 3, 2,
-	2, 2, 379, 380, 3, 2, 2, 2, 380, 381, 3, 2, 2, 2, 381, 382, 5, 316, 159,
+	371, 3, 2, 2, 2, 372, 373, 3, 2, 2, 2, 373, 378, 3, 2, 2, 2, 374, 376,
+	5, 312, 157, 2, 375, 377, 5, 308, 155, 2, 376, 375, 3, 2, 2, 2, 376, 377,
+	3, 2, 2, 2, 377, 379, 3, 2, 2, 2, 378, 374, 3, 2, 2, 2, 378, 379, 3, 2,
+	2, 2, 379, 380, 3, 2, 2, 2, 380, 381, 7, 86, 2, 2, 381, 382, 5, 316, 159,
 	2, 382, 9, 3, 2, 2, 2, 383, 397, 5, 20, 11, 2, 384, 397, 5, 22, 12, 2,
 	385, 397, 5, 26, 14, 2, 386, 397, 5, 24, 13, 2, 387, 397, 5, 28, 15, 2,
 	388, 397, 5, 58, 30, 2, 389, 397, 5, 42, 22, 2, 390, 397, 5, 50, 26, 2,
@@ -942,7 +942,7 @@ var parserATN = []uint16{
 	1935, 3, 2, 2, 2, 1938, 1940, 7, 94, 2, 2, 1939, 1938, 3, 2, 2, 2, 1940,
 	1943, 3, 2, 2, 2, 1941, 1939, 3, 2, 2, 2, 1941, 1942, 3, 2, 2, 2, 1942,
 	1944, 3, 2, 2, 2, 1943, 1941, 3, 2, 2, 2, 1944, 1945, 7, 48, 2, 2, 1945,
-	331, 3, 2, 2, 2, 201, 335, 340, 344, 350, 356, 363, 365, 372, 377, 379,
+	331, 3, 2, 2, 2, 201, 335, 340, 344, 350, 356, 363, 365, 372, 376, 378,
 	396, 409, 416, 424, 433, 436, 441, 449, 451, 456, 461, 469, 473, 478, 482,
 	489, 493, 501, 510, 517, 521, 528, 538, 545, 553, 557, 563, 569, 577, 579,
 	588, 594, 609, 614, 621, 630, 633, 637, 645, 654, 661, 666, 674, 678, 690,
@@ -1803,7 +1803,7 @@ func (p *LiteParser) ExportStatement() (localctx IExportStatementContext) {
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case LiteParserLeft_Brack, LiteParserTextLiteral:
+			case LiteParserLinqFrom, LiteParserLinqBy, LiteParserLinqSelect, LiteParserLinqWhere, LiteParserLinqGroup, LiteParserLinqInto, LiteParserLinqOrderby, LiteParserLinqJoin, LiteParserLinqLet, LiteParserLinqIn, LiteParserLinqOn, LiteParserLinqEquals, LiteParserLinqAscending, LiteParserLinqDescending, LiteParserLeft_Brack, LiteParserTypeI8, LiteParserTypeU8, LiteParserTypeI16, LiteParserTypeU16, LiteParserTypeI32, LiteParserTypeU32, LiteParserTypeI64, LiteParserTypeU64, LiteParserTypeF32, LiteParserTypeF64, LiteParserTypeChr, LiteParserTypeStr, LiteParserTypeBool, LiteParserTypeInt, LiteParserTypeNum, LiteParserTypeByte, LiteParserTypeAny, LiteParserTextLiteral, LiteParserIDPrivate, LiteParserIDPublic:
 				{
 					p.SetState(359)
 					p.ImportStatement()
@@ -1969,31 +1969,31 @@ func (p *LiteParser) ImportStatement() (localctx IImportStatementContext) {
 		}
 
 	}
-	{
-		p.SetState(372)
-		p.Match(LiteParserTextLiteral)
-	}
-	p.SetState(377)
+	p.SetState(376)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
 	if (((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<LiteParserLinqFrom)|(1<<LiteParserLinqBy)|(1<<LiteParserLinqSelect)|(1<<LiteParserLinqWhere)|(1<<LiteParserLinqGroup)|(1<<LiteParserLinqInto)|(1<<LiteParserLinqOrderby)|(1<<LiteParserLinqJoin)|(1<<LiteParserLinqLet)|(1<<LiteParserLinqIn)|(1<<LiteParserLinqOn)|(1<<LiteParserLinqEquals)|(1<<LiteParserLinqAscending)|(1<<LiteParserLinqDescending))) != 0) || (((_la-62)&-(0x1f+1)) == 0 && ((1<<uint((_la-62)))&((1<<(LiteParserTypeI8-62))|(1<<(LiteParserTypeU8-62))|(1<<(LiteParserTypeI16-62))|(1<<(LiteParserTypeU16-62))|(1<<(LiteParserTypeI32-62))|(1<<(LiteParserTypeU32-62))|(1<<(LiteParserTypeI64-62))|(1<<(LiteParserTypeU64-62))|(1<<(LiteParserTypeF32-62))|(1<<(LiteParserTypeF64-62))|(1<<(LiteParserTypeChr-62))|(1<<(LiteParserTypeStr-62))|(1<<(LiteParserTypeBool-62))|(1<<(LiteParserTypeInt-62))|(1<<(LiteParserTypeNum-62))|(1<<(LiteParserTypeByte-62))|(1<<(LiteParserTypeAny-62))|(1<<(LiteParserIDPrivate-62))|(1<<(LiteParserIDPublic-62)))) != 0) {
 		{
-			p.SetState(373)
+			p.SetState(372)
 			p.Id()
 		}
-		p.SetState(375)
+		p.SetState(374)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
 		if _la == LiteParserDot {
 			{
-				p.SetState(374)
+				p.SetState(373)
 				p.Call()
 			}
 
 		}
 
+	}
+	{
+		p.SetState(378)
+		p.Match(LiteParserTextLiteral)
 	}
 	{
 		p.SetState(379)
