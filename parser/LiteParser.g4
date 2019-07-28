@@ -61,7 +61,7 @@ includeStatement
 ;
 
 // 包含
-includeStatement: Discard typeType end;
+includeStatement: typeType end;
 // 包构造方法
 packageNewStatement: (annotationSupport)? parameterClauseSelf left_paren parameterClauseIn right_paren
 (left_paren expressionList? right_paren)? left_brace (functionSupportStatement)* right_brace;
@@ -391,7 +391,7 @@ typeNullable: Question typeNotNull;
 typeTuple: Less typeType (more typeType)+ Greater;
 typeArray: Left_Brack Colon Right_Brack typeType;
 typeList: Left_Brack Right_Brack typeType;
-typeSet: Left_Brack typeType Right_Brack;
+typeSet: Left_Brack Right_Brack Left_Brack typeType Right_Brack;
 typeDictionary: Left_Brack typeType Right_Brack typeType;
 typeChannel: Left_Brack Right_Arrow Right_Brack typeType;
 typeStack: Left_Brack Xor Right_Brack typeType;

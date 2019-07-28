@@ -227,7 +227,7 @@ func (me *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 func (me *LiteVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
 	r := Result{Data: "var"}
 	if len(ctx.AllIdExprItem()) > 1 {
-		r.Text = "("
+		r.Text = ""
 		for i, v := range ctx.AllIdExprItem() {
 			subID := me.Visit(v).(Result).Text
 			if i != 0 {
@@ -241,7 +241,7 @@ func (me *LiteVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
 				me.add_id(subID)
 			}
 		}
-		r.Text += ")"
+		r.Text += ""
 	} else {
 		r = me.Visit(ctx.IdExprItem(0)).(Result)
 		if me.has_id(r.Text) {

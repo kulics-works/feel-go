@@ -1,6 +1,6 @@
 "main" {
     # "./project/package path" package. #
-    "fmt" fmt.
+    fmt. "fmt"
 }
 
 main(->) {
@@ -90,7 +90,7 @@ me ?human -> {
 } 
 
 man -> {
-    _ human
+    human
     age int
 }
 
@@ -105,7 +105,7 @@ person <- {
 }
 
 worker <- {
-    _ person
+    person
     doSomething(work str ->)
 }
 
