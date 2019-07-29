@@ -55,10 +55,10 @@ testLoop(->) {
     i @ arr {
         a += i
     }
-    [i]v @ arr {
+    i:v @ arr {
         a += i + v
     }
-    dic = {["1"]1,["2"]2}
+    dic = {"1":1,"2":2}
     i @ dic {
         a += i
     }
@@ -151,19 +151,6 @@ test_define(->) {
         a = 3
         Println(b)
     }
-    # loop can not assign temp id
-    arr = {1,2,3}
-    arr @ i {
-        i = 2
-    }
-    [0<1] @ i {
-        i = 2
-    } #
-    #! {
-        a = 2
-    } e {
-        e = Exception{}
-    }#
 }
 
 testGo(-> v int) {
@@ -171,9 +158,9 @@ testGo(-> v int) {
         Println("async")
     }
     async() <~
-    channel = <[->]int>(1)
-    channel[<-] = 2
-    <- channel[<-]
+    channel = [[->]int](1)
+    channel.(<-) = 2
+    <- channel.(<-)
 }
 
 testLambda(fn (int->str) ->) {
