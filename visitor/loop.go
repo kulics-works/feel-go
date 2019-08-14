@@ -1,6 +1,6 @@
 package visitor
 
-import "github.com/kulics/lite-go/parser"
+import "github.com/kulics/lite-go/parser/generate"
 
 type Iterator struct {
 	Begin  Result
@@ -57,15 +57,6 @@ func (me *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any 
 	obj += "for " + id + " := " + it.Begin.Text + ";" + id + order + it.End.Text + ";" + id + step + it.Step.Text
 	me.add_current_set()
 	obj += BlockLeft + Wrap
-	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
-	obj += BlockRight + Wrap
-	me.delete_current_set()
-	return obj
-}
-
-func (me *LiteVisitor) VisitLoopInfiniteStatement(ctx *parser.LoopInfiniteStatementContext) any {
-	me.add_current_set()
-	obj := "for " + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
 	obj += BlockRight + Wrap
 	me.delete_current_set()

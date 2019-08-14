@@ -1,7 +1,7 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser"
+	"github.com/kulics/lite-go/parser/generate"
 )
 
 func (me *LiteVisitor) VisitJudgeCaseStatement(ctx *parser.JudgeCaseStatementContext) any {

@@ -1,6 +1,6 @@
 package visitor
 
-import "github.com/kulics/lite-go/parser"
+import "github.com/kulics/lite-go/parser/generate"
 
 func (me *LiteVisitor) VisitTypeConversion(ctx *parser.TypeConversionContext) any {
 	return me.Visit(ctx.TypeType()).(string)

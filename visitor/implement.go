@@ -2,7 +2,7 @@ package visitor
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"github.com/kulics/lite-go/parser"
+	"github.com/kulics/lite-go/parser/generate"
 )
 
 var self Parameter

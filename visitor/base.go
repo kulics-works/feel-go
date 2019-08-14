@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/kulics/lite-go/parser"
+	"github.com/kulics/lite-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )

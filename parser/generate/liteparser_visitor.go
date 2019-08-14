@@ -164,8 +164,8 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#loopCaseStatement.
 	VisitLoopCaseStatement(ctx *LoopCaseStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#loopInfiniteStatement.
-	VisitLoopInfiniteStatement(ctx *LoopInfiniteStatementContext) interface{}
+	// Visit a parse tree produced by LiteParser#loopElseStatement.
+	VisitLoopElseStatement(ctx *LoopElseStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#loopJumpStatement.
 	VisitLoopJumpStatement(ctx *LoopJumpStatementContext) interface{}

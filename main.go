@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/kulics/lite-go/parser"
+	"github.com/kulics/lite-go/parser/generate"
 	"github.com/kulics/lite-go/visitor"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"

@@ -216,7 +216,7 @@ func (v *BaseLiteParserVisitor) VisitLoopCaseStatement(ctx *LoopCaseStatementCon
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitLoopInfiniteStatement(ctx *LoopInfiniteStatementContext) interface{} {
+func (v *BaseLiteParserVisitor) VisitLoopElseStatement(ctx *LoopElseStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
