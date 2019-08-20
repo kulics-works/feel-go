@@ -120,39 +120,40 @@ func (me *LiteVisitor) VisitTypeFunctionParameterClause(ctx *parser.TypeFunction
 
 func (me *LiteVisitor) VisitTypeBasic(ctx *parser.TypeBasicContext) any {
 	obj := ""
-	if ctx.GetT().GetTokenType() == parser.LiteLexerTypeI8 {
+	switch ctx.GetT().GetTokenType() {
+	case parser.LiteLexerTypeI8:
 		obj = I8
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeU8 {
+	case parser.LiteLexerTypeU8:
 		obj = U8
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeI16 {
+	case parser.LiteLexerTypeI16:
 		obj = I16
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeU16 {
+	case parser.LiteLexerTypeU16:
 		obj = U16
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeI32 {
+	case parser.LiteLexerTypeI32:
 		obj = I32
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeU32 {
+	case parser.LiteLexerTypeU32:
 		obj = U32
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeI64 {
+	case parser.LiteLexerTypeI64:
 		obj = I64
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeU64 {
+	case parser.LiteLexerTypeU64:
 		obj = U64
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeF32 {
+	case parser.LiteLexerTypeF32:
 		obj = F32
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeF64 {
+	case parser.LiteLexerTypeF64:
 		obj = F64
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeChr {
+	case parser.LiteLexerTypeChr:
 		obj = Chr
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeStr {
+	case parser.LiteLexerTypeStr:
 		obj = Str
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeBool {
+	case parser.LiteLexerTypeBool:
 		obj = Bool
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeInt {
+	case parser.LiteLexerTypeInt:
 		obj = Int
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeNum {
+	case parser.LiteLexerTypeNum:
 		obj = Num
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTypeByte {
+	case parser.LiteLexerTypeByte:
 		obj = Byte
-	} else {
+	default:
 		obj = Any
 	}
 	return obj
