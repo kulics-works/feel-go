@@ -17,13 +17,13 @@ LinqDescending: 'descending';
 
 Pow:    '**';
 Root:   '//';
-Log:    '%%';
+Log:    '\\\\';
 
 Add_Equal:         '+=';
 Sub_Equal:         '-=';
 Mul_Equal:         '*=';
 Div_Equal:         '/=';
-Mod_Equal:         '%=';
+Mod_Equal:        '\\=';
 Colon_Equal:       ':=';
 
 Equal_Equal:        '==';
@@ -68,14 +68,16 @@ At: '@';
 
 Bang: '!';
 
+Coin: '$';
+Cent: '%';
+
 Wave: '~';
 
 Add:    '+';
 Sub:    '-';
 Mul:    '*';
 Div:    '/';
-Mod:    '%';
-Slash:  '\\';
+Mod:   '\\';
 
 And:    '&';
 Or:     '|';
@@ -115,7 +117,7 @@ Big_Big_Comment: '###' .*? '###' -> skip; // 可嵌套注释
 Big_Comment: '##' .*? '##' -> skip; // 可嵌套注释
 Comment: '#' .*? '#' -> skip; // 注释
 
-New_Line: '\n'; 
+New_Line: '\r'? '\n'; 
 //WS: (' ' |'\t' |'\n' |'\r' )+ -> skip ;
 
 WS: [ \t]+ -> skip; // 空白， 后面的->skip表示antlr4在分析语言的文本时，符合这个规则的词法将被无视
