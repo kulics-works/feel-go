@@ -375,7 +375,7 @@ var parserATN = []uint16{
 	2, 2, 2, 432, 433, 5, 334, 168, 2, 433, 437, 7, 25, 2, 2, 434, 436, 7,
 	95, 2, 2, 435, 434, 3, 2, 2, 2, 436, 439, 3, 2, 2, 2, 437, 435, 3, 2, 2,
 	2, 437, 438, 3, 2, 2, 2, 438, 440, 3, 2, 2, 2, 439, 437, 3, 2, 2, 2, 440,
-	441, 5, 270, 136, 2, 441, 442, 7, 50, 2, 2, 442, 446, 5, 342, 172, 2, 443,
+	441, 5, 270, 136, 2, 441, 442, 7, 51, 2, 2, 442, 446, 5, 342, 172, 2, 443,
 	445, 5, 18, 10, 2, 444, 443, 3, 2, 2, 2, 445, 448, 3, 2, 2, 2, 446, 444,
 	3, 2, 2, 2, 446, 447, 3, 2, 2, 2, 447, 449, 3, 2, 2, 2, 448, 446, 3, 2,
 	2, 2, 449, 450, 5, 344, 173, 2, 450, 451, 5, 338, 170, 2, 451, 17, 3, 2,
@@ -2764,8 +2764,8 @@ func (s *EnumStatementContext) TypeType() ITypeTypeContext {
 	return t.(ITypeTypeContext)
 }
 
-func (s *EnumStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(LiteParserColon, 0)
+func (s *EnumStatementContext) Question() antlr.TerminalNode {
+	return s.GetToken(LiteParserQuestion, 0)
 }
 
 func (s *EnumStatementContext) Left_brace() ILeft_braceContext {
@@ -2918,7 +2918,7 @@ func (p *LiteParser) EnumStatement() (localctx IEnumStatementContext) {
 	}
 	{
 		p.SetState(439)
-		p.Match(LiteParserColon)
+		p.Match(LiteParserQuestion)
 	}
 	{
 		p.SetState(440)
