@@ -68,6 +68,12 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#packageEventStatement.
 	VisitPackageEventStatement(ctx *PackageEventStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#packageImplementStatement.
+	VisitPackageImplementStatement(ctx *PackageImplementStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#implementNewStatement.
+	VisitImplementNewStatement(ctx *ImplementNewStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#implementStatement.
 	VisitImplementStatement(ctx *ImplementStatementContext) interface{}
 
@@ -79,12 +85,6 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#implementControlStatement.
 	VisitImplementControlStatement(ctx *ImplementControlStatementContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#overrideStatement.
-	VisitOverrideStatement(ctx *OverrideStatementContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#overrideSupportStatement.
-	VisitOverrideSupportStatement(ctx *OverrideSupportStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#overrideFunctionStatement.
 	VisitOverrideFunctionStatement(ctx *OverrideFunctionStatementContext) interface{}
@@ -364,6 +364,39 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#stringExpressionElement.
 	VisitStringExpressionElement(ctx *StringExpressionElementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#judgeExpression.
+	VisitJudgeExpression(ctx *JudgeExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#judgeExpressionElseStatement.
+	VisitJudgeExpressionElseStatement(ctx *JudgeExpressionElseStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#judgeExpressionIfStatement.
+	VisitJudgeExpressionIfStatement(ctx *JudgeExpressionIfStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#judgeExpressionElseIfStatement.
+	VisitJudgeExpressionElseIfStatement(ctx *JudgeExpressionElseIfStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#judgeCaseExpression.
+	VisitJudgeCaseExpression(ctx *JudgeCaseExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#caseExpressionStatement.
+	VisitCaseExpressionStatement(ctx *CaseExpressionStatementContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#loopExpression.
+	VisitLoopExpression(ctx *LoopExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#loopEachExpression.
+	VisitLoopEachExpression(ctx *LoopEachExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#loopElseExpression.
+	VisitLoopElseExpression(ctx *LoopElseExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#checkExpression.
+	VisitCheckExpression(ctx *CheckExpressionContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#checkErrorExpression.
+	VisitCheckErrorExpression(ctx *CheckErrorExpressionContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#dataStatement.
 	VisitDataStatement(ctx *DataStatementContext) interface{}

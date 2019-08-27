@@ -88,6 +88,14 @@ func (v *BaseLiteParserVisitor) VisitPackageEventStatement(ctx *PackageEventStat
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitPackageImplementStatement(ctx *PackageImplementStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitImplementNewStatement(ctx *ImplementNewStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitImplementStatement(ctx *ImplementStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -101,14 +109,6 @@ func (v *BaseLiteParserVisitor) VisitImplementFunctionStatement(ctx *ImplementFu
 }
 
 func (v *BaseLiteParserVisitor) VisitImplementControlStatement(ctx *ImplementControlStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitOverrideStatement(ctx *OverrideStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitOverrideSupportStatement(ctx *OverrideSupportStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -481,6 +481,50 @@ func (v *BaseLiteParserVisitor) VisitStringExpression(ctx *StringExpressionConte
 }
 
 func (v *BaseLiteParserVisitor) VisitStringExpressionElement(ctx *StringExpressionElementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitJudgeExpression(ctx *JudgeExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitJudgeExpressionElseStatement(ctx *JudgeExpressionElseStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitJudgeExpressionIfStatement(ctx *JudgeExpressionIfStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitJudgeExpressionElseIfStatement(ctx *JudgeExpressionElseIfStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitJudgeCaseExpression(ctx *JudgeCaseExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitCaseExpressionStatement(ctx *CaseExpressionStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitLoopExpression(ctx *LoopExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitLoopEachExpression(ctx *LoopEachExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitLoopElseExpression(ctx *LoopElseExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitCheckExpression(ctx *CheckExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitCheckErrorExpression(ctx *CheckErrorExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
