@@ -5,8 +5,6 @@ import (
 	"github.com/kulics/lite-go/parser/generate"
 )
 
-var self Parameter
-
 func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) any {
 	obj := ""
 	// if ctx.AnnotationSupport() >< () {
@@ -27,13 +25,13 @@ func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementCon
 	// 	obj += template.Template
 	// 	templateContract = template.Contract
 	// }
-	self = me.Visit(ctx.ParameterClauseSelf()).(Parameter)
+	me.self = me.Visit(ctx.ParameterClauseSelf()).(Parameter)
 	for _, item := range ctx.AllImplementSupportStatement() {
 		if v, ok := me.Visit(item).(string); ok {
 			obj += v
 		}
 	}
-	self = Parameter{}
+	me.self = Parameter{}
 	return obj
 }
 
@@ -45,7 +43,7 @@ func (me *LiteVisitor) VisitImplementFunctionStatement(ctx *parser.ImplementFunc
 	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	me.add_current_set()
-	obj += Func + "(" + self.Id + " " + self.Type + ")" +
+	obj += Func + "(" + me.self.Id + " " + me.self.Type + ")" +
 		id.Text + me.Visit(ctx.ParameterClauseIn()).(string) +
 		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())

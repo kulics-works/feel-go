@@ -64,6 +64,10 @@ func (v *BaseLiteParserVisitor) VisitPackageStatement(ctx *PackageStatementConte
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitPackageFieldStatement(ctx *PackageFieldStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitPackageSupportStatement(ctx *PackageSupportStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }

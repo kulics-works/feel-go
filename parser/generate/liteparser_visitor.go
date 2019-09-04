@@ -50,6 +50,9 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#packageStatement.
 	VisitPackageStatement(ctx *PackageStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#packageFieldStatement.
+	VisitPackageFieldStatement(ctx *PackageFieldStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#packageSupportStatement.
 	VisitPackageSupportStatement(ctx *PackageSupportStatementContext) interface{}
 

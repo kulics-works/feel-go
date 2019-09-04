@@ -95,6 +95,8 @@ type human struct {
 	name string
 }
 
+func (me human) run() {
+}
 func (me *human) sayName() (n string) {
 	return me.name
 }

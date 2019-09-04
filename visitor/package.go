@@ -13,18 +13,25 @@ func (me *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext
 func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
 	id := me.Visit(ctx.Id(0)).(Result)
 	if ctx.Id(1) != nil {
-		// var Self = me.Visit(ctx.Id(1)).(Result)
+		me.self.Id = me.Visit(ctx.Id(1)).(Result).Text
+		me.self.Type = id.Text
 	}
 
-	obj := ""
-	Init := ""
+	var obj = ""
+	var Init = ""
+	var methed = ""
 
 	// # 处理构造函数 #
 	// ctx.packageNewStatement() @ item {
 	// 	Init += "public " id.text " " Visit(item):Str ""
 	// }
-	for _, item := range ctx.AllPackageSupportStatement() {
-		obj += me.Visit(item).(string)
+	for _, item := range ctx.AllPackageFieldStatement() {
+		var r = me.Visit(item).(Result)
+		obj += r.Text
+		methed += r.Data.(string)
+	}
+	for _, item := range ctx.AllPackageImplementStatement() {
+		methed += me.Visit(item).(Result).Text
 	}
 	obj = Init + obj
 	obj += BlockRight + Wrap
@@ -45,12 +52,28 @@ func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext
 
 	header += templateContract + BlockLeft + Wrap
 	obj = header + obj
-
+	obj += methed
+	me.self = Parameter{}
 	return obj
 }
 
 func (me *LiteVisitor) VisitPackageSupportStatement(ctx *parser.PackageSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
+}
+
+func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatementContext) any {
+	var obj = ""
+	var method = ""
+	for _, item := range ctx.AllPackageSupportStatement() {
+		switch item.GetChild(0).(type) {
+		case *parser.ImplementFunctionStatementContext:
+			method += me.Visit(item).(string)
+		case *parser.PackageVariableStatementContext,
+			*parser.IncludeStatementContext:
+			obj += me.Visit(item).(string)
+		}
+	}
+	return Result{Text: obj, Data: method}
 }
 
 func (me *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariableStatementContext) any {

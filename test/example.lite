@@ -77,8 +77,10 @@ testLoop : (->) {
     }
 }
 
-human := $ {
+human := me $ {
     name str
+
+    run : (->){}
 }
 
 me ?human % {

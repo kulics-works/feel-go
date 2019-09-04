@@ -105,7 +105,7 @@ func (me *LiteVisitor) VisitVariableStatement(ctx *parser.VariableStatementConte
 		Type = me.Visit(ctx.TypeType()).(string)
 		obj = Var + r1.Text + " " + Type + " = " + r2.Text + Wrap
 	} else {
-		if r1.IsDefine || r1.Text == self.Id {
+		if r1.IsDefine || r1.Text == me.self.Id {
 			obj = r1.Text + " = " + r2.Text + Wrap
 		} else {
 			obj = r1.Text + " := " + r2.Text + Wrap

@@ -82,6 +82,8 @@ type LiteVisitor struct {
 
 	AllIDSet     *set_str
 	CurrentIDSet *stack_str
+
+	self Parameter
 }
 
 func NewLiteVisitor() LiteVisitor {
