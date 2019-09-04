@@ -3,7 +3,7 @@
     fmt. "fmt"
 }
 
-main(->) {
+main : (->) {
     testGo()
     test(1, "2")
     testJudge()
@@ -22,15 +22,15 @@ num1 = 1
 num2 num = 12.345678
 
 work => (str->)
-doWork -> (str->) 
+doWork := (str->) 
 
-test(x int, y str -> r1 str, r2 int) {
+test : (x int, y str -> r1 str, r2 int) {
     a = x * 3
     b int = 2
     <- "hello", a + b
 }
 
-testJudge(->) {
+testJudge : (->) {
     a = 5
     ? 1 + 1 == 2 {
         a = 2
@@ -49,7 +49,7 @@ testJudge(->) {
     }
 }
 
-testLoop(->) {
+testLoop : (->) {
     a = 0
     arr = {1,2,3,4,5}
     i @ arr {
@@ -73,48 +73,46 @@ testLoop(->) {
     }
     @ a > 0 {
         a -= 1
-    }
-    @ {
         @..
     }
 }
 
-human -> {
+human := $ {
     name str
 }
 
-me ?human -> {
-    sayName(-> n str) {
+me ?human % {
+    sayName : (-> n str) {
         <- me.name
     }
 } 
 
-man -> {
+man := $ {
     human
     age int
 }
 
-me ?man -> {
-    doSomething(work str ->) {
+me ?man % {
+    doSomething : (work str ->) {
         Println(work)
     }
 }
 
-person <- {
-    sayName(-> n str)
+person := % {
+    sayName (-> n str)
 }
 
-worker <- {
+worker := % {
     person
-    doSomething(work str ->)
+    doSomething (work str ->)
 }
 
-testProtocol(w worker -> i any) {
+testProtocol : (w worker -> i any) {
     w.doSomething("protocol")
     <- w
 }
 
-test_define(->) {
+test_define : (->) {
     a = 1
     ? a == 1 {
         b = 2
@@ -153,7 +151,7 @@ test_define(->) {
     }
 }
 
-testGo(-> v int) {
+testGo : (-> v int) {
     async = (->) {
         Println("async")
     }
@@ -163,6 +161,6 @@ testGo(-> v int) {
     <- channel.(<-)
 }
 
-testLambda(fn (int->str) ->) {
+testLambda : (fn (int->str) ->) {
     fn(1)
 }

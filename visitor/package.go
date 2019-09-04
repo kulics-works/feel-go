@@ -11,7 +11,11 @@ func (me *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext
 }
 
 func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
-	id := me.Visit(ctx.Id()).(Result)
+	id := me.Visit(ctx.Id(0)).(Result)
+	if ctx.Id(1) != nil {
+		// var Self = me.Visit(ctx.Id(1)).(Result)
+	}
+
 	obj := ""
 	Init := ""
 
