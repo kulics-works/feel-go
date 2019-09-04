@@ -12,9 +12,9 @@ func (me *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext
 
 func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
 	id := me.Visit(ctx.Id(0)).(Result)
+	me.self.Type = id.Text
 	if ctx.Id(1) != nil {
 		me.self.Id = me.Visit(ctx.Id(1)).(Result).Text
-		me.self.Type = id.Text
 	}
 
 	var obj = ""
