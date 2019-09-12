@@ -171,7 +171,7 @@ func testGo() (v int) {
 	async := func() { Println("async") }
 	go async()
 	channel := make(chan int, 1)
-	channel <- 2
+	<-channel = 2
 	return <-channel
 }
 func testLambda(fn func(int) string) {

@@ -580,11 +580,15 @@ func (v *BaseLiteParserVisitor) VisitTypeDictionary(ctx *TypeDictionaryContext) 
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitTypeChannel(ctx *TypeChannelContext) interface{} {
+func (v *BaseLiteParserVisitor) VisitTypeStack(ctx *TypeStackContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitTypeStack(ctx *TypeStackContext) interface{} {
+func (v *BaseLiteParserVisitor) VisitTypeQueue(ctx *TypeQueueContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitTypeChannel(ctx *TypeChannelContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

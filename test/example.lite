@@ -51,14 +51,14 @@ testJudge : (->) {
 
 testLoop : (->) {
     a = 0
-    arr = {1,2,3,4,5}
+    arr = {1;2;3;4;5}
     i @ arr {
         a += i
     }
-    i:v @ arr {
+    (i)v @ arr {
         a += i + v
     }
-    dic = {"1":1,"2":2}
+    dic = {"1"=>1;"2"=>2}
     i @ dic {
         a += i
     }
@@ -158,9 +158,9 @@ testGo : (-> v int) {
         Println("async")
     }
     async() <~
-    channel = [[->]int](1)
-    channel.(<-) = 2
-    <- channel.(<-)
+    channel = [[int...]](1)
+    channel.(.) = 2
+    <- channel.(.)
 }
 
 testLambda : (fn (int->str) ->) {

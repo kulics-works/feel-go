@@ -437,11 +437,14 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#typeDictionary.
 	VisitTypeDictionary(ctx *TypeDictionaryContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#typeChannel.
-	VisitTypeChannel(ctx *TypeChannelContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#typeStack.
 	VisitTypeStack(ctx *TypeStackContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#typeQueue.
+	VisitTypeQueue(ctx *TypeQueueContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#typeChannel.
+	VisitTypeChannel(ctx *TypeChannelContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#typePackage.
 	VisitTypePackage(ctx *TypePackageContext) interface{}
