@@ -77,7 +77,7 @@ testLoop : (->) {
     }
 }
 
-human := me $ {
+human := me % {
     name str
 
     run : (->){}
@@ -89,8 +89,8 @@ me ?human % {
     }
 } 
 
-man := $ {
-    human
+man := % {
+    % human
     age int
 }
 
@@ -100,12 +100,12 @@ me ?man % {
     }
 }
 
-person := % {
+person := _% {
     sayName (-> n str)
 }
 
-worker := % {
-    person
+worker := _% {
+    % person
     doSomething (work str ->)
 }
 

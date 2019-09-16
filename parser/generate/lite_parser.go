@@ -695,7 +695,7 @@ var parserATN = []uint16{
 	172, 2, 1258, 125, 3, 2, 2, 2, 1259, 1260, 5, 134, 68, 2, 1260, 1261, 5,
 	272, 137, 2, 1261, 1262, 5, 342, 172, 2, 1262, 127, 3, 2, 2, 2, 1263, 1264,
 	5, 142, 72, 2, 1264, 1265, 7, 32, 2, 2, 1265, 1266, 5, 350, 176, 2, 1266,
-	1267, 7, 36, 2, 2, 1267, 1268, 5, 352, 177, 2, 1268, 1269, 5, 326, 164,
+	1267, 7, 32, 2, 2, 1267, 1268, 5, 352, 177, 2, 1268, 1269, 5, 326, 164,
 	2, 1269, 1270, 5, 142, 72, 2, 1270, 1271, 5, 342, 172, 2, 1271, 129, 3,
 	2, 2, 2, 1272, 1273, 5, 138, 70, 2, 1273, 1274, 5, 326, 164, 2, 1274, 1275,
 	5, 138, 70, 2, 1275, 1276, 5, 342, 172, 2, 1276, 131, 3, 2, 2, 2, 1277,
@@ -14420,8 +14420,12 @@ func (s *ChannelAssignStatementContext) Expression(i int) IExpressionContext {
 	return t.(IExpressionContext)
 }
 
-func (s *ChannelAssignStatementContext) Dot() antlr.TerminalNode {
-	return s.GetToken(LiteParserDot, 0)
+func (s *ChannelAssignStatementContext) AllDot() []antlr.TerminalNode {
+	return s.GetTokens(LiteParserDot)
+}
+
+func (s *ChannelAssignStatementContext) Dot(i int) antlr.TerminalNode {
+	return s.GetToken(LiteParserDot, i)
 }
 
 func (s *ChannelAssignStatementContext) Left_paren() ILeft_parenContext {
@@ -14432,10 +14436,6 @@ func (s *ChannelAssignStatementContext) Left_paren() ILeft_parenContext {
 	}
 
 	return t.(ILeft_parenContext)
-}
-
-func (s *ChannelAssignStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(LiteParserLeft_Arrow, 0)
 }
 
 func (s *ChannelAssignStatementContext) Right_paren() IRight_parenContext {
@@ -14521,7 +14521,7 @@ func (p *LiteParser) ChannelAssignStatement() (localctx IChannelAssignStatementC
 	}
 	{
 		p.SetState(1264)
-		p.Match(LiteParserLeft_Arrow)
+		p.Match(LiteParserDot)
 	}
 	{
 		p.SetState(1265)
