@@ -560,10 +560,6 @@ func (v *BaseLiteParserVisitor) VisitTypeNullable(ctx *TypeNullableContext) inte
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitTypeTuple(ctx *TypeTupleContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitTypeArray(ctx *TypeArrayContext) interface{} {
 	return v.VisitChildren(ctx)
 }

@@ -422,9 +422,6 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#typeNullable.
 	VisitTypeNullable(ctx *TypeNullableContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#typeTuple.
-	VisitTypeTuple(ctx *TypeTupleContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#typeArray.
 	VisitTypeArray(ctx *TypeArrayContext) interface{}
 
