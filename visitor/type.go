@@ -46,20 +46,6 @@ func (me *LiteVisitor) VisitTypeNotNull(ctx *parser.TypeNotNullContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitTypeTuple(ctx *parser.TypeTupleContext) any {
-	obj := ""
-	obj += "("
-	for i := 0; i < len(ctx.AllTypeType()); i++ {
-		if i == 0 {
-			obj += me.Visit(ctx.TypeType(i)).(string)
-		} else {
-			obj += "," + me.Visit(ctx.TypeType(i)).(string)
-		}
-	}
-	obj += ")"
-	return obj
-}
-
 func (me *LiteVisitor) VisitTypeArray(ctx *parser.TypeArrayContext) any {
 	return "[]" + me.Visit(ctx.TypeType()).(string)
 }
