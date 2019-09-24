@@ -76,13 +76,13 @@ func testLoop() {
 	for _, i := range dic {
 		a += i
 	}
-	for i := 0; i < 10; i += 1 {
+	for i := 0; i <= 10; i += 1 {
 		a += i
 		if i == 7 {
 			continue
 		}
 	}
-	for i := 5; i < 0; i += 1 {
+	for i := 5; i >= 0; i -= 1 {
 		a += i
 	}
 	for a > 0 {

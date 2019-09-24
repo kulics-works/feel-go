@@ -11,11 +11,11 @@ type Iterator struct {
 }
 
 func (me *LiteVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
-	it := Iterator{Order: true, Attach: false}
-	if ctx.GetOp().GetText() == ">=" || ctx.GetOp().GetText() == "<=" {
-		it.Attach = true
-	}
-	if ctx.GetOp().GetText() == ">" || ctx.GetOp().GetText() == ">=" {
+	it := Iterator{Order: true, Attach: true}
+	// if ctx.GetOp().GetText() == ">=" || ctx.GetOp().GetText() == "<=" {
+	// 	it.Attach = true
+	// }
+	if ctx.GetOp().GetTokenType() == parser.LiteLexerSub_Sub {
 		it.Order = false
 	}
 	if len(ctx.AllExpression()) == 2 {
