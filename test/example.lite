@@ -158,7 +158,7 @@ testGo : (-> v int) {
         Println("async")
     }
     async() <~
-    channel = [[]<<int](1)
+    channel = [[<<int]](1)
     channel.(.) = 2
     <- channel.(.)
 }
