@@ -7,30 +7,21 @@ import (
 
 func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) any {
 	obj := ""
-	// if ctx.AnnotationSupport() >< () {
-	// 	obj += Visit(context.annotationSupport())
-	// }
-	// 异步
-	// if ctx.GetT().GetTokenType() == parser.XsLexerRight_Flow {
-	// pout := Visit(ctx.ParameterClauseOut()).(string)
-	// obj += ""id.permission" async static "pout" "id.text""
-	// } else {
-	// 	obj += Func + id.Text  + me.Visit(ctx.ParameterClauseOut()).(string)
-	// }
-
-	// 泛型
-	// templateContract := ""
-	// if context.templateDefine() >< () {
-	// 	template := Visit(context.templateDefine()):TemplateItem
-	// 	obj += template.Template
-	// 	templateContract = template.Contract
-	// }
-	me.self = me.Visit(ctx.ParameterClauseSelf()).(Parameter)
-	for _, item := range ctx.AllImplementSupportStatement() {
-		if v, ok := me.Visit(item).(string); ok {
-			obj += v
-		}
+	var methed = ""
+	id := me.Visit(ctx.Id(0)).(Result)
+	me.self.Type = id.Text
+	if ctx.Id(1) != nil {
+		me.self.Id = me.Visit(ctx.Id(1)).(Result).Text
 	}
+	for _, item := range ctx.AllPackageFieldStatement() {
+		var r = me.Visit(item).(Result)
+		obj += r.Text
+		methed += r.Data.(string)
+	}
+	for _, item := range ctx.AllPackageImplementStatement() {
+		methed += me.Visit(item).(Result).Text
+	}
+	obj += methed
 	me.self = Parameter{}
 	return obj
 }

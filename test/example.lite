@@ -81,30 +81,26 @@ human := me % {
     name str
 
     run : (->){}
-}
 
-me ?human % {
     sayName : (-> n str) {
         <- me.name
     }
-} 
+}
 
 man := % {
     % human
     age int
-}
 
-me ?man % {
     doSomething : (work str ->) {
         Println(work)
     }
 }
 
-person := _% {
+person := % _ {
     sayName (-> n str)
 }
 
-worker := _% {
+worker := % _ {
     % person
     doSomething (work str ->)
 }

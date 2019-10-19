@@ -120,15 +120,6 @@ func (me *LiteVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutCon
 	return obj
 }
 
-func (me *LiteVisitor) VisitParameterClauseSelf(ctx *parser.ParameterClauseSelfContext) any {
-	p := Parameter{}
-	id := me.Visit(ctx.Id()).(Result)
-	p.Id = id.Text
-	p.Permission = id.Permission
-	p.Type = me.Visit(ctx.TypeType()).(string)
-	return p
-}
-
 func (me *LiteVisitor) VisitParameter(ctx *parser.ParameterContext) any {
 	p := Parameter{}
 	id := me.Visit(ctx.Id()).(Result)

@@ -211,9 +211,6 @@ func (me *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	} else if ctx.TypeAny() != nil {
 		r.Permission = "public"
 		r.Text += ctx.TypeAny().GetText()
-	} else if ctx.LinqKeyword() != nil {
-		r.Permission = "public"
-		r.Text += me.Visit(ctx.LinqKeyword()).(string)
 	} else if ctx.GetOp().GetTokenType() == parser.LiteLexerIDPublic {
 		r.Permission = "public"
 		r.Text += ctx.GetOp().GetText()
