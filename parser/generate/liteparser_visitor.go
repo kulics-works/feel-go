@@ -38,9 +38,6 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#namespaceVariableStatement.
 	VisitNamespaceVariableStatement(ctx *NamespaceVariableStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#namespaceControlStatement.
-	VisitNamespaceControlStatement(ctx *NamespaceControlStatementContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#namespaceConstantStatement.
 	VisitNamespaceConstantStatement(ctx *NamespaceConstantStatementContext) interface{}
 
@@ -65,6 +62,9 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#packageVariableStatement.
 	VisitPackageVariableStatement(ctx *PackageVariableStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#packageFunctionStatement.
+	VisitPackageFunctionStatement(ctx *PackageFunctionStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#packageControlSubStatement.
 	VisitPackageControlSubStatement(ctx *PackageControlSubStatementContext) interface{}
 
@@ -74,26 +74,23 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#packageImplementStatement.
 	VisitPackageImplementStatement(ctx *PackageImplementStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#implementNewStatement.
-	VisitImplementNewStatement(ctx *ImplementNewStatementContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#implementStatement.
 	VisitImplementStatement(ctx *ImplementStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#implementSupportStatement.
 	VisitImplementSupportStatement(ctx *ImplementSupportStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#implementVariableStatement.
+	VisitImplementVariableStatement(ctx *ImplementVariableStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#implementFunctionStatement.
 	VisitImplementFunctionStatement(ctx *ImplementFunctionStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#implementControlStatement.
-	VisitImplementControlStatement(ctx *ImplementControlStatementContext) interface{}
+	// Visit a parse tree produced by LiteParser#overrideVariableStatement.
+	VisitOverrideVariableStatement(ctx *OverrideVariableStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#overrideFunctionStatement.
 	VisitOverrideFunctionStatement(ctx *OverrideFunctionStatementContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#overrideControlStatement.
-	VisitOverrideControlStatement(ctx *OverrideControlStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#protocolStatement.
 	VisitProtocolStatement(ctx *ProtocolStatementContext) interface{}
@@ -101,11 +98,8 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#protocolSupportStatement.
 	VisitProtocolSupportStatement(ctx *ProtocolSupportStatementContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#protocolControlStatement.
-	VisitProtocolControlStatement(ctx *ProtocolControlStatementContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#protocolControlSubStatement.
-	VisitProtocolControlSubStatement(ctx *ProtocolControlSubStatementContext) interface{}
+	// Visit a parse tree produced by LiteParser#protocolVariableStatement.
+	VisitProtocolVariableStatement(ctx *ProtocolVariableStatementContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#protocolFunctionStatement.
 	VisitProtocolFunctionStatement(ctx *ProtocolFunctionStatementContext) interface{}
@@ -127,9 +121,6 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#parameterClauseOut.
 	VisitParameterClauseOut(ctx *ParameterClauseOutContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#parameterClauseSelf.
-	VisitParameterClauseSelf(ctx *ParameterClauseSelfContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#parameter.
 	VisitParameter(ctx *ParameterContext) interface{}
@@ -188,6 +179,9 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#checkFinallyStatment.
 	VisitCheckFinallyStatment(ctx *CheckFinallyStatmentContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#checkReportStatement.
+	VisitCheckReportStatement(ctx *CheckReportStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#iteratorStatement.
 	VisitIteratorStatement(ctx *IteratorStatementContext) interface{}
 
@@ -242,9 +236,6 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#annotationItem.
 	VisitAnnotationItem(ctx *AnnotationItemContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#annotationAssign.
-	VisitAnnotationAssign(ctx *AnnotationAssignContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#callFunc.
 	VisitCallFunc(ctx *CallFuncContext) interface{}
 
@@ -259,6 +250,9 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#callNew.
 	VisitCallNew(ctx *CallNewContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#orElse.
+	VisitOrElse(ctx *OrElseContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#typeConversion.
 	VisitTypeConversion(ctx *TypeConversionContext) interface{}
@@ -350,17 +344,11 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#linq.
 	VisitLinq(ctx *LinqContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#linqHeadItem.
+	VisitLinqHeadItem(ctx *LinqHeadItemContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#linqItem.
 	VisitLinqItem(ctx *LinqItemContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#linqKeyword.
-	VisitLinqKeyword(ctx *LinqKeywordContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#linqHeadKeyword.
-	VisitLinqHeadKeyword(ctx *LinqHeadKeywordContext) interface{}
-
-	// Visit a parse tree produced by LiteParser#linqBodyKeyword.
-	VisitLinqBodyKeyword(ctx *LinqBodyKeywordContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#stringExpression.
 	VisitStringExpression(ctx *StringExpressionContext) interface{}

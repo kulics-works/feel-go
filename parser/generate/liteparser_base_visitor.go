@@ -48,10 +48,6 @@ func (v *BaseLiteParserVisitor) VisitNamespaceVariableStatement(ctx *NamespaceVa
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitNamespaceControlStatement(ctx *NamespaceControlStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitNamespaceConstantStatement(ctx *NamespaceConstantStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -84,6 +80,10 @@ func (v *BaseLiteParserVisitor) VisitPackageVariableStatement(ctx *PackageVariab
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitPackageFunctionStatement(ctx *PackageFunctionStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitPackageControlSubStatement(ctx *PackageControlSubStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -96,10 +96,6 @@ func (v *BaseLiteParserVisitor) VisitPackageImplementStatement(ctx *PackageImple
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitImplementNewStatement(ctx *ImplementNewStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitImplementStatement(ctx *ImplementStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -108,19 +104,19 @@ func (v *BaseLiteParserVisitor) VisitImplementSupportStatement(ctx *ImplementSup
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitImplementVariableStatement(ctx *ImplementVariableStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitImplementFunctionStatement(ctx *ImplementFunctionStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitImplementControlStatement(ctx *ImplementControlStatementContext) interface{} {
+func (v *BaseLiteParserVisitor) VisitOverrideVariableStatement(ctx *OverrideVariableStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseLiteParserVisitor) VisitOverrideFunctionStatement(ctx *OverrideFunctionStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitOverrideControlStatement(ctx *OverrideControlStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -132,11 +128,7 @@ func (v *BaseLiteParserVisitor) VisitProtocolSupportStatement(ctx *ProtocolSuppo
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitProtocolControlStatement(ctx *ProtocolControlStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitProtocolControlSubStatement(ctx *ProtocolControlSubStatementContext) interface{} {
+func (v *BaseLiteParserVisitor) VisitProtocolVariableStatement(ctx *ProtocolVariableStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -165,10 +157,6 @@ func (v *BaseLiteParserVisitor) VisitParameterClauseIn(ctx *ParameterClauseInCon
 }
 
 func (v *BaseLiteParserVisitor) VisitParameterClauseOut(ctx *ParameterClauseOutContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitParameterClauseSelf(ctx *ParameterClauseSelfContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -248,6 +236,10 @@ func (v *BaseLiteParserVisitor) VisitCheckFinallyStatment(ctx *CheckFinallyStatm
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitCheckReportStatement(ctx *CheckReportStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitIteratorStatement(ctx *IteratorStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -320,10 +312,6 @@ func (v *BaseLiteParserVisitor) VisitAnnotationItem(ctx *AnnotationItemContext) 
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitAnnotationAssign(ctx *AnnotationAssignContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitCallFunc(ctx *CallFuncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -341,6 +329,10 @@ func (v *BaseLiteParserVisitor) VisitCallPkg(ctx *CallPkgContext) interface{} {
 }
 
 func (v *BaseLiteParserVisitor) VisitCallNew(ctx *CallNewContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitOrElse(ctx *OrElseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -464,19 +456,11 @@ func (v *BaseLiteParserVisitor) VisitLinq(ctx *LinqContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitLinqHeadItem(ctx *LinqHeadItemContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitLinqItem(ctx *LinqItemContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitLinqKeyword(ctx *LinqKeywordContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitLinqHeadKeyword(ctx *LinqHeadKeywordContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseLiteParserVisitor) VisitLinqBodyKeyword(ctx *LinqBodyKeywordContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
