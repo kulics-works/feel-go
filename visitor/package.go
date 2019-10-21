@@ -66,7 +66,7 @@ func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatem
 	var method = ""
 	for _, item := range ctx.AllPackageSupportStatement() {
 		switch item.GetChild(0).(type) {
-		case *parser.ImplementFunctionStatementContext:
+		case *parser.PackageFunctionStatementContext:
 			method += me.Visit(item).(string)
 		case *parser.PackageVariableStatementContext,
 			*parser.IncludeStatementContext:
@@ -99,3 +99,17 @@ func (me *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariable
 	obj += Wrap
 	return obj
 }
+
+func (me *LiteVisitor) VisitPackageFunctionStatement(ctx *parser.PackageFunctionStatementContext) any {
+	id := me.Visit(ctx.Id()).(Result)
+	obj := ""
+	me.add_current_set()
+	obj += Func + "(" + me.self.Id + " " + me.self.Type + ")" +
+		id.Text + me.Visit(ctx.ParameterClauseIn()).(string) +
+		me.Visit(ctx.ParameterClauseOut()).(string) + BlockLeft + Wrap
+	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())
+	obj += BlockRight + Wrap
+	me.delete_current_set()
+	return obj
+}
+

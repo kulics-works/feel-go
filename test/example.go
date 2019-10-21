@@ -97,7 +97,7 @@ type human struct {
 
 func (me human) run() {
 }
-func (me *human) sayName() (n string) {
+func (me human) sayName() (n string) {
 	return me.name
 }
 
@@ -106,7 +106,7 @@ type man struct {
 	age int
 }
 
-func (me *man) doSomething(work string) {
+func (man) doSomething(work string) {
 	Println(work)
 }
 
