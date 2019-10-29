@@ -65,7 +65,7 @@ testLoop : (->) {
     i @ 0 ++ 10 {
         a += i
         ? i == 7 {
-            ..@
+            ^@
         }
     }
     i @ 5 -- 0 {
@@ -73,7 +73,7 @@ testLoop : (->) {
     }
     @ a > 0 {
         a -= 1
-        @..
+        ~@
     }
 }
 
@@ -153,8 +153,8 @@ testGo : (-> v int) {
     async = (->) {
         Println("async")
     }
-    async() <~
-    channel = [[<<int]](1)
+    >> async()
+    channel = [[..<int]](1)
     channel.(.) = 2
     <- channel.(.)
 }

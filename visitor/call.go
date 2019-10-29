@@ -22,6 +22,12 @@ func (me *LiteVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) an
 	return r
 }
 
+func (me *LiteVisitor) VisitCallAsync(ctx *parser.CallAsyncContext) any {
+	r := me.Visit(ctx.Expression()).(Result)
+	r.Text = "go " + r.Text
+	return r
+}
+
 func (me *LiteVisitor) VisitCallChannel(ctx *parser.CallChannelContext) any {
 	r := Result{}
 	r.Text = "<-"

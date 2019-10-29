@@ -86,8 +86,6 @@ func (me *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 				r.Text = "*" + r.Text
 			} else if ctx.GetOp().GetTokenType() == parser.LiteLexerQuestion {
 				r.Text = "&" + r.Text
-			} else if ctx.GetOp().GetTokenType() == parser.LiteLexerLeft_Flow {
-				r.Text = "go " + r.Text
 			}
 		}
 	} else if count == 1 {
