@@ -144,6 +144,10 @@ func (v *BaseLiteParserVisitor) VisitReturnStatement(ctx *ReturnStatementContext
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseLiteParserVisitor) VisitReturnAwaitStatement(ctx *ReturnAwaitStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseLiteParserVisitor) VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -361,6 +365,10 @@ func (v *BaseLiteParserVisitor) VisitDictionaryAssign(ctx *DictionaryAssignConte
 }
 
 func (v *BaseLiteParserVisitor) VisitCallAwait(ctx *CallAwaitContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitCallAsync(ctx *CallAsyncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

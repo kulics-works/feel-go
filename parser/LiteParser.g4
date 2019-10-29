@@ -40,7 +40,7 @@ namespaceVariableStatement: (annotationSupport)? id (Equal expression| typeType 
 namespaceConstantStatement: (annotationSupport)? id (typeType)? Colon expression end;
 // 命名空间函数
 namespaceFunctionStatement: (annotationSupport)? id (templateDefine)? Colon left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) y=At? New_Line*
-parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
+(parameterClauseOut|Discard) right_paren left_brace (functionSupportStatement)* right_brace end;
 
 // 定义包
 packageStatement: (annotationSupport)? id (templateDefine)? Colon_Equal (id (id)?)?
@@ -68,7 +68,7 @@ packageNewStatement: (annotationSupport)? left_paren parameterClauseIn right_par
 packageVariableStatement: (annotationSupport)? id (Equal expression| typeType (Equal expression)?) end;
 // 函数
 packageFunctionStatement: (annotationSupport)? id (templateDefine)? Colon left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) y=At? New_Line*
-parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
+(parameterClauseOut|Discard) right_paren left_brace (functionSupportStatement)* right_brace end;
 // 定义子方法
 packageControlSubStatement: id (left_paren id right_paren)? left_brace (functionSupportStatement)+ right_brace end;
 // 定义包事件
@@ -91,13 +91,13 @@ New_Line;
 implementVariableStatement: (annotationSupport)? id (Equal expression| typeType (Equal expression)?) end;
 // 函数
 implementFunctionStatement: (annotationSupport)? id (templateDefine)? Colon left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) y=At? New_Line*
-parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
+(parameterClauseOut|Discard) right_paren left_brace (functionSupportStatement)* right_brace end;
 
 // 定义变量
 overrideVariableStatement: (annotationSupport)? Cent (n='_')? id (Equal expression| typeType (Equal expression)?) end;
 // 函数
 overrideFunctionStatement: (annotationSupport)? Cent (n='_')? id (templateDefine)? Colon left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) y=At? New_Line*
-parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
+(parameterClauseOut|Discard) right_paren left_brace (functionSupportStatement)* right_brace end;
 
 // 协议
 protocolStatement: (annotationSupport)? id (templateDefine)? Colon_Equal Cent Discard left_brace (protocolSupportStatement)* right_brace end;
@@ -115,9 +115,11 @@ t=(Right_Arrow|Right_Flow) y=At? New_Line* parameterClauseOut right_paren end;
 
 // 函数
 functionStatement: id (templateDefine)? Colon left_paren parameterClauseIn t=(Right_Arrow|Right_Flow) y=At? New_Line*
- parameterClauseOut right_paren left_brace (functionSupportStatement)* right_brace end;
+ (parameterClauseOut|Discard) right_paren left_brace (functionSupportStatement)* right_brace end;
 // 返回
 returnStatement: Left_Arrow (tupleExpression)? end;
+// 异步等待返回
+returnAwaitStatement: Left_Flow (tupleExpression)? end;
 // 生成器
 yieldReturnStatement: At Left_Arrow tupleExpression end;
 yieldBreakStatement: At Left_Arrow end;
@@ -126,31 +128,31 @@ parameterClauseIn: parameter? (more parameter)*;
 // 出参
 parameterClauseOut: parameter? (more parameter)*;
 // 参数结构
-parameter: (annotationSupport)? id typeType (Equal expression)?;
+parameter: (annotationSupport)? id (Dot_Dot|Dot_Dot_Dot)? typeType (Equal expression)?;
 
 // 函数支持的语句
 functionSupportStatement:
- returnStatement
-| yieldReturnStatement
-| yieldBreakStatement
-| judgeCaseStatement
-| judgeStatement
-| loopStatement
-| loopEachStatement
-| loopCaseStatement
-| loopJumpStatement
-| loopContinueStatement
-| usingStatement
-| checkStatement
-| checkReportStatement
-| functionStatement
-| variableStatement
-| variableDeclaredStatement
-| channelAssignStatement
-| assignStatement
-| expressionStatement
-| New_Line
-;
+returnStatement |
+returnAwaitStatement |
+yieldReturnStatement |
+yieldBreakStatement |
+judgeCaseStatement |
+judgeStatement |
+loopStatement |
+loopEachStatement |
+loopCaseStatement |
+loopJumpStatement |
+loopContinueStatement |
+usingStatement |
+checkStatement |
+checkReportStatement |
+functionStatement |
+variableStatement |
+variableDeclaredStatement |
+channelAssignStatement |
+assignStatement |
+expressionStatement |
+New_Line;
 
 // 条件判断
 judgeCaseStatement: expression Question (caseStatement)+ end;
@@ -176,9 +178,9 @@ loopCaseStatement: At expression left_brace (functionSupportStatement)* right_br
 // else 判断
 loopElseStatement: Discard left_brace (functionSupportStatement)* right_brace;
 // 跳出循环
-loopJumpStatement: At Dot_Dot end;
+loopJumpStatement: Wave At end;
 // 跳出当前循环
-loopContinueStatement: Dot_Dot At end;
+loopContinueStatement: Xor At end;
 // 检查
 checkStatement: 
 Bang left_brace (functionSupportStatement)* right_brace (checkErrorStatement)* checkFinallyStatment end
@@ -193,8 +195,8 @@ checkFinallyStatment: Discard left_brace (functionSupportStatement)* right_brace
 checkReportStatement: Bang Left_Arrow expression end;
 
 // 迭代器
-iteratorStatement: expression op=(Add_Add|Sub_Sub) expression
- Colon expression | expression op=(Add_Add|Sub_Sub) expression;
+iteratorStatement: expression op=(Add_Add|Sub_Sub) expression Xor expression | 
+expression op=(Add_Add|Sub_Sub) expression;
 
 // 定义变量
 variableStatement: idExpression typeType? Equal expression end;
@@ -226,6 +228,7 @@ linq // 联合查询
 | callNew // 构造类对象
 | callPkg // 新建包
 | callAwait // 异步等待调用
+| callAsync // 创建异步调用
 | list // 列表
 | set // 集合
 | dictionary // 字典
@@ -243,7 +246,6 @@ linq // 联合查询
 | expression op=Bang // 引用判断
 | expression op=Question // 可空判断
 | expression orElse // 空值替换
-| expression op=Left_Flow // 异步执行
 | expression typeConversion // 类型转换
 | expression callFunc // 函数调用
 | expression callChannel // 调用通道
@@ -295,7 +297,8 @@ setAssign: Equal_Arrow expression (more Equal_Arrow expression)* ;
 
 dictionaryAssign: (dictionaryElement end)* dictionaryElement;
 
-callAwait: Left_Flow expression; // 异步调用
+callAwait: Less_Less expression; // 异步等待调用
+callAsync: Greater_Greater expression; // 创建异步调用
 
 list: left_brace (expression end)* expression right_brace; // 列表
 
@@ -413,13 +416,13 @@ typeType: typeNotNull | typeNullable | typeReference;
 typeReference: Bang (typeNotNull | typeNullable);
 typeNullable: Question typeNotNull;
 
-typeArray: left_brack Colon typeType right_brack;
-typeList: left_brack Semi typeType right_brack;
+typeArray: left_brack Dot_Dot_Dot typeType right_brack;
+typeList: left_brack Dot_Dot typeType right_brack;
 typeSet: left_brack Equal_Arrow typeType right_brack;
 typeDictionary: left_brack typeType Equal_Arrow typeType right_brack;
-typeStack: left_brack Greater typeType right_brack;
-typeQueue: left_brack Less typeType right_brack;
-typeChannel: left_brack Less Less typeType right_brack;
+typeStack: left_brack Dot Greater typeType right_brack;
+typeQueue: left_brack Dot Less typeType right_brack;
+typeChannel: left_brack Dot_Dot Less typeType right_brack;
 typePackage: nameSpaceItem (templateCall)? ;
 typeFunction: left_paren typeFunctionParameterClause t=(Right_Arrow|Right_Flow) y=At? New_Line* typeFunctionParameterClause right_paren;
 typeAny: TypeAny;
@@ -454,12 +457,12 @@ boolExpr: t=TrueLiteral|t=FalseLiteral;
 judgeType: op=(Equal_Equal|Not_Equal);
 bitwise: (bitwiseAnd | bitwiseOr | bitwiseXor 
 | bitwiseLeftShift | bitwiseRightShift) (New_Line)?;
-bitwiseAnd: And And;
-bitwiseOr: Or Or;
-bitwiseNot: Wave Wave;
-bitwiseXor: Xor Xor;
-bitwiseLeftShift: Less Less;
-bitwiseRightShift: Greater Greater;
+bitwiseAnd: Grave And Grave;
+bitwiseOr: Grave Or Grave;
+bitwiseNot: Grave Wave Grave;
+bitwiseXor: Grave Xor Grave;
+bitwiseLeftShift: Grave Less Grave;
+bitwiseRightShift: Grave Greater Grave;
 judge: op=(Or | And | Equal_Equal | Not_Equal | Less_Equal | Greater_Equal | Less | Greater) (New_Line)?;
 assign: op=(Equal | Add_Equal | Sub_Equal | Mul_Equal | Div_Equal | Mod_Equal) (New_Line)?;
 add: op=(Add | Sub) (New_Line)?;

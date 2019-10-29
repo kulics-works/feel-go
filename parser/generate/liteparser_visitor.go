@@ -110,6 +110,9 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#returnStatement.
 	VisitReturnStatement(ctx *ReturnStatementContext) interface{}
 
+	// Visit a parse tree produced by LiteParser#returnAwaitStatement.
+	VisitReturnAwaitStatement(ctx *ReturnAwaitStatementContext) interface{}
+
 	// Visit a parse tree produced by LiteParser#yieldReturnStatement.
 	VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{}
 
@@ -274,6 +277,9 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#callAwait.
 	VisitCallAwait(ctx *CallAwaitContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#callAsync.
+	VisitCallAsync(ctx *CallAsyncContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#list.
 	VisitList(ctx *ListContext) interface{}
