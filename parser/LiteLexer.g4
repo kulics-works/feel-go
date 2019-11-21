@@ -18,6 +18,7 @@ Equal_Equal:        '==';
 Less_Equal:         '<=';
 Greater_Equal:      '>=';
 Not_Equal:          '><';
+Combine_Equal:      '<>';
 
 Dot_Dot_Dot: '...';
 Dot_Dot: '..';
@@ -25,6 +26,7 @@ Dot: '.';
 
 Comma: ',';
 
+Colon_Arrow: ':>';
 Equal_Arrow: '=>';
 
 Right_Arrow: '->';

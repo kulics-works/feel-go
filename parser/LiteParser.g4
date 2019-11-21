@@ -252,6 +252,7 @@ linq // 联合查询
 | expression callElement // 访问元素
 | expression callExpression // 链式调用
 | expression bitwise expression // 位运算表达式
+| expression judgeCombine expression // 组合判断表达式
 | expression judge expression // 判断型表达式
 | expression add expression // 和型表达式
 | expression mul expression // 积型表达式
@@ -293,7 +294,7 @@ pkgAssignElement: name Equal expression; // 简化赋值元素
 
 listAssign: (expression end)* expression;
 
-setAssign: Equal_Arrow expression (more Equal_Arrow expression)* ;
+setAssign: Colon_Arrow expression (more expression)* ;
 
 dictionaryAssign: (dictionaryElement end)* dictionaryElement;
 
@@ -302,7 +303,7 @@ callAsync: Greater_Greater expression; // 创建异步调用
 
 list: left_brace (expression end)* expression right_brace; // 列表
 
-set: left_brace (Equal_Arrow expression end)* Equal_Arrow expression right_brace; // 无序集合
+set: left_brace Colon_Arrow (expression end)* expression right_brace; // 无序集合
 
 dictionary:  left_brace (dictionaryElement end)* dictionaryElement right_brace; // 字典
 
@@ -418,7 +419,7 @@ typeNullable: Question typeNotNull;
 
 typeArray: left_brack Dot_Dot_Dot typeType right_brack;
 typeList: left_brack Dot_Dot typeType right_brack;
-typeSet: left_brack Equal_Arrow typeType right_brack;
+typeSet: left_brack Colon_Arrow typeType right_brack;
 typeDictionary: left_brack typeType Equal_Arrow typeType right_brack;
 typeStack: left_brack Dot Greater typeType right_brack;
 typeQueue: left_brack Dot Less typeType right_brack;
@@ -454,7 +455,6 @@ nilExpr: NilLiteral;
 // bool值
 boolExpr: t=TrueLiteral|t=FalseLiteral;
 
-judgeType: op=(Equal_Equal|Not_Equal);
 bitwise: (bitwiseAnd | bitwiseOr | bitwiseXor 
 | bitwiseLeftShift | bitwiseRightShift) (New_Line)?;
 bitwiseAnd: Grave And Grave;
@@ -463,6 +463,7 @@ bitwiseNot: Grave Wave Grave;
 bitwiseXor: Grave Xor Grave;
 bitwiseLeftShift: Grave Less Grave;
 bitwiseRightShift: Grave Greater Grave;
+judgeCombine: Combine_Equal;
 judge: op=(Or | And | Equal_Equal | Not_Equal | Less_Equal | Greater_Equal | Less | Greater) (New_Line)?;
 assign: op=(Equal | Add_Equal | Sub_Equal | Mul_Equal | Div_Equal | Mod_Equal) (New_Line)?;
 add: op=(Add | Sub) (New_Line)?;
