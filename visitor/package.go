@@ -11,11 +11,8 @@ func (me *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext
 }
 
 func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
-	id := me.Visit(ctx.Id(0)).(Result)
+	id := me.Visit(ctx.Id()).(Result)
 	me.self.Type = id.Text
-	if ctx.Id(1) != nil {
-		me.self.Id = me.Visit(ctx.Id(1)).(Result).Text
-	}
 
 	var obj = ""
 	var Init = ""
@@ -53,7 +50,6 @@ func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext
 	header += templateContract + BlockLeft + Wrap
 	obj = header + obj
 	obj += methed
-	me.self = Parameter{}
 	return obj
 }
 
@@ -64,6 +60,9 @@ func (me *LiteVisitor) VisitPackageSupportStatement(ctx *parser.PackageSupportSt
 func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatementContext) any {
 	var obj = ""
 	var method = ""
+	if ctx.Id(0) != nil {
+		me.self.Id = me.Visit(ctx.Id(0)).(Result).Text
+	}
 	for _, item := range ctx.AllPackageSupportStatement() {
 		switch item.GetChild(0).(type) {
 		case *parser.PackageFunctionStatementContext:
@@ -73,6 +72,7 @@ func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatem
 			obj += me.Visit(item).(string)
 		}
 	}
+	me.self = Parameter{}
 	return Result{Text: obj, Data: method}
 }
 

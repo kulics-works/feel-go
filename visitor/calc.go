@@ -14,10 +14,6 @@ func (me *LiteVisitor) VisitWave(ctx *parser.WaveContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitJudgeType(ctx *parser.JudgeTypeContext) any {
-	return ctx.GetOp().GetText()
-}
-
 func (me *LiteVisitor) VisitJudge(ctx *parser.JudgeContext) any {
 	if ctx.GetOp().GetText() == "><" {
 		return "!="

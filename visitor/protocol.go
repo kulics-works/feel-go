@@ -7,7 +7,7 @@ import (
 )
 
 func (me *LiteVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext) any {
-	id := me.Visit(ctx.Id()).(Result)
+	id := me.Visit(ctx.Id(0)).(Result)
 	obj := ""
 	interfaceProtocol := ""
 	ptclName := id.Text

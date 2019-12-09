@@ -20,15 +20,6 @@ func (me *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 		op := me.Visit(ctx.GetChild(1).(antlr.ParseTree))
 
 		switch ctx.GetChild(1).(type) {
-		case parser.JudgeTypeContext:
-			// r.data = Bool
-			// e3 := me.Visit(ctx.GetChild(2)).(string)
-			// if op == "==" {
-			// 	r.text = "(" + e1.text + " is " + e3+")"
-			// } else if op == "><" {
-			// 	r.text = "!(" + e1.text +" is "+e3+")"
-			// }
-			return r
 		case parser.JudgeContext:
 			// todo 如果左右不是bool类型值，报错
 			r.Data = Bool
