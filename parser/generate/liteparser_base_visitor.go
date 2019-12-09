@@ -608,10 +608,6 @@ func (v *BaseLiteParserVisitor) VisitBoolExpr(ctx *BoolExprContext) interface{} 
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseLiteParserVisitor) VisitJudgeType(ctx *JudgeTypeContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseLiteParserVisitor) VisitBitwise(ctx *BitwiseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -637,6 +633,10 @@ func (v *BaseLiteParserVisitor) VisitBitwiseLeftShift(ctx *BitwiseLeftShiftConte
 }
 
 func (v *BaseLiteParserVisitor) VisitBitwiseRightShift(ctx *BitwiseRightShiftContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseLiteParserVisitor) VisitJudgeCombine(ctx *JudgeCombineContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

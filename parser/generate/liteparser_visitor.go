@@ -458,9 +458,6 @@ type LiteParserVisitor interface {
 	// Visit a parse tree produced by LiteParser#boolExpr.
 	VisitBoolExpr(ctx *BoolExprContext) interface{}
 
-	// Visit a parse tree produced by LiteParser#judgeType.
-	VisitJudgeType(ctx *JudgeTypeContext) interface{}
-
 	// Visit a parse tree produced by LiteParser#bitwise.
 	VisitBitwise(ctx *BitwiseContext) interface{}
 
@@ -481,6 +478,9 @@ type LiteParserVisitor interface {
 
 	// Visit a parse tree produced by LiteParser#bitwiseRightShift.
 	VisitBitwiseRightShift(ctx *BitwiseRightShiftContext) interface{}
+
+	// Visit a parse tree produced by LiteParser#judgeCombine.
+	VisitJudgeCombine(ctx *JudgeCombineContext) interface{}
 
 	// Visit a parse tree produced by LiteParser#judge.
 	VisitJudge(ctx *JudgeContext) interface{}
