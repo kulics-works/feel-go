@@ -63,6 +63,9 @@ func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatem
 	if ctx.Id(0) != nil {
 		me.self.Id = me.Visit(ctx.Id(0)).(Result).Text
 	}
+	if ctx.GetP() != nil {
+		me.self.Type = "*" + me.self.Type
+	}
 	for _, item := range ctx.AllPackageSupportStatement() {
 		switch item.GetChild(0).(type) {
 		case *parser.PackageFunctionStatementContext:
@@ -72,7 +75,8 @@ func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatem
 			obj += me.Visit(item).(string)
 		}
 	}
-	me.self = Parameter{}
+	me.self.Id = ""
+	me.self.Type = me.self.Type[1:]
 	return Result{Text: obj, Data: method}
 }
 

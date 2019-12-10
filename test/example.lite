@@ -77,7 +77,7 @@ testLoop : (->) {
     }
 }
 
-human : % -> me {
+human : % -> ?me {
     name str
 
     run : (->){}
@@ -87,7 +87,7 @@ human : % -> me {
     }
 }
 
-man : % {
+man : % -> me {
     % human
     age int
 
