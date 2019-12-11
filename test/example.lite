@@ -1,6 +1,7 @@
 "main" {
     # "./project/package path" package.
-    fmt. "fmt"
+    fmt. -> "fmt"
+    work -> (str->)
 }
 
 main : (->) {
@@ -21,7 +22,6 @@ eight int : 8
 num1 = 1
 num2 num = 12.345678
 
-work => (str->)
 doWork : % (str->) 
 
 test : (x int, y str -> r1 str, r2 int) {

@@ -11,6 +11,7 @@ import (
 type Namespace struct {
 	Name    string
 	Imports string
+	Alias 	string
 }
 
 func (me *LiteVisitor) VisitStatement(ctx *parser.StatementContext) any {
@@ -19,7 +20,7 @@ func (me *LiteVisitor) VisitStatement(ctx *parser.StatementContext) any {
 	if !ok {
 		return ""
 	}
-	obj += fmt.Sprintf("package %s%s%s", ns.Name, Wrap, ns.Imports)
+	obj += fmt.Sprintf("package %s%s%s%s%s", ns.Name, Wrap, ns.Imports, Wrap, ns.Alias)
 	for _, item := range ctx.AllNamespaceSupportStatement() {
 		if v, ok := me.Visit(item).(string); ok {
 			obj += v
@@ -35,6 +36,9 @@ func (me *LiteVisitor) VisitExportStatement(ctx *parser.ExportStatementContext) 
 	}
 	for _, item := range ctx.AllImportStatement() {
 		obj.Imports += me.Visit(item).(string)
+	}
+	for _, item := range ctx.AllTypeAliasStatement() {
+		obj.Alias += me.Visit(item).(string)
 	}
 	return obj
 }
