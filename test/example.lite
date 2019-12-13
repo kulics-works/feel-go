@@ -1,7 +1,7 @@
 "main" {
     # "./project/package path" package.
-    fmt. -> "fmt"
-    work -> (str->)
+    fmt. <- "fmt"
+    work <- (str->)
 }
 
 main : (->) {
@@ -77,7 +77,7 @@ testLoop : (->) {
     }
 }
 
-human : % -> ?me {
+human : % ?me <- {
     name str
 
     run : (->){}
@@ -87,7 +87,7 @@ human : % -> ?me {
     }
 }
 
-man : % -> me {
+man : % ?me <- {
     % human
     age int
 

@@ -107,7 +107,7 @@ type man struct {
 	age int
 }
 
-func (me man) doSomething(work string) {
+func (me *man) doSomething(work string) {
 	Println(work)
 }
 

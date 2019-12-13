@@ -8,11 +8,9 @@ import (
 func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) any {
 	obj := ""
 	var methed = ""
-	id := me.Visit(ctx.Id(0)).(Result)
+	id := me.Visit(ctx.Id()).(Result)
 	me.self.Type = id.Text
-	if ctx.Id(1) != nil {
-		me.self.Id = me.Visit(ctx.Id(1)).(Result).Text
-	}
+
 	for _, item := range ctx.AllPackageFieldStatement() {
 		var r = me.Visit(item).(Result)
 		obj += r.Text
