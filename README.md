@@ -1,1 +1,1 @@
-# lite-go
+# k-go
