@@ -1,16 +1,16 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (me *LiteVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext) any {
+func (me *KVisitor) VisitIncludeStatement(ctx *parser.IncludeStatementContext) any {
 	return me.Visit(ctx.TypeType()).(string) + Wrap
 }
 
-func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
+func (me *KVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	me.self.Type = id.Text
 
@@ -53,11 +53,11 @@ func (me *LiteVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext
 	return obj
 }
 
-func (me *LiteVisitor) VisitPackageSupportStatement(ctx *parser.PackageSupportStatementContext) any {
+func (me *KVisitor) VisitPackageSupportStatement(ctx *parser.PackageSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatementContext) any {
+func (me *KVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatementContext) any {
 	var obj = ""
 	var method = ""
 	if ctx.Id(0) != nil {
@@ -80,7 +80,7 @@ func (me *LiteVisitor) VisitPackageFieldStatement(ctx *parser.PackageFieldStatem
 	return Result{Text: obj, Data: method}
 }
 
-func (me *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariableStatementContext) any {
+func (me *KVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariableStatementContext) any {
 	r1 := me.Visit(ctx.Id()).(Result)
 	typ := ""
 	// r2:= Result{}
@@ -104,7 +104,7 @@ func (me *LiteVisitor) VisitPackageVariableStatement(ctx *parser.PackageVariable
 	return obj
 }
 
-func (me *LiteVisitor) VisitPackageFunctionStatement(ctx *parser.PackageFunctionStatementContext) any {
+func (me *KVisitor) VisitPackageFunctionStatement(ctx *parser.PackageFunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	me.add_current_set()
@@ -116,4 +116,3 @@ func (me *LiteVisitor) VisitPackageFunctionStatement(ctx *parser.PackageFunction
 	me.delete_current_set()
 	return obj
 }
-

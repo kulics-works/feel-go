@@ -2,10 +2,10 @@ package visitor
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 )
 
-func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) any {
+func (me *KVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContext) any {
 	obj := ""
 	var methed = ""
 	id := me.Visit(ctx.Id()).(Result)
@@ -24,11 +24,11 @@ func (me *LiteVisitor) VisitImplementStatement(ctx *parser.ImplementStatementCon
 	return obj
 }
 
-func (me *LiteVisitor) VisitImplementSupportStatement(ctx *parser.ImplementSupportStatementContext) any {
+func (me *KVisitor) VisitImplementSupportStatement(ctx *parser.ImplementSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (me *LiteVisitor) VisitImplementFunctionStatement(ctx *parser.ImplementFunctionStatementContext) any {
+func (me *KVisitor) VisitImplementFunctionStatement(ctx *parser.ImplementFunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	me.add_current_set()

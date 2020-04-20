@@ -1,5 +1,7 @@
-module github.com/kulics/lite-go
+module github.com/kulics-work/k-go
 
-go 1.12
+go 1.13
 
-require github.com/antlr/antlr4 v0.0.0-20190518164840-edae2a1c9b4b
+require (
+	github.com/antlr/antlr4 v0.0.0-20200417160354-8c50731894e0
+)

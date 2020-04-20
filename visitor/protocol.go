@@ -1,12 +1,12 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (me *LiteVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext) any {
+func (me *KVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext) any {
 	id := me.Visit(ctx.Id(0)).(Result)
 	obj := ""
 	interfaceProtocol := ""
@@ -35,11 +35,11 @@ func (me *LiteVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitProtocolSupportStatement(ctx *parser.ProtocolSupportStatementContext) any {
+func (me *KVisitor) VisitProtocolSupportStatement(ctx *parser.ProtocolSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (me *LiteVisitor) VisitProtocolFunctionStatement(ctx *parser.ProtocolFunctionStatementContext) any {
+func (me *KVisitor) VisitProtocolFunctionStatement(ctx *parser.ProtocolFunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	r := Result{}
 	if ctx.AnnotationSupport() != nil {

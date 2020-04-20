@@ -1,6 +1,6 @@
 package visitor
 
-import "github.com/kulics/lite-go/parser/generate"
+import parser "github.com/kulics-works/k-go/parser/generate"
 
 type Iterator struct {
 	Begin  Result
@@ -10,7 +10,7 @@ type Iterator struct {
 	Attach bool
 }
 
-func (me *LiteVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
+func (me *KVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
 	it := Iterator{Order: true, Attach: true}
 	// if ctx.GetOp().GetText() == ">=" || ctx.GetOp().GetText() == "<=" {
 	// 	it.Attach = true
@@ -30,7 +30,7 @@ func (me *LiteVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementConte
 	return it
 }
 
-func (me *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any {
+func (me *KVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any {
 	obj := ""
 	id := "ea"
 	if ctx.Id() != nil {
@@ -63,7 +63,7 @@ func (me *LiteVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any 
 	return obj
 }
 
-func (me *LiteVisitor) VisitLoopEachStatement(ctx *parser.LoopEachStatementContext) any {
+func (me *KVisitor) VisitLoopEachStatement(ctx *parser.LoopEachStatementContext) any {
 	obj := ""
 	arr := me.Visit(ctx.Expression()).(Result)
 	target := arr.Text
@@ -82,7 +82,7 @@ func (me *LiteVisitor) VisitLoopEachStatement(ctx *parser.LoopEachStatementConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitLoopCaseStatement(ctx *parser.LoopCaseStatementContext) any {
+func (me *KVisitor) VisitLoopCaseStatement(ctx *parser.LoopCaseStatementContext) any {
 	obj := ""
 	expr := me.Visit(ctx.Expression()).(Result)
 	me.add_current_set()
@@ -94,10 +94,10 @@ func (me *LiteVisitor) VisitLoopCaseStatement(ctx *parser.LoopCaseStatementConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitLoopJumpStatement(ctx *parser.LoopJumpStatementContext) any {
+func (me *KVisitor) VisitLoopJumpStatement(ctx *parser.LoopJumpStatementContext) any {
 	return "break" + Wrap
 }
 
-func (me *LiteVisitor) VisitLoopContinueStatement(ctx *parser.LoopContinueStatementContext) any {
+func (me *KVisitor) VisitLoopContinueStatement(ctx *parser.LoopContinueStatementContext) any {
 	return "continue" + Wrap
 }

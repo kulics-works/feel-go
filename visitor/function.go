@@ -1,7 +1,7 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -14,7 +14,7 @@ type Parameter struct {
 	Permission string
 }
 
-func (me *LiteVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportStatementContext) string {
+func (me *KVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportStatementContext) string {
 	obj := ""
 	content := ""
 	// lazy := []string{}
@@ -40,7 +40,7 @@ func (me *LiteVisitor) ProcessFunctionSupport(items []parser.IFunctionSupportSta
 	return obj
 }
 
-func (me *LiteVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementContext) any {
+func (me *KVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	// 异步
@@ -71,11 +71,11 @@ func (me *LiteVisitor) VisitFunctionStatement(ctx *parser.FunctionStatementConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitFunctionSupportStatement(ctx *parser.FunctionSupportStatementContext) any {
+func (me *KVisitor) VisitFunctionSupportStatement(ctx *parser.FunctionSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (me *LiteVisitor) VisitReturnStatement(ctx *parser.ReturnStatementContext) any {
+func (me *KVisitor) VisitReturnStatement(ctx *parser.ReturnStatementContext) any {
 	if ctx.TupleExpression() != nil {
 		r := me.Visit(ctx.TupleExpression()).(Result)
 		return "return " + r.Text + Wrap
@@ -83,7 +83,7 @@ func (me *LiteVisitor) VisitReturnStatement(ctx *parser.ReturnStatementContext) 
 	return "return " + Wrap
 }
 
-func (me *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInContext) any {
+func (me *KVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInContext) any {
 	obj := "("
 	temp := []string{}
 	for i := len(ctx.AllParameter()) - 1; i >= 0; i-- {
@@ -102,7 +102,7 @@ func (me *LiteVisitor) VisitParameterClauseIn(ctx *parser.ParameterClauseInConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutContext) any {
+func (me *KVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutContext) any {
 	obj := "("
 	temp := []string{}
 	for i := len(ctx.AllParameter()) - 1; i >= 0; i-- {
@@ -120,7 +120,7 @@ func (me *LiteVisitor) VisitParameterClauseOut(ctx *parser.ParameterClauseOutCon
 	return obj
 }
 
-func (me *LiteVisitor) VisitParameter(ctx *parser.ParameterContext) any {
+func (me *KVisitor) VisitParameter(ctx *parser.ParameterContext) any {
 	p := Parameter{}
 	id := me.Visit(ctx.Id()).(Result)
 	p.Id = id.Text
@@ -135,7 +135,7 @@ func (me *LiteVisitor) VisitParameter(ctx *parser.ParameterContext) any {
 	return p
 }
 
-func (me *LiteVisitor) VisitTuple(ctx *parser.TupleContext) any {
+func (me *KVisitor) VisitTuple(ctx *parser.TupleContext) any {
 	obj := ""
 	for i := 0; i < len(ctx.AllExpression()); i++ {
 		r := me.Visit(ctx.Expression(i)).(Result)
@@ -149,7 +149,7 @@ func (me *LiteVisitor) VisitTuple(ctx *parser.TupleContext) any {
 	return result
 }
 
-func (me *LiteVisitor) VisitFunctionExpression(ctx *parser.FunctionExpressionContext) any {
+func (me *KVisitor) VisitFunctionExpression(ctx *parser.FunctionExpressionContext) any {
 	r := Result{}
 	r.Data = "var"
 	// 异步

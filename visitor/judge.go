@@ -1,10 +1,10 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 )
 
-func (me *LiteVisitor) VisitJudgeCaseStatement(ctx *parser.JudgeCaseStatementContext) any {
+func (me *KVisitor) VisitJudgeCaseStatement(ctx *parser.JudgeCaseStatementContext) any {
 	obj := ""
 	expr := me.Visit(ctx.Expression()).(Result)
 	obj += "switch " + expr.Text + BlockLeft + Wrap
@@ -16,7 +16,7 @@ func (me *LiteVisitor) VisitJudgeCaseStatement(ctx *parser.JudgeCaseStatementCon
 	return obj
 }
 
-func (me *LiteVisitor) VisitCaseExprStatement(ctx *parser.CaseExprStatementContext) any {
+func (me *KVisitor) VisitCaseExprStatement(ctx *parser.CaseExprStatementContext) any {
 	obj := ""
 	if ctx.Expression() != nil {
 		expr := me.Visit(ctx.Expression()).(Result)
@@ -34,7 +34,7 @@ func (me *LiteVisitor) VisitCaseExprStatement(ctx *parser.CaseExprStatementConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitCaseStatement(ctx *parser.CaseStatementContext) any {
+func (me *KVisitor) VisitCaseStatement(ctx *parser.CaseStatementContext) any {
 	obj := ""
 
 	for _, item := range ctx.AllCaseExprStatement() {
@@ -47,7 +47,7 @@ func (me *LiteVisitor) VisitCaseStatement(ctx *parser.CaseStatementContext) any 
 	return obj
 }
 
-func (me *LiteVisitor) VisitJudgeStatement(ctx *parser.JudgeStatementContext) any {
+func (me *KVisitor) VisitJudgeStatement(ctx *parser.JudgeStatementContext) any {
 	obj := ""
 	obj += me.Visit(ctx.JudgeIfStatement()).(string)
 	for _, it := range ctx.AllJudgeElseIfStatement() {
@@ -60,7 +60,7 @@ func (me *LiteVisitor) VisitJudgeStatement(ctx *parser.JudgeStatementContext) an
 	return obj
 }
 
-func (me *LiteVisitor) VisitJudgeIfStatement(ctx *parser.JudgeIfStatementContext) any {
+func (me *KVisitor) VisitJudgeIfStatement(ctx *parser.JudgeIfStatementContext) any {
 	b := me.Visit(ctx.Expression()).(Result)
 	me.add_current_set()
 	obj := "if " + b.Text + BlockLeft + Wrap
@@ -70,7 +70,7 @@ func (me *LiteVisitor) VisitJudgeIfStatement(ctx *parser.JudgeIfStatementContext
 	return obj
 }
 
-func (me *LiteVisitor) VisitJudgeElseIfStatement(ctx *parser.JudgeElseIfStatementContext) any {
+func (me *KVisitor) VisitJudgeElseIfStatement(ctx *parser.JudgeElseIfStatementContext) any {
 	b := me.Visit(ctx.Expression()).(Result)
 	obj := "else if " + b.Text + BlockLeft + Wrap
 	me.add_current_set()
@@ -80,7 +80,7 @@ func (me *LiteVisitor) VisitJudgeElseIfStatement(ctx *parser.JudgeElseIfStatemen
 	return obj
 }
 
-func (me *LiteVisitor) VisitJudgeElseStatement(ctx *parser.JudgeElseStatementContext) any {
+func (me *KVisitor) VisitJudgeElseStatement(ctx *parser.JudgeElseStatementContext) any {
 	me.add_current_set()
 	obj := "else " + BlockLeft + Wrap
 	obj += me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement())

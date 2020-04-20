@@ -3,7 +3,7 @@ package visitor
 import (
 	"fmt"
 
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -11,10 +11,10 @@ import (
 type Namespace struct {
 	Name    string
 	Imports string
-	Alias 	string
+	Alias   string
 }
 
-func (me *LiteVisitor) VisitStatement(ctx *parser.StatementContext) any {
+func (me *KVisitor) VisitStatement(ctx *parser.StatementContext) any {
 	obj := ""
 	ns, ok := me.Visit(ctx.ExportStatement()).(Namespace)
 	if !ok {
@@ -29,7 +29,7 @@ func (me *LiteVisitor) VisitStatement(ctx *parser.StatementContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitExportStatement(ctx *parser.ExportStatementContext) any {
+func (me *KVisitor) VisitExportStatement(ctx *parser.ExportStatementContext) any {
 	name := ctx.TextLiteral().GetText()
 	obj := Namespace{
 		Name: name[1 : len(name)-1],
@@ -43,7 +43,7 @@ func (me *LiteVisitor) VisitExportStatement(ctx *parser.ExportStatementContext) 
 	return obj
 }
 
-func (me *LiteVisitor) VisitImportStatement(ctx *parser.ImportStatementContext) any {
+func (me *KVisitor) VisitImportStatement(ctx *parser.ImportStatementContext) any {
 	obj := "import "
 	if ctx.AnnotationSupport() != nil {
 		obj += me.Visit(ctx.AnnotationSupport()).(string)
@@ -60,7 +60,7 @@ func (me *LiteVisitor) VisitImportStatement(ctx *parser.ImportStatementContext) 
 	return obj
 }
 
-func (me *LiteVisitor) VisitNameSpaceItem(ctx *parser.NameSpaceItemContext) any {
+func (me *KVisitor) VisitNameSpaceItem(ctx *parser.NameSpaceItemContext) any {
 	obj := ""
 	for i := 0; i < len(ctx.AllId()); i++ {
 		id := me.Visit(ctx.Id(i)).(Result)
@@ -73,11 +73,11 @@ func (me *LiteVisitor) VisitNameSpaceItem(ctx *parser.NameSpaceItemContext) any 
 	return obj
 }
 
-func (me *LiteVisitor) VisitNamespaceSupportStatement(ctx *parser.NamespaceSupportStatementContext) any {
+func (me *KVisitor) VisitNamespaceSupportStatement(ctx *parser.NamespaceSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
-func (me *LiteVisitor) VisitNamespaceFunctionStatement(ctx *parser.NamespaceFunctionStatementContext) any {
+func (me *KVisitor) VisitNamespaceFunctionStatement(ctx *parser.NamespaceFunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	// if ctx.AnnotationSupport() >< () {
@@ -106,7 +106,7 @@ func (me *LiteVisitor) VisitNamespaceFunctionStatement(ctx *parser.NamespaceFunc
 	return obj
 }
 
-func (me *LiteVisitor) VisitNamespaceConstantStatement(ctx *parser.NamespaceConstantStatementContext) any {
+func (me *KVisitor) VisitNamespaceConstantStatement(ctx *parser.NamespaceConstantStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
 	expr := me.Visit(ctx.Expression()).(Result)
 	typ := ""
@@ -123,7 +123,7 @@ func (me *LiteVisitor) VisitNamespaceConstantStatement(ctx *parser.NamespaceCons
 	return obj
 }
 
-func (me *LiteVisitor) VisitNamespaceVariableStatement(ctx *parser.NamespaceVariableStatementContext) any {
+func (me *KVisitor) VisitNamespaceVariableStatement(ctx *parser.NamespaceVariableStatementContext) any {
 	r1 := me.Visit(ctx.Id()).(Result)
 	me.add_id(r1.Text)
 	typ := ""

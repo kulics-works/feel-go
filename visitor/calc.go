@@ -1,20 +1,20 @@
 package visitor
 
-import "github.com/kulics/lite-go/parser/generate"
+import parser "github.com/kulics-works/k-go/parser/generate"
 
-func (me *LiteVisitor) VisitTypeConversion(ctx *parser.TypeConversionContext) any {
+func (me *KVisitor) VisitTypeConversion(ctx *parser.TypeConversionContext) any {
 	return me.Visit(ctx.TypeType()).(string)
 }
 
-func (me *LiteVisitor) VisitCall(ctx *parser.CallContext) any {
+func (me *KVisitor) VisitCall(ctx *parser.CallContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitWave(ctx *parser.WaveContext) any {
+func (me *KVisitor) VisitWave(ctx *parser.WaveContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitJudge(ctx *parser.JudgeContext) any {
+func (me *KVisitor) VisitJudge(ctx *parser.JudgeContext) any {
 	if ctx.GetOp().GetText() == "><" {
 		return "!="
 	} else if ctx.GetOp().GetText() == "&" {
@@ -25,19 +25,19 @@ func (me *LiteVisitor) VisitJudge(ctx *parser.JudgeContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitAdd(ctx *parser.AddContext) any {
+func (me *KVisitor) VisitAdd(ctx *parser.AddContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitMul(ctx *parser.MulContext) any {
+func (me *KVisitor) VisitMul(ctx *parser.MulContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitPow(ctx *parser.PowContext) any {
+func (me *KVisitor) VisitPow(ctx *parser.PowContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitPlusMinus(ctx *parser.PlusMinusContext) any {
+func (me *KVisitor) VisitPlusMinus(ctx *parser.PlusMinusContext) any {
 	r := Result{}
 	expr := me.Visit(ctx.Expression()).(Result)
 	op := me.Visit(ctx.Add()).(string)
@@ -46,7 +46,7 @@ func (me *LiteVisitor) VisitPlusMinus(ctx *parser.PlusMinusContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitNegate(ctx *parser.NegateContext) any {
+func (me *KVisitor) VisitNegate(ctx *parser.NegateContext) any {
 	r := Result{}
 	expr := me.Visit(ctx.Expression()).(Result)
 	r.Data = expr.Data

@@ -1,17 +1,17 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (me *LiteVisitor) VisitExpressionStatement(ctx *parser.ExpressionStatementContext) any {
+func (me *KVisitor) VisitExpressionStatement(ctx *parser.ExpressionStatementContext) any {
 	r := me.Visit(ctx.Expression()).(Result)
 	return r.Text + Wrap
 }
 
-func (me *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
+func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 	count := ctx.GetChildCount()
 	r := Result{}
 	if count == 3 {
@@ -85,7 +85,7 @@ func (me *LiteVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) any {
+func (me *KVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) any {
 	obj := ""
 	r1 := me.Visit(ctx.IdExpression()).(Result)
 	r2 := me.Visit(ctx.Expression()).(Result)
@@ -103,7 +103,7 @@ func (me *LiteVisitor) VisitVariableStatement(ctx *parser.VariableStatementConte
 	return obj
 }
 
-func (me *LiteVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclaredStatementContext) any {
+func (me *KVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclaredStatementContext) any {
 	obj := ""
 	Type := me.Visit(ctx.TypeType()).(string)
 	r := me.Visit(ctx.IdExpression()).(Result)
@@ -111,25 +111,25 @@ func (me *LiteVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclar
 	return obj
 }
 
-func (me *LiteVisitor) VisitChannelAssignStatement(ctx *parser.ChannelAssignStatementContext) any {
+func (me *KVisitor) VisitChannelAssignStatement(ctx *parser.ChannelAssignStatementContext) any {
 	r1 := me.Visit(ctx.Expression(0)).(Result)
 	r2 := me.Visit(ctx.Expression(1)).(Result)
 	obj := r1.Text + "<-" + r2.Text + Wrap
 	return obj
 }
 
-func (me *LiteVisitor) VisitAssignStatement(ctx *parser.AssignStatementContext) any {
+func (me *KVisitor) VisitAssignStatement(ctx *parser.AssignStatementContext) any {
 	r1 := me.Visit(ctx.TupleExpression(0)).(Result)
 	r2 := me.Visit(ctx.TupleExpression(1)).(Result)
 	obj := r1.Text + me.Visit(ctx.Assign()).(string) + r2.Text + Wrap
 	return obj
 }
 
-func (me *LiteVisitor) VisitAssign(ctx *parser.AssignContext) any {
+func (me *KVisitor) VisitAssign(ctx *parser.AssignContext) any {
 	return ctx.GetOp().GetText()
 }
 
-func (me *LiteVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext) any {
+func (me *KVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext) any {
 	if ctx.GetChildCount() == 1 {
 		c := ctx.GetChild(0)
 		if _, ok := c.(*parser.DataStatementContext); ok {
@@ -150,7 +150,7 @@ func (me *LiteVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionConte
 	return Result{Text: "(" + r.Text + ")", Data: r.Data}
 }
 
-func (me *LiteVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) any {
+func (me *KVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) any {
 	r := Result{}
 	obj := ""
 	for i := 0; i < len(ctx.AllExpression()); i++ {
@@ -166,7 +166,7 @@ func (me *LiteVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) an
 	return r
 }
 
-func (me *LiteVisitor) VisitStringExpression(ctx *parser.StringExpressionContext) any {
+func (me *KVisitor) VisitStringExpression(ctx *parser.StringExpressionContext) any {
 	text := "bytes.Buffer{}.WriteString(" + ctx.TextLiteral().GetText() + ")"
 	for _, item := range ctx.AllStringExpressionElement() {
 		text += me.Visit(item).(string)
@@ -178,13 +178,13 @@ func (me *LiteVisitor) VisitStringExpression(ctx *parser.StringExpressionContext
 	}
 }
 
-func (me *LiteVisitor) VisitStringExpressionElement(ctx *parser.StringExpressionElementContext) any {
+func (me *KVisitor) VisitStringExpressionElement(ctx *parser.StringExpressionElementContext) any {
 	r := me.Visit(ctx.Expression()).(Result)
 	text := ctx.TextLiteral().GetText()
 	return ".WriteString(fmt.Sprint(" + r.Text + ").WriteString(" + text + ")"
 }
 
-func (me *LiteVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
+func (me *KVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
 	r := Result{}
 	if ctx.NilExpr() != nil {
 		r.Data = Any
@@ -211,19 +211,19 @@ func (me *LiteVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any 
 	return r
 }
 
-func (me *LiteVisitor) VisitFloatExpr(ctx *parser.FloatExprContext) any {
+func (me *KVisitor) VisitFloatExpr(ctx *parser.FloatExprContext) any {
 	number := ""
 	number += me.Visit(ctx.IntegerExpr(0)).(string) + "." + me.Visit(ctx.IntegerExpr(1)).(string)
 	return number
 }
 
-func (me *LiteVisitor) VisitIntegerExpr(ctx *parser.IntegerExprContext) any {
+func (me *KVisitor) VisitIntegerExpr(ctx *parser.IntegerExprContext) any {
 	number := ""
 	number += ctx.NumberLiteral().GetText()
 	return number
 }
 
-func (me *LiteVisitor) VisitTupleExpression(ctx *parser.TupleExpressionContext) any {
+func (me *KVisitor) VisitTupleExpression(ctx *parser.TupleExpressionContext) any {
 	obj := ""
 	for i := 0; i < len(ctx.AllExpression()); i++ {
 		r := me.Visit(ctx.Expression(i)).(Result)

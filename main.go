@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/kulics/lite-go/parser/generate"
-	"github.com/kulics/lite-go/visitor"
+	"github.com/kulics-work/k-go/visitor"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -35,16 +35,16 @@ func Compiled(dir string) error {
 			fmt.Println(path)
 			InputStream, _ := antlr.NewFileStream(path)
 			// Create the Lexer
-			Lexer := parser.NewLiteLexer(InputStream)
+			Lexer := parser.NewKLexer(InputStream)
 			Tokens := antlr.NewCommonTokenStream(Lexer, antlr.TokenDefaultChannel)
-			Parser := parser.NewLiteParser(Tokens)
+			Parser := parser.NewKParser(Tokens)
 			Parser.BuildParseTrees = true
 			Parser.RemoveErrorListeners()
 			Parser.AddErrorListener(visitor.NewErrorListener(path))
 
 			AST := Parser.Program()
 
-			Visitor := visitor.NewLiteVisitor()
+			Visitor := visitor.NewKVisitor()
 			Result := Visitor.Visit(AST)
 			gopath := strings.Replace(path, ".lite", ".go", 1)
 			if err := ioutil.WriteFile(gopath, []byte(Result.(string)), 0644); err != nil {

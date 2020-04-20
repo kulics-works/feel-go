@@ -1,12 +1,12 @@
 package visitor
 
 import (
-	"github.com/kulics/lite-go/parser/generate"
+	parser "github.com/kulics-works/k-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
-func (me *LiteVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) any {
+func (me *KVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) any {
 	r := me.Visit(ctx.Id()).(Result)
 	r.Text = "." + r.Text
 	if ctx.CallFunc() != nil {
@@ -22,19 +22,19 @@ func (me *LiteVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) an
 	return r
 }
 
-func (me *LiteVisitor) VisitCallAsync(ctx *parser.CallAsyncContext) any {
+func (me *KVisitor) VisitCallAsync(ctx *parser.CallAsyncContext) any {
 	r := me.Visit(ctx.Expression()).(Result)
 	r.Text = "go " + r.Text
 	return r
 }
 
-func (me *LiteVisitor) VisitCallChannel(ctx *parser.CallChannelContext) any {
+func (me *KVisitor) VisitCallChannel(ctx *parser.CallChannelContext) any {
 	r := Result{}
 	r.Text = "<-"
 	return r
 }
 
-func (me *LiteVisitor) VisitCallElement(ctx *parser.CallElementContext) any {
+func (me *KVisitor) VisitCallElement(ctx *parser.CallElementContext) any {
 	if ctx.Expression() == nil {
 		return Result{Text: me.Visit(ctx.Slice()).(string)}
 	}
@@ -43,11 +43,11 @@ func (me *LiteVisitor) VisitCallElement(ctx *parser.CallElementContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitSlice(ctx *parser.SliceContext) any {
+func (me *KVisitor) VisitSlice(ctx *parser.SliceContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(string)
 }
 
-func (me *LiteVisitor) VisitSliceFull(ctx *parser.SliceFullContext) any {
+func (me *KVisitor) VisitSliceFull(ctx *parser.SliceFullContext) any {
 	attach := ""
 	switch ctx.GetOp().GetText() {
 	case "<=":
@@ -58,13 +58,13 @@ func (me *LiteVisitor) VisitSliceFull(ctx *parser.SliceFullContext) any {
 	return "[" + expr1.Text + ":" + expr2.Text + attach + "]"
 }
 
-func (me *LiteVisitor) VisitSliceStart(ctx *parser.SliceStartContext) any {
+func (me *KVisitor) VisitSliceStart(ctx *parser.SliceStartContext) any {
 	attach := ""
 	expr := me.Visit(ctx.Expression()).(Result)
 	return "[" + expr.Text + ":" + attach + "]"
 }
 
-func (me *LiteVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) any {
+func (me *KVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) any {
 	attach := ""
 	switch ctx.GetOp().GetText() {
 	case "<=":
@@ -74,7 +74,7 @@ func (me *LiteVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) any {
 	return "[:" + expr.Text + attach + "]"
 }
 
-func (me *LiteVisitor) VisitCallFunc(ctx *parser.CallFuncContext) any {
+func (me *KVisitor) VisitCallFunc(ctx *parser.CallFuncContext) any {
 	r := Result{Data: "var"}
 	if ctx.Tuple() != nil {
 		r.Text += "(" + me.Visit(ctx.Tuple()).(Result).Text + ")"
@@ -84,7 +84,7 @@ func (me *LiteVisitor) VisitCallFunc(ctx *parser.CallFuncContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitCallNew(ctx *parser.CallNewContext) any {
+func (me *KVisitor) VisitCallNew(ctx *parser.CallNewContext) any {
 	r := Result{Data: me.Visit(ctx.TypeType())}
 	param := ""
 	if ctx.ExpressionList() != nil {
@@ -98,7 +98,7 @@ func (me *LiteVisitor) VisitCallNew(ctx *parser.CallNewContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitCallPkg(ctx *parser.CallPkgContext) any {
+func (me *KVisitor) VisitCallPkg(ctx *parser.CallPkgContext) any {
 	r := Result{Data: me.Visit(ctx.TypeType())}
 	r.Text = me.Visit(ctx.TypeType()).(string)
 	if ctx.PkgAssign() != nil {
@@ -115,7 +115,7 @@ func (me *LiteVisitor) VisitCallPkg(ctx *parser.CallPkgContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitPkgAssign(ctx *parser.PkgAssignContext) any {
+func (me *KVisitor) VisitPkgAssign(ctx *parser.PkgAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllPkgAssignElement()); i++ {
@@ -129,7 +129,7 @@ func (me *LiteVisitor) VisitPkgAssign(ctx *parser.PkgAssignContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitListAssign(ctx *parser.ListAssignContext) any {
+func (me *KVisitor) VisitListAssign(ctx *parser.ListAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllExpression()); i++ {
@@ -144,7 +144,7 @@ func (me *LiteVisitor) VisitListAssign(ctx *parser.ListAssignContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitSetAssign(ctx *parser.SetAssignContext) any {
+func (me *KVisitor) VisitSetAssign(ctx *parser.SetAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllExpression()); i++ {
@@ -159,7 +159,7 @@ func (me *LiteVisitor) VisitSetAssign(ctx *parser.SetAssignContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitDictionaryAssign(ctx *parser.DictionaryAssignContext) any {
+func (me *KVisitor) VisitDictionaryAssign(ctx *parser.DictionaryAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllDictionaryElement()); i++ {
@@ -174,13 +174,13 @@ func (me *LiteVisitor) VisitDictionaryAssign(ctx *parser.DictionaryAssignContext
 	return obj
 }
 
-func (me *LiteVisitor) VisitPkgAssignElement(ctx *parser.PkgAssignElementContext) any {
+func (me *KVisitor) VisitPkgAssignElement(ctx *parser.PkgAssignElementContext) any {
 	obj := ""
 	obj += me.Visit(ctx.Name()).(string) + " = " + me.Visit(ctx.Expression()).(Result).Text
 	return obj
 }
 
-func (me *LiteVisitor) VisitList(ctx *parser.ListContext) any {
+func (me *KVisitor) VisitList(ctx *parser.ListContext) any {
 	typeName := "object"
 	result := Result{}
 	for index := 0; index < len(ctx.AllExpression()); index++ {
@@ -201,7 +201,7 @@ func (me *LiteVisitor) VisitList(ctx *parser.ListContext) any {
 	return result
 }
 
-func (me *LiteVisitor) VisitDictionary(ctx *parser.DictionaryContext) any {
+func (me *KVisitor) VisitDictionary(ctx *parser.DictionaryContext) any {
 	key := Any
 	value := Any
 	result := Result{}
@@ -227,7 +227,7 @@ func (me *LiteVisitor) VisitDictionary(ctx *parser.DictionaryContext) any {
 	return result
 }
 
-func (me *LiteVisitor) VisitDictionaryElement(ctx *parser.DictionaryElementContext) any {
+func (me *KVisitor) VisitDictionaryElement(ctx *parser.DictionaryElementContext) any {
 	r1 := me.Visit(ctx.Expression(0)).(Result)
 	r2 := me.Visit(ctx.Expression(1)).(Result)
 	r := DicEle{

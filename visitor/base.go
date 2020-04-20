@@ -4,9 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/kulics/lite-go/parser/generate"
-
 	"github.com/antlr/antlr4/runtime/Go/antlr"
+	parser "github.com/kulics-works/k-go/parser/generate"
 )
 
 const (
@@ -77,20 +76,18 @@ func (me *errorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbo
 	me.Err = fmt.Errorf("[ERR %s:%d:%d] %s", me.file, line, column, msg)
 }
 
-type LiteVisitor struct {
-	parser.BaseLiteParserVisitor
-
+type KVisitor struct {
 	AllIDSet     *set_str
 	CurrentIDSet *stack_str
 
 	self Parameter
 }
 
-func NewLiteVisitor() LiteVisitor {
+func NewKVisitor() KVisitor {
 	set := new_set_str()
 	stack := new_stack_str()
 	stack.push(set)
-	return LiteVisitor{AllIDSet: set, CurrentIDSet: stack}
+	return KVisitor{AllIDSet: set, CurrentIDSet: stack}
 }
 
 type Result struct {
@@ -136,19 +133,19 @@ func (me *stack_str) pop() {
 	me.stack = me.stack[:len(me.stack)-1]
 }
 
-func (me *LiteVisitor) has_id(id str) bool {
+func (me *KVisitor) has_id(id str) bool {
 	return me.AllIDSet.contains(id) || me.CurrentIDSet.peek().contains(id)
 }
-func (me *LiteVisitor) add_id(id str) {
+func (me *KVisitor) add_id(id str) {
 	me.CurrentIDSet.peek().add(id)
 }
-func (me *LiteVisitor) add_current_set() {
+func (me *KVisitor) add_current_set() {
 	for k := range me.CurrentIDSet.peek().set {
 		me.AllIDSet.add(k)
 	}
 	me.CurrentIDSet.push(new_set_str())
 }
-func (me *LiteVisitor) delete_current_set() {
+func (me *KVisitor) delete_current_set() {
 	// printJSON(me.AllIDSet)
 	me.AllIDSet.except_with(me.CurrentIDSet.peek())
 	// printJSON(me.AllIDSet)
@@ -160,23 +157,23 @@ func printJSON(i any) {
 	fmt.Println(string(by))
 }
 
-func (me *LiteVisitor) Visit(tree antlr.ParseTree) any {
+func (me *KVisitor) Visit(tree antlr.ParseTree) any {
 	return tree.Accept(me)
 }
 
-func (me *LiteVisitor) VisitChildren(tree antlr.RuleNode) any {
+func (me *KVisitor) VisitChildren(tree antlr.RuleNode) any {
 	return tree.Accept(me)
 }
 
-// func (me *LiteVisitor) VisitTerminal(tree antlr.TerminalNode) any {
+// func (me *KVisitor) VisitTerminal(tree antlr.TerminalNode) any {
 // 	return tree.Accept(me)
 // }
 
-// func (me *LiteVisitor) VisitErrorNode(tree antlr.ErrorNode) any {
+// func (me *KVisitor) VisitErrorNode(tree antlr.ErrorNode) any {
 // 	return tree.Accept(me)
 // }
 
-func (me *LiteVisitor) VisitProgram(ctx *parser.ProgramContext) any {
+func (me *KVisitor) VisitProgram(ctx *parser.ProgramContext) any {
 	obj := ""
 	for _, item := range ctx.AllStatement() {
 		obj += me.Visit(item).(string)
@@ -184,7 +181,7 @@ func (me *LiteVisitor) VisitProgram(ctx *parser.ProgramContext) any {
 	return obj
 }
 
-func (me *LiteVisitor) VisitId(ctx *parser.IdContext) any {
+func (me *KVisitor) VisitId(ctx *parser.IdContext) any {
 	r := Result{Data: "var"}
 	first := me.Visit(ctx.GetChild(0).(antlr.ParseTree)).(Result)
 	r.Permission = first.Permission
@@ -203,7 +200,7 @@ func (me *LiteVisitor) VisitId(ctx *parser.IdContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
+func (me *KVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	r := Result{Data: "var"}
 	if ctx.TypeBasic() != nil {
 		r.Permission = "public"
@@ -223,7 +220,7 @@ func (me *LiteVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
+func (me *KVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
 	r := Result{Data: "var"}
 	if len(ctx.AllIdExprItem()) > 1 {
 		r.Text = ""
@@ -252,6 +249,6 @@ func (me *LiteVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
 	return r
 }
 
-func (me *LiteVisitor) VisitIdExprItem(ctx *parser.IdExprItemContext) any {
+func (me *KVisitor) VisitIdExprItem(ctx *parser.IdExprItemContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
