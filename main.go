@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/kulics-work/k-go/visitor"
 	parser "github.com/kulics-works/k-go/parser/generate"
+	"github.com/kulics-works/k-go/visitor"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
