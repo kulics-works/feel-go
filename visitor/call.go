@@ -48,14 +48,13 @@ func (me *KVisitor) VisitSlice(ctx *parser.SliceContext) any {
 }
 
 func (me *KVisitor) VisitSliceFull(ctx *parser.SliceFullContext) any {
-	attach := ""
-	switch ctx.GetOp().GetText() {
-	case "<=":
-		attach = "+1"
-	}
+	// order := true
+	// if ctx.Tilde() == nil {
+	// 	order = false
+	// }
 	expr1 := me.Visit(ctx.Expression(0)).(Result)
 	expr2 := me.Visit(ctx.Expression(1)).(Result)
-	return "[" + expr1.Text + ":" + expr2.Text + attach + "]"
+	return "[" + expr1.Text + ":" + expr2.Text + "]"
 }
 
 func (me *KVisitor) VisitSliceStart(ctx *parser.SliceStartContext) any {
@@ -65,13 +64,12 @@ func (me *KVisitor) VisitSliceStart(ctx *parser.SliceStartContext) any {
 }
 
 func (me *KVisitor) VisitSliceEnd(ctx *parser.SliceEndContext) any {
-	attach := ""
-	switch ctx.GetOp().GetText() {
-	case "<=":
-		attach = "+1"
-	}
+	// order := true
+	// if ctx.Tilde() == nil {
+	// 	order = false
+	// }
 	expr := me.Visit(ctx.Expression()).(Result)
-	return "[:" + expr.Text + attach + "]"
+	return "[:" + expr.Text + "]"
 }
 
 func (me *KVisitor) VisitCallFunc(ctx *parser.CallFuncContext) any {
@@ -105,8 +103,6 @@ func (me *KVisitor) VisitCallPkg(ctx *parser.CallPkgContext) any {
 		r.Text += me.Visit(ctx.PkgAssign()).(string)
 	} else if ctx.ListAssign() != nil {
 		r.Text += me.Visit(ctx.ListAssign()).(string)
-	} else if ctx.SetAssign() != nil {
-		r.Text += me.Visit(ctx.SetAssign()).(string)
 	} else if ctx.DictionaryAssign() != nil {
 		r.Text += me.Visit(ctx.DictionaryAssign()).(string)
 	} else {
@@ -130,21 +126,6 @@ func (me *KVisitor) VisitPkgAssign(ctx *parser.PkgAssignContext) any {
 }
 
 func (me *KVisitor) VisitListAssign(ctx *parser.ListAssignContext) any {
-	obj := ""
-	obj += "{"
-	for i := 0; i < len(ctx.AllExpression()); i++ {
-		r := me.Visit(ctx.Expression(i)).(Result)
-		if i == 0 {
-			obj += r.Text
-		} else {
-			obj += "," + r.Text
-		}
-	}
-	obj += "}"
-	return obj
-}
-
-func (me *KVisitor) VisitSetAssign(ctx *parser.SetAssignContext) any {
 	obj := ""
 	obj += "{"
 	for i := 0; i < len(ctx.AllExpression()); i++ {

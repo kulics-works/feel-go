@@ -27,9 +27,6 @@ func (me *KVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) a
 		obj += r.Text
 		methed += r.Data.(string)
 	}
-	for _, item := range ctx.AllPackageImplementStatement() {
-		methed += me.Visit(item).(Result).Text
-	}
 	obj = Init + obj
 	obj += BlockRight + Wrap
 	header := ""

@@ -1,7 +1,7 @@
-"main" {
-    # "./project/package path" package.
-    fmt. <- "fmt"
-    work <- (str->)
+main . {
+    # _ package "./project/package path"
+    fmt "fmt"
+    # work : (str->)
 }
 
 main : (->) {
@@ -9,7 +9,7 @@ main : (->) {
     test(1, "2")
     testJudge()
     testLoop()
-    m = man{}
+    m : man{}
     testProtocol(m?)
     testLambda( (a int -> b str) {
         <- ""
@@ -19,19 +19,19 @@ main : (->) {
 pi : 3.14
 eight int : 8
 
-num1 = 1
-num2 num = 12.345678
+num1! : 1
+num2! num : 12.345678
 
-doWork : % (str->) 
+# doWork : (str->) 
 
 test : (x int, y str -> r1 str, r2 int) {
-    a = x * 3
-    b int = 2
+    a : x * 3
+    b int : 2
     <- "hello", a + b
 }
 
 testJudge : (->) {
-    a = 5
+    a : 5
     ? 1 + 1 == 2 {
         a = 2
     } 2 * 3 == 6 {
@@ -40,7 +40,7 @@ testJudge : (->) {
         a = 5
     }
     
-    a ? 1 {
+    ? a : 1 {
         a = a + 1
     } 2, 3, 4 {
         a = a + 2
@@ -50,25 +50,25 @@ testJudge : (->) {
 }
 
 testLoop : (->) {
-    a = 0
-    arr = {1;2;3;4;5}
-    i @ arr {
+    a : 0
+    arr : {1;2;3;4;5}
+    @ i : arr {
         a += i
     }
-    (i)v @ arr {
+    @ [i]v : arr {
         a += i + v
     }
-    dic = {"1"=>1;"2"=>2}
-    i @ dic {
+    dic : {["1"]=1; ["2"]=2}
+    @ i : dic {
         a += i
     }
-    i @ 0 ++ 10 {
+    @ i : 0 ~ 10 {
         a += i
         ? i == 7 {
-            ^@
+            ->@
         }
     }
-    i @ 5 -- 0 {
+    @ i : 5 ~~ 0 {
         a += i
     }
     @ a > 0 {
@@ -77,33 +77,32 @@ testLoop : (->) {
     }
 }
 
-human : % ?me <- {
-    name str
+human : $ ?me {
+    name! str
 
-    run : (->){}
+    run : (->){
+    }
 
     sayName : (-> n str) {
         <- me.name
     }
 }
 
-man : % ?me <- {
-    % human
-    age int
+man : human & $ ?me {
+    age! int
 
     doSomething : (work str ->) {
-        Println(work)
+        fmt.Println(work)
     }
 }
 
-person : % _ {
-    sayName (-> n str)
-}
+# person : $$ {
+#     sayName (-> n str)
+# }
 
-worker : % _ {
-    % person
-    doSomething (work str ->)
-}
+# worker : person & $$ {
+#     doSomething (work str ->)
+# }
 
 testProtocol : (w worker -> i any) {
     w.doSomething("protocol")
@@ -111,27 +110,27 @@ testProtocol : (w worker -> i any) {
 }
 
 test_define : (->) {
-    a = 1
+    a! : 1
     ? a == 1 {
-        b = 2
+        b! : 2
         b = 3
         a = 3
-        Println(b)
+        fmt.Println(b)
     } a == 2 {
-        b = 2
+        b! : 2
         b = 3
         ? b == 2 {
             a = 1
         }
-        Println(b)
+        fmt.Println(b)
     } _ {
-        b = 2
+        b! : 2
         b = 3
         a = 3
-        Println(b)
+        fmt.Println(b)
     }
-    a ? 1 {
-        b = 2
+    ? a : 1 {
+        b! : 2
         b = 3
         a = 3
         ? a == 3 {
@@ -140,23 +139,23 @@ test_define : (->) {
         } _ {
             a = 2
         }
-        Println(b)
+        fmt.Println(b)
     } _ {
-        b = 2
+        b! : 2
         b = 3
         a = 3
-        Println(b)
+        fmt.Println(b)
     }
 }
 
 testGo : (-> v int) {
-    async = (->) {
-        Println("async")
+    async : (->) {
+        fmt.Println("async")
     }
     >> async()
-    channel = [[..<int]](1)
-    channel.(.) = 2
-    <- channel.(.)
+    channel = [<<]int(1)
+    channel[.] = 2
+    <- channel[.]
 }
 
 testLambda : (fn (int->str) ->) {

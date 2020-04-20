@@ -77,6 +77,8 @@ func (me *errorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbo
 }
 
 type KVisitor struct {
+	parser.BaseKParserVisitor
+
 	AllIDSet     *set_str
 	CurrentIDSet *stack_str
 
@@ -208,11 +210,11 @@ func (me *KVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	} else if ctx.TypeAny() != nil {
 		r.Permission = "public"
 		r.Text += ctx.TypeAny().GetText()
-	} else if ctx.GetOp().GetTokenType() == parser.LiteLexerIDPublic {
+	} else if ctx.GetOp().GetTokenType() == parser.KLexerIDPublic {
 		r.Permission = "public"
 		r.Text += ctx.GetOp().GetText()
 		// r.IsVirtual = r.Text[0].is Upper()
-	} else if ctx.GetOp().GetTokenType() == parser.LiteLexerIDPrivate {
+	} else if ctx.GetOp().GetTokenType() == parser.KLexerIDPrivate {
 		r.Permission = "protected"
 		r.Text += ctx.GetOp().GetText()
 		// r.IsVirtual = r.Text[r.Text.find first({it -> it >< '_'})].is Upper()
@@ -220,35 +222,73 @@ func (me *KVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	return r
 }
 
-func (me *KVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
-	r := Result{Data: "var"}
-	if len(ctx.AllIdExprItem()) > 1 {
-		r.Text = ""
-		for i, v := range ctx.AllIdExprItem() {
-			subID := me.Visit(v).(Result).Text
-			if i != 0 {
-				r.Text += ", " + subID
-			} else {
-				r.Text += subID
-			}
-			if me.has_id(subID) {
-				r.IsDefine = true
-			} else {
-				me.add_id(subID)
-			}
-		}
-		r.Text += ""
+func (me *KVisitor) VisitVarId(ctx *parser.VarIdContext) any {
+	if ctx.Discard() != nil {
+		return "_"
 	} else {
-		r = me.Visit(ctx.IdExprItem(0)).(Result)
-		if me.has_id(r.Text) {
-			r.IsDefine = true
+		var id = me.Visit(ctx.Id()).(Result).Text
+		if me.has_id(id) {
+			// r.isDefine = true
 		} else {
-			me.add_id(r.Text)
+			me.add_id(id)
 		}
+		return id
+		// if ctx.TypeType() != nil {
+		// 	return me.Visit(ctx.TypeType()) + " " + id
+		// } else {
+		// 	return "var " + id
+		// }
 	}
-	return r
 }
 
-func (me *KVisitor) VisitIdExprItem(ctx *parser.IdExprItemContext) any {
-	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
+func (me *KVisitor) VisitConstId(ctx *parser.ConstIdContext) any {
+	if ctx.Discard() != nil {
+		return "_"
+	} else {
+		var id = me.Visit(ctx.Id()).(Result).Text
+		if me.has_id(id) {
+			// r.isDefine = true
+		} else {
+			me.add_id(id)
+		}
+		return id
+		// if ctx.TypeType() != nil {
+		// 	return me.Visit(ctx.TypeType()) + " " + id
+		// } else {
+		// 	return "var " + id
+		// }
+	}
 }
+
+// func (me *KVisitor) VisitIdExpression(ctx *parser.IdExpressionContext) any {
+// 	r := Result{Data: "var"}
+// 	if len(ctx.AllIdExprItem()) > 1 {
+// 		r.Text = ""
+// 		for i, v := range ctx.AllIdExprItem() {
+// 			subID := me.Visit(v).(Result).Text
+// 			if i != 0 {
+// 				r.Text += ", " + subID
+// 			} else {
+// 				r.Text += subID
+// 			}
+// 			if me.has_id(subID) {
+// 				r.IsDefine = true
+// 			} else {
+// 				me.add_id(subID)
+// 			}
+// 		}
+// 		r.Text += ""
+// 	} else {
+// 		r = me.Visit(ctx.IdExprItem(0)).(Result)
+// 		if me.has_id(r.Text) {
+// 			r.IsDefine = true
+// 		} else {
+// 			me.add_id(r.Text)
+// 		}
+// 	}
+// 	return r
+// }
+
+// func (me *KVisitor) VisitIdExprItem(ctx *parser.IdExprItemContext) any {
+// 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
+// }

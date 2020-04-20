@@ -30,9 +30,9 @@ func (me *KVisitor) VisitStatement(ctx *parser.StatementContext) any {
 }
 
 func (me *KVisitor) VisitExportStatement(ctx *parser.ExportStatementContext) any {
-	name := ctx.TextLiteral().GetText()
+	name := me.Visit(ctx.NameSpaceItem()).(str)
 	obj := Namespace{
-		Name: name[1 : len(name)-1],
+		Name: name,
 	}
 	for _, item := range ctx.AllImportStatement() {
 		obj.Imports += me.Visit(item).(string)
@@ -48,15 +48,16 @@ func (me *KVisitor) VisitImportStatement(ctx *parser.ImportStatementContext) any
 	if ctx.AnnotationSupport() != nil {
 		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
-	ns := ctx.TextLiteral().GetText()
-	if ctx.Call() != nil {
+	ns := me.Visit(ctx.NameSpaceItem()).(str)
+	if ctx.Discard() != nil {
 		obj += ". " + ns
 	} else if ctx.Id() != nil {
 		obj += me.Visit(ctx.Id()).(Result).Text + " " + ns
 	} else {
 		obj += ns
 	}
-	obj += Wrap
+	dir := me.Visit(ctx.StringExpr()).(str)
+	obj += dir + Wrap
 	return obj
 }
 

@@ -24,16 +24,6 @@ func (me *KVisitor) VisitTypeType(ctx *parser.TypeTypeContext) any {
 	return obj
 }
 
-func (me *KVisitor) VisitTypeReference(ctx *parser.TypeReferenceContext) any {
-	obj := "*"
-	if ctx.TypeNullable() != nil {
-		obj += me.Visit(ctx.TypeNullable()).(string)
-	} else if ctx.TypeNotNull() != nil {
-		obj += me.Visit(ctx.TypeNotNull()).(string)
-	}
-	return obj
-}
-
 func (me *KVisitor) VisitTypeNullable(ctx *parser.TypeNullableContext) any {
 	obj := ""
 	obj = "*" + me.Visit(ctx.TypeNotNull()).(string)
@@ -79,7 +69,7 @@ func (me *KVisitor) VisitTypeFunction(ctx *parser.TypeFunctionContext) any {
 	obj := ""
 	in := me.Visit(ctx.TypeFunctionParameterClause(0)).(string)
 	out := me.Visit(ctx.TypeFunctionParameterClause(1)).(string)
-	if ctx.GetT().GetTokenType() == parser.LiteLexerRight_Arrow {
+	if ctx.GetT().GetTokenType() == parser.KLexerRight_Arrow {
 		obj = Func + "(" + in + ")" + "(" + out + ")"
 	} else {
 		obj = Func + "(" + in + ")" + "(" + out + ")"
@@ -107,37 +97,37 @@ func (me *KVisitor) VisitTypeFunctionParameterClause(ctx *parser.TypeFunctionPar
 func (me *KVisitor) VisitTypeBasic(ctx *parser.TypeBasicContext) any {
 	obj := ""
 	switch ctx.GetT().GetTokenType() {
-	case parser.LiteLexerTypeI8:
+	case parser.KLexerTypeI8:
 		obj = I8
-	case parser.LiteLexerTypeU8:
+	case parser.KLexerTypeU8:
 		obj = U8
-	case parser.LiteLexerTypeI16:
+	case parser.KLexerTypeI16:
 		obj = I16
-	case parser.LiteLexerTypeU16:
+	case parser.KLexerTypeU16:
 		obj = U16
-	case parser.LiteLexerTypeI32:
+	case parser.KLexerTypeI32:
 		obj = I32
-	case parser.LiteLexerTypeU32:
+	case parser.KLexerTypeU32:
 		obj = U32
-	case parser.LiteLexerTypeI64:
+	case parser.KLexerTypeI64:
 		obj = I64
-	case parser.LiteLexerTypeU64:
+	case parser.KLexerTypeU64:
 		obj = U64
-	case parser.LiteLexerTypeF32:
+	case parser.KLexerTypeF32:
 		obj = F32
-	case parser.LiteLexerTypeF64:
+	case parser.KLexerTypeF64:
 		obj = F64
-	case parser.LiteLexerTypeChr:
+	case parser.KLexerTypeChr:
 		obj = Chr
-	case parser.LiteLexerTypeStr:
+	case parser.KLexerTypeStr:
 		obj = Str
-	case parser.LiteLexerTypeBool:
+	case parser.KLexerTypeBool:
 		obj = Bool
-	case parser.LiteLexerTypeInt:
+	case parser.KLexerTypeInt:
 		obj = Int
-	case parser.LiteLexerTypeNum:
+	case parser.KLexerTypeNum:
 		obj = Num
-	case parser.LiteLexerTypeByte:
+	case parser.KLexerTypeByte:
 		obj = Byte
 	default:
 		obj = Any

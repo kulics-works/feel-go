@@ -7,19 +7,23 @@ import (
 )
 
 func (me *KVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext) any {
-	id := me.Visit(ctx.Id(0)).(Result)
+	id := me.Visit(ctx.Id()).(Result)
 	obj := ""
 	interfaceProtocol := ""
 	ptclName := id.Text
 	if ctx.AnnotationSupport() != nil {
 		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
-	for _, item := range ctx.AllProtocolSupportStatement() {
+	for _, item := range ctx.AllProtocolSubStatement() {
 		if r, ok := me.Visit(item).(Result); ok {
 			interfaceProtocol += r.Text
 		} else {
 			interfaceProtocol += me.Visit(item).(string)
 		}
+	}
+	for _, item := range ctx.AllIncludeStatement() {
+		var r = me.Visit(item).(string)
+		interfaceProtocol += r
 	}
 	obj += "type " + ptclName + " interface"
 	// 泛型

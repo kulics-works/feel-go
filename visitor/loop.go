@@ -12,10 +12,7 @@ type Iterator struct {
 
 func (me *KVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
 	it := Iterator{Order: true, Attach: true}
-	// if ctx.GetOp().GetText() == ">=" || ctx.GetOp().GetText() == "<=" {
-	// 	it.Attach = true
-	// }
-	if ctx.GetOp().GetTokenType() == parser.LiteLexerSub_Sub {
+	if ctx.Tilde() == nil {
 		it.Order = false
 	}
 	if len(ctx.AllExpression()) == 2 {

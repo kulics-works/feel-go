@@ -1,8 +1,6 @@
 package main
 
-import . "fmt"
-
-type work = func(string)
+import fmt "fmt"
 
 func main() {
 	testGo()
@@ -22,11 +20,12 @@ const eight int = 8
 var num1 = 1
 var num2 float64 = 12.345678
 
-type doWork func(string)
+type doWork struct {
+}
 
 func test(x int, y string) (r1 string, r2 int) {
 	a := x * 3
-	var b int = 2
+	b := 2
 	return "hello", a + b
 }
 func testJudge() {
@@ -103,22 +102,12 @@ func (me *human) sayName() (n string) {
 }
 
 type man struct {
-	human
 	age int
 }
 
 func (me *man) doSomething(work string) {
-	Println(work)
+	fmt.Println(work)
 }
-
-type person interface {
-	sayName() (n string)
-}
-type worker interface {
-	person
-	doSomething(work string)
-}
-
 func testProtocol(w worker) (i interface{}) {
 	w.doSomething("protocol")
 	return w
@@ -129,19 +118,19 @@ func test_define() {
 		b := 2
 		b = 3
 		a = 3
-		Println(b)
+		fmt.Println(b)
 	} else if a == 2 {
 		b := 2
 		b = 3
 		if b == 2 {
 			a = 1
 		}
-		Println(b)
+		fmt.Println(b)
 	} else {
 		b := 2
 		b = 3
 		a = 3
-		Println(b)
+		fmt.Println(b)
 	}
 	switch a {
 	case 1:
@@ -155,7 +144,7 @@ func test_define() {
 			} else {
 				a = 2
 			}
-			Println(b)
+			fmt.Println(b)
 		}
 
 	default:
@@ -163,15 +152,17 @@ func test_define() {
 			b := 2
 			b = 3
 			a = 3
-			Println(b)
+			fmt.Println(b)
 		}
 
 	}
 }
 func testGo() (v int) {
-	async := func() { Println("async") }
+	async := func() {
+		fmt.Println("async")
+	}
 	go async()
-	channel := make(chan int, 1)
+	channel = make(chan int, 1)
 	channel <- 2
 	return <-channel
 }

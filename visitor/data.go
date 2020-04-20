@@ -20,7 +20,10 @@ func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 		op := me.Visit(ctx.GetChild(1).(antlr.ParseTree))
 
 		switch ctx.GetChild(1).(type) {
-		case parser.JudgeContext:
+		case parser.CompareContext:
+			// todo 如果左右不是bool类型值，报错
+			r.Data = Bool
+		case parser.LogicContext:
 			// todo 如果左右不是bool类型值，报错
 			r.Data = Bool
 		case parser.AddContext:
@@ -73,9 +76,9 @@ func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = e2.Text + r.Text
 		} else if ctx.GetOp() != nil {
-			if ctx.GetOp().GetTokenType() == parser.LiteLexerBang {
+			if ctx.GetOp().GetTokenType() == parser.KLexerBang {
 				r.Text = "*" + r.Text
-			} else if ctx.GetOp().GetTokenType() == parser.LiteLexerQuestion {
+			} else if ctx.GetOp().GetTokenType() == parser.KLexerQuestion {
 				r.Text = "&" + r.Text
 			}
 		}
@@ -85,28 +88,38 @@ func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 	return r
 }
 
-func (me *KVisitor) VisitVariableStatement(ctx *parser.VariableStatementContext) any {
-	obj := ""
-	r1 := me.Visit(ctx.IdExpression()).(Result)
-	r2 := me.Visit(ctx.Expression()).(Result)
-	Type := ""
-	if ctx.TypeType() != nil {
-		Type = me.Visit(ctx.TypeType()).(string)
-		obj = Var + r1.Text + " " + Type + " = " + r2.Text + Wrap
-	} else {
-		if r1.IsDefine || r1.Text == me.self.Id {
-			obj = r1.Text + " = " + r2.Text + Wrap
+func (me *KVisitor) VisitVarStatement(ctx *parser.VarStatementContext) any {
+	var obj = ""
+	for i, v := range ctx.AllVarId() {
+		if i != 0 {
+			obj += "," + me.Visit(v).(str)
 		} else {
-			obj = r1.Text + " := " + r2.Text + Wrap
+			obj += me.Visit(v).(str)
 		}
 	}
+	var r2 = me.Visit(ctx.TupleExpression()).(Result)
+	obj += " := " + r2.Text + Wrap
+	return obj
+}
+
+func (me *KVisitor) VisitBindStatement(ctx *parser.BindStatementContext) any {
+	var obj = ""
+	for i, v := range ctx.AllConstId() {
+		if i != 0 {
+			obj += "," + me.Visit(v).(str)
+		} else {
+			obj += me.Visit(v).(str)
+		}
+	}
+	var r2 = me.Visit(ctx.TupleExpression()).(Result)
+	obj += " := " + r2.Text + Wrap
 	return obj
 }
 
 func (me *KVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclaredStatementContext) any {
 	obj := ""
 	Type := me.Visit(ctx.TypeType()).(string)
-	r := me.Visit(ctx.IdExpression()).(Result)
+	r := me.Visit(ctx.Id()).(Result)
 	obj = Var + r.Text + " " + Type + Wrap
 	return obj
 }
@@ -136,9 +149,7 @@ func (me *KVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext)
 			return me.Visit(ctx.DataStatement())
 		} else if _, ok := c.(*parser.IdContext); ok {
 			return me.Visit(ctx.Id())
-		} else if ctx.GetT().GetTokenType() == parser.LiteLexerDot_Dot {
-			return Result{Text: "me", Data: "var"}
-		} else if ctx.GetT().GetTokenType() == parser.LiteLexerDiscard {
+		} else if ctx.GetT().GetTokenType() == parser.KLexerDiscard {
 			return Result{Text: "_", Data: "var"}
 		}
 	} else if ctx.GetChildCount() == 2 {
@@ -165,23 +176,45 @@ func (me *KVisitor) VisitExpressionList(ctx *parser.ExpressionListContext) any {
 	r.Data = "var"
 	return r
 }
-
-func (me *KVisitor) VisitStringExpression(ctx *parser.StringExpressionContext) any {
-	text := "bytes.Buffer{}.WriteString(" + ctx.TextLiteral().GetText() + ")"
-	for _, item := range ctx.AllStringExpressionElement() {
-		text += me.Visit(item).(string)
-	}
-	text += ".String()"
-	return Result{
-		Data: Str,
-		Text: text,
+func (me *KVisitor) VisitStringExpr(ctx *parser.StringExprContext) any {
+	var text = ""
+	if len(ctx.AllStringTemplate()) == 0 {
+		for _, v := range ctx.AllStringContent() {
+			text += me.Visit(v).(str)
+		}
+		return "\"" + text + "\""
+	} else {
+		text = "bytes.Buffer{}.WriteString("
+		// 去除前后一个元素
+		for i := 1; i <= ctx.GetChildCount()-2; i++ {
+			var v = ctx.GetChild(i)
+			var r = me.Visit(ctx.GetChild(i).(antlr.ParseTree)).(str)
+			switch v.(type) {
+			case parser.StringContentContext:
+				text += ".WriteString(fmt.Sprint(" + r + ")"
+			default:
+				text += r
+			}
+		}
+		text += ").String()"
+		return text
 	}
 }
 
-func (me *KVisitor) VisitStringExpressionElement(ctx *parser.StringExpressionElementContext) any {
-	r := me.Visit(ctx.Expression()).(Result)
-	text := ctx.TextLiteral().GetText()
-	return ".WriteString(fmt.Sprint(" + r.Text + ").WriteString(" + text + ")"
+func (me *KVisitor) VisitStringContent(ctx *parser.StringContentContext) any {
+	if ctx.TextLiteral().GetText() == "\\$" {
+		return "$"
+	}
+	return ctx.TextLiteral().GetText()
+}
+
+func (me *KVisitor) VisitStringTemplate(ctx *parser.StringTemplateContext) any {
+	var text = ""
+	for _, v := range ctx.AllExpression() {
+		var r = me.Visit(v).(Result)
+		text += ".WriteString(fmt.Sprint(" + r.Text + ")"
+	}
+	return text
 }
 
 func (me *KVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
@@ -195,16 +228,16 @@ func (me *KVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
 	} else if ctx.IntegerExpr() != nil {
 		r.Data = Int
 		r.Text = me.Visit(ctx.IntegerExpr()).(string)
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTextLiteral {
+	} else if ctx.StringExpr() != nil {
 		r.Data = Str
-		r.Text = ctx.TextLiteral().GetText()
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerCharLiteral {
+		r.Text = me.Visit(ctx.StringExpr()).(string)
+	} else if ctx.GetT().GetTokenType() == parser.KLexerCharLiteral {
 		r.Data = Chr
 		r.Text = ctx.CharLiteral().GetText()
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerTrueLiteral {
+	} else if ctx.GetT().GetTokenType() == parser.KLexerTrueLiteral {
 		r.Data = Bool
 		r.Text = T
-	} else if ctx.GetT().GetTokenType() == parser.LiteLexerFalseLiteral {
+	} else if ctx.GetT().GetTokenType() == parser.KLexerFalseLiteral {
 		r.Data = Bool
 		r.Text = F
 	}
@@ -212,14 +245,12 @@ func (me *KVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
 }
 
 func (me *KVisitor) VisitFloatExpr(ctx *parser.FloatExprContext) any {
-	number := ""
-	number += me.Visit(ctx.IntegerExpr(0)).(string) + "." + me.Visit(ctx.IntegerExpr(1)).(string)
+	number := ctx.FloatLiteral().GetText()
 	return number
 }
 
 func (me *KVisitor) VisitIntegerExpr(ctx *parser.IntegerExprContext) any {
-	number := ""
-	number += ctx.NumberLiteral().GetText()
+	number := ctx.GetChild(0).(antlr.ParseTree).GetText()
 	return number
 }
 
