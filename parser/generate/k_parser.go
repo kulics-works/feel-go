@@ -700,7 +700,7 @@ var parserATN = []uint16{
 	3, 2, 2, 2, 1190, 1192, 5, 352, 177, 2, 1191, 1193, 7, 41, 2, 2, 1192,
 	1191, 3, 2, 2, 2, 1192, 1193, 3, 2, 2, 2, 1193, 1195, 3, 2, 2, 2, 1194,
 	1196, 9, 3, 2, 2, 1195, 1194, 3, 2, 2, 2, 1195, 1196, 3, 2, 2, 2, 1196,
-	1197, 3, 2, 2, 2, 1197, 1200, 5, 288, 145, 2, 1198, 1199, 7, 22, 2, 2,
+	1197, 3, 2, 2, 2, 1197, 1200, 5, 288, 145, 2, 1198, 1199, 7, 38, 2, 2,
 	1199, 1201, 5, 154, 78, 2, 1200, 1198, 3, 2, 2, 2, 1200, 1201, 3, 2, 2,
 	2, 1201, 91, 3, 2, 2, 2, 1202, 1226, 5, 78, 40, 2, 1203, 1226, 5, 80, 41,
 	2, 1204, 1226, 5, 82, 42, 2, 1205, 1226, 5, 84, 43, 2, 1206, 1226, 5, 94,
@@ -11981,8 +11981,8 @@ func (s *ParameterContext) Bang() antlr.TerminalNode {
 	return s.GetToken(KParserBang, 0)
 }
 
-func (s *ParameterContext) Equal() antlr.TerminalNode {
-	return s.GetToken(KParserEqual, 0)
+func (s *ParameterContext) Colon() antlr.TerminalNode {
+	return s.GetToken(KParserColon, 0)
 }
 
 func (s *ParameterContext) Expression() IExpressionContext {
@@ -12095,10 +12095,10 @@ func (p *KParser) Parameter() (localctx IParameterContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserEqual {
+	if _la == KParserColon {
 		{
 			p.SetState(1196)
-			p.Match(KParserEqual)
+			p.Match(KParserColon)
 		}
 		{
 			p.SetState(1197)
