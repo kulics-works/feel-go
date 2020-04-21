@@ -20,9 +20,6 @@ const eight int = 8
 var num1 = 1
 var num2 float64 = 12.345678
 
-type doWork struct {
-}
-
 func test(x int, y string) (r1 string, r2 int) {
 	a := x * 3
 	b := 2
@@ -162,7 +159,7 @@ func testGo() (v int) {
 		fmt.Println("async")
 	}
 	go async()
-	channel = make(chan int, 1)
+	channel := make(chan int, 1)
 	channel <- 2
 	return <-channel
 }

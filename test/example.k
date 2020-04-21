@@ -88,7 +88,7 @@ human : $ ?me {
     }
 }
 
-man : human & $ ?me {
+man : human \/ $ ?me {
     age! int
 
     doSomething : (work str ->) {
@@ -153,7 +153,7 @@ testGo : (-> v int) {
         fmt.Println("async")
     }
     >> async()
-    channel = [<<]int(1)
+    channel : [<<]int(1)
     channel[.] = 2
     <- channel[.]
 }
