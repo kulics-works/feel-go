@@ -99,12 +99,22 @@ func (me *human) sayName() (n string) {
 }
 
 type man struct {
+	human
 	age int
 }
 
 func (me *man) doSomething(work string) {
 	fmt.Println(work)
 }
+
+type person interface {
+	sayName() (n string)
+}
+type worker interface {
+	doSomething(work string)
+	person
+}
+
 func testProtocol(w worker) (i interface{}) {
 	w.doSomething("protocol")
 	return w

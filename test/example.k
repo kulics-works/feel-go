@@ -96,13 +96,13 @@ man : human \/ $ ?me {
     }
 }
 
-# person : $$ {
-#     sayName (-> n str)
-# }
+person : $$ {
+    sayName (-> n str)
+}
 
-# worker : person & $$ {
-#     doSomething (work str ->)
-# }
+worker : person \/ $$ {
+    doSomething (work str ->)
+}
 
 testProtocol : (w worker -> i any) {
     w.doSomething("protocol")

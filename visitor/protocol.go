@@ -15,11 +15,7 @@ func (me *KVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext)
 		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
 	for _, item := range ctx.AllProtocolSubStatement() {
-		if r, ok := me.Visit(item).(Result); ok {
-			interfaceProtocol += r.Text
-		} else {
-			interfaceProtocol += me.Visit(item).(string)
-		}
+		interfaceProtocol += me.Visit(item).(string)
 	}
 	for _, item := range ctx.AllIncludeStatement() {
 		var r = me.Visit(item).(string)
@@ -39,17 +35,24 @@ func (me *KVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext)
 	return obj
 }
 
+func (me *KVisitor) VisitProtocolSubStatement(ctx *parser.ProtocolSubStatementContext) any {
+	var obj = ""
+	for _, item := range ctx.AllProtocolSupportStatement() {
+		obj += me.Visit(item).(str)
+	}
+	return obj
+}
+
 func (me *KVisitor) VisitProtocolSupportStatement(ctx *parser.ProtocolSupportStatementContext) any {
 	return me.Visit(ctx.GetChild(0).(antlr.ParseTree))
 }
 
 func (me *KVisitor) VisitProtocolFunctionStatement(ctx *parser.ProtocolFunctionStatementContext) any {
 	id := me.Visit(ctx.Id()).(Result)
-	r := Result{}
+	obj := ""
 	if ctx.AnnotationSupport() != nil {
-		r.Text += me.Visit(ctx.AnnotationSupport()).(string)
+		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
-	r.Permission = "public"
 	// # 异步 #
 	// ? ctx.t.Type == Right Flow {
 	// 	pout := me.Visit(ctx.parameterClauseOut()):Str
@@ -69,6 +72,6 @@ func (me *KVisitor) VisitProtocolFunctionStatement(ctx *parser.ProtocolFunctionS
 	// 	r.text += template.Template
 	// 	templateContract = template.Contract
 	// }
-	r.Text += id.Text + me.Visit(ctx.ParameterClauseIn()).(string) + templateContract + me.Visit(ctx.ParameterClauseOut()).(string) + Wrap
-	return r
+	obj += id.Text + me.Visit(ctx.ParameterClauseIn()).(string) + templateContract + me.Visit(ctx.ParameterClauseOut()).(string) + Wrap
+	return obj
 }
