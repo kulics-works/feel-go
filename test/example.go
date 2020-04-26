@@ -165,12 +165,12 @@ func test_define() {
 	}
 }
 func testGo() (v int) {
+	channel := make(chan int, 1)
 	async := func() {
 		fmt.Println("async")
+		channel <- 2
 	}
 	go async()
-	channel := make(chan int, 1)
-	channel <- 2
 	return <-channel
 }
 func testLambda(fn func(int) string) {

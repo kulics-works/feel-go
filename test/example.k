@@ -149,13 +149,13 @@ test_define : (->) {
 }
 
 testGo : (-> v int) {
+    channel : ..int(1)
     async : (->) {
         fmt.Println("async")
+        channel ..< 2
     }
-    >> async()
-    channel : [<<]int(1)
-    channel[.] = 2
-    <- channel[.]
+    async.()
+    <- ..< channel
 }
 
 testLambda : (fn (int->str) ->) {

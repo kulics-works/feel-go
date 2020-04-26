@@ -18,10 +18,13 @@ Forward_Back_Slash: '/\\';
 Back_Forward_Slash:	'\\/';
 
 Dot_Dot_Dot: 	'...';
+Dot_Dot_Less:	'..<';
 Dot_Dot: 		'..';
 Dot: 			'.';
 
-Comma: 	',';
+Comma_Comma_Comma: 	',,,';
+Comma_Comma: 		',,';
+Comma: 				',';
 
 Right_Arrow: 	'->';
 Left_Arrow: 	'<-';

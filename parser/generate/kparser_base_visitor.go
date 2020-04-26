@@ -164,10 +164,6 @@ func (v *BaseKParserVisitor) VisitReturnStatement(ctx *ReturnStatementContext) i
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseKParserVisitor) VisitReturnAwaitStatement(ctx *ReturnAwaitStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseKParserVisitor) VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -276,10 +272,6 @@ func (v *BaseKParserVisitor) VisitConstantDeclaredStatement(ctx *ConstantDeclare
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseKParserVisitor) VisitChannelAssignStatement(ctx *ChannelAssignStatementContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
 func (v *BaseKParserVisitor) VisitVarStatement(ctx *VarStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -348,7 +340,23 @@ func (v *BaseKParserVisitor) VisitCallFunc(ctx *CallFuncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseKParserVisitor) VisitCallAwaitFunc(ctx *CallAwaitFuncContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseKParserVisitor) VisitCallAwait(ctx *CallAwaitContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseKParserVisitor) VisitCallAsync(ctx *CallAsyncContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseKParserVisitor) VisitCallChannel(ctx *CallChannelContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseKParserVisitor) VisitTransfer(ctx *TransferContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -389,14 +397,6 @@ func (v *BaseKParserVisitor) VisitListAssign(ctx *ListAssignContext) interface{}
 }
 
 func (v *BaseKParserVisitor) VisitDictionaryAssign(ctx *DictionaryAssignContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseKParserVisitor) VisitCallAwait(ctx *CallAwaitContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseKParserVisitor) VisitCallAsync(ctx *CallAsyncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

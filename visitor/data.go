@@ -20,6 +20,9 @@ func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 		op := me.Visit(ctx.GetChild(1).(antlr.ParseTree))
 
 		switch ctx.GetChild(1).(type) {
+		case parser.TransferContext:
+			op = "<-"
+			r.Data = e1.Data
 		case parser.CompareContext:
 			// todo 如果左右不是bool类型值，报错
 			r.Data = Bool
@@ -72,9 +75,9 @@ func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 		} else if _, ok := ctx.GetChild(1).(*parser.CallElementContext); ok {
 			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = r.Text + e2.Text
-		} else if _, ok := ctx.GetChild(1).(*parser.CallChannelContext); ok {
+		} else if _, ok := ctx.GetChild(1).(*parser.CallAsyncContext); ok {
 			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
-			r.Text = e2.Text + r.Text
+			r.Text = "go " + r.Text + e2.Text
 		} else if ctx.GetOp() != nil {
 			if ctx.GetOp().GetTokenType() == parser.KLexerBang {
 				r.Text = "*" + r.Text
@@ -121,13 +124,6 @@ func (me *KVisitor) VisitVariableDeclaredStatement(ctx *parser.VariableDeclaredS
 	Type := me.Visit(ctx.TypeType()).(string)
 	r := me.Visit(ctx.Id()).(Result)
 	obj = Var + r.Text + " " + Type + Wrap
-	return obj
-}
-
-func (me *KVisitor) VisitChannelAssignStatement(ctx *parser.ChannelAssignStatementContext) any {
-	r1 := me.Visit(ctx.Expression(0)).(Result)
-	r2 := me.Visit(ctx.Expression(1)).(Result)
-	obj := r1.Text + "<-" + r2.Text + Wrap
 	return obj
 }
 

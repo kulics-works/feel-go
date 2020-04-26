@@ -15,22 +15,23 @@ func (me *KVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) any {
 	} else if ctx.CallElement() != nil {
 		e2 := me.Visit(ctx.CallElement()).(Result)
 		r.Text = r.Text + e2.Text
-	} else if ctx.CallChannel() != nil {
-		e2 := me.Visit(ctx.CallChannel()).(Result)
-		r.Text = e2.Text + r.Text
 	}
 	return r
 }
 
 func (me *KVisitor) VisitCallAsync(ctx *parser.CallAsyncContext) any {
-	r := me.Visit(ctx.Expression()).(Result)
-	r.Text = "go " + r.Text
+	r := Result{Data: "var"}
+	if ctx.Tuple() != nil {
+		r.Text += "(" + me.Visit(ctx.Tuple()).(Result).Text + ")"
+	} else {
+		r.Text += "(" + me.Visit(ctx.Lambda()).(Result).Text + ")"
+	}
 	return r
 }
 
 func (me *KVisitor) VisitCallChannel(ctx *parser.CallChannelContext) any {
 	r := Result{}
-	r.Text = "<-"
+	r.Text = "<-" + me.Visit(ctx.Expression()).(Result).Text
 	return r
 }
 

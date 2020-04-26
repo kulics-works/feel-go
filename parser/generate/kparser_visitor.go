@@ -125,9 +125,6 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#returnStatement.
 	VisitReturnStatement(ctx *ReturnStatementContext) interface{}
 
-	// Visit a parse tree produced by KParser#returnAwaitStatement.
-	VisitReturnAwaitStatement(ctx *ReturnAwaitStatementContext) interface{}
-
 	// Visit a parse tree produced by KParser#yieldReturnStatement.
 	VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{}
 
@@ -209,9 +206,6 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#constantDeclaredStatement.
 	VisitConstantDeclaredStatement(ctx *ConstantDeclaredStatementContext) interface{}
 
-	// Visit a parse tree produced by KParser#channelAssignStatement.
-	VisitChannelAssignStatement(ctx *ChannelAssignStatementContext) interface{}
-
 	// Visit a parse tree produced by KParser#varStatement.
 	VisitVarStatement(ctx *VarStatementContext) interface{}
 
@@ -263,8 +257,20 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#callFunc.
 	VisitCallFunc(ctx *CallFuncContext) interface{}
 
+	// Visit a parse tree produced by KParser#callAwaitFunc.
+	VisitCallAwaitFunc(ctx *CallAwaitFuncContext) interface{}
+
+	// Visit a parse tree produced by KParser#callAwait.
+	VisitCallAwait(ctx *CallAwaitContext) interface{}
+
+	// Visit a parse tree produced by KParser#callAsync.
+	VisitCallAsync(ctx *CallAsyncContext) interface{}
+
 	// Visit a parse tree produced by KParser#callChannel.
 	VisitCallChannel(ctx *CallChannelContext) interface{}
+
+	// Visit a parse tree produced by KParser#transfer.
+	VisitTransfer(ctx *TransferContext) interface{}
 
 	// Visit a parse tree produced by KParser#callElement.
 	VisitCallElement(ctx *CallElementContext) interface{}
@@ -295,12 +301,6 @@ type KParserVisitor interface {
 
 	// Visit a parse tree produced by KParser#dictionaryAssign.
 	VisitDictionaryAssign(ctx *DictionaryAssignContext) interface{}
-
-	// Visit a parse tree produced by KParser#callAwait.
-	VisitCallAwait(ctx *CallAwaitContext) interface{}
-
-	// Visit a parse tree produced by KParser#callAsync.
-	VisitCallAsync(ctx *CallAsyncContext) interface{}
 
 	// Visit a parse tree produced by KParser#list.
 	VisitList(ctx *ListContext) interface{}

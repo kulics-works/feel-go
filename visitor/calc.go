@@ -29,6 +29,10 @@ func (me *KVisitor) VisitPow(ctx *parser.PowContext) any {
 	return "^"
 }
 
+func (me *KVisitor) VisitTransfer(ctx *parser.TransferContext) any {
+	return "<-"
+}
+
 func (me *KVisitor) VisitPlusMinus(ctx *parser.PlusMinusContext) any {
 	r := Result{}
 	expr := me.Visit(ctx.Expression()).(Result)
