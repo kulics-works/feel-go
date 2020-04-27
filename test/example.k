@@ -62,13 +62,13 @@ testLoop : (->) {
     @ i : dic {
         a += i
     }
-    @ i : 0 ~ 10 {
+    @ i : 0 .. 10 {
         a += i
         ? i == 7 {
             ->@
         }
     }
-    @ i : 5 ~~ 0 {
+    @ i : 5 ... 0 {
         a += i
     }
     @ a > 0 {
@@ -149,13 +149,13 @@ test_define : (->) {
 }
 
 testGo : (-> v int) {
-    channel : ..int(1)
+    channel : [~]int(1)
     async : (->) {
         fmt.Println("async")
-        channel ..< 2
+        channel <~ 2
     }
-    async.()
-    <- ..< channel
+    ~> async()
+    <- <~ channel
 }
 
 testLambda : (fn (int->str) ->) {

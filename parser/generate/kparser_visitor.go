@@ -125,6 +125,9 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#returnStatement.
 	VisitReturnStatement(ctx *ReturnStatementContext) interface{}
 
+	// Visit a parse tree produced by KParser#returnAsyncStatement.
+	VisitReturnAsyncStatement(ctx *ReturnAsyncStatementContext) interface{}
+
 	// Visit a parse tree produced by KParser#yieldReturnStatement.
 	VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{}
 
@@ -257,14 +260,11 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#callFunc.
 	VisitCallFunc(ctx *CallFuncContext) interface{}
 
-	// Visit a parse tree produced by KParser#callAwaitFunc.
-	VisitCallAwaitFunc(ctx *CallAwaitFuncContext) interface{}
+	// Visit a parse tree produced by KParser#callAsync.
+	VisitCallAsync(ctx *CallAsyncContext) interface{}
 
 	// Visit a parse tree produced by KParser#callAwait.
 	VisitCallAwait(ctx *CallAwaitContext) interface{}
-
-	// Visit a parse tree produced by KParser#callAsync.
-	VisitCallAsync(ctx *CallAsyncContext) interface{}
 
 	// Visit a parse tree produced by KParser#callChannel.
 	VisitCallChannel(ctx *CallChannelContext) interface{}

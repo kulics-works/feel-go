@@ -20,6 +20,14 @@ func (me *KVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) any {
 }
 
 func (me *KVisitor) VisitCallAsync(ctx *parser.CallAsyncContext) any {
+	var r = Result{}
+	var expr = me.Visit(ctx.Expression()).(Result)
+	r.Data = "var"
+	r.Text = "go " + expr.Text
+	return r
+}
+
+func (me *KVisitor) VisitCallAwait(ctx *parser.CallAwaitContext) any {
 	r := Result{Data: "var"}
 	if ctx.Tuple() != nil {
 		r.Text += "(" + me.Visit(ctx.Tuple()).(Result).Text + ")"

@@ -164,6 +164,10 @@ func (v *BaseKParserVisitor) VisitReturnStatement(ctx *ReturnStatementContext) i
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseKParserVisitor) VisitReturnAsyncStatement(ctx *ReturnAsyncStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseKParserVisitor) VisitYieldReturnStatement(ctx *YieldReturnStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -340,15 +344,11 @@ func (v *BaseKParserVisitor) VisitCallFunc(ctx *CallFuncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseKParserVisitor) VisitCallAwaitFunc(ctx *CallAwaitFuncContext) interface{} {
+func (v *BaseKParserVisitor) VisitCallAsync(ctx *CallAsyncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
 func (v *BaseKParserVisitor) VisitCallAwait(ctx *CallAwaitContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseKParserVisitor) VisitCallAsync(ctx *CallAsyncContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

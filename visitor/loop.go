@@ -12,7 +12,7 @@ type Iterator struct {
 
 func (me *KVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
 	it := Iterator{Order: true, Attach: true}
-	if ctx.Tilde() == nil {
+	if ctx.Dot_Dot() == nil {
 		it.Order = false
 	}
 	if len(ctx.AllExpression()) == 2 {
