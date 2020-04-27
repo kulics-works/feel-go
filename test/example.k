@@ -68,6 +68,12 @@ testLoop : (->) {
             ->@
         }
     }
+    @ i : 1 ..< 3 {
+        println(i)
+    }
+    @ i : 3 ..> 1 {
+        println(i)
+    }
     @ i : 5 ... 0 {
         a += i
     }

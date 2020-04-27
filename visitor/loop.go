@@ -3,17 +3,20 @@ package visitor
 import parser "github.com/kulics-works/k-go/parser/generate"
 
 type Iterator struct {
-	Begin  Result
-	End    Result
-	Step   Result
-	Order  bool
-	Attach bool
+	Begin Result
+	End   Result
+	Step  Result
+	Order bool
+	Close bool
 }
 
 func (me *KVisitor) VisitIteratorStatement(ctx *parser.IteratorStatementContext) any {
-	it := Iterator{Order: true, Attach: true}
-	if ctx.Dot_Dot() == nil {
+	it := Iterator{Order: true, Close: true}
+	if ctx.Dot_Dot_Dot() != nil || ctx.Dot_Dot_Greater() != nil {
 		it.Order = false
+	}
+	if ctx.Dot_Dot_Less() != nil || ctx.Dot_Dot_Greater() != nil {
+		it.Close = false
 	}
 	if len(ctx.AllExpression()) == 2 {
 		it.Begin = me.Visit(ctx.Expression(0)).(Result)
@@ -38,14 +41,14 @@ func (me *KVisitor) VisitLoopStatement(ctx *parser.LoopStatementContext) any {
 	step := ""
 	if it.Order {
 		step = "+="
-		if it.Attach {
+		if it.Close {
 			order = "<="
 		} else {
 			order = "<"
 		}
 	} else {
 		step = "-="
-		if it.Attach {
+		if it.Close {
 			order = ">="
 		} else {
 			order = ">"

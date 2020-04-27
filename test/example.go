@@ -79,6 +79,12 @@ func testLoop() {
 			continue
 		}
 	}
+	for i := 1; i < 3; i += 1 {
+		println(i)
+	}
+	for i := 3; i > 1; i -= 1 {
+		println(i)
+	}
 	for i := 5; i >= 0; i -= 1 {
 		a += i
 	}
