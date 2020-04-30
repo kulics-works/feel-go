@@ -8,12 +8,10 @@ statement: (New_Line)* (annotationSupport)?
 exportStatement (New_Line)* namespaceSupportStatement*;
 
 // 导出命名空间
-exportStatement: nameSpaceItem call left_brace (importStatement|typeAliasStatement|New_Line)* right_brace end;
-
-// 导入命名空间
-importStatement: (annotationSupport)? ((id Bang?|Discard) Colon)? nameSpaceItem stringExpr? end;
+exportStatement: Left_Arrow nameSpaceItem end;
 
 namespaceSupportStatement:
+importStatement |
 namespaceFunctionStatement |
 namespaceVariableStatement |
 namespaceConstantStatement |
@@ -24,6 +22,11 @@ enumStatement |
 typeRedefineStatement |
 typeTagStatement |
 New_Line ;
+
+// 导入命名空间
+importStatement: Right_Arrow left_brace (importSubStatement|typeAliasStatement|New_Line)* right_brace end;
+
+importSubStatement: (annotationSupport)? ((id Bang?|Discard) Colon)? nameSpaceItem stringExpr? end;
 
 // 类型别名
 typeAliasStatement: id Bang? Colon typeType end;
@@ -172,6 +175,7 @@ varStatement |
 bindStatement |
 assignStatement |
 expressionStatement |
+annotationStatement |
 New_Line;
 
 // 条件判断
@@ -207,7 +211,8 @@ checkStatement:
 Bang left_brace (functionSupportStatement)* right_brace (checkErrorStatement)* checkFinallyStatment end
 |Bang left_brace (functionSupportStatement)* right_brace (checkErrorStatement)+ end;
 // 定义检查变量
-usingStatement: Bang expression Bang? (typeType)? Colon expression end;
+usingStatement: Bang constId (more constId)* Bang? Colon 
+tupleExpression left_brace (functionSupportStatement)* right_brace end;
 // 错误处理
 checkErrorStatement: (id|id typeType) left_brace (functionSupportStatement)* right_brace;
 // 最终执行
@@ -230,6 +235,8 @@ bindStatement: constId (more constId)* Colon tupleExpression end;
 assignStatement: tupleExpression assign tupleExpression end;
 // 表达式
 expressionStatement: expression end;
+
+annotationStatement: annotationString end;
 
 varId: id Bang typeType? | Discard;
 constId: id typeType? | Discard;
@@ -289,13 +296,15 @@ tuple: left_paren (expression (more expression)* )? right_paren; // 元组
 
 expressionList: expression (more expression)* ; // 表达式列
 
-annotationSupport: annotation (New_Line)?;
+annotationSupport: annotation;
 
-annotation: Less (id Right_Arrow)? annotationList Greater; // 注解
+annotation: annotationList; // 注解
 
-annotationList: (annotationItem end)* annotationItem;
+annotationList: ((annotationItem|annotationString) New_Line?)+;
 
-annotationItem: id (tuple|lambda)?;
+annotationItem: Sharp (id Right_Arrow)? id (tuple|lambda)?;
+
+annotationString: Sharp (stringExpr|rawStringExpr);
 
 callFunc: (tuple|lambda); // 函数调用
 

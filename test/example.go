@@ -2,6 +2,8 @@ package main
 
 import fmt "fmt"
 
+type work = func(string)
+
 func main() {
 	testGo()
 	test(1, "2")

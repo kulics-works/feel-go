@@ -20,11 +20,15 @@ func (v *BaseKParserVisitor) VisitExportStatement(ctx *ExportStatementContext) i
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseKParserVisitor) VisitNamespaceSupportStatement(ctx *NamespaceSupportStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseKParserVisitor) VisitImportStatement(ctx *ImportStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseKParserVisitor) VisitNamespaceSupportStatement(ctx *NamespaceSupportStatementContext) interface{} {
+func (v *BaseKParserVisitor) VisitImportSubStatement(ctx *ImportSubStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -292,6 +296,10 @@ func (v *BaseKParserVisitor) VisitExpressionStatement(ctx *ExpressionStatementCo
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseKParserVisitor) VisitAnnotationStatement(ctx *AnnotationStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseKParserVisitor) VisitVarId(ctx *VarIdContext) interface{} {
 	return v.VisitChildren(ctx)
 }
@@ -337,6 +345,10 @@ func (v *BaseKParserVisitor) VisitAnnotationList(ctx *AnnotationListContext) int
 }
 
 func (v *BaseKParserVisitor) VisitAnnotationItem(ctx *AnnotationItemContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseKParserVisitor) VisitAnnotationString(ctx *AnnotationStringContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

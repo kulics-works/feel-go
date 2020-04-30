@@ -20,7 +20,7 @@ func (me *KVisitor) VisitStatement(ctx *parser.StatementContext) any {
 	if !ok {
 		return ""
 	}
-	obj += fmt.Sprintf("package %s%s%s%s%s", ns.Name, Wrap, ns.Imports, Wrap, ns.Alias)
+	obj += fmt.Sprintf("package %s%s", ns.Name, Wrap)
 	for _, item := range ctx.AllNamespaceSupportStatement() {
 		if v, ok := me.Visit(item).(string); ok {
 			obj += v
@@ -34,16 +34,21 @@ func (me *KVisitor) VisitExportStatement(ctx *parser.ExportStatementContext) any
 	obj := Namespace{
 		Name: name,
 	}
-	for _, item := range ctx.AllImportStatement() {
-		obj.Imports += me.Visit(item).(string)
-	}
-	for _, item := range ctx.AllTypeAliasStatement() {
-		obj.Alias += me.Visit(item).(string)
-	}
 	return obj
 }
 
 func (me *KVisitor) VisitImportStatement(ctx *parser.ImportStatementContext) any {
+	var obj = ""
+	for _, item := range ctx.AllImportSubStatement() {
+		obj += me.Visit(item).(string)
+	}
+	for _, item := range ctx.AllTypeAliasStatement() {
+		obj += me.Visit(item).(string)
+	}
+	return obj
+}
+
+func (me *KVisitor) VisitImportSubStatement(ctx *parser.ImportSubStatementContext) any {
 	obj := "import "
 	if ctx.AnnotationSupport() != nil {
 		obj += me.Visit(ctx.AnnotationSupport()).(string)

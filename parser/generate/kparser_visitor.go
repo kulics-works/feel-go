@@ -17,11 +17,14 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#exportStatement.
 	VisitExportStatement(ctx *ExportStatementContext) interface{}
 
+	// Visit a parse tree produced by KParser#namespaceSupportStatement.
+	VisitNamespaceSupportStatement(ctx *NamespaceSupportStatementContext) interface{}
+
 	// Visit a parse tree produced by KParser#importStatement.
 	VisitImportStatement(ctx *ImportStatementContext) interface{}
 
-	// Visit a parse tree produced by KParser#namespaceSupportStatement.
-	VisitNamespaceSupportStatement(ctx *NamespaceSupportStatementContext) interface{}
+	// Visit a parse tree produced by KParser#importSubStatement.
+	VisitImportSubStatement(ctx *ImportSubStatementContext) interface{}
 
 	// Visit a parse tree produced by KParser#typeAliasStatement.
 	VisitTypeAliasStatement(ctx *TypeAliasStatementContext) interface{}
@@ -221,6 +224,9 @@ type KParserVisitor interface {
 	// Visit a parse tree produced by KParser#expressionStatement.
 	VisitExpressionStatement(ctx *ExpressionStatementContext) interface{}
 
+	// Visit a parse tree produced by KParser#annotationStatement.
+	VisitAnnotationStatement(ctx *AnnotationStatementContext) interface{}
+
 	// Visit a parse tree produced by KParser#varId.
 	VisitVarId(ctx *VarIdContext) interface{}
 
@@ -256,6 +262,9 @@ type KParserVisitor interface {
 
 	// Visit a parse tree produced by KParser#annotationItem.
 	VisitAnnotationItem(ctx *AnnotationItemContext) interface{}
+
+	// Visit a parse tree produced by KParser#annotationString.
+	VisitAnnotationString(ctx *AnnotationStringContext) interface{}
 
 	// Visit a parse tree produced by KParser#callFunc.
 	VisitCallFunc(ctx *CallFuncContext) interface{}

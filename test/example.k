@@ -1,7 +1,9 @@
-main . {
-    # _ package "./project/package path"
+<- main
+
+-> {
+    #: _ package "./project/package path"
     fmt "fmt"
-    # work : (str->)
+    work : (str->)
 }
 
 main : (->) {
@@ -22,7 +24,7 @@ eight int : 8
 num1! : 1
 num2! num : 12.345678
 
-# doWork : (str->) 
+#: doWork : (str->) 
 
 test : (x int, y str -> r1 str, r2 int) {
     a : x * 3
