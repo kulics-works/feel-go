@@ -1,4 +1,4 @@
-// Code generated from KLexer.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from FeelLexer.g4 by ANTLR 4.8. DO NOT EDIT.
 
 package parser
 
@@ -517,7 +517,7 @@ var lexerRuleNames = []string{
 	"RawTextLiteral",
 }
 
-type KLexer struct {
+type FeelLexer struct {
 	*antlr.BaseLexer
 	channelNames []string
 	modeNames    []string
@@ -532,9 +532,9 @@ func init() {
 	}
 }
 
-func NewKLexer(input antlr.CharStream) *KLexer {
+func NewFeelLexer(input antlr.CharStream) *FeelLexer {
 
-	l := new(KLexer)
+	l := new(FeelLexer)
 
 	l.BaseLexer = antlr.NewBaseLexer(input)
 	l.Interpreter = antlr.NewLexerATNSimulator(l, lexerAtn, lexerDecisionToDFA, antlr.NewPredictionContextCache())
@@ -544,122 +544,122 @@ func NewKLexer(input antlr.CharStream) *KLexer {
 	l.RuleNames = lexerRuleNames
 	l.LiteralNames = lexerLiteralNames
 	l.SymbolicNames = lexerSymbolicNames
-	l.GrammarFileName = "KLexer.g4"
+	l.GrammarFileName = "FeelLexer.g4"
 	// TODO: l.EOF = antlr.TokenEOF
 
 	return l
 }
 
-// KLexer tokens.
+// FeelLexer tokens.
 const (
-	KLexerAdd_Equal                = 1
-	KLexerSub_Equal                = 2
-	KLexerMul_Equal                = 3
-	KLexerDiv_Equal                = 4
-	KLexerMod_Equal                = 5
-	KLexerPow_Equal                = 6
-	KLexerColon_Equal              = 7
-	KLexerEqual_Equal              = 8
-	KLexerLess_Equal               = 9
-	KLexerGreater_Equal            = 10
-	KLexerNot_Equal                = 11
-	KLexerCombine_Equal            = 12
-	KLexerForward_Back_Slash       = 13
-	KLexerBack_Forward_Slash       = 14
-	KLexerDot_Dot_Dot              = 15
-	KLexerDot_Dot_Less             = 16
-	KLexerDot_Dot_Greater          = 17
-	KLexerDot_Dot                  = 18
-	KLexerDot                      = 19
-	KLexerComma_Comma_Comma        = 20
-	KLexerComma_Comma              = 21
-	KLexerComma                    = 22
-	KLexerRight_Flow               = 23
-	KLexerLeft_Flow                = 24
-	KLexerRight_Arrow              = 25
-	KLexerLeft_Arrow               = 26
-	KLexerRight_Wave               = 27
-	KLexerLeft_Wave                = 28
-	KLexerEqual                    = 29
-	KLexerLess_Less                = 30
-	KLexerGreater_Greater          = 31
-	KLexerAnd_And                  = 32
-	KLexerOr_Or                    = 33
-	KLexerCaret_Caret              = 34
-	KLexerTilde_Tilde              = 35
-	KLexerLess                     = 36
-	KLexerGreater                  = 37
-	KLexerSemi                     = 38
-	KLexerLeft_Paren               = 39
-	KLexerRight_Paren              = 40
-	KLexerLeft_Brace               = 41
-	KLexerRight_Brace              = 42
-	KLexerLeft_Brack               = 43
-	KLexerRight_Brack              = 44
-	KLexerColon                    = 45
-	KLexerQuestion                 = 46
-	KLexerAt                       = 47
-	KLexerBang                     = 48
-	KLexerCoin                     = 49
-	KLexerTilde                    = 50
-	KLexerAdd                      = 51
-	KLexerSub                      = 52
-	KLexerMul                      = 53
-	KLexerDiv                      = 54
-	KLexerMod                      = 55
-	KLexerAnd                      = 56
-	KLexerOr                       = 57
-	KLexerCaret                    = 58
-	KLexerGrave                    = 59
-	KLexerSharp                    = 60
-	KLexerTypeI8                   = 61
-	KLexerTypeU8                   = 62
-	KLexerTypeI16                  = 63
-	KLexerTypeU16                  = 64
-	KLexerTypeI32                  = 65
-	KLexerTypeU32                  = 66
-	KLexerTypeI64                  = 67
-	KLexerTypeU64                  = 68
-	KLexerTypeF32                  = 69
-	KLexerTypeF64                  = 70
-	KLexerTypeChr                  = 71
-	KLexerTypeStr                  = 72
-	KLexerTypeBool                 = 73
-	KLexerTypeInt                  = 74
-	KLexerTypeNum                  = 75
-	KLexerTypeByte                 = 76
-	KLexerTypeAny                  = 77
-	KLexerNilLiteral               = 78
-	KLexerTrueLiteral              = 79
-	KLexerFalseLiteral             = 80
-	KLexerUndefinedLiteral         = 81
-	KLexerFloatLiteral             = 82
-	KLexerDecimalLiteral           = 83
-	KLexerBinaryLiteral            = 84
-	KLexerOctalLiteral             = 85
-	KLexerHexLiteral               = 86
-	KLexerQuote_Quote_Quote_Open   = 87
-	KLexerQuote_Open               = 88
-	KLexerCharLiteral              = 89
-	KLexerIDPrivate                = 90
-	KLexerIDPublic                 = 91
-	KLexerDiscard                  = 92
-	KLexerComment_Tag              = 93
-	KLexerComment_Block            = 94
-	KLexerComment_Line             = 95
-	KLexerNew_Line                 = 96
-	KLexerWS                       = 97
-	KLexerQuote_Close              = 98
-	KLexerString_Template_Open     = 99
-	KLexerTextLiteral              = 100
-	KLexerQuote_Quote_Quote_Close  = 101
-	KLexerRaw_Quote                = 102
-	KLexerRaw_String_Template_Open = 103
-	KLexerRawTextLiteral           = 104
+	FeelLexerAdd_Equal                = 1
+	FeelLexerSub_Equal                = 2
+	FeelLexerMul_Equal                = 3
+	FeelLexerDiv_Equal                = 4
+	FeelLexerMod_Equal                = 5
+	FeelLexerPow_Equal                = 6
+	FeelLexerColon_Equal              = 7
+	FeelLexerEqual_Equal              = 8
+	FeelLexerLess_Equal               = 9
+	FeelLexerGreater_Equal            = 10
+	FeelLexerNot_Equal                = 11
+	FeelLexerCombine_Equal            = 12
+	FeelLexerForward_Back_Slash       = 13
+	FeelLexerBack_Forward_Slash       = 14
+	FeelLexerDot_Dot_Dot              = 15
+	FeelLexerDot_Dot_Less             = 16
+	FeelLexerDot_Dot_Greater          = 17
+	FeelLexerDot_Dot                  = 18
+	FeelLexerDot                      = 19
+	FeelLexerComma_Comma_Comma        = 20
+	FeelLexerComma_Comma              = 21
+	FeelLexerComma                    = 22
+	FeelLexerRight_Flow               = 23
+	FeelLexerLeft_Flow                = 24
+	FeelLexerRight_Arrow              = 25
+	FeelLexerLeft_Arrow               = 26
+	FeelLexerRight_Wave               = 27
+	FeelLexerLeft_Wave                = 28
+	FeelLexerEqual                    = 29
+	FeelLexerLess_Less                = 30
+	FeelLexerGreater_Greater          = 31
+	FeelLexerAnd_And                  = 32
+	FeelLexerOr_Or                    = 33
+	FeelLexerCaret_Caret              = 34
+	FeelLexerTilde_Tilde              = 35
+	FeelLexerLess                     = 36
+	FeelLexerGreater                  = 37
+	FeelLexerSemi                     = 38
+	FeelLexerLeft_Paren               = 39
+	FeelLexerRight_Paren              = 40
+	FeelLexerLeft_Brace               = 41
+	FeelLexerRight_Brace              = 42
+	FeelLexerLeft_Brack               = 43
+	FeelLexerRight_Brack              = 44
+	FeelLexerColon                    = 45
+	FeelLexerQuestion                 = 46
+	FeelLexerAt                       = 47
+	FeelLexerBang                     = 48
+	FeelLexerCoin                     = 49
+	FeelLexerTilde                    = 50
+	FeelLexerAdd                      = 51
+	FeelLexerSub                      = 52
+	FeelLexerMul                      = 53
+	FeelLexerDiv                      = 54
+	FeelLexerMod                      = 55
+	FeelLexerAnd                      = 56
+	FeelLexerOr                       = 57
+	FeelLexerCaret                    = 58
+	FeelLexerGrave                    = 59
+	FeelLexerSharp                    = 60
+	FeelLexerTypeI8                   = 61
+	FeelLexerTypeU8                   = 62
+	FeelLexerTypeI16                  = 63
+	FeelLexerTypeU16                  = 64
+	FeelLexerTypeI32                  = 65
+	FeelLexerTypeU32                  = 66
+	FeelLexerTypeI64                  = 67
+	FeelLexerTypeU64                  = 68
+	FeelLexerTypeF32                  = 69
+	FeelLexerTypeF64                  = 70
+	FeelLexerTypeChr                  = 71
+	FeelLexerTypeStr                  = 72
+	FeelLexerTypeBool                 = 73
+	FeelLexerTypeInt                  = 74
+	FeelLexerTypeNum                  = 75
+	FeelLexerTypeByte                 = 76
+	FeelLexerTypeAny                  = 77
+	FeelLexerNilLiteral               = 78
+	FeelLexerTrueLiteral              = 79
+	FeelLexerFalseLiteral             = 80
+	FeelLexerUndefinedLiteral         = 81
+	FeelLexerFloatLiteral             = 82
+	FeelLexerDecimalLiteral           = 83
+	FeelLexerBinaryLiteral            = 84
+	FeelLexerOctalLiteral             = 85
+	FeelLexerHexLiteral               = 86
+	FeelLexerQuote_Quote_Quote_Open   = 87
+	FeelLexerQuote_Open               = 88
+	FeelLexerCharLiteral              = 89
+	FeelLexerIDPrivate                = 90
+	FeelLexerIDPublic                 = 91
+	FeelLexerDiscard                  = 92
+	FeelLexerComment_Tag              = 93
+	FeelLexerComment_Block            = 94
+	FeelLexerComment_Line             = 95
+	FeelLexerNew_Line                 = 96
+	FeelLexerWS                       = 97
+	FeelLexerQuote_Close              = 98
+	FeelLexerString_Template_Open     = 99
+	FeelLexerTextLiteral              = 100
+	FeelLexerQuote_Quote_Quote_Close  = 101
+	FeelLexerRaw_Quote                = 102
+	FeelLexerRaw_String_Template_Open = 103
+	FeelLexerRawTextLiteral           = 104
 )
 
-// KLexer modes.
+// FeelLexer modes.
 const (
-	KLexerModeString = iota + 1
-	KLexerModeRawString
+	FeelLexerModeString = iota + 1
+	FeelLexerModeRawString
 )

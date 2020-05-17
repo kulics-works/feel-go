@@ -1,6 +1,6 @@
-// Code generated from KParser.g4 by ANTLR 4.7.2. DO NOT EDIT.
+// Code generated from FeelParser.g4 by ANTLR 4.8. DO NOT EDIT.
 
-package parser // KParser
+package parser // FeelParser
 
 import (
 	"fmt"
@@ -1356,12 +1356,12 @@ func init() {
 	}
 }
 
-type KParser struct {
+type FeelParser struct {
 	*antlr.BaseParser
 }
 
-func NewKParser(input antlr.TokenStream) *KParser {
-	this := new(KParser)
+func NewFeelParser(input antlr.TokenStream) *FeelParser {
+	this := new(FeelParser)
 
 	this.BaseParser = antlr.NewBaseParser(input)
 
@@ -1369,310 +1369,310 @@ func NewKParser(input antlr.TokenStream) *KParser {
 	this.RuleNames = ruleNames
 	this.LiteralNames = literalNames
 	this.SymbolicNames = symbolicNames
-	this.GrammarFileName = "KParser.g4"
+	this.GrammarFileName = "FeelParser.g4"
 
 	return this
 }
 
-// KParser tokens.
+// FeelParser tokens.
 const (
-	KParserEOF                      = antlr.TokenEOF
-	KParserAdd_Equal                = 1
-	KParserSub_Equal                = 2
-	KParserMul_Equal                = 3
-	KParserDiv_Equal                = 4
-	KParserMod_Equal                = 5
-	KParserPow_Equal                = 6
-	KParserColon_Equal              = 7
-	KParserEqual_Equal              = 8
-	KParserLess_Equal               = 9
-	KParserGreater_Equal            = 10
-	KParserNot_Equal                = 11
-	KParserCombine_Equal            = 12
-	KParserForward_Back_Slash       = 13
-	KParserBack_Forward_Slash       = 14
-	KParserDot_Dot_Dot              = 15
-	KParserDot_Dot_Less             = 16
-	KParserDot_Dot_Greater          = 17
-	KParserDot_Dot                  = 18
-	KParserDot                      = 19
-	KParserComma_Comma_Comma        = 20
-	KParserComma_Comma              = 21
-	KParserComma                    = 22
-	KParserRight_Flow               = 23
-	KParserLeft_Flow                = 24
-	KParserRight_Arrow              = 25
-	KParserLeft_Arrow               = 26
-	KParserRight_Wave               = 27
-	KParserLeft_Wave                = 28
-	KParserEqual                    = 29
-	KParserLess_Less                = 30
-	KParserGreater_Greater          = 31
-	KParserAnd_And                  = 32
-	KParserOr_Or                    = 33
-	KParserCaret_Caret              = 34
-	KParserTilde_Tilde              = 35
-	KParserLess                     = 36
-	KParserGreater                  = 37
-	KParserSemi                     = 38
-	KParserLeft_Paren               = 39
-	KParserRight_Paren              = 40
-	KParserLeft_Brace               = 41
-	KParserRight_Brace              = 42
-	KParserLeft_Brack               = 43
-	KParserRight_Brack              = 44
-	KParserColon                    = 45
-	KParserQuestion                 = 46
-	KParserAt                       = 47
-	KParserBang                     = 48
-	KParserCoin                     = 49
-	KParserTilde                    = 50
-	KParserAdd                      = 51
-	KParserSub                      = 52
-	KParserMul                      = 53
-	KParserDiv                      = 54
-	KParserMod                      = 55
-	KParserAnd                      = 56
-	KParserOr                       = 57
-	KParserCaret                    = 58
-	KParserGrave                    = 59
-	KParserSharp                    = 60
-	KParserTypeI8                   = 61
-	KParserTypeU8                   = 62
-	KParserTypeI16                  = 63
-	KParserTypeU16                  = 64
-	KParserTypeI32                  = 65
-	KParserTypeU32                  = 66
-	KParserTypeI64                  = 67
-	KParserTypeU64                  = 68
-	KParserTypeF32                  = 69
-	KParserTypeF64                  = 70
-	KParserTypeChr                  = 71
-	KParserTypeStr                  = 72
-	KParserTypeBool                 = 73
-	KParserTypeInt                  = 74
-	KParserTypeNum                  = 75
-	KParserTypeByte                 = 76
-	KParserTypeAny                  = 77
-	KParserNilLiteral               = 78
-	KParserTrueLiteral              = 79
-	KParserFalseLiteral             = 80
-	KParserUndefinedLiteral         = 81
-	KParserFloatLiteral             = 82
-	KParserDecimalLiteral           = 83
-	KParserBinaryLiteral            = 84
-	KParserOctalLiteral             = 85
-	KParserHexLiteral               = 86
-	KParserQuote_Quote_Quote_Open   = 87
-	KParserQuote_Open               = 88
-	KParserCharLiteral              = 89
-	KParserIDPrivate                = 90
-	KParserIDPublic                 = 91
-	KParserDiscard                  = 92
-	KParserComment_Tag              = 93
-	KParserComment_Block            = 94
-	KParserComment_Line             = 95
-	KParserNew_Line                 = 96
-	KParserWS                       = 97
-	KParserQuote_Close              = 98
-	KParserString_Template_Open     = 99
-	KParserTextLiteral              = 100
-	KParserQuote_Quote_Quote_Close  = 101
-	KParserRaw_Quote                = 102
-	KParserRaw_String_Template_Open = 103
-	KParserRawTextLiteral           = 104
+	FeelParserEOF                      = antlr.TokenEOF
+	FeelParserAdd_Equal                = 1
+	FeelParserSub_Equal                = 2
+	FeelParserMul_Equal                = 3
+	FeelParserDiv_Equal                = 4
+	FeelParserMod_Equal                = 5
+	FeelParserPow_Equal                = 6
+	FeelParserColon_Equal              = 7
+	FeelParserEqual_Equal              = 8
+	FeelParserLess_Equal               = 9
+	FeelParserGreater_Equal            = 10
+	FeelParserNot_Equal                = 11
+	FeelParserCombine_Equal            = 12
+	FeelParserForward_Back_Slash       = 13
+	FeelParserBack_Forward_Slash       = 14
+	FeelParserDot_Dot_Dot              = 15
+	FeelParserDot_Dot_Less             = 16
+	FeelParserDot_Dot_Greater          = 17
+	FeelParserDot_Dot                  = 18
+	FeelParserDot                      = 19
+	FeelParserComma_Comma_Comma        = 20
+	FeelParserComma_Comma              = 21
+	FeelParserComma                    = 22
+	FeelParserRight_Flow               = 23
+	FeelParserLeft_Flow                = 24
+	FeelParserRight_Arrow              = 25
+	FeelParserLeft_Arrow               = 26
+	FeelParserRight_Wave               = 27
+	FeelParserLeft_Wave                = 28
+	FeelParserEqual                    = 29
+	FeelParserLess_Less                = 30
+	FeelParserGreater_Greater          = 31
+	FeelParserAnd_And                  = 32
+	FeelParserOr_Or                    = 33
+	FeelParserCaret_Caret              = 34
+	FeelParserTilde_Tilde              = 35
+	FeelParserLess                     = 36
+	FeelParserGreater                  = 37
+	FeelParserSemi                     = 38
+	FeelParserLeft_Paren               = 39
+	FeelParserRight_Paren              = 40
+	FeelParserLeft_Brace               = 41
+	FeelParserRight_Brace              = 42
+	FeelParserLeft_Brack               = 43
+	FeelParserRight_Brack              = 44
+	FeelParserColon                    = 45
+	FeelParserQuestion                 = 46
+	FeelParserAt                       = 47
+	FeelParserBang                     = 48
+	FeelParserCoin                     = 49
+	FeelParserTilde                    = 50
+	FeelParserAdd                      = 51
+	FeelParserSub                      = 52
+	FeelParserMul                      = 53
+	FeelParserDiv                      = 54
+	FeelParserMod                      = 55
+	FeelParserAnd                      = 56
+	FeelParserOr                       = 57
+	FeelParserCaret                    = 58
+	FeelParserGrave                    = 59
+	FeelParserSharp                    = 60
+	FeelParserTypeI8                   = 61
+	FeelParserTypeU8                   = 62
+	FeelParserTypeI16                  = 63
+	FeelParserTypeU16                  = 64
+	FeelParserTypeI32                  = 65
+	FeelParserTypeU32                  = 66
+	FeelParserTypeI64                  = 67
+	FeelParserTypeU64                  = 68
+	FeelParserTypeF32                  = 69
+	FeelParserTypeF64                  = 70
+	FeelParserTypeChr                  = 71
+	FeelParserTypeStr                  = 72
+	FeelParserTypeBool                 = 73
+	FeelParserTypeInt                  = 74
+	FeelParserTypeNum                  = 75
+	FeelParserTypeByte                 = 76
+	FeelParserTypeAny                  = 77
+	FeelParserNilLiteral               = 78
+	FeelParserTrueLiteral              = 79
+	FeelParserFalseLiteral             = 80
+	FeelParserUndefinedLiteral         = 81
+	FeelParserFloatLiteral             = 82
+	FeelParserDecimalLiteral           = 83
+	FeelParserBinaryLiteral            = 84
+	FeelParserOctalLiteral             = 85
+	FeelParserHexLiteral               = 86
+	FeelParserQuote_Quote_Quote_Open   = 87
+	FeelParserQuote_Open               = 88
+	FeelParserCharLiteral              = 89
+	FeelParserIDPrivate                = 90
+	FeelParserIDPublic                 = 91
+	FeelParserDiscard                  = 92
+	FeelParserComment_Tag              = 93
+	FeelParserComment_Block            = 94
+	FeelParserComment_Line             = 95
+	FeelParserNew_Line                 = 96
+	FeelParserWS                       = 97
+	FeelParserQuote_Close              = 98
+	FeelParserString_Template_Open     = 99
+	FeelParserTextLiteral              = 100
+	FeelParserQuote_Quote_Quote_Close  = 101
+	FeelParserRaw_Quote                = 102
+	FeelParserRaw_String_Template_Open = 103
+	FeelParserRawTextLiteral           = 104
 )
 
-// KParser rules.
+// FeelParser rules.
 const (
-	KParserRULE_program                        = 0
-	KParserRULE_statement                      = 1
-	KParserRULE_exportStatement                = 2
-	KParserRULE_namespaceSupportStatement      = 3
-	KParserRULE_importStatement                = 4
-	KParserRULE_importSubStatement             = 5
-	KParserRULE_typeAliasStatement             = 6
-	KParserRULE_typeRedefineStatement          = 7
-	KParserRULE_typeTagStatement               = 8
-	KParserRULE_enumStatement                  = 9
-	KParserRULE_enumSupportStatement           = 10
-	KParserRULE_namespaceVariableStatement     = 11
-	KParserRULE_namespaceConstantStatement     = 12
-	KParserRULE_namespaceFunctionStatement     = 13
-	KParserRULE_packageStatement               = 14
-	KParserRULE_packageStaticStatement         = 15
-	KParserRULE_packageStaticSupportStatement  = 16
-	KParserRULE_packageStaticVariableStatement = 17
-	KParserRULE_packageStaticConstantStatement = 18
-	KParserRULE_packageStaticFunctionStatement = 19
-	KParserRULE_packageFieldStatement          = 20
-	KParserRULE_packageSupportStatement        = 21
-	KParserRULE_includeStatement               = 22
-	KParserRULE_packageNewStatement            = 23
-	KParserRULE_packageVariableStatement       = 24
-	KParserRULE_packageConstantStatement       = 25
-	KParserRULE_packageFunctionStatement       = 26
-	KParserRULE_packageControlSubStatement     = 27
-	KParserRULE_packageEventStatement          = 28
-	KParserRULE_implementStatement             = 29
-	KParserRULE_overrideVariableStatement      = 30
-	KParserRULE_overrideConstantStatement      = 31
-	KParserRULE_overrideFunctionStatement      = 32
-	KParserRULE_protocolStatement              = 33
-	KParserRULE_protocolSubStatement           = 34
-	KParserRULE_protocolSupportStatement       = 35
-	KParserRULE_protocolVariableStatement      = 36
-	KParserRULE_protocolFunctionStatement      = 37
-	KParserRULE_functionStatement              = 38
-	KParserRULE_returnStatement                = 39
-	KParserRULE_returnAsyncStatement           = 40
-	KParserRULE_yieldReturnStatement           = 41
-	KParserRULE_yieldBreakStatement            = 42
-	KParserRULE_parameterClauseIn              = 43
-	KParserRULE_parameterClauseOut             = 44
-	KParserRULE_parameter                      = 45
-	KParserRULE_functionSupportStatement       = 46
-	KParserRULE_judgeCaseStatement             = 47
-	KParserRULE_caseStatement                  = 48
-	KParserRULE_caseExprStatement              = 49
-	KParserRULE_judgeStatement                 = 50
-	KParserRULE_judgeElseStatement             = 51
-	KParserRULE_judgeIfStatement               = 52
-	KParserRULE_judgeElseIfStatement           = 53
-	KParserRULE_loopStatement                  = 54
-	KParserRULE_loopEachStatement              = 55
-	KParserRULE_loopCaseStatement              = 56
-	KParserRULE_loopElseStatement              = 57
-	KParserRULE_loopJumpStatement              = 58
-	KParserRULE_loopContinueStatement          = 59
-	KParserRULE_checkStatement                 = 60
-	KParserRULE_usingStatement                 = 61
-	KParserRULE_checkErrorStatement            = 62
-	KParserRULE_checkFinallyStatment           = 63
-	KParserRULE_checkReportStatement           = 64
-	KParserRULE_iteratorStatement              = 65
-	KParserRULE_variableDeclaredStatement      = 66
-	KParserRULE_constantDeclaredStatement      = 67
-	KParserRULE_varStatement                   = 68
-	KParserRULE_bindStatement                  = 69
-	KParserRULE_assignStatement                = 70
-	KParserRULE_expressionStatement            = 71
-	KParserRULE_annotationStatement            = 72
-	KParserRULE_varId                          = 73
-	KParserRULE_constId                        = 74
-	KParserRULE_tupleExpression                = 75
-	KParserRULE_primaryExpression              = 76
-	KParserRULE_expression                     = 77
-	KParserRULE_callExpression                 = 78
-	KParserRULE_tuple                          = 79
-	KParserRULE_expressionList                 = 80
-	KParserRULE_annotationSupport              = 81
-	KParserRULE_annotation                     = 82
-	KParserRULE_annotationList                 = 83
-	KParserRULE_annotationItem                 = 84
-	KParserRULE_annotationString               = 85
-	KParserRULE_callFunc                       = 86
-	KParserRULE_callAsync                      = 87
-	KParserRULE_callAwait                      = 88
-	KParserRULE_callChannel                    = 89
-	KParserRULE_transfer                       = 90
-	KParserRULE_callElement                    = 91
-	KParserRULE_callPkg                        = 92
-	KParserRULE_callNew                        = 93
-	KParserRULE_orElse                         = 94
-	KParserRULE_typeConversion                 = 95
-	KParserRULE_typeCheck                      = 96
-	KParserRULE_pkgAssign                      = 97
-	KParserRULE_pkgAssignElement               = 98
-	KParserRULE_listAssign                     = 99
-	KParserRULE_dictionaryAssign               = 100
-	KParserRULE_list                           = 101
-	KParserRULE_dictionary                     = 102
-	KParserRULE_dictionaryElement              = 103
-	KParserRULE_slice                          = 104
-	KParserRULE_sliceFull                      = 105
-	KParserRULE_sliceStart                     = 106
-	KParserRULE_sliceEnd                       = 107
-	KParserRULE_nameSpaceItem                  = 108
-	KParserRULE_name                           = 109
-	KParserRULE_templateDefine                 = 110
-	KParserRULE_templateDefineItem             = 111
-	KParserRULE_templateCall                   = 112
-	KParserRULE_lambda                         = 113
-	KParserRULE_lambdaIn                       = 114
-	KParserRULE_pkgAnonymous                   = 115
-	KParserRULE_pkgAnonymousAssign             = 116
-	KParserRULE_pkgAnonymousAssignElement      = 117
-	KParserRULE_functionExpression             = 118
-	KParserRULE_plusMinus                      = 119
-	KParserRULE_negate                         = 120
-	KParserRULE_bitwiseNotExpression           = 121
-	KParserRULE_linq                           = 122
-	KParserRULE_linqHeadItem                   = 123
-	KParserRULE_linqItem                       = 124
-	KParserRULE_judgeExpression                = 125
-	KParserRULE_judgeExpressionElseStatement   = 126
-	KParserRULE_judgeExpressionIfStatement     = 127
-	KParserRULE_judgeExpressionElseIfStatement = 128
-	KParserRULE_judgeCaseExpression            = 129
-	KParserRULE_caseExpressionStatement        = 130
-	KParserRULE_loopExpression                 = 131
-	KParserRULE_loopEachExpression             = 132
-	KParserRULE_loopElseExpression             = 133
-	KParserRULE_checkExpression                = 134
-	KParserRULE_checkErrorExpression           = 135
-	KParserRULE_dataStatement                  = 136
-	KParserRULE_stringExpr                     = 137
-	KParserRULE_stringContent                  = 138
-	KParserRULE_stringTemplate                 = 139
-	KParserRULE_rawStringExpr                  = 140
-	KParserRULE_rawStringContent               = 141
-	KParserRULE_rawStringTemplate              = 142
-	KParserRULE_floatExpr                      = 143
-	KParserRULE_integerExpr                    = 144
-	KParserRULE_typeNotNull                    = 145
-	KParserRULE_typeType                       = 146
-	KParserRULE_typeNullable                   = 147
-	KParserRULE_typeArray                      = 148
-	KParserRULE_typeList                       = 149
-	KParserRULE_typeSet                        = 150
-	KParserRULE_typeDictionary                 = 151
-	KParserRULE_typeStack                      = 152
-	KParserRULE_typeQueue                      = 153
-	KParserRULE_typeChannel                    = 154
-	KParserRULE_typePackage                    = 155
-	KParserRULE_typeFunction                   = 156
-	KParserRULE_typeAny                        = 157
-	KParserRULE_typeFunctionParameterClause    = 158
-	KParserRULE_typeBasic                      = 159
-	KParserRULE_nilExpr                        = 160
-	KParserRULE_boolExpr                       = 161
-	KParserRULE_bitwise                        = 162
-	KParserRULE_bitwiseAnd                     = 163
-	KParserRULE_bitwiseOr                      = 164
-	KParserRULE_bitwiseNot                     = 165
-	KParserRULE_bitwiseXor                     = 166
-	KParserRULE_bitwiseLeftShift               = 167
-	KParserRULE_bitwiseRightShift              = 168
-	KParserRULE_compareCombine                 = 169
-	KParserRULE_compare                        = 170
-	KParserRULE_logic                          = 171
-	KParserRULE_assign                         = 172
-	KParserRULE_add                            = 173
-	KParserRULE_mul                            = 174
-	KParserRULE_pow                            = 175
-	KParserRULE_call                           = 176
-	KParserRULE_wave                           = 177
-	KParserRULE_id                             = 178
-	KParserRULE_idItem                         = 179
-	KParserRULE_end                            = 180
-	KParserRULE_more                           = 181
-	KParserRULE_left_brace                     = 182
-	KParserRULE_right_brace                    = 183
-	KParserRULE_left_paren                     = 184
-	KParserRULE_right_paren                    = 185
-	KParserRULE_left_brack                     = 186
-	KParserRULE_right_brack                    = 187
+	FeelParserRULE_program                        = 0
+	FeelParserRULE_statement                      = 1
+	FeelParserRULE_exportStatement                = 2
+	FeelParserRULE_namespaceSupportStatement      = 3
+	FeelParserRULE_importStatement                = 4
+	FeelParserRULE_importSubStatement             = 5
+	FeelParserRULE_typeAliasStatement             = 6
+	FeelParserRULE_typeRedefineStatement          = 7
+	FeelParserRULE_typeTagStatement               = 8
+	FeelParserRULE_enumStatement                  = 9
+	FeelParserRULE_enumSupportStatement           = 10
+	FeelParserRULE_namespaceVariableStatement     = 11
+	FeelParserRULE_namespaceConstantStatement     = 12
+	FeelParserRULE_namespaceFunctionStatement     = 13
+	FeelParserRULE_packageStatement               = 14
+	FeelParserRULE_packageStaticStatement         = 15
+	FeelParserRULE_packageStaticSupportStatement  = 16
+	FeelParserRULE_packageStaticVariableStatement = 17
+	FeelParserRULE_packageStaticConstantStatement = 18
+	FeelParserRULE_packageStaticFunctionStatement = 19
+	FeelParserRULE_packageFieldStatement          = 20
+	FeelParserRULE_packageSupportStatement        = 21
+	FeelParserRULE_includeStatement               = 22
+	FeelParserRULE_packageNewStatement            = 23
+	FeelParserRULE_packageVariableStatement       = 24
+	FeelParserRULE_packageConstantStatement       = 25
+	FeelParserRULE_packageFunctionStatement       = 26
+	FeelParserRULE_packageControlSubStatement     = 27
+	FeelParserRULE_packageEventStatement          = 28
+	FeelParserRULE_implementStatement             = 29
+	FeelParserRULE_overrideVariableStatement      = 30
+	FeelParserRULE_overrideConstantStatement      = 31
+	FeelParserRULE_overrideFunctionStatement      = 32
+	FeelParserRULE_protocolStatement              = 33
+	FeelParserRULE_protocolSubStatement           = 34
+	FeelParserRULE_protocolSupportStatement       = 35
+	FeelParserRULE_protocolVariableStatement      = 36
+	FeelParserRULE_protocolFunctionStatement      = 37
+	FeelParserRULE_functionStatement              = 38
+	FeelParserRULE_returnStatement                = 39
+	FeelParserRULE_returnAsyncStatement           = 40
+	FeelParserRULE_yieldReturnStatement           = 41
+	FeelParserRULE_yieldBreakStatement            = 42
+	FeelParserRULE_parameterClauseIn              = 43
+	FeelParserRULE_parameterClauseOut             = 44
+	FeelParserRULE_parameter                      = 45
+	FeelParserRULE_functionSupportStatement       = 46
+	FeelParserRULE_judgeCaseStatement             = 47
+	FeelParserRULE_caseStatement                  = 48
+	FeelParserRULE_caseExprStatement              = 49
+	FeelParserRULE_judgeStatement                 = 50
+	FeelParserRULE_judgeElseStatement             = 51
+	FeelParserRULE_judgeIfStatement               = 52
+	FeelParserRULE_judgeElseIfStatement           = 53
+	FeelParserRULE_loopStatement                  = 54
+	FeelParserRULE_loopEachStatement              = 55
+	FeelParserRULE_loopCaseStatement              = 56
+	FeelParserRULE_loopElseStatement              = 57
+	FeelParserRULE_loopJumpStatement              = 58
+	FeelParserRULE_loopContinueStatement          = 59
+	FeelParserRULE_checkStatement                 = 60
+	FeelParserRULE_usingStatement                 = 61
+	FeelParserRULE_checkErrorStatement            = 62
+	FeelParserRULE_checkFinallyStatment           = 63
+	FeelParserRULE_checkReportStatement           = 64
+	FeelParserRULE_iteratorStatement              = 65
+	FeelParserRULE_variableDeclaredStatement      = 66
+	FeelParserRULE_constantDeclaredStatement      = 67
+	FeelParserRULE_varStatement                   = 68
+	FeelParserRULE_bindStatement                  = 69
+	FeelParserRULE_assignStatement                = 70
+	FeelParserRULE_expressionStatement            = 71
+	FeelParserRULE_annotationStatement            = 72
+	FeelParserRULE_varId                          = 73
+	FeelParserRULE_constId                        = 74
+	FeelParserRULE_tupleExpression                = 75
+	FeelParserRULE_primaryExpression              = 76
+	FeelParserRULE_expression                     = 77
+	FeelParserRULE_callExpression                 = 78
+	FeelParserRULE_tuple                          = 79
+	FeelParserRULE_expressionList                 = 80
+	FeelParserRULE_annotationSupport              = 81
+	FeelParserRULE_annotation                     = 82
+	FeelParserRULE_annotationList                 = 83
+	FeelParserRULE_annotationItem                 = 84
+	FeelParserRULE_annotationString               = 85
+	FeelParserRULE_callFunc                       = 86
+	FeelParserRULE_callAsync                      = 87
+	FeelParserRULE_callAwait                      = 88
+	FeelParserRULE_callChannel                    = 89
+	FeelParserRULE_transfer                       = 90
+	FeelParserRULE_callElement                    = 91
+	FeelParserRULE_callPkg                        = 92
+	FeelParserRULE_callNew                        = 93
+	FeelParserRULE_orElse                         = 94
+	FeelParserRULE_typeConversion                 = 95
+	FeelParserRULE_typeCheck                      = 96
+	FeelParserRULE_pkgAssign                      = 97
+	FeelParserRULE_pkgAssignElement               = 98
+	FeelParserRULE_listAssign                     = 99
+	FeelParserRULE_dictionaryAssign               = 100
+	FeelParserRULE_list                           = 101
+	FeelParserRULE_dictionary                     = 102
+	FeelParserRULE_dictionaryElement              = 103
+	FeelParserRULE_slice                          = 104
+	FeelParserRULE_sliceFull                      = 105
+	FeelParserRULE_sliceStart                     = 106
+	FeelParserRULE_sliceEnd                       = 107
+	FeelParserRULE_nameSpaceItem                  = 108
+	FeelParserRULE_name                           = 109
+	FeelParserRULE_templateDefine                 = 110
+	FeelParserRULE_templateDefineItem             = 111
+	FeelParserRULE_templateCall                   = 112
+	FeelParserRULE_lambda                         = 113
+	FeelParserRULE_lambdaIn                       = 114
+	FeelParserRULE_pkgAnonymous                   = 115
+	FeelParserRULE_pkgAnonymousAssign             = 116
+	FeelParserRULE_pkgAnonymousAssignElement      = 117
+	FeelParserRULE_functionExpression             = 118
+	FeelParserRULE_plusMinus                      = 119
+	FeelParserRULE_negate                         = 120
+	FeelParserRULE_bitwiseNotExpression           = 121
+	FeelParserRULE_linq                           = 122
+	FeelParserRULE_linqHeadItem                   = 123
+	FeelParserRULE_linqItem                       = 124
+	FeelParserRULE_judgeExpression                = 125
+	FeelParserRULE_judgeExpressionElseStatement   = 126
+	FeelParserRULE_judgeExpressionIfStatement     = 127
+	FeelParserRULE_judgeExpressionElseIfStatement = 128
+	FeelParserRULE_judgeCaseExpression            = 129
+	FeelParserRULE_caseExpressionStatement        = 130
+	FeelParserRULE_loopExpression                 = 131
+	FeelParserRULE_loopEachExpression             = 132
+	FeelParserRULE_loopElseExpression             = 133
+	FeelParserRULE_checkExpression                = 134
+	FeelParserRULE_checkErrorExpression           = 135
+	FeelParserRULE_dataStatement                  = 136
+	FeelParserRULE_stringExpr                     = 137
+	FeelParserRULE_stringContent                  = 138
+	FeelParserRULE_stringTemplate                 = 139
+	FeelParserRULE_rawStringExpr                  = 140
+	FeelParserRULE_rawStringContent               = 141
+	FeelParserRULE_rawStringTemplate              = 142
+	FeelParserRULE_floatExpr                      = 143
+	FeelParserRULE_integerExpr                    = 144
+	FeelParserRULE_typeNotNull                    = 145
+	FeelParserRULE_typeType                       = 146
+	FeelParserRULE_typeNullable                   = 147
+	FeelParserRULE_typeArray                      = 148
+	FeelParserRULE_typeList                       = 149
+	FeelParserRULE_typeSet                        = 150
+	FeelParserRULE_typeDictionary                 = 151
+	FeelParserRULE_typeStack                      = 152
+	FeelParserRULE_typeQueue                      = 153
+	FeelParserRULE_typeChannel                    = 154
+	FeelParserRULE_typePackage                    = 155
+	FeelParserRULE_typeFunction                   = 156
+	FeelParserRULE_typeAny                        = 157
+	FeelParserRULE_typeFunctionParameterClause    = 158
+	FeelParserRULE_typeBasic                      = 159
+	FeelParserRULE_nilExpr                        = 160
+	FeelParserRULE_boolExpr                       = 161
+	FeelParserRULE_bitwise                        = 162
+	FeelParserRULE_bitwiseAnd                     = 163
+	FeelParserRULE_bitwiseOr                      = 164
+	FeelParserRULE_bitwiseNot                     = 165
+	FeelParserRULE_bitwiseXor                     = 166
+	FeelParserRULE_bitwiseLeftShift               = 167
+	FeelParserRULE_bitwiseRightShift              = 168
+	FeelParserRULE_compareCombine                 = 169
+	FeelParserRULE_compare                        = 170
+	FeelParserRULE_logic                          = 171
+	FeelParserRULE_assign                         = 172
+	FeelParserRULE_add                            = 173
+	FeelParserRULE_mul                            = 174
+	FeelParserRULE_pow                            = 175
+	FeelParserRULE_call                           = 176
+	FeelParserRULE_wave                           = 177
+	FeelParserRULE_id                             = 178
+	FeelParserRULE_idItem                         = 179
+	FeelParserRULE_end                            = 180
+	FeelParserRULE_more                           = 181
+	FeelParserRULE_left_brace                     = 182
+	FeelParserRULE_right_brace                    = 183
+	FeelParserRULE_left_paren                     = 184
+	FeelParserRULE_right_paren                    = 185
+	FeelParserRULE_left_brack                     = 186
+	FeelParserRULE_right_brack                    = 187
 )
 
 // IProgramContext is an interface to support dynamic dispatch.
@@ -1694,7 +1694,7 @@ type ProgramContext struct {
 func NewEmptyProgramContext() *ProgramContext {
 	var p = new(ProgramContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_program
+	p.RuleIndex = FeelParserRULE_program
 	return p
 }
 
@@ -1706,7 +1706,7 @@ func NewProgramContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_program
+	p.RuleIndex = FeelParserRULE_program
 
 	return p
 }
@@ -1746,7 +1746,7 @@ func (s *ProgramContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitProgram(s)
 
 	default:
@@ -1754,9 +1754,9 @@ func (s *ProgramContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Program() (localctx IProgramContext) {
+func (p *FeelParser) Program() (localctx IProgramContext) {
 	localctx = NewProgramContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 0, KParserRULE_program)
+	p.EnterRule(localctx, 0, FeelParserRULE_program)
 	var _la int
 
 	defer func() {
@@ -1780,7 +1780,7 @@ func (p *KParser) Program() (localctx IProgramContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = _la == KParserLeft_Arrow || _la == KParserSharp || _la == KParserNew_Line {
+	for ok := true; ok; ok = _la == FeelParserLeft_Arrow || _la == FeelParserSharp || _la == FeelParserNew_Line {
 		{
 			p.SetState(376)
 			p.Statement()
@@ -1813,7 +1813,7 @@ type StatementContext struct {
 func NewEmptyStatementContext() *StatementContext {
 	var p = new(StatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_statement
+	p.RuleIndex = FeelParserRULE_statement
 	return p
 }
 
@@ -1825,7 +1825,7 @@ func NewStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_statement
+	p.RuleIndex = FeelParserRULE_statement
 
 	return p
 }
@@ -1843,11 +1843,11 @@ func (s *StatementContext) ExportStatement() IExportStatementContext {
 }
 
 func (s *StatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *StatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *StatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -1893,7 +1893,7 @@ func (s *StatementContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitStatement(s)
 
 	default:
@@ -1901,9 +1901,9 @@ func (s *StatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Statement() (localctx IStatementContext) {
+func (p *FeelParser) Statement() (localctx IStatementContext) {
 	localctx = NewStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 2, KParserRULE_statement)
+	p.EnterRule(localctx, 2, FeelParserRULE_statement)
 	var _la int
 
 	defer func() {
@@ -1929,10 +1929,10 @@ func (p *KParser) Statement() (localctx IStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(381)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(386)
@@ -1943,7 +1943,7 @@ func (p *KParser) Statement() (localctx IStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(387)
 			p.AnnotationSupport()
@@ -1962,7 +1962,7 @@ func (p *KParser) Statement() (localctx IStatementContext) {
 		if _alt == 1 {
 			{
 				p.SetState(391)
-				p.Match(KParserNew_Line)
+				p.Match(FeelParserNew_Line)
 			}
 
 		}
@@ -2009,7 +2009,7 @@ type ExportStatementContext struct {
 func NewEmptyExportStatementContext() *ExportStatementContext {
 	var p = new(ExportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_exportStatement
+	p.RuleIndex = FeelParserRULE_exportStatement
 	return p
 }
 
@@ -2021,7 +2021,7 @@ func NewExportStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_exportStatement
+	p.RuleIndex = FeelParserRULE_exportStatement
 
 	return p
 }
@@ -2029,7 +2029,7 @@ func NewExportStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *ExportStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ExportStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Arrow, 0)
+	return s.GetToken(FeelParserLeft_Arrow, 0)
 }
 
 func (s *ExportStatementContext) NameSpaceItem() INameSpaceItemContext {
@@ -2062,7 +2062,7 @@ func (s *ExportStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *ExportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitExportStatement(s)
 
 	default:
@@ -2070,9 +2070,9 @@ func (s *ExportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) ExportStatement() (localctx IExportStatementContext) {
+func (p *FeelParser) ExportStatement() (localctx IExportStatementContext) {
 	localctx = NewExportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 4, KParserRULE_exportStatement)
+	p.EnterRule(localctx, 4, FeelParserRULE_exportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -2093,7 +2093,7 @@ func (p *KParser) ExportStatement() (localctx IExportStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(403)
-		p.Match(KParserLeft_Arrow)
+		p.Match(FeelParserLeft_Arrow)
 	}
 	{
 		p.SetState(404)
@@ -2126,7 +2126,7 @@ type NamespaceSupportStatementContext struct {
 func NewEmptyNamespaceSupportStatementContext() *NamespaceSupportStatementContext {
 	var p = new(NamespaceSupportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_namespaceSupportStatement
+	p.RuleIndex = FeelParserRULE_namespaceSupportStatement
 	return p
 }
 
@@ -2138,7 +2138,7 @@ func NewNamespaceSupportStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_namespaceSupportStatement
+	p.RuleIndex = FeelParserRULE_namespaceSupportStatement
 
 	return p
 }
@@ -2246,7 +2246,7 @@ func (s *NamespaceSupportStatementContext) TypeTagStatement() ITypeTagStatementC
 }
 
 func (s *NamespaceSupportStatementContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *NamespaceSupportStatementContext) GetRuleContext() antlr.RuleContext {
@@ -2259,7 +2259,7 @@ func (s *NamespaceSupportStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *NamespaceSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNamespaceSupportStatement(s)
 
 	default:
@@ -2267,9 +2267,9 @@ func (s *NamespaceSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) NamespaceSupportStatement() (localctx INamespaceSupportStatementContext) {
+func (p *FeelParser) NamespaceSupportStatement() (localctx INamespaceSupportStatementContext) {
 	localctx = NewNamespaceSupportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 6, KParserRULE_namespaceSupportStatement)
+	p.EnterRule(localctx, 6, FeelParserRULE_namespaceSupportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -2364,7 +2364,7 @@ func (p *KParser) NamespaceSupportStatement() (localctx INamespaceSupportStateme
 		p.EnterOuterAlt(localctx, 11)
 		{
 			p.SetState(417)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -2391,7 +2391,7 @@ type ImportStatementContext struct {
 func NewEmptyImportStatementContext() *ImportStatementContext {
 	var p = new(ImportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_importStatement
+	p.RuleIndex = FeelParserRULE_importStatement
 	return p
 }
 
@@ -2403,7 +2403,7 @@ func NewImportStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_importStatement
+	p.RuleIndex = FeelParserRULE_importStatement
 
 	return p
 }
@@ -2411,7 +2411,7 @@ func NewImportStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *ImportStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ImportStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *ImportStatementContext) Left_brace() ILeft_braceContext {
@@ -2491,11 +2491,11 @@ func (s *ImportStatementContext) TypeAliasStatement(i int) ITypeAliasStatementCo
 }
 
 func (s *ImportStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *ImportStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *ImportStatementContext) GetRuleContext() antlr.RuleContext {
@@ -2508,7 +2508,7 @@ func (s *ImportStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *ImportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitImportStatement(s)
 
 	default:
@@ -2516,9 +2516,9 @@ func (s *ImportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) ImportStatement() (localctx IImportStatementContext) {
+func (p *FeelParser) ImportStatement() (localctx IImportStatementContext) {
 	localctx = NewImportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 8, KParserRULE_importStatement)
+	p.EnterRule(localctx, 8, FeelParserRULE_importStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -2541,7 +2541,7 @@ func (p *KParser) ImportStatement() (localctx IImportStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(420)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(421)
@@ -2571,7 +2571,7 @@ func (p *KParser) ImportStatement() (localctx IImportStatementContext) {
 			case 3:
 				{
 					p.SetState(424)
-					p.Match(KParserNew_Line)
+					p.Match(FeelParserNew_Line)
 				}
 
 			}
@@ -2612,7 +2612,7 @@ type ImportSubStatementContext struct {
 func NewEmptyImportSubStatementContext() *ImportSubStatementContext {
 	var p = new(ImportSubStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_importSubStatement
+	p.RuleIndex = FeelParserRULE_importSubStatement
 	return p
 }
 
@@ -2624,7 +2624,7 @@ func NewImportSubStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_importSubStatement
+	p.RuleIndex = FeelParserRULE_importSubStatement
 
 	return p
 }
@@ -2662,7 +2662,7 @@ func (s *ImportSubStatementContext) AnnotationSupport() IAnnotationSupportContex
 }
 
 func (s *ImportSubStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *ImportSubStatementContext) StringExpr() IStringExprContext {
@@ -2686,11 +2686,11 @@ func (s *ImportSubStatementContext) Id() IIdContext {
 }
 
 func (s *ImportSubStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *ImportSubStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *ImportSubStatementContext) GetRuleContext() antlr.RuleContext {
@@ -2703,7 +2703,7 @@ func (s *ImportSubStatementContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *ImportSubStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitImportSubStatement(s)
 
 	default:
@@ -2711,9 +2711,9 @@ func (s *ImportSubStatementContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) ImportSubStatement() (localctx IImportSubStatementContext) {
+func (p *FeelParser) ImportSubStatement() (localctx IImportSubStatementContext) {
 	localctx = NewImportSubStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 10, KParserRULE_importSubStatement)
+	p.EnterRule(localctx, 10, FeelParserRULE_importSubStatement)
 	var _la int
 
 	defer func() {
@@ -2737,7 +2737,7 @@ func (p *KParser) ImportSubStatement() (localctx IImportSubStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(433)
 			p.AnnotationSupport()
@@ -2752,7 +2752,7 @@ func (p *KParser) ImportSubStatement() (localctx IImportSubStatementContext) {
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
-		case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+		case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 			{
 				p.SetState(436)
 				p.Id()
@@ -2761,18 +2761,18 @@ func (p *KParser) ImportSubStatement() (localctx IImportSubStatementContext) {
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			if _la == KParserBang {
+			if _la == FeelParserBang {
 				{
 					p.SetState(437)
-					p.Match(KParserBang)
+					p.Match(FeelParserBang)
 				}
 
 			}
 
-		case KParserDiscard:
+		case FeelParserDiscard:
 			{
 				p.SetState(440)
-				p.Match(KParserDiscard)
+				p.Match(FeelParserDiscard)
 			}
 
 		default:
@@ -2780,7 +2780,7 @@ func (p *KParser) ImportSubStatement() (localctx IImportSubStatementContext) {
 		}
 		{
 			p.SetState(443)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 
 	}
@@ -2792,7 +2792,7 @@ func (p *KParser) ImportSubStatement() (localctx IImportSubStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserQuote_Open {
+	if _la == FeelParserQuote_Open {
 		{
 			p.SetState(447)
 			p.StringExpr()
@@ -2826,7 +2826,7 @@ type TypeAliasStatementContext struct {
 func NewEmptyTypeAliasStatementContext() *TypeAliasStatementContext {
 	var p = new(TypeAliasStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeAliasStatement
+	p.RuleIndex = FeelParserRULE_typeAliasStatement
 	return p
 }
 
@@ -2838,7 +2838,7 @@ func NewTypeAliasStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeAliasStatement
+	p.RuleIndex = FeelParserRULE_typeAliasStatement
 
 	return p
 }
@@ -2856,7 +2856,7 @@ func (s *TypeAliasStatementContext) Id() IIdContext {
 }
 
 func (s *TypeAliasStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *TypeAliasStatementContext) TypeType() ITypeTypeContext {
@@ -2880,7 +2880,7 @@ func (s *TypeAliasStatementContext) End() IEndContext {
 }
 
 func (s *TypeAliasStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *TypeAliasStatementContext) GetRuleContext() antlr.RuleContext {
@@ -2893,7 +2893,7 @@ func (s *TypeAliasStatementContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *TypeAliasStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeAliasStatement(s)
 
 	default:
@@ -2901,9 +2901,9 @@ func (s *TypeAliasStatementContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) TypeAliasStatement() (localctx ITypeAliasStatementContext) {
+func (p *FeelParser) TypeAliasStatement() (localctx ITypeAliasStatementContext) {
 	localctx = NewTypeAliasStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 12, KParserRULE_typeAliasStatement)
+	p.EnterRule(localctx, 12, FeelParserRULE_typeAliasStatement)
 	var _la int
 
 	defer func() {
@@ -2931,16 +2931,16 @@ func (p *KParser) TypeAliasStatement() (localctx ITypeAliasStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(453)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(456)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(457)
@@ -2973,7 +2973,7 @@ type TypeRedefineStatementContext struct {
 func NewEmptyTypeRedefineStatementContext() *TypeRedefineStatementContext {
 	var p = new(TypeRedefineStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeRedefineStatement
+	p.RuleIndex = FeelParserRULE_typeRedefineStatement
 	return p
 }
 
@@ -2985,7 +2985,7 @@ func NewTypeRedefineStatementContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeRedefineStatement
+	p.RuleIndex = FeelParserRULE_typeRedefineStatement
 
 	return p
 }
@@ -3003,7 +3003,7 @@ func (s *TypeRedefineStatementContext) Id() IIdContext {
 }
 
 func (s *TypeRedefineStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *TypeRedefineStatementContext) TypeType() ITypeTypeContext {
@@ -3027,15 +3027,15 @@ func (s *TypeRedefineStatementContext) End() IEndContext {
 }
 
 func (s *TypeRedefineStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *TypeRedefineStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *TypeRedefineStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *TypeRedefineStatementContext) GetRuleContext() antlr.RuleContext {
@@ -3048,7 +3048,7 @@ func (s *TypeRedefineStatementContext) ToStringTree(ruleNames []string, recog an
 
 func (s *TypeRedefineStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeRedefineStatement(s)
 
 	default:
@@ -3056,9 +3056,9 @@ func (s *TypeRedefineStatementContext) Accept(visitor antlr.ParseTreeVisitor) in
 	}
 }
 
-func (p *KParser) TypeRedefineStatement() (localctx ITypeRedefineStatementContext) {
+func (p *FeelParser) TypeRedefineStatement() (localctx ITypeRedefineStatementContext) {
 	localctx = NewTypeRedefineStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 14, KParserRULE_typeRedefineStatement)
+	p.EnterRule(localctx, 14, FeelParserRULE_typeRedefineStatement)
 	var _la int
 
 	defer func() {
@@ -3086,25 +3086,25 @@ func (p *KParser) TypeRedefineStatement() (localctx ITypeRedefineStatementContex
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(461)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(464)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	p.SetState(468)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(465)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(470)
@@ -3142,7 +3142,7 @@ type TypeTagStatementContext struct {
 func NewEmptyTypeTagStatementContext() *TypeTagStatementContext {
 	var p = new(TypeTagStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeTagStatement
+	p.RuleIndex = FeelParserRULE_typeTagStatement
 	return p
 }
 
@@ -3154,7 +3154,7 @@ func NewTypeTagStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeTagStatement
+	p.RuleIndex = FeelParserRULE_typeTagStatement
 
 	return p
 }
@@ -3162,7 +3162,7 @@ func NewTypeTagStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *TypeTagStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *TypeTagStatementContext) Comment_Tag() antlr.TerminalNode {
-	return s.GetToken(KParserComment_Tag, 0)
+	return s.GetToken(FeelParserComment_Tag, 0)
 }
 
 func (s *TypeTagStatementContext) GetRuleContext() antlr.RuleContext {
@@ -3175,7 +3175,7 @@ func (s *TypeTagStatementContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *TypeTagStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeTagStatement(s)
 
 	default:
@@ -3183,9 +3183,9 @@ func (s *TypeTagStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) TypeTagStatement() (localctx ITypeTagStatementContext) {
+func (p *FeelParser) TypeTagStatement() (localctx ITypeTagStatementContext) {
 	localctx = NewTypeTagStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 16, KParserRULE_typeTagStatement)
+	p.EnterRule(localctx, 16, FeelParserRULE_typeTagStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -3206,7 +3206,7 @@ func (p *KParser) TypeTagStatement() (localctx ITypeTagStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(474)
-		p.Match(KParserComment_Tag)
+		p.Match(FeelParserComment_Tag)
 	}
 
 	return localctx
@@ -3231,7 +3231,7 @@ type EnumStatementContext struct {
 func NewEmptyEnumStatementContext() *EnumStatementContext {
 	var p = new(EnumStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_enumStatement
+	p.RuleIndex = FeelParserRULE_enumStatement
 	return p
 }
 
@@ -3243,7 +3243,7 @@ func NewEnumStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_enumStatement
+	p.RuleIndex = FeelParserRULE_enumStatement
 
 	return p
 }
@@ -3261,11 +3261,11 @@ func (s *EnumStatementContext) Id() IIdContext {
 }
 
 func (s *EnumStatementContext) AllColon() []antlr.TerminalNode {
-	return s.GetTokens(KParserColon)
+	return s.GetTokens(FeelParserColon)
 }
 
 func (s *EnumStatementContext) Colon(i int) antlr.TerminalNode {
-	return s.GetToken(KParserColon, i)
+	return s.GetToken(FeelParserColon, i)
 }
 
 func (s *EnumStatementContext) Left_brack() ILeft_brackContext {
@@ -3329,15 +3329,15 @@ func (s *EnumStatementContext) AnnotationSupport() IAnnotationSupportContext {
 }
 
 func (s *EnumStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *EnumStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *EnumStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *EnumStatementContext) AllEnumSupportStatement() []IEnumSupportStatementContext {
@@ -3373,7 +3373,7 @@ func (s *EnumStatementContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *EnumStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitEnumStatement(s)
 
 	default:
@@ -3381,9 +3381,9 @@ func (s *EnumStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) EnumStatement() (localctx IEnumStatementContext) {
+func (p *FeelParser) EnumStatement() (localctx IEnumStatementContext) {
 	localctx = NewEnumStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 18, KParserRULE_enumStatement)
+	p.EnterRule(localctx, 18, FeelParserRULE_enumStatement)
 	var _la int
 
 	defer func() {
@@ -3407,7 +3407,7 @@ func (p *KParser) EnumStatement() (localctx IEnumStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(476)
 			p.AnnotationSupport()
@@ -3422,25 +3422,25 @@ func (p *KParser) EnumStatement() (localctx IEnumStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(480)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(483)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	p.SetState(487)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(484)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(489)
@@ -3453,7 +3453,7 @@ func (p *KParser) EnumStatement() (localctx IEnumStatementContext) {
 	}
 	{
 		p.SetState(491)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(492)
@@ -3467,7 +3467,7 @@ func (p *KParser) EnumStatement() (localctx IEnumStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0 {
+	for ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0 {
 		{
 			p.SetState(494)
 			p.EnumSupportStatement()
@@ -3508,7 +3508,7 @@ type EnumSupportStatementContext struct {
 func NewEmptyEnumSupportStatementContext() *EnumSupportStatementContext {
 	var p = new(EnumSupportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_enumSupportStatement
+	p.RuleIndex = FeelParserRULE_enumSupportStatement
 	return p
 }
 
@@ -3520,7 +3520,7 @@ func NewEnumSupportStatementContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_enumSupportStatement
+	p.RuleIndex = FeelParserRULE_enumSupportStatement
 
 	return p
 }
@@ -3548,7 +3548,7 @@ func (s *EnumSupportStatementContext) End() IEndContext {
 }
 
 func (s *EnumSupportStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *EnumSupportStatementContext) IntegerExpr() IIntegerExprContext {
@@ -3581,7 +3581,7 @@ func (s *EnumSupportStatementContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *EnumSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitEnumSupportStatement(s)
 
 	default:
@@ -3589,9 +3589,9 @@ func (s *EnumSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) EnumSupportStatement() (localctx IEnumSupportStatementContext) {
+func (p *FeelParser) EnumSupportStatement() (localctx IEnumSupportStatementContext) {
 	localctx = NewEnumSupportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 20, KParserRULE_enumSupportStatement)
+	p.EnterRule(localctx, 20, FeelParserRULE_enumSupportStatement)
 	var _la int
 
 	defer func() {
@@ -3619,16 +3619,16 @@ func (p *KParser) EnumSupportStatement() (localctx IEnumSupportStatementContext)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserColon {
+	if _la == FeelParserColon {
 		{
 			p.SetState(504)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		p.SetState(506)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserAdd || _la == KParserSub {
+		if _la == FeelParserAdd || _la == FeelParserSub {
 			{
 				p.SetState(505)
 				p.Add()
@@ -3668,7 +3668,7 @@ type NamespaceVariableStatementContext struct {
 func NewEmptyNamespaceVariableStatementContext() *NamespaceVariableStatementContext {
 	var p = new(NamespaceVariableStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_namespaceVariableStatement
+	p.RuleIndex = FeelParserRULE_namespaceVariableStatement
 	return p
 }
 
@@ -3680,7 +3680,7 @@ func NewNamespaceVariableStatementContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_namespaceVariableStatement
+	p.RuleIndex = FeelParserRULE_namespaceVariableStatement
 
 	return p
 }
@@ -3698,7 +3698,7 @@ func (s *NamespaceVariableStatementContext) Id() IIdContext {
 }
 
 func (s *NamespaceVariableStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *NamespaceVariableStatementContext) End() IEndContext {
@@ -3712,7 +3712,7 @@ func (s *NamespaceVariableStatementContext) End() IEndContext {
 }
 
 func (s *NamespaceVariableStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *NamespaceVariableStatementContext) Expression() IExpressionContext {
@@ -3755,7 +3755,7 @@ func (s *NamespaceVariableStatementContext) ToStringTree(ruleNames []string, rec
 
 func (s *NamespaceVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNamespaceVariableStatement(s)
 
 	default:
@@ -3763,9 +3763,9 @@ func (s *NamespaceVariableStatementContext) Accept(visitor antlr.ParseTreeVisito
 	}
 }
 
-func (p *KParser) NamespaceVariableStatement() (localctx INamespaceVariableStatementContext) {
+func (p *FeelParser) NamespaceVariableStatement() (localctx INamespaceVariableStatementContext) {
 	localctx = NewNamespaceVariableStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 22, KParserRULE_namespaceVariableStatement)
+	p.EnterRule(localctx, 22, FeelParserRULE_namespaceVariableStatement)
 	var _la int
 
 	defer func() {
@@ -3789,7 +3789,7 @@ func (p *KParser) NamespaceVariableStatement() (localctx INamespaceVariableState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(513)
 			p.AnnotationSupport()
@@ -3802,23 +3802,23 @@ func (p *KParser) NamespaceVariableStatement() (localctx INamespaceVariableState
 	}
 	{
 		p.SetState(517)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	p.SetState(525)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(518)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(519)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(520)
 			p.TypeType()
@@ -3827,10 +3827,10 @@ func (p *KParser) NamespaceVariableStatement() (localctx INamespaceVariableState
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(521)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(522)
@@ -3869,7 +3869,7 @@ type NamespaceConstantStatementContext struct {
 func NewEmptyNamespaceConstantStatementContext() *NamespaceConstantStatementContext {
 	var p = new(NamespaceConstantStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_namespaceConstantStatement
+	p.RuleIndex = FeelParserRULE_namespaceConstantStatement
 	return p
 }
 
@@ -3881,7 +3881,7 @@ func NewNamespaceConstantStatementContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_namespaceConstantStatement
+	p.RuleIndex = FeelParserRULE_namespaceConstantStatement
 
 	return p
 }
@@ -3909,7 +3909,7 @@ func (s *NamespaceConstantStatementContext) End() IEndContext {
 }
 
 func (s *NamespaceConstantStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *NamespaceConstantStatementContext) Expression() IExpressionContext {
@@ -3952,7 +3952,7 @@ func (s *NamespaceConstantStatementContext) ToStringTree(ruleNames []string, rec
 
 func (s *NamespaceConstantStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNamespaceConstantStatement(s)
 
 	default:
@@ -3960,9 +3960,9 @@ func (s *NamespaceConstantStatementContext) Accept(visitor antlr.ParseTreeVisito
 	}
 }
 
-func (p *KParser) NamespaceConstantStatement() (localctx INamespaceConstantStatementContext) {
+func (p *FeelParser) NamespaceConstantStatement() (localctx INamespaceConstantStatementContext) {
 	localctx = NewNamespaceConstantStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 24, KParserRULE_namespaceConstantStatement)
+	p.EnterRule(localctx, 24, FeelParserRULE_namespaceConstantStatement)
 	var _la int
 
 	defer func() {
@@ -3986,7 +3986,7 @@ func (p *KParser) NamespaceConstantStatement() (localctx INamespaceConstantState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(529)
 			p.AnnotationSupport()
@@ -4001,17 +4001,17 @@ func (p *KParser) NamespaceConstantStatement() (localctx INamespaceConstantState
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(533)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(534)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(535)
 			p.TypeType()
@@ -4020,10 +4020,10 @@ func (p *KParser) NamespaceConstantStatement() (localctx INamespaceConstantState
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(536)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(537)
@@ -4083,7 +4083,7 @@ type NamespaceFunctionStatementContext struct {
 func NewEmptyNamespaceFunctionStatementContext() *NamespaceFunctionStatementContext {
 	var p = new(NamespaceFunctionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_namespaceFunctionStatement
+	p.RuleIndex = FeelParserRULE_namespaceFunctionStatement
 	return p
 }
 
@@ -4095,7 +4095,7 @@ func NewNamespaceFunctionStatementContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_namespaceFunctionStatement
+	p.RuleIndex = FeelParserRULE_namespaceFunctionStatement
 
 	return p
 }
@@ -4115,7 +4115,7 @@ func (s *NamespaceFunctionStatementContext) SetB(v antlr.Token) { s.b = v }
 func (s *NamespaceFunctionStatementContext) SetY(v antlr.Token) { s.y = v }
 
 func (s *NamespaceFunctionStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *NamespaceFunctionStatementContext) Left_paren() ILeft_parenContext {
@@ -4229,11 +4229,11 @@ func (s *NamespaceFunctionStatementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *NamespaceFunctionStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *NamespaceFunctionStatementContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *NamespaceFunctionStatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -4247,11 +4247,11 @@ func (s *NamespaceFunctionStatementContext) AnnotationSupport() IAnnotationSuppo
 }
 
 func (s *NamespaceFunctionStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *NamespaceFunctionStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *NamespaceFunctionStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -4278,11 +4278,11 @@ func (s *NamespaceFunctionStatementContext) FunctionSupportStatement(i int) IFun
 }
 
 func (s *NamespaceFunctionStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *NamespaceFunctionStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *NamespaceFunctionStatementContext) GetRuleContext() antlr.RuleContext {
@@ -4295,7 +4295,7 @@ func (s *NamespaceFunctionStatementContext) ToStringTree(ruleNames []string, rec
 
 func (s *NamespaceFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNamespaceFunctionStatement(s)
 
 	default:
@@ -4303,9 +4303,9 @@ func (s *NamespaceFunctionStatementContext) Accept(visitor antlr.ParseTreeVisito
 	}
 }
 
-func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionStatementContext) {
+func (p *FeelParser) NamespaceFunctionStatement() (localctx INamespaceFunctionStatementContext) {
 	localctx = NewNamespaceFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 26, KParserRULE_namespaceFunctionStatement)
+	p.EnterRule(localctx, 26, FeelParserRULE_namespaceFunctionStatement)
 	var _la int
 
 	defer func() {
@@ -4331,7 +4331,7 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(544)
 			p.AnnotationSupport()
@@ -4342,13 +4342,13 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(547)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(548)
 			p.Left_brack()
@@ -4371,7 +4371,7 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 	}
 	{
 		p.SetState(555)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(556)
@@ -4390,7 +4390,7 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*NamespaceFunctionStatementContext).t = _ri
@@ -4403,11 +4403,11 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(559)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*NamespaceFunctionStatementContext).b = _m
 		}
@@ -4417,11 +4417,11 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(562)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*NamespaceFunctionStatementContext).y = _m
 		}
@@ -4431,10 +4431,10 @@ func (p *KParser) NamespaceFunctionStatement() (localctx INamespaceFunctionState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(565)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(570)
@@ -4500,7 +4500,7 @@ type PackageStatementContext struct {
 func NewEmptyPackageStatementContext() *PackageStatementContext {
 	var p = new(PackageStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageStatement
+	p.RuleIndex = FeelParserRULE_packageStatement
 	return p
 }
 
@@ -4512,7 +4512,7 @@ func NewPackageStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageStatement
+	p.RuleIndex = FeelParserRULE_packageStatement
 
 	return p
 }
@@ -4520,7 +4520,7 @@ func NewPackageStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *PackageStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *PackageStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageStatementContext) End() IEndContext {
@@ -4676,15 +4676,15 @@ func (s *PackageStatementContext) AnnotationSupport() IAnnotationSupportContext 
 }
 
 func (s *PackageStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PackageStatementContext) AllBack_Forward_Slash() []antlr.TerminalNode {
-	return s.GetTokens(KParserBack_Forward_Slash)
+	return s.GetTokens(FeelParserBack_Forward_Slash)
 }
 
 func (s *PackageStatementContext) Back_Forward_Slash(i int) antlr.TerminalNode {
-	return s.GetToken(KParserBack_Forward_Slash, i)
+	return s.GetToken(FeelParserBack_Forward_Slash, i)
 }
 
 func (s *PackageStatementContext) GetRuleContext() antlr.RuleContext {
@@ -4697,7 +4697,7 @@ func (s *PackageStatementContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *PackageStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageStatement(s)
 
 	default:
@@ -4705,9 +4705,9 @@ func (s *PackageStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) PackageStatement() (localctx IPackageStatementContext) {
+func (p *FeelParser) PackageStatement() (localctx IPackageStatementContext) {
 	localctx = NewPackageStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 28, KParserRULE_packageStatement)
+	p.EnterRule(localctx, 28, FeelParserRULE_packageStatement)
 	var _la int
 
 	defer func() {
@@ -4731,7 +4731,7 @@ func (p *KParser) PackageStatement() (localctx IPackageStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(583)
 			p.AnnotationSupport()
@@ -4742,13 +4742,13 @@ func (p *KParser) PackageStatement() (localctx IPackageStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(586)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(587)
 			p.Left_brack()
@@ -4773,16 +4773,16 @@ func (p *KParser) PackageStatement() (localctx IPackageStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(594)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(597)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	p.SetState(602)
 	p.GetErrorHandler().Sync(p)
@@ -4816,10 +4816,10 @@ func (p *KParser) PackageStatement() (localctx IPackageStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserBack_Forward_Slash {
+	for _la == FeelParserBack_Forward_Slash {
 		{
 			p.SetState(604)
-			p.Match(KParserBack_Forward_Slash)
+			p.Match(FeelParserBack_Forward_Slash)
 		}
 		p.SetState(609)
 		p.GetErrorHandler().Sync(p)
@@ -4881,7 +4881,7 @@ type PackageStaticStatementContext struct {
 func NewEmptyPackageStaticStatementContext() *PackageStaticStatementContext {
 	var p = new(PackageStaticStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageStaticStatement
+	p.RuleIndex = FeelParserRULE_packageStaticStatement
 	return p
 }
 
@@ -4893,7 +4893,7 @@ func NewPackageStaticStatementContext(parser antlr.Parser, parent antlr.ParserRu
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageStaticStatement
+	p.RuleIndex = FeelParserRULE_packageStaticStatement
 
 	return p
 }
@@ -4953,7 +4953,7 @@ func (s *PackageStaticStatementContext) ToStringTree(ruleNames []string, recog a
 
 func (s *PackageStaticStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageStaticStatement(s)
 
 	default:
@@ -4961,9 +4961,9 @@ func (s *PackageStaticStatementContext) Accept(visitor antlr.ParseTreeVisitor) i
 	}
 }
 
-func (p *KParser) PackageStaticStatement() (localctx IPackageStaticStatementContext) {
+func (p *FeelParser) PackageStaticStatement() (localctx IPackageStaticStatementContext) {
 	localctx = NewPackageStaticStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 30, KParserRULE_packageStaticStatement)
+	p.EnterRule(localctx, 30, FeelParserRULE_packageStaticStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -5031,7 +5031,7 @@ type PackageStaticSupportStatementContext struct {
 func NewEmptyPackageStaticSupportStatementContext() *PackageStaticSupportStatementContext {
 	var p = new(PackageStaticSupportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageStaticSupportStatement
+	p.RuleIndex = FeelParserRULE_packageStaticSupportStatement
 	return p
 }
 
@@ -5043,7 +5043,7 @@ func NewPackageStaticSupportStatementContext(parser antlr.Parser, parent antlr.P
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageStaticSupportStatement
+	p.RuleIndex = FeelParserRULE_packageStaticSupportStatement
 
 	return p
 }
@@ -5081,7 +5081,7 @@ func (s *PackageStaticSupportStatementContext) PackageStaticConstantStatement() 
 }
 
 func (s *PackageStaticSupportStatementContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *PackageStaticSupportStatementContext) GetRuleContext() antlr.RuleContext {
@@ -5094,7 +5094,7 @@ func (s *PackageStaticSupportStatementContext) ToStringTree(ruleNames []string, 
 
 func (s *PackageStaticSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageStaticSupportStatement(s)
 
 	default:
@@ -5102,9 +5102,9 @@ func (s *PackageStaticSupportStatementContext) Accept(visitor antlr.ParseTreeVis
 	}
 }
 
-func (p *KParser) PackageStaticSupportStatement() (localctx IPackageStaticSupportStatementContext) {
+func (p *FeelParser) PackageStaticSupportStatement() (localctx IPackageStaticSupportStatementContext) {
 	localctx = NewPackageStaticSupportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 32, KParserRULE_packageStaticSupportStatement)
+	p.EnterRule(localctx, 32, FeelParserRULE_packageStaticSupportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -5150,7 +5150,7 @@ func (p *KParser) PackageStaticSupportStatement() (localctx IPackageStaticSuppor
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(630)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -5177,7 +5177,7 @@ type PackageStaticVariableStatementContext struct {
 func NewEmptyPackageStaticVariableStatementContext() *PackageStaticVariableStatementContext {
 	var p = new(PackageStaticVariableStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageStaticVariableStatement
+	p.RuleIndex = FeelParserRULE_packageStaticVariableStatement
 	return p
 }
 
@@ -5189,7 +5189,7 @@ func NewPackageStaticVariableStatementContext(parser antlr.Parser, parent antlr.
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageStaticVariableStatement
+	p.RuleIndex = FeelParserRULE_packageStaticVariableStatement
 
 	return p
 }
@@ -5207,7 +5207,7 @@ func (s *PackageStaticVariableStatementContext) Id() IIdContext {
 }
 
 func (s *PackageStaticVariableStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PackageStaticVariableStatementContext) End() IEndContext {
@@ -5221,7 +5221,7 @@ func (s *PackageStaticVariableStatementContext) End() IEndContext {
 }
 
 func (s *PackageStaticVariableStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageStaticVariableStatementContext) Expression() IExpressionContext {
@@ -5264,7 +5264,7 @@ func (s *PackageStaticVariableStatementContext) ToStringTree(ruleNames []string,
 
 func (s *PackageStaticVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageStaticVariableStatement(s)
 
 	default:
@@ -5272,9 +5272,9 @@ func (s *PackageStaticVariableStatementContext) Accept(visitor antlr.ParseTreeVi
 	}
 }
 
-func (p *KParser) PackageStaticVariableStatement() (localctx IPackageStaticVariableStatementContext) {
+func (p *FeelParser) PackageStaticVariableStatement() (localctx IPackageStaticVariableStatementContext) {
 	localctx = NewPackageStaticVariableStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 34, KParserRULE_packageStaticVariableStatement)
+	p.EnterRule(localctx, 34, FeelParserRULE_packageStaticVariableStatement)
 	var _la int
 
 	defer func() {
@@ -5298,7 +5298,7 @@ func (p *KParser) PackageStaticVariableStatement() (localctx IPackageStaticVaria
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(633)
 			p.AnnotationSupport()
@@ -5311,23 +5311,23 @@ func (p *KParser) PackageStaticVariableStatement() (localctx IPackageStaticVaria
 	}
 	{
 		p.SetState(637)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	p.SetState(645)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(638)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(639)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(640)
 			p.TypeType()
@@ -5336,10 +5336,10 @@ func (p *KParser) PackageStaticVariableStatement() (localctx IPackageStaticVaria
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(641)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(642)
@@ -5378,7 +5378,7 @@ type PackageStaticConstantStatementContext struct {
 func NewEmptyPackageStaticConstantStatementContext() *PackageStaticConstantStatementContext {
 	var p = new(PackageStaticConstantStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageStaticConstantStatement
+	p.RuleIndex = FeelParserRULE_packageStaticConstantStatement
 	return p
 }
 
@@ -5390,7 +5390,7 @@ func NewPackageStaticConstantStatementContext(parser antlr.Parser, parent antlr.
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageStaticConstantStatement
+	p.RuleIndex = FeelParserRULE_packageStaticConstantStatement
 
 	return p
 }
@@ -5418,7 +5418,7 @@ func (s *PackageStaticConstantStatementContext) End() IEndContext {
 }
 
 func (s *PackageStaticConstantStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageStaticConstantStatementContext) Expression() IExpressionContext {
@@ -5461,7 +5461,7 @@ func (s *PackageStaticConstantStatementContext) ToStringTree(ruleNames []string,
 
 func (s *PackageStaticConstantStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageStaticConstantStatement(s)
 
 	default:
@@ -5469,9 +5469,9 @@ func (s *PackageStaticConstantStatementContext) Accept(visitor antlr.ParseTreeVi
 	}
 }
 
-func (p *KParser) PackageStaticConstantStatement() (localctx IPackageStaticConstantStatementContext) {
+func (p *FeelParser) PackageStaticConstantStatement() (localctx IPackageStaticConstantStatementContext) {
 	localctx = NewPackageStaticConstantStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 36, KParserRULE_packageStaticConstantStatement)
+	p.EnterRule(localctx, 36, FeelParserRULE_packageStaticConstantStatement)
 	var _la int
 
 	defer func() {
@@ -5495,7 +5495,7 @@ func (p *KParser) PackageStaticConstantStatement() (localctx IPackageStaticConst
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(649)
 			p.AnnotationSupport()
@@ -5510,17 +5510,17 @@ func (p *KParser) PackageStaticConstantStatement() (localctx IPackageStaticConst
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(653)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(654)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(655)
 			p.TypeType()
@@ -5529,10 +5529,10 @@ func (p *KParser) PackageStaticConstantStatement() (localctx IPackageStaticConst
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(656)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(657)
@@ -5592,7 +5592,7 @@ type PackageStaticFunctionStatementContext struct {
 func NewEmptyPackageStaticFunctionStatementContext() *PackageStaticFunctionStatementContext {
 	var p = new(PackageStaticFunctionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageStaticFunctionStatement
+	p.RuleIndex = FeelParserRULE_packageStaticFunctionStatement
 	return p
 }
 
@@ -5604,7 +5604,7 @@ func NewPackageStaticFunctionStatementContext(parser antlr.Parser, parent antlr.
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageStaticFunctionStatement
+	p.RuleIndex = FeelParserRULE_packageStaticFunctionStatement
 
 	return p
 }
@@ -5624,7 +5624,7 @@ func (s *PackageStaticFunctionStatementContext) SetB(v antlr.Token) { s.b = v }
 func (s *PackageStaticFunctionStatementContext) SetY(v antlr.Token) { s.y = v }
 
 func (s *PackageStaticFunctionStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageStaticFunctionStatementContext) Left_paren() ILeft_parenContext {
@@ -5738,11 +5738,11 @@ func (s *PackageStaticFunctionStatementContext) Right_brack() IRight_brackContex
 }
 
 func (s *PackageStaticFunctionStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *PackageStaticFunctionStatementContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *PackageStaticFunctionStatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -5756,11 +5756,11 @@ func (s *PackageStaticFunctionStatementContext) AnnotationSupport() IAnnotationS
 }
 
 func (s *PackageStaticFunctionStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *PackageStaticFunctionStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *PackageStaticFunctionStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -5787,11 +5787,11 @@ func (s *PackageStaticFunctionStatementContext) FunctionSupportStatement(i int) 
 }
 
 func (s *PackageStaticFunctionStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PackageStaticFunctionStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *PackageStaticFunctionStatementContext) GetRuleContext() antlr.RuleContext {
@@ -5804,7 +5804,7 @@ func (s *PackageStaticFunctionStatementContext) ToStringTree(ruleNames []string,
 
 func (s *PackageStaticFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageStaticFunctionStatement(s)
 
 	default:
@@ -5812,9 +5812,9 @@ func (s *PackageStaticFunctionStatementContext) Accept(visitor antlr.ParseTreeVi
 	}
 }
 
-func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunctionStatementContext) {
+func (p *FeelParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunctionStatementContext) {
 	localctx = NewPackageStaticFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 38, KParserRULE_packageStaticFunctionStatement)
+	p.EnterRule(localctx, 38, FeelParserRULE_packageStaticFunctionStatement)
 	var _la int
 
 	defer func() {
@@ -5840,7 +5840,7 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(664)
 			p.AnnotationSupport()
@@ -5851,13 +5851,13 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(667)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(668)
 			p.Left_brack()
@@ -5880,7 +5880,7 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 	}
 	{
 		p.SetState(675)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(676)
@@ -5899,7 +5899,7 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*PackageStaticFunctionStatementContext).t = _ri
@@ -5912,11 +5912,11 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(679)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*PackageStaticFunctionStatementContext).b = _m
 		}
@@ -5926,11 +5926,11 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(682)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*PackageStaticFunctionStatementContext).y = _m
 		}
@@ -5940,10 +5940,10 @@ func (p *KParser) PackageStaticFunctionStatement() (localctx IPackageStaticFunct
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(685)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(690)
@@ -6016,7 +6016,7 @@ type PackageFieldStatementContext struct {
 func NewEmptyPackageFieldStatementContext() *PackageFieldStatementContext {
 	var p = new(PackageFieldStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageFieldStatement
+	p.RuleIndex = FeelParserRULE_packageFieldStatement
 	return p
 }
 
@@ -6028,7 +6028,7 @@ func NewPackageFieldStatementContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageFieldStatement
+	p.RuleIndex = FeelParserRULE_packageFieldStatement
 
 	return p
 }
@@ -6040,7 +6040,7 @@ func (s *PackageFieldStatementContext) GetP() antlr.Token { return s.p }
 func (s *PackageFieldStatementContext) SetP(v antlr.Token) { s.p = v }
 
 func (s *PackageFieldStatementContext) Coin() antlr.TerminalNode {
-	return s.GetToken(KParserCoin, 0)
+	return s.GetToken(FeelParserCoin, 0)
 }
 
 func (s *PackageFieldStatementContext) Left_brace() ILeft_braceContext {
@@ -6120,7 +6120,7 @@ func (s *PackageFieldStatementContext) More() IMoreContext {
 }
 
 func (s *PackageFieldStatementContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *PackageFieldStatementContext) GetRuleContext() antlr.RuleContext {
@@ -6133,7 +6133,7 @@ func (s *PackageFieldStatementContext) ToStringTree(ruleNames []string, recog an
 
 func (s *PackageFieldStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageFieldStatement(s)
 
 	default:
@@ -6141,9 +6141,9 @@ func (s *PackageFieldStatementContext) Accept(visitor antlr.ParseTreeVisitor) in
 	}
 }
 
-func (p *KParser) PackageFieldStatement() (localctx IPackageFieldStatementContext) {
+func (p *FeelParser) PackageFieldStatement() (localctx IPackageFieldStatementContext) {
 	localctx = NewPackageFieldStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 40, KParserRULE_packageFieldStatement)
+	p.EnterRule(localctx, 40, FeelParserRULE_packageFieldStatement)
 	var _la int
 
 	defer func() {
@@ -6167,22 +6167,22 @@ func (p *KParser) PackageFieldStatement() (localctx IPackageFieldStatementContex
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(703)
-		p.Match(KParserCoin)
+		p.Match(FeelParserCoin)
 	}
 	p.SetState(713)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-46)&-(0x1f+1)) == 0 && ((1<<uint((_la-46)))&((1<<(KParserQuestion-46))|(1<<(KParserTypeI8-46))|(1<<(KParserTypeU8-46))|(1<<(KParserTypeI16-46))|(1<<(KParserTypeU16-46))|(1<<(KParserTypeI32-46))|(1<<(KParserTypeU32-46))|(1<<(KParserTypeI64-46))|(1<<(KParserTypeU64-46))|(1<<(KParserTypeF32-46))|(1<<(KParserTypeF64-46))|(1<<(KParserTypeChr-46))|(1<<(KParserTypeStr-46))|(1<<(KParserTypeBool-46))|(1<<(KParserTypeInt-46))|(1<<(KParserTypeNum-46))|(1<<(KParserTypeByte-46))|(1<<(KParserTypeAny-46)))) != 0) || _la == KParserIDPrivate || _la == KParserIDPublic {
+	if (((_la-46)&-(0x1f+1)) == 0 && ((1<<uint((_la-46)))&((1<<(FeelParserQuestion-46))|(1<<(FeelParserTypeI8-46))|(1<<(FeelParserTypeU8-46))|(1<<(FeelParserTypeI16-46))|(1<<(FeelParserTypeU16-46))|(1<<(FeelParserTypeI32-46))|(1<<(FeelParserTypeU32-46))|(1<<(FeelParserTypeI64-46))|(1<<(FeelParserTypeU64-46))|(1<<(FeelParserTypeF32-46))|(1<<(FeelParserTypeF64-46))|(1<<(FeelParserTypeChr-46))|(1<<(FeelParserTypeStr-46))|(1<<(FeelParserTypeBool-46))|(1<<(FeelParserTypeInt-46))|(1<<(FeelParserTypeNum-46))|(1<<(FeelParserTypeByte-46))|(1<<(FeelParserTypeAny-46)))) != 0) || _la == FeelParserIDPrivate || _la == FeelParserIDPublic {
 		p.SetState(705)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserQuestion {
+		if _la == FeelParserQuestion {
 			{
 				p.SetState(704)
 
-				var _m = p.Match(KParserQuestion)
+				var _m = p.Match(FeelParserQuestion)
 
 				localctx.(*PackageFieldStatementContext).p = _m
 			}
@@ -6196,7 +6196,7 @@ func (p *KParser) PackageFieldStatement() (localctx IPackageFieldStatementContex
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserComma {
+		if _la == FeelParserComma {
 			{
 				p.SetState(708)
 				p.More()
@@ -6256,7 +6256,7 @@ type PackageSupportStatementContext struct {
 func NewEmptyPackageSupportStatementContext() *PackageSupportStatementContext {
 	var p = new(PackageSupportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageSupportStatement
+	p.RuleIndex = FeelParserRULE_packageSupportStatement
 	return p
 }
 
@@ -6268,7 +6268,7 @@ func NewPackageSupportStatementContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageSupportStatement
+	p.RuleIndex = FeelParserRULE_packageSupportStatement
 
 	return p
 }
@@ -6346,7 +6346,7 @@ func (s *PackageSupportStatementContext) OverrideConstantStatement() IOverrideCo
 }
 
 func (s *PackageSupportStatementContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *PackageSupportStatementContext) GetRuleContext() antlr.RuleContext {
@@ -6359,7 +6359,7 @@ func (s *PackageSupportStatementContext) ToStringTree(ruleNames []string, recog 
 
 func (s *PackageSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageSupportStatement(s)
 
 	default:
@@ -6367,9 +6367,9 @@ func (s *PackageSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) 
 	}
 }
 
-func (p *KParser) PackageSupportStatement() (localctx IPackageSupportStatementContext) {
+func (p *FeelParser) PackageSupportStatement() (localctx IPackageSupportStatementContext) {
 	localctx = NewPackageSupportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 42, KParserRULE_packageSupportStatement)
+	p.EnterRule(localctx, 42, FeelParserRULE_packageSupportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -6443,7 +6443,7 @@ func (p *KParser) PackageSupportStatement() (localctx IPackageSupportStatementCo
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(731)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -6470,7 +6470,7 @@ type IncludeStatementContext struct {
 func NewEmptyIncludeStatementContext() *IncludeStatementContext {
 	var p = new(IncludeStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_includeStatement
+	p.RuleIndex = FeelParserRULE_includeStatement
 	return p
 }
 
@@ -6482,7 +6482,7 @@ func NewIncludeStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_includeStatement
+	p.RuleIndex = FeelParserRULE_includeStatement
 
 	return p
 }
@@ -6509,7 +6509,7 @@ func (s *IncludeStatementContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *IncludeStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitIncludeStatement(s)
 
 	default:
@@ -6517,9 +6517,9 @@ func (s *IncludeStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) IncludeStatement() (localctx IIncludeStatementContext) {
+func (p *FeelParser) IncludeStatement() (localctx IIncludeStatementContext) {
 	localctx = NewIncludeStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 44, KParserRULE_includeStatement)
+	p.EnterRule(localctx, 44, FeelParserRULE_includeStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -6572,7 +6572,7 @@ type PackageNewStatementContext struct {
 func NewEmptyPackageNewStatementContext() *PackageNewStatementContext {
 	var p = new(PackageNewStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageNewStatement
+	p.RuleIndex = FeelParserRULE_packageNewStatement
 	return p
 }
 
@@ -6584,7 +6584,7 @@ func NewPackageNewStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageNewStatement
+	p.RuleIndex = FeelParserRULE_packageNewStatement
 
 	return p
 }
@@ -6629,11 +6629,11 @@ func (s *PackageNewStatementContext) ParameterClauseIn() IParameterClauseInConte
 }
 
 func (s *PackageNewStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *PackageNewStatementContext) Coin() antlr.TerminalNode {
-	return s.GetToken(KParserCoin, 0)
+	return s.GetToken(FeelParserCoin, 0)
 }
 
 func (s *PackageNewStatementContext) AllRight_paren() []IRight_parenContext {
@@ -6736,7 +6736,7 @@ func (s *PackageNewStatementContext) FunctionSupportStatement(i int) IFunctionSu
 }
 
 func (s *PackageNewStatementContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *PackageNewStatementContext) More() IMoreContext {
@@ -6769,7 +6769,7 @@ func (s *PackageNewStatementContext) ToStringTree(ruleNames []string, recog antl
 
 func (s *PackageNewStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageNewStatement(s)
 
 	default:
@@ -6777,9 +6777,9 @@ func (s *PackageNewStatementContext) Accept(visitor antlr.ParseTreeVisitor) inte
 	}
 }
 
-func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
+func (p *FeelParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 	localctx = NewPackageNewStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 46, KParserRULE_packageNewStatement)
+	p.EnterRule(localctx, 46, FeelParserRULE_packageNewStatement)
 	var _la int
 
 	defer func() {
@@ -6805,7 +6805,7 @@ func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(736)
 			p.AnnotationSupport()
@@ -6822,21 +6822,21 @@ func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 	}
 	{
 		p.SetState(741)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(742)
-		p.Match(KParserCoin)
+		p.Match(FeelParserCoin)
 	}
 	p.SetState(744)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserQuestion {
+	if _la == FeelParserQuestion {
 		{
 			p.SetState(743)
 
-			var _m = p.Match(KParserQuestion)
+			var _m = p.Match(FeelParserQuestion)
 
 			localctx.(*PackageNewStatementContext).p = _m
 		}
@@ -6846,7 +6846,7 @@ func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0 {
+	if ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0 {
 		{
 			p.SetState(746)
 			p.Id()
@@ -6855,7 +6855,7 @@ func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserComma {
+		if _la == FeelParserComma {
 			{
 				p.SetState(747)
 				p.More()
@@ -6876,7 +6876,7 @@ func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserLeft_Paren {
+	if _la == FeelParserLeft_Paren {
 		{
 			p.SetState(755)
 			p.Left_paren()
@@ -6885,7 +6885,7 @@ func (p *KParser) PackageNewStatement() (localctx IPackageNewStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+		if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 			{
 				p.SetState(756)
 				p.ExpressionList()
@@ -6945,7 +6945,7 @@ type PackageVariableStatementContext struct {
 func NewEmptyPackageVariableStatementContext() *PackageVariableStatementContext {
 	var p = new(PackageVariableStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageVariableStatement
+	p.RuleIndex = FeelParserRULE_packageVariableStatement
 	return p
 }
 
@@ -6957,7 +6957,7 @@ func NewPackageVariableStatementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageVariableStatement
+	p.RuleIndex = FeelParserRULE_packageVariableStatement
 
 	return p
 }
@@ -6975,7 +6975,7 @@ func (s *PackageVariableStatementContext) Id() IIdContext {
 }
 
 func (s *PackageVariableStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PackageVariableStatementContext) End() IEndContext {
@@ -6989,7 +6989,7 @@ func (s *PackageVariableStatementContext) End() IEndContext {
 }
 
 func (s *PackageVariableStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageVariableStatementContext) Expression() IExpressionContext {
@@ -7032,7 +7032,7 @@ func (s *PackageVariableStatementContext) ToStringTree(ruleNames []string, recog
 
 func (s *PackageVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageVariableStatement(s)
 
 	default:
@@ -7040,9 +7040,9 @@ func (s *PackageVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor)
 	}
 }
 
-func (p *KParser) PackageVariableStatement() (localctx IPackageVariableStatementContext) {
+func (p *FeelParser) PackageVariableStatement() (localctx IPackageVariableStatementContext) {
 	localctx = NewPackageVariableStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 48, KParserRULE_packageVariableStatement)
+	p.EnterRule(localctx, 48, FeelParserRULE_packageVariableStatement)
 	var _la int
 
 	defer func() {
@@ -7066,7 +7066,7 @@ func (p *KParser) PackageVariableStatement() (localctx IPackageVariableStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(772)
 			p.AnnotationSupport()
@@ -7079,23 +7079,23 @@ func (p *KParser) PackageVariableStatement() (localctx IPackageVariableStatement
 	}
 	{
 		p.SetState(776)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	p.SetState(784)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(777)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(778)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(779)
 			p.TypeType()
@@ -7104,10 +7104,10 @@ func (p *KParser) PackageVariableStatement() (localctx IPackageVariableStatement
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(780)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(781)
@@ -7146,7 +7146,7 @@ type PackageConstantStatementContext struct {
 func NewEmptyPackageConstantStatementContext() *PackageConstantStatementContext {
 	var p = new(PackageConstantStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageConstantStatement
+	p.RuleIndex = FeelParserRULE_packageConstantStatement
 	return p
 }
 
@@ -7158,7 +7158,7 @@ func NewPackageConstantStatementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageConstantStatement
+	p.RuleIndex = FeelParserRULE_packageConstantStatement
 
 	return p
 }
@@ -7186,7 +7186,7 @@ func (s *PackageConstantStatementContext) End() IEndContext {
 }
 
 func (s *PackageConstantStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageConstantStatementContext) Expression() IExpressionContext {
@@ -7229,7 +7229,7 @@ func (s *PackageConstantStatementContext) ToStringTree(ruleNames []string, recog
 
 func (s *PackageConstantStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageConstantStatement(s)
 
 	default:
@@ -7237,9 +7237,9 @@ func (s *PackageConstantStatementContext) Accept(visitor antlr.ParseTreeVisitor)
 	}
 }
 
-func (p *KParser) PackageConstantStatement() (localctx IPackageConstantStatementContext) {
+func (p *FeelParser) PackageConstantStatement() (localctx IPackageConstantStatementContext) {
 	localctx = NewPackageConstantStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 50, KParserRULE_packageConstantStatement)
+	p.EnterRule(localctx, 50, FeelParserRULE_packageConstantStatement)
 	var _la int
 
 	defer func() {
@@ -7263,7 +7263,7 @@ func (p *KParser) PackageConstantStatement() (localctx IPackageConstantStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(788)
 			p.AnnotationSupport()
@@ -7278,17 +7278,17 @@ func (p *KParser) PackageConstantStatement() (localctx IPackageConstantStatement
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(792)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(793)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(794)
 			p.TypeType()
@@ -7297,10 +7297,10 @@ func (p *KParser) PackageConstantStatement() (localctx IPackageConstantStatement
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(795)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(796)
@@ -7360,7 +7360,7 @@ type PackageFunctionStatementContext struct {
 func NewEmptyPackageFunctionStatementContext() *PackageFunctionStatementContext {
 	var p = new(PackageFunctionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageFunctionStatement
+	p.RuleIndex = FeelParserRULE_packageFunctionStatement
 	return p
 }
 
@@ -7372,7 +7372,7 @@ func NewPackageFunctionStatementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageFunctionStatement
+	p.RuleIndex = FeelParserRULE_packageFunctionStatement
 
 	return p
 }
@@ -7392,7 +7392,7 @@ func (s *PackageFunctionStatementContext) SetB(v antlr.Token) { s.b = v }
 func (s *PackageFunctionStatementContext) SetY(v antlr.Token) { s.y = v }
 
 func (s *PackageFunctionStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PackageFunctionStatementContext) Left_paren() ILeft_parenContext {
@@ -7506,11 +7506,11 @@ func (s *PackageFunctionStatementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *PackageFunctionStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *PackageFunctionStatementContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *PackageFunctionStatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -7524,11 +7524,11 @@ func (s *PackageFunctionStatementContext) AnnotationSupport() IAnnotationSupport
 }
 
 func (s *PackageFunctionStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *PackageFunctionStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *PackageFunctionStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -7555,11 +7555,11 @@ func (s *PackageFunctionStatementContext) FunctionSupportStatement(i int) IFunct
 }
 
 func (s *PackageFunctionStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PackageFunctionStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *PackageFunctionStatementContext) GetRuleContext() antlr.RuleContext {
@@ -7572,7 +7572,7 @@ func (s *PackageFunctionStatementContext) ToStringTree(ruleNames []string, recog
 
 func (s *PackageFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageFunctionStatement(s)
 
 	default:
@@ -7580,9 +7580,9 @@ func (s *PackageFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor)
 	}
 }
 
-func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatementContext) {
+func (p *FeelParser) PackageFunctionStatement() (localctx IPackageFunctionStatementContext) {
 	localctx = NewPackageFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 52, KParserRULE_packageFunctionStatement)
+	p.EnterRule(localctx, 52, FeelParserRULE_packageFunctionStatement)
 	var _la int
 
 	defer func() {
@@ -7608,7 +7608,7 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(803)
 			p.AnnotationSupport()
@@ -7619,13 +7619,13 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(806)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(807)
 			p.Left_brack()
@@ -7648,7 +7648,7 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 	}
 	{
 		p.SetState(814)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(815)
@@ -7667,7 +7667,7 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*PackageFunctionStatementContext).t = _ri
@@ -7680,11 +7680,11 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(818)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*PackageFunctionStatementContext).b = _m
 		}
@@ -7694,11 +7694,11 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(821)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*PackageFunctionStatementContext).y = _m
 		}
@@ -7708,10 +7708,10 @@ func (p *KParser) PackageFunctionStatement() (localctx IPackageFunctionStatement
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(824)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(829)
@@ -7777,7 +7777,7 @@ type PackageControlSubStatementContext struct {
 func NewEmptyPackageControlSubStatementContext() *PackageControlSubStatementContext {
 	var p = new(PackageControlSubStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageControlSubStatement
+	p.RuleIndex = FeelParserRULE_packageControlSubStatement
 	return p
 }
 
@@ -7789,7 +7789,7 @@ func NewPackageControlSubStatementContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageControlSubStatement
+	p.RuleIndex = FeelParserRULE_packageControlSubStatement
 
 	return p
 }
@@ -7902,7 +7902,7 @@ func (s *PackageControlSubStatementContext) ToStringTree(ruleNames []string, rec
 
 func (s *PackageControlSubStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageControlSubStatement(s)
 
 	default:
@@ -7910,9 +7910,9 @@ func (s *PackageControlSubStatementContext) Accept(visitor antlr.ParseTreeVisito
 	}
 }
 
-func (p *KParser) PackageControlSubStatement() (localctx IPackageControlSubStatementContext) {
+func (p *FeelParser) PackageControlSubStatement() (localctx IPackageControlSubStatementContext) {
 	localctx = NewPackageControlSubStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 54, KParserRULE_packageControlSubStatement)
+	p.EnterRule(localctx, 54, FeelParserRULE_packageControlSubStatement)
 	var _la int
 
 	defer func() {
@@ -7942,7 +7942,7 @@ func (p *KParser) PackageControlSubStatement() (localctx IPackageControlSubState
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserLeft_Paren {
+	if _la == FeelParserLeft_Paren {
 		{
 			p.SetState(843)
 			p.Left_paren()
@@ -8011,7 +8011,7 @@ type PackageEventStatementContext struct {
 func NewEmptyPackageEventStatementContext() *PackageEventStatementContext {
 	var p = new(PackageEventStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_packageEventStatement
+	p.RuleIndex = FeelParserRULE_packageEventStatement
 	return p
 }
 
@@ -8023,7 +8023,7 @@ func NewPackageEventStatementContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_packageEventStatement
+	p.RuleIndex = FeelParserRULE_packageEventStatement
 
 	return p
 }
@@ -8041,7 +8041,7 @@ func (s *PackageEventStatementContext) Id() IIdContext {
 }
 
 func (s *PackageEventStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PackageEventStatementContext) Left_brack() ILeft_brackContext {
@@ -8055,7 +8055,7 @@ func (s *PackageEventStatementContext) Left_brack() ILeft_brackContext {
 }
 
 func (s *PackageEventStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *PackageEventStatementContext) Right_brack() IRight_brackContext {
@@ -8098,7 +8098,7 @@ func (s *PackageEventStatementContext) ToStringTree(ruleNames []string, recog an
 
 func (s *PackageEventStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPackageEventStatement(s)
 
 	default:
@@ -8106,9 +8106,9 @@ func (s *PackageEventStatementContext) Accept(visitor antlr.ParseTreeVisitor) in
 	}
 }
 
-func (p *KParser) PackageEventStatement() (localctx IPackageEventStatementContext) {
+func (p *FeelParser) PackageEventStatement() (localctx IPackageEventStatementContext) {
 	localctx = NewPackageEventStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 56, KParserRULE_packageEventStatement)
+	p.EnterRule(localctx, 56, FeelParserRULE_packageEventStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -8133,7 +8133,7 @@ func (p *KParser) PackageEventStatement() (localctx IPackageEventStatementContex
 	}
 	{
 		p.SetState(859)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	{
 		p.SetState(860)
@@ -8141,7 +8141,7 @@ func (p *KParser) PackageEventStatement() (localctx IPackageEventStatementContex
 	}
 	{
 		p.SetState(861)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(862)
@@ -8178,7 +8178,7 @@ type ImplementStatementContext struct {
 func NewEmptyImplementStatementContext() *ImplementStatementContext {
 	var p = new(ImplementStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_implementStatement
+	p.RuleIndex = FeelParserRULE_implementStatement
 	return p
 }
 
@@ -8190,7 +8190,7 @@ func NewImplementStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_implementStatement
+	p.RuleIndex = FeelParserRULE_implementStatement
 
 	return p
 }
@@ -8198,7 +8198,7 @@ func NewImplementStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *ImplementStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ImplementStatementContext) Colon_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserColon_Equal, 0)
+	return s.GetToken(FeelParserColon_Equal, 0)
 }
 
 func (s *ImplementStatementContext) End() IEndContext {
@@ -8321,11 +8321,11 @@ func (s *ImplementStatementContext) IncludeStatement(i int) IIncludeStatementCon
 }
 
 func (s *ImplementStatementContext) AllBack_Forward_Slash() []antlr.TerminalNode {
-	return s.GetTokens(KParserBack_Forward_Slash)
+	return s.GetTokens(FeelParserBack_Forward_Slash)
 }
 
 func (s *ImplementStatementContext) Back_Forward_Slash(i int) antlr.TerminalNode {
-	return s.GetToken(KParserBack_Forward_Slash, i)
+	return s.GetToken(FeelParserBack_Forward_Slash, i)
 }
 
 func (s *ImplementStatementContext) GetRuleContext() antlr.RuleContext {
@@ -8338,7 +8338,7 @@ func (s *ImplementStatementContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *ImplementStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitImplementStatement(s)
 
 	default:
@@ -8346,9 +8346,9 @@ func (s *ImplementStatementContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) ImplementStatement() (localctx IImplementStatementContext) {
+func (p *FeelParser) ImplementStatement() (localctx IImplementStatementContext) {
 	localctx = NewImplementStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 58, KParserRULE_implementStatement)
+	p.EnterRule(localctx, 58, FeelParserRULE_implementStatement)
 	var _la int
 
 	defer func() {
@@ -8372,13 +8372,13 @@ func (p *KParser) ImplementStatement() (localctx IImplementStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(866)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(867)
 			p.Left_brack()
@@ -8401,7 +8401,7 @@ func (p *KParser) ImplementStatement() (localctx IImplementStatementContext) {
 	}
 	{
 		p.SetState(874)
-		p.Match(KParserColon_Equal)
+		p.Match(FeelParserColon_Equal)
 	}
 	p.SetState(878)
 	p.GetErrorHandler().Sync(p)
@@ -8429,10 +8429,10 @@ func (p *KParser) ImplementStatement() (localctx IImplementStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserBack_Forward_Slash {
+	for _la == FeelParserBack_Forward_Slash {
 		{
 			p.SetState(880)
-			p.Match(KParserBack_Forward_Slash)
+			p.Match(FeelParserBack_Forward_Slash)
 		}
 		p.SetState(884)
 		p.GetErrorHandler().Sync(p)
@@ -8495,7 +8495,7 @@ type OverrideVariableStatementContext struct {
 func NewEmptyOverrideVariableStatementContext() *OverrideVariableStatementContext {
 	var p = new(OverrideVariableStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_overrideVariableStatement
+	p.RuleIndex = FeelParserRULE_overrideVariableStatement
 	return p
 }
 
@@ -8507,7 +8507,7 @@ func NewOverrideVariableStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_overrideVariableStatement
+	p.RuleIndex = FeelParserRULE_overrideVariableStatement
 
 	return p
 }
@@ -8519,7 +8519,7 @@ func (s *OverrideVariableStatementContext) GetN() antlr.Token { return s.n }
 func (s *OverrideVariableStatementContext) SetN(v antlr.Token) { s.n = v }
 
 func (s *OverrideVariableStatementContext) Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot, 0)
+	return s.GetToken(FeelParserDot, 0)
 }
 
 func (s *OverrideVariableStatementContext) Id() IIdContext {
@@ -8533,7 +8533,7 @@ func (s *OverrideVariableStatementContext) Id() IIdContext {
 }
 
 func (s *OverrideVariableStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *OverrideVariableStatementContext) End() IEndContext {
@@ -8547,7 +8547,7 @@ func (s *OverrideVariableStatementContext) End() IEndContext {
 }
 
 func (s *OverrideVariableStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *OverrideVariableStatementContext) Expression() IExpressionContext {
@@ -8581,7 +8581,7 @@ func (s *OverrideVariableStatementContext) AnnotationSupport() IAnnotationSuppor
 }
 
 func (s *OverrideVariableStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *OverrideVariableStatementContext) GetRuleContext() antlr.RuleContext {
@@ -8594,7 +8594,7 @@ func (s *OverrideVariableStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *OverrideVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitOverrideVariableStatement(s)
 
 	default:
@@ -8602,9 +8602,9 @@ func (s *OverrideVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) OverrideVariableStatement() (localctx IOverrideVariableStatementContext) {
+func (p *FeelParser) OverrideVariableStatement() (localctx IOverrideVariableStatementContext) {
 	localctx = NewOverrideVariableStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 60, KParserRULE_overrideVariableStatement)
+	p.EnterRule(localctx, 60, FeelParserRULE_overrideVariableStatement)
 	var _la int
 
 	defer func() {
@@ -8628,7 +8628,7 @@ func (p *KParser) OverrideVariableStatement() (localctx IOverrideVariableStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(893)
 			p.AnnotationSupport()
@@ -8637,17 +8637,17 @@ func (p *KParser) OverrideVariableStatement() (localctx IOverrideVariableStateme
 	}
 	{
 		p.SetState(896)
-		p.Match(KParserDot)
+		p.Match(FeelParserDot)
 	}
 	p.SetState(898)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserDiscard {
+	if _la == FeelParserDiscard {
 		{
 			p.SetState(897)
 
-			var _m = p.Match(KParserDiscard)
+			var _m = p.Match(FeelParserDiscard)
 
 			localctx.(*OverrideVariableStatementContext).n = _m
 		}
@@ -8659,23 +8659,23 @@ func (p *KParser) OverrideVariableStatement() (localctx IOverrideVariableStateme
 	}
 	{
 		p.SetState(901)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	p.SetState(909)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(902)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(903)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(904)
 			p.TypeType()
@@ -8684,10 +8684,10 @@ func (p *KParser) OverrideVariableStatement() (localctx IOverrideVariableStateme
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(905)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(906)
@@ -8733,7 +8733,7 @@ type OverrideConstantStatementContext struct {
 func NewEmptyOverrideConstantStatementContext() *OverrideConstantStatementContext {
 	var p = new(OverrideConstantStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_overrideConstantStatement
+	p.RuleIndex = FeelParserRULE_overrideConstantStatement
 	return p
 }
 
@@ -8745,7 +8745,7 @@ func NewOverrideConstantStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_overrideConstantStatement
+	p.RuleIndex = FeelParserRULE_overrideConstantStatement
 
 	return p
 }
@@ -8757,7 +8757,7 @@ func (s *OverrideConstantStatementContext) GetN() antlr.Token { return s.n }
 func (s *OverrideConstantStatementContext) SetN(v antlr.Token) { s.n = v }
 
 func (s *OverrideConstantStatementContext) Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot, 0)
+	return s.GetToken(FeelParserDot, 0)
 }
 
 func (s *OverrideConstantStatementContext) Id() IIdContext {
@@ -8781,7 +8781,7 @@ func (s *OverrideConstantStatementContext) End() IEndContext {
 }
 
 func (s *OverrideConstantStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *OverrideConstantStatementContext) Expression() IExpressionContext {
@@ -8815,7 +8815,7 @@ func (s *OverrideConstantStatementContext) AnnotationSupport() IAnnotationSuppor
 }
 
 func (s *OverrideConstantStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *OverrideConstantStatementContext) GetRuleContext() antlr.RuleContext {
@@ -8828,7 +8828,7 @@ func (s *OverrideConstantStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *OverrideConstantStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitOverrideConstantStatement(s)
 
 	default:
@@ -8836,9 +8836,9 @@ func (s *OverrideConstantStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) OverrideConstantStatement() (localctx IOverrideConstantStatementContext) {
+func (p *FeelParser) OverrideConstantStatement() (localctx IOverrideConstantStatementContext) {
 	localctx = NewOverrideConstantStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 62, KParserRULE_overrideConstantStatement)
+	p.EnterRule(localctx, 62, FeelParserRULE_overrideConstantStatement)
 	var _la int
 
 	defer func() {
@@ -8862,7 +8862,7 @@ func (p *KParser) OverrideConstantStatement() (localctx IOverrideConstantStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(913)
 			p.AnnotationSupport()
@@ -8871,17 +8871,17 @@ func (p *KParser) OverrideConstantStatement() (localctx IOverrideConstantStateme
 	}
 	{
 		p.SetState(916)
-		p.Match(KParserDot)
+		p.Match(FeelParserDot)
 	}
 	p.SetState(918)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserDiscard {
+	if _la == FeelParserDiscard {
 		{
 			p.SetState(917)
 
-			var _m = p.Match(KParserDiscard)
+			var _m = p.Match(FeelParserDiscard)
 
 			localctx.(*OverrideConstantStatementContext).n = _m
 		}
@@ -8895,17 +8895,17 @@ func (p *KParser) OverrideConstantStatement() (localctx IOverrideConstantStateme
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(921)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(922)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(923)
 			p.TypeType()
@@ -8914,10 +8914,10 @@ func (p *KParser) OverrideConstantStatement() (localctx IOverrideConstantStateme
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(924)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(925)
@@ -8984,7 +8984,7 @@ type OverrideFunctionStatementContext struct {
 func NewEmptyOverrideFunctionStatementContext() *OverrideFunctionStatementContext {
 	var p = new(OverrideFunctionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_overrideFunctionStatement
+	p.RuleIndex = FeelParserRULE_overrideFunctionStatement
 	return p
 }
 
@@ -8996,7 +8996,7 @@ func NewOverrideFunctionStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_overrideFunctionStatement
+	p.RuleIndex = FeelParserRULE_overrideFunctionStatement
 
 	return p
 }
@@ -9020,11 +9020,11 @@ func (s *OverrideFunctionStatementContext) SetB(v antlr.Token) { s.b = v }
 func (s *OverrideFunctionStatementContext) SetY(v antlr.Token) { s.y = v }
 
 func (s *OverrideFunctionStatementContext) Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot, 0)
+	return s.GetToken(FeelParserDot, 0)
 }
 
 func (s *OverrideFunctionStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *OverrideFunctionStatementContext) Left_paren() ILeft_parenContext {
@@ -9138,11 +9138,11 @@ func (s *OverrideFunctionStatementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *OverrideFunctionStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *OverrideFunctionStatementContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *OverrideFunctionStatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -9156,11 +9156,11 @@ func (s *OverrideFunctionStatementContext) AnnotationSupport() IAnnotationSuppor
 }
 
 func (s *OverrideFunctionStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *OverrideFunctionStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *OverrideFunctionStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -9187,15 +9187,15 @@ func (s *OverrideFunctionStatementContext) FunctionSupportStatement(i int) IFunc
 }
 
 func (s *OverrideFunctionStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *OverrideFunctionStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *OverrideFunctionStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *OverrideFunctionStatementContext) GetRuleContext() antlr.RuleContext {
@@ -9208,7 +9208,7 @@ func (s *OverrideFunctionStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *OverrideFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitOverrideFunctionStatement(s)
 
 	default:
@@ -9216,9 +9216,9 @@ func (s *OverrideFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStatementContext) {
+func (p *FeelParser) OverrideFunctionStatement() (localctx IOverrideFunctionStatementContext) {
 	localctx = NewOverrideFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 64, KParserRULE_overrideFunctionStatement)
+	p.EnterRule(localctx, 64, FeelParserRULE_overrideFunctionStatement)
 	var _la int
 
 	defer func() {
@@ -9244,7 +9244,7 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(932)
 			p.AnnotationSupport()
@@ -9253,17 +9253,17 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	}
 	{
 		p.SetState(935)
-		p.Match(KParserDot)
+		p.Match(FeelParserDot)
 	}
 	p.SetState(937)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserDiscard {
+	if _la == FeelParserDiscard {
 		{
 			p.SetState(936)
 
-			var _m = p.Match(KParserDiscard)
+			var _m = p.Match(FeelParserDiscard)
 
 			localctx.(*OverrideFunctionStatementContext).n = _m
 		}
@@ -9273,13 +9273,13 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(939)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(940)
 			p.Left_brack()
@@ -9302,7 +9302,7 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	}
 	{
 		p.SetState(947)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(948)
@@ -9321,7 +9321,7 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*OverrideFunctionStatementContext).t = _ri
@@ -9334,11 +9334,11 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(951)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*OverrideFunctionStatementContext).b = _m
 		}
@@ -9348,11 +9348,11 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(954)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*OverrideFunctionStatementContext).y = _m
 		}
@@ -9362,10 +9362,10 @@ func (p *KParser) OverrideFunctionStatement() (localctx IOverrideFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(957)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(962)
@@ -9431,7 +9431,7 @@ type ProtocolStatementContext struct {
 func NewEmptyProtocolStatementContext() *ProtocolStatementContext {
 	var p = new(ProtocolStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_protocolStatement
+	p.RuleIndex = FeelParserRULE_protocolStatement
 	return p
 }
 
@@ -9443,7 +9443,7 @@ func NewProtocolStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_protocolStatement
+	p.RuleIndex = FeelParserRULE_protocolStatement
 
 	return p
 }
@@ -9451,7 +9451,7 @@ func NewProtocolStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *ProtocolStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ProtocolStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *ProtocolStatementContext) End() IEndContext {
@@ -9551,11 +9551,11 @@ func (s *ProtocolStatementContext) IncludeStatement(i int) IIncludeStatementCont
 }
 
 func (s *ProtocolStatementContext) AllBack_Forward_Slash() []antlr.TerminalNode {
-	return s.GetTokens(KParserBack_Forward_Slash)
+	return s.GetTokens(FeelParserBack_Forward_Slash)
 }
 
 func (s *ProtocolStatementContext) Back_Forward_Slash(i int) antlr.TerminalNode {
-	return s.GetToken(KParserBack_Forward_Slash, i)
+	return s.GetToken(FeelParserBack_Forward_Slash, i)
 }
 
 func (s *ProtocolStatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -9569,7 +9569,7 @@ func (s *ProtocolStatementContext) AnnotationSupport() IAnnotationSupportContext
 }
 
 func (s *ProtocolStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *ProtocolStatementContext) GetRuleContext() antlr.RuleContext {
@@ -9582,7 +9582,7 @@ func (s *ProtocolStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *ProtocolStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitProtocolStatement(s)
 
 	default:
@@ -9590,9 +9590,9 @@ func (s *ProtocolStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
+func (p *FeelParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 	localctx = NewProtocolStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 66, KParserRULE_protocolStatement)
+	p.EnterRule(localctx, 66, FeelParserRULE_protocolStatement)
 	var _la int
 
 	defer func() {
@@ -9618,7 +9618,7 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(975)
 			p.AnnotationSupport()
@@ -9629,13 +9629,13 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(978)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(979)
 			p.Left_brack()
@@ -9660,22 +9660,22 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(986)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(989)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	p.SetState(1024)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserCoin:
+	case FeelParserCoin:
 		{
 			p.SetState(990)
 			p.ProtocolSubStatement()
@@ -9684,22 +9684,22 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == KParserBack_Forward_Slash {
+		for _la == FeelParserBack_Forward_Slash {
 			{
 				p.SetState(991)
-				p.Match(KParserBack_Forward_Slash)
+				p.Match(FeelParserBack_Forward_Slash)
 			}
 			p.SetState(994)
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case KParserCoin:
+			case FeelParserCoin:
 				{
 					p.SetState(992)
 					p.ProtocolSubStatement()
 				}
 
-			case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+			case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 				{
 					p.SetState(993)
 					p.IncludeStatement()
@@ -9714,7 +9714,7 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 			_la = p.GetTokenStream().LA(1)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(1001)
 			p.IncludeStatement()
@@ -9727,19 +9727,19 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 			if _alt == 1 {
 				{
 					p.SetState(1002)
-					p.Match(KParserBack_Forward_Slash)
+					p.Match(FeelParserBack_Forward_Slash)
 				}
 				p.SetState(1005)
 				p.GetErrorHandler().Sync(p)
 
 				switch p.GetTokenStream().LA(1) {
-				case KParserCoin:
+				case FeelParserCoin:
 					{
 						p.SetState(1003)
 						p.ProtocolSubStatement()
 					}
 
-				case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+				case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 					{
 						p.SetState(1004)
 						p.IncludeStatement()
@@ -9756,7 +9756,7 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 		}
 		{
 			p.SetState(1012)
-			p.Match(KParserBack_Forward_Slash)
+			p.Match(FeelParserBack_Forward_Slash)
 		}
 		{
 			p.SetState(1013)
@@ -9766,22 +9766,22 @@ func (p *KParser) ProtocolStatement() (localctx IProtocolStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == KParserBack_Forward_Slash {
+		for _la == FeelParserBack_Forward_Slash {
 			{
 				p.SetState(1014)
-				p.Match(KParserBack_Forward_Slash)
+				p.Match(FeelParserBack_Forward_Slash)
 			}
 			p.SetState(1017)
 			p.GetErrorHandler().Sync(p)
 
 			switch p.GetTokenStream().LA(1) {
-			case KParserCoin:
+			case FeelParserCoin:
 				{
 					p.SetState(1015)
 					p.ProtocolSubStatement()
 				}
 
-			case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+			case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 				{
 					p.SetState(1016)
 					p.IncludeStatement()
@@ -9833,7 +9833,7 @@ type ProtocolSubStatementContext struct {
 func NewEmptyProtocolSubStatementContext() *ProtocolSubStatementContext {
 	var p = new(ProtocolSubStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_protocolSubStatement
+	p.RuleIndex = FeelParserRULE_protocolSubStatement
 	return p
 }
 
@@ -9845,7 +9845,7 @@ func NewProtocolSubStatementContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_protocolSubStatement
+	p.RuleIndex = FeelParserRULE_protocolSubStatement
 
 	return p
 }
@@ -9857,11 +9857,11 @@ func (s *ProtocolSubStatementContext) GetP() antlr.Token { return s.p }
 func (s *ProtocolSubStatementContext) SetP(v antlr.Token) { s.p = v }
 
 func (s *ProtocolSubStatementContext) AllCoin() []antlr.TerminalNode {
-	return s.GetTokens(KParserCoin)
+	return s.GetTokens(FeelParserCoin)
 }
 
 func (s *ProtocolSubStatementContext) Coin(i int) antlr.TerminalNode {
-	return s.GetToken(KParserCoin, i)
+	return s.GetToken(FeelParserCoin, i)
 }
 
 func (s *ProtocolSubStatementContext) Left_brace() ILeft_braceContext {
@@ -9941,7 +9941,7 @@ func (s *ProtocolSubStatementContext) More() IMoreContext {
 }
 
 func (s *ProtocolSubStatementContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *ProtocolSubStatementContext) GetRuleContext() antlr.RuleContext {
@@ -9954,7 +9954,7 @@ func (s *ProtocolSubStatementContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *ProtocolSubStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitProtocolSubStatement(s)
 
 	default:
@@ -9962,9 +9962,9 @@ func (s *ProtocolSubStatementContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) ProtocolSubStatement() (localctx IProtocolSubStatementContext) {
+func (p *FeelParser) ProtocolSubStatement() (localctx IProtocolSubStatementContext) {
 	localctx = NewProtocolSubStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 68, KParserRULE_protocolSubStatement)
+	p.EnterRule(localctx, 68, FeelParserRULE_protocolSubStatement)
 	var _la int
 
 	defer func() {
@@ -9988,26 +9988,26 @@ func (p *KParser) ProtocolSubStatement() (localctx IProtocolSubStatementContext)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1028)
-		p.Match(KParserCoin)
+		p.Match(FeelParserCoin)
 	}
 	{
 		p.SetState(1029)
-		p.Match(KParserCoin)
+		p.Match(FeelParserCoin)
 	}
 	p.SetState(1039)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-46)&-(0x1f+1)) == 0 && ((1<<uint((_la-46)))&((1<<(KParserQuestion-46))|(1<<(KParserTypeI8-46))|(1<<(KParserTypeU8-46))|(1<<(KParserTypeI16-46))|(1<<(KParserTypeU16-46))|(1<<(KParserTypeI32-46))|(1<<(KParserTypeU32-46))|(1<<(KParserTypeI64-46))|(1<<(KParserTypeU64-46))|(1<<(KParserTypeF32-46))|(1<<(KParserTypeF64-46))|(1<<(KParserTypeChr-46))|(1<<(KParserTypeStr-46))|(1<<(KParserTypeBool-46))|(1<<(KParserTypeInt-46))|(1<<(KParserTypeNum-46))|(1<<(KParserTypeByte-46))|(1<<(KParserTypeAny-46)))) != 0) || _la == KParserIDPrivate || _la == KParserIDPublic {
+	if (((_la-46)&-(0x1f+1)) == 0 && ((1<<uint((_la-46)))&((1<<(FeelParserQuestion-46))|(1<<(FeelParserTypeI8-46))|(1<<(FeelParserTypeU8-46))|(1<<(FeelParserTypeI16-46))|(1<<(FeelParserTypeU16-46))|(1<<(FeelParserTypeI32-46))|(1<<(FeelParserTypeU32-46))|(1<<(FeelParserTypeI64-46))|(1<<(FeelParserTypeU64-46))|(1<<(FeelParserTypeF32-46))|(1<<(FeelParserTypeF64-46))|(1<<(FeelParserTypeChr-46))|(1<<(FeelParserTypeStr-46))|(1<<(FeelParserTypeBool-46))|(1<<(FeelParserTypeInt-46))|(1<<(FeelParserTypeNum-46))|(1<<(FeelParserTypeByte-46))|(1<<(FeelParserTypeAny-46)))) != 0) || _la == FeelParserIDPrivate || _la == FeelParserIDPublic {
 		p.SetState(1031)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserQuestion {
+		if _la == FeelParserQuestion {
 			{
 				p.SetState(1030)
 
-				var _m = p.Match(KParserQuestion)
+				var _m = p.Match(FeelParserQuestion)
 
 				localctx.(*ProtocolSubStatementContext).p = _m
 			}
@@ -10021,7 +10021,7 @@ func (p *KParser) ProtocolSubStatement() (localctx IProtocolSubStatementContext)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserComma {
+		if _la == FeelParserComma {
 			{
 				p.SetState(1034)
 				p.More()
@@ -10081,7 +10081,7 @@ type ProtocolSupportStatementContext struct {
 func NewEmptyProtocolSupportStatementContext() *ProtocolSupportStatementContext {
 	var p = new(ProtocolSupportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_protocolSupportStatement
+	p.RuleIndex = FeelParserRULE_protocolSupportStatement
 	return p
 }
 
@@ -10093,7 +10093,7 @@ func NewProtocolSupportStatementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_protocolSupportStatement
+	p.RuleIndex = FeelParserRULE_protocolSupportStatement
 
 	return p
 }
@@ -10121,7 +10121,7 @@ func (s *ProtocolSupportStatementContext) ProtocolVariableStatement() IProtocolV
 }
 
 func (s *ProtocolSupportStatementContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *ProtocolSupportStatementContext) GetRuleContext() antlr.RuleContext {
@@ -10134,7 +10134,7 @@ func (s *ProtocolSupportStatementContext) ToStringTree(ruleNames []string, recog
 
 func (s *ProtocolSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitProtocolSupportStatement(s)
 
 	default:
@@ -10142,9 +10142,9 @@ func (s *ProtocolSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor)
 	}
 }
 
-func (p *KParser) ProtocolSupportStatement() (localctx IProtocolSupportStatementContext) {
+func (p *FeelParser) ProtocolSupportStatement() (localctx IProtocolSupportStatementContext) {
 	localctx = NewProtocolSupportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 70, KParserRULE_protocolSupportStatement)
+	p.EnterRule(localctx, 70, FeelParserRULE_protocolSupportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -10183,7 +10183,7 @@ func (p *KParser) ProtocolSupportStatement() (localctx IProtocolSupportStatement
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(1052)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -10210,7 +10210,7 @@ type ProtocolVariableStatementContext struct {
 func NewEmptyProtocolVariableStatementContext() *ProtocolVariableStatementContext {
 	var p = new(ProtocolVariableStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_protocolVariableStatement
+	p.RuleIndex = FeelParserRULE_protocolVariableStatement
 	return p
 }
 
@@ -10222,7 +10222,7 @@ func NewProtocolVariableStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_protocolVariableStatement
+	p.RuleIndex = FeelParserRULE_protocolVariableStatement
 
 	return p
 }
@@ -10250,7 +10250,7 @@ func (s *ProtocolVariableStatementContext) End() IEndContext {
 }
 
 func (s *ProtocolVariableStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *ProtocolVariableStatementContext) Expression() IExpressionContext {
@@ -10284,7 +10284,7 @@ func (s *ProtocolVariableStatementContext) AnnotationSupport() IAnnotationSuppor
 }
 
 func (s *ProtocolVariableStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *ProtocolVariableStatementContext) GetRuleContext() antlr.RuleContext {
@@ -10297,7 +10297,7 @@ func (s *ProtocolVariableStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *ProtocolVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitProtocolVariableStatement(s)
 
 	default:
@@ -10305,9 +10305,9 @@ func (s *ProtocolVariableStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) ProtocolVariableStatement() (localctx IProtocolVariableStatementContext) {
+func (p *FeelParser) ProtocolVariableStatement() (localctx IProtocolVariableStatementContext) {
 	localctx = NewProtocolVariableStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 72, KParserRULE_protocolVariableStatement)
+	p.EnterRule(localctx, 72, FeelParserRULE_protocolVariableStatement)
 	var _la int
 
 	defer func() {
@@ -10331,7 +10331,7 @@ func (p *KParser) ProtocolVariableStatement() (localctx IProtocolVariableStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(1055)
 			p.AnnotationSupport()
@@ -10346,10 +10346,10 @@ func (p *KParser) ProtocolVariableStatement() (localctx IProtocolVariableStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1059)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
@@ -10357,17 +10357,17 @@ func (p *KParser) ProtocolVariableStatement() (localctx IProtocolVariableStateme
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserColon:
+	case FeelParserColon:
 		{
 			p.SetState(1062)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(1063)
 			p.expression(0)
 		}
 
-	case KParserLeft_Paren, KParserLeft_Brack, KParserQuestion, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserQuestion, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(1064)
 			p.TypeType()
@@ -10376,10 +10376,10 @@ func (p *KParser) ProtocolVariableStatement() (localctx IProtocolVariableStateme
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserColon {
+		if _la == FeelParserColon {
 			{
 				p.SetState(1065)
-				p.Match(KParserColon)
+				p.Match(FeelParserColon)
 			}
 			{
 				p.SetState(1066)
@@ -10439,7 +10439,7 @@ type ProtocolFunctionStatementContext struct {
 func NewEmptyProtocolFunctionStatementContext() *ProtocolFunctionStatementContext {
 	var p = new(ProtocolFunctionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_protocolFunctionStatement
+	p.RuleIndex = FeelParserRULE_protocolFunctionStatement
 	return p
 }
 
@@ -10451,7 +10451,7 @@ func NewProtocolFunctionStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_protocolFunctionStatement
+	p.RuleIndex = FeelParserRULE_protocolFunctionStatement
 
 	return p
 }
@@ -10561,11 +10561,11 @@ func (s *ProtocolFunctionStatementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *ProtocolFunctionStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *ProtocolFunctionStatementContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *ProtocolFunctionStatementContext) AnnotationSupport() IAnnotationSupportContext {
@@ -10579,19 +10579,19 @@ func (s *ProtocolFunctionStatementContext) AnnotationSupport() IAnnotationSuppor
 }
 
 func (s *ProtocolFunctionStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *ProtocolFunctionStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *ProtocolFunctionStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *ProtocolFunctionStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *ProtocolFunctionStatementContext) GetRuleContext() antlr.RuleContext {
@@ -10604,7 +10604,7 @@ func (s *ProtocolFunctionStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *ProtocolFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitProtocolFunctionStatement(s)
 
 	default:
@@ -10612,9 +10612,9 @@ func (s *ProtocolFunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStatementContext) {
+func (p *FeelParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStatementContext) {
 	localctx = NewProtocolFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 74, KParserRULE_protocolFunctionStatement)
+	p.EnterRule(localctx, 74, FeelParserRULE_protocolFunctionStatement)
 	var _la int
 
 	defer func() {
@@ -10638,7 +10638,7 @@ func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(1073)
 			p.AnnotationSupport()
@@ -10649,13 +10649,13 @@ func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStateme
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(1076)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(1077)
 			p.Left_brack()
@@ -10693,7 +10693,7 @@ func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStateme
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*ProtocolFunctionStatementContext).t = _ri
@@ -10706,11 +10706,11 @@ func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1087)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*ProtocolFunctionStatementContext).b = _m
 		}
@@ -10720,11 +10720,11 @@ func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(1090)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*ProtocolFunctionStatementContext).y = _m
 		}
@@ -10734,10 +10734,10 @@ func (p *KParser) ProtocolFunctionStatement() (localctx IProtocolFunctionStateme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(1093)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(1098)
@@ -10800,7 +10800,7 @@ type FunctionStatementContext struct {
 func NewEmptyFunctionStatementContext() *FunctionStatementContext {
 	var p = new(FunctionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_functionStatement
+	p.RuleIndex = FeelParserRULE_functionStatement
 	return p
 }
 
@@ -10812,7 +10812,7 @@ func NewFunctionStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_functionStatement
+	p.RuleIndex = FeelParserRULE_functionStatement
 
 	return p
 }
@@ -10832,7 +10832,7 @@ func (s *FunctionStatementContext) SetB(v antlr.Token) { s.b = v }
 func (s *FunctionStatementContext) SetY(v antlr.Token) { s.y = v }
 
 func (s *FunctionStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *FunctionStatementContext) Left_paren() ILeft_parenContext {
@@ -10946,19 +10946,19 @@ func (s *FunctionStatementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *FunctionStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *FunctionStatementContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *FunctionStatementContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *FunctionStatementContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *FunctionStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -10985,11 +10985,11 @@ func (s *FunctionStatementContext) FunctionSupportStatement(i int) IFunctionSupp
 }
 
 func (s *FunctionStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *FunctionStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *FunctionStatementContext) GetRuleContext() antlr.RuleContext {
@@ -11002,7 +11002,7 @@ func (s *FunctionStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *FunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitFunctionStatement(s)
 
 	default:
@@ -11010,9 +11010,9 @@ func (s *FunctionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
+func (p *FeelParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	localctx = NewFunctionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 76, KParserRULE_functionStatement)
+	p.EnterRule(localctx, 76, FeelParserRULE_functionStatement)
 	var _la int
 
 	defer func() {
@@ -11038,13 +11038,13 @@ func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(1103)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(1104)
 			p.Left_brack()
@@ -11067,7 +11067,7 @@ func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	}
 	{
 		p.SetState(1111)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(1112)
@@ -11086,7 +11086,7 @@ func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*FunctionStatementContext).t = _ri
@@ -11099,11 +11099,11 @@ func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1115)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*FunctionStatementContext).b = _m
 		}
@@ -11113,11 +11113,11 @@ func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(1118)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*FunctionStatementContext).y = _m
 		}
@@ -11127,10 +11127,10 @@ func (p *KParser) FunctionStatement() (localctx IFunctionStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(1121)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(1126)
@@ -11196,7 +11196,7 @@ type ReturnStatementContext struct {
 func NewEmptyReturnStatementContext() *ReturnStatementContext {
 	var p = new(ReturnStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_returnStatement
+	p.RuleIndex = FeelParserRULE_returnStatement
 	return p
 }
 
@@ -11208,7 +11208,7 @@ func NewReturnStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_returnStatement
+	p.RuleIndex = FeelParserRULE_returnStatement
 
 	return p
 }
@@ -11216,7 +11216,7 @@ func NewReturnStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *ReturnStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ReturnStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Arrow, 0)
+	return s.GetToken(FeelParserLeft_Arrow, 0)
 }
 
 func (s *ReturnStatementContext) End() IEndContext {
@@ -11249,7 +11249,7 @@ func (s *ReturnStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *ReturnStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitReturnStatement(s)
 
 	default:
@@ -11257,9 +11257,9 @@ func (s *ReturnStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) ReturnStatement() (localctx IReturnStatementContext) {
+func (p *FeelParser) ReturnStatement() (localctx IReturnStatementContext) {
 	localctx = NewReturnStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 78, KParserRULE_returnStatement)
+	p.EnterRule(localctx, 78, FeelParserRULE_returnStatement)
 	var _la int
 
 	defer func() {
@@ -11281,13 +11281,13 @@ func (p *KParser) ReturnStatement() (localctx IReturnStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1139)
-		p.Match(KParserLeft_Arrow)
+		p.Match(FeelParserLeft_Arrow)
 	}
 	p.SetState(1141)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 		{
 			p.SetState(1140)
 			p.TupleExpression()
@@ -11321,7 +11321,7 @@ type ReturnAsyncStatementContext struct {
 func NewEmptyReturnAsyncStatementContext() *ReturnAsyncStatementContext {
 	var p = new(ReturnAsyncStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_returnAsyncStatement
+	p.RuleIndex = FeelParserRULE_returnAsyncStatement
 	return p
 }
 
@@ -11333,7 +11333,7 @@ func NewReturnAsyncStatementContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_returnAsyncStatement
+	p.RuleIndex = FeelParserRULE_returnAsyncStatement
 
 	return p
 }
@@ -11341,7 +11341,7 @@ func NewReturnAsyncStatementContext(parser antlr.Parser, parent antlr.ParserRule
 func (s *ReturnAsyncStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *ReturnAsyncStatementContext) Left_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Flow, 0)
+	return s.GetToken(FeelParserLeft_Flow, 0)
 }
 
 func (s *ReturnAsyncStatementContext) End() IEndContext {
@@ -11374,7 +11374,7 @@ func (s *ReturnAsyncStatementContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *ReturnAsyncStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitReturnAsyncStatement(s)
 
 	default:
@@ -11382,9 +11382,9 @@ func (s *ReturnAsyncStatementContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) ReturnAsyncStatement() (localctx IReturnAsyncStatementContext) {
+func (p *FeelParser) ReturnAsyncStatement() (localctx IReturnAsyncStatementContext) {
 	localctx = NewReturnAsyncStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 80, KParserRULE_returnAsyncStatement)
+	p.EnterRule(localctx, 80, FeelParserRULE_returnAsyncStatement)
 	var _la int
 
 	defer func() {
@@ -11406,13 +11406,13 @@ func (p *KParser) ReturnAsyncStatement() (localctx IReturnAsyncStatementContext)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1145)
-		p.Match(KParserLeft_Flow)
+		p.Match(FeelParserLeft_Flow)
 	}
 	p.SetState(1147)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 		{
 			p.SetState(1146)
 			p.TupleExpression()
@@ -11446,7 +11446,7 @@ type YieldReturnStatementContext struct {
 func NewEmptyYieldReturnStatementContext() *YieldReturnStatementContext {
 	var p = new(YieldReturnStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_yieldReturnStatement
+	p.RuleIndex = FeelParserRULE_yieldReturnStatement
 	return p
 }
 
@@ -11458,7 +11458,7 @@ func NewYieldReturnStatementContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_yieldReturnStatement
+	p.RuleIndex = FeelParserRULE_yieldReturnStatement
 
 	return p
 }
@@ -11466,11 +11466,11 @@ func NewYieldReturnStatementContext(parser antlr.Parser, parent antlr.ParserRule
 func (s *YieldReturnStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *YieldReturnStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *YieldReturnStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Arrow, 0)
+	return s.GetToken(FeelParserLeft_Arrow, 0)
 }
 
 func (s *YieldReturnStatementContext) TupleExpression() ITupleExpressionContext {
@@ -11503,7 +11503,7 @@ func (s *YieldReturnStatementContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *YieldReturnStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitYieldReturnStatement(s)
 
 	default:
@@ -11511,9 +11511,9 @@ func (s *YieldReturnStatementContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) YieldReturnStatement() (localctx IYieldReturnStatementContext) {
+func (p *FeelParser) YieldReturnStatement() (localctx IYieldReturnStatementContext) {
 	localctx = NewYieldReturnStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 82, KParserRULE_yieldReturnStatement)
+	p.EnterRule(localctx, 82, FeelParserRULE_yieldReturnStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -11534,11 +11534,11 @@ func (p *KParser) YieldReturnStatement() (localctx IYieldReturnStatementContext)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1151)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(1152)
-		p.Match(KParserLeft_Arrow)
+		p.Match(FeelParserLeft_Arrow)
 	}
 	{
 		p.SetState(1153)
@@ -11571,7 +11571,7 @@ type YieldBreakStatementContext struct {
 func NewEmptyYieldBreakStatementContext() *YieldBreakStatementContext {
 	var p = new(YieldBreakStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_yieldBreakStatement
+	p.RuleIndex = FeelParserRULE_yieldBreakStatement
 	return p
 }
 
@@ -11583,7 +11583,7 @@ func NewYieldBreakStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_yieldBreakStatement
+	p.RuleIndex = FeelParserRULE_yieldBreakStatement
 
 	return p
 }
@@ -11591,11 +11591,11 @@ func NewYieldBreakStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 func (s *YieldBreakStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *YieldBreakStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *YieldBreakStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Arrow, 0)
+	return s.GetToken(FeelParserLeft_Arrow, 0)
 }
 
 func (s *YieldBreakStatementContext) End() IEndContext {
@@ -11618,7 +11618,7 @@ func (s *YieldBreakStatementContext) ToStringTree(ruleNames []string, recog antl
 
 func (s *YieldBreakStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitYieldBreakStatement(s)
 
 	default:
@@ -11626,9 +11626,9 @@ func (s *YieldBreakStatementContext) Accept(visitor antlr.ParseTreeVisitor) inte
 	}
 }
 
-func (p *KParser) YieldBreakStatement() (localctx IYieldBreakStatementContext) {
+func (p *FeelParser) YieldBreakStatement() (localctx IYieldBreakStatementContext) {
 	localctx = NewYieldBreakStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 84, KParserRULE_yieldBreakStatement)
+	p.EnterRule(localctx, 84, FeelParserRULE_yieldBreakStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -11649,11 +11649,11 @@ func (p *KParser) YieldBreakStatement() (localctx IYieldBreakStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1156)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(1157)
-		p.Match(KParserLeft_Arrow)
+		p.Match(FeelParserLeft_Arrow)
 	}
 	{
 		p.SetState(1158)
@@ -11682,7 +11682,7 @@ type ParameterClauseInContext struct {
 func NewEmptyParameterClauseInContext() *ParameterClauseInContext {
 	var p = new(ParameterClauseInContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_parameterClauseIn
+	p.RuleIndex = FeelParserRULE_parameterClauseIn
 	return p
 }
 
@@ -11694,7 +11694,7 @@ func NewParameterClauseInContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_parameterClauseIn
+	p.RuleIndex = FeelParserRULE_parameterClauseIn
 
 	return p
 }
@@ -11757,7 +11757,7 @@ func (s *ParameterClauseInContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *ParameterClauseInContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitParameterClauseIn(s)
 
 	default:
@@ -11765,9 +11765,9 @@ func (s *ParameterClauseInContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) ParameterClauseIn() (localctx IParameterClauseInContext) {
+func (p *FeelParser) ParameterClauseIn() (localctx IParameterClauseInContext) {
 	localctx = NewParameterClauseInContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 86, KParserRULE_parameterClauseIn)
+	p.EnterRule(localctx, 86, FeelParserRULE_parameterClauseIn)
 	var _la int
 
 	defer func() {
@@ -11791,7 +11791,7 @@ func (p *KParser) ParameterClauseIn() (localctx IParameterClauseInContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la-60)&-(0x1f+1)) == 0 && ((1<<uint((_la-60)))&((1<<(KParserSharp-60))|(1<<(KParserTypeI8-60))|(1<<(KParserTypeU8-60))|(1<<(KParserTypeI16-60))|(1<<(KParserTypeU16-60))|(1<<(KParserTypeI32-60))|(1<<(KParserTypeU32-60))|(1<<(KParserTypeI64-60))|(1<<(KParserTypeU64-60))|(1<<(KParserTypeF32-60))|(1<<(KParserTypeF64-60))|(1<<(KParserTypeChr-60))|(1<<(KParserTypeStr-60))|(1<<(KParserTypeBool-60))|(1<<(KParserTypeInt-60))|(1<<(KParserTypeNum-60))|(1<<(KParserTypeByte-60))|(1<<(KParserTypeAny-60))|(1<<(KParserIDPrivate-60))|(1<<(KParserIDPublic-60)))) != 0 {
+	if ((_la-60)&-(0x1f+1)) == 0 && ((1<<uint((_la-60)))&((1<<(FeelParserSharp-60))|(1<<(FeelParserTypeI8-60))|(1<<(FeelParserTypeU8-60))|(1<<(FeelParserTypeI16-60))|(1<<(FeelParserTypeU16-60))|(1<<(FeelParserTypeI32-60))|(1<<(FeelParserTypeU32-60))|(1<<(FeelParserTypeI64-60))|(1<<(FeelParserTypeU64-60))|(1<<(FeelParserTypeF32-60))|(1<<(FeelParserTypeF64-60))|(1<<(FeelParserTypeChr-60))|(1<<(FeelParserTypeStr-60))|(1<<(FeelParserTypeBool-60))|(1<<(FeelParserTypeInt-60))|(1<<(FeelParserTypeNum-60))|(1<<(FeelParserTypeByte-60))|(1<<(FeelParserTypeAny-60))|(1<<(FeelParserIDPrivate-60))|(1<<(FeelParserIDPublic-60)))) != 0 {
 		{
 			p.SetState(1160)
 			p.Parameter()
@@ -11802,7 +11802,7 @@ func (p *KParser) ParameterClauseIn() (localctx IParameterClauseInContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1163)
 			p.More()
@@ -11839,7 +11839,7 @@ type ParameterClauseOutContext struct {
 func NewEmptyParameterClauseOutContext() *ParameterClauseOutContext {
 	var p = new(ParameterClauseOutContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_parameterClauseOut
+	p.RuleIndex = FeelParserRULE_parameterClauseOut
 	return p
 }
 
@@ -11851,7 +11851,7 @@ func NewParameterClauseOutContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_parameterClauseOut
+	p.RuleIndex = FeelParserRULE_parameterClauseOut
 
 	return p
 }
@@ -11914,7 +11914,7 @@ func (s *ParameterClauseOutContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *ParameterClauseOutContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitParameterClauseOut(s)
 
 	default:
@@ -11922,9 +11922,9 @@ func (s *ParameterClauseOutContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) ParameterClauseOut() (localctx IParameterClauseOutContext) {
+func (p *FeelParser) ParameterClauseOut() (localctx IParameterClauseOutContext) {
 	localctx = NewParameterClauseOutContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 88, KParserRULE_parameterClauseOut)
+	p.EnterRule(localctx, 88, FeelParserRULE_parameterClauseOut)
 	var _la int
 
 	defer func() {
@@ -11948,7 +11948,7 @@ func (p *KParser) ParameterClauseOut() (localctx IParameterClauseOutContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if ((_la-60)&-(0x1f+1)) == 0 && ((1<<uint((_la-60)))&((1<<(KParserSharp-60))|(1<<(KParserTypeI8-60))|(1<<(KParserTypeU8-60))|(1<<(KParserTypeI16-60))|(1<<(KParserTypeU16-60))|(1<<(KParserTypeI32-60))|(1<<(KParserTypeU32-60))|(1<<(KParserTypeI64-60))|(1<<(KParserTypeU64-60))|(1<<(KParserTypeF32-60))|(1<<(KParserTypeF64-60))|(1<<(KParserTypeChr-60))|(1<<(KParserTypeStr-60))|(1<<(KParserTypeBool-60))|(1<<(KParserTypeInt-60))|(1<<(KParserTypeNum-60))|(1<<(KParserTypeByte-60))|(1<<(KParserTypeAny-60))|(1<<(KParserIDPrivate-60))|(1<<(KParserIDPublic-60)))) != 0 {
+	if ((_la-60)&-(0x1f+1)) == 0 && ((1<<uint((_la-60)))&((1<<(FeelParserSharp-60))|(1<<(FeelParserTypeI8-60))|(1<<(FeelParserTypeU8-60))|(1<<(FeelParserTypeI16-60))|(1<<(FeelParserTypeU16-60))|(1<<(FeelParserTypeI32-60))|(1<<(FeelParserTypeU32-60))|(1<<(FeelParserTypeI64-60))|(1<<(FeelParserTypeU64-60))|(1<<(FeelParserTypeF32-60))|(1<<(FeelParserTypeF64-60))|(1<<(FeelParserTypeChr-60))|(1<<(FeelParserTypeStr-60))|(1<<(FeelParserTypeBool-60))|(1<<(FeelParserTypeInt-60))|(1<<(FeelParserTypeNum-60))|(1<<(FeelParserTypeByte-60))|(1<<(FeelParserTypeAny-60))|(1<<(FeelParserIDPrivate-60))|(1<<(FeelParserIDPublic-60)))) != 0 {
 		{
 			p.SetState(1171)
 			p.Parameter()
@@ -11959,7 +11959,7 @@ func (p *KParser) ParameterClauseOut() (localctx IParameterClauseOutContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1174)
 			p.More()
@@ -11996,7 +11996,7 @@ type ParameterContext struct {
 func NewEmptyParameterContext() *ParameterContext {
 	var p = new(ParameterContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_parameter
+	p.RuleIndex = FeelParserRULE_parameter
 	return p
 }
 
@@ -12008,7 +12008,7 @@ func NewParameterContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_parameter
+	p.RuleIndex = FeelParserRULE_parameter
 
 	return p
 }
@@ -12046,11 +12046,11 @@ func (s *ParameterContext) AnnotationSupport() IAnnotationSupportContext {
 }
 
 func (s *ParameterContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *ParameterContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *ParameterContext) Expression() IExpressionContext {
@@ -12064,11 +12064,11 @@ func (s *ParameterContext) Expression() IExpressionContext {
 }
 
 func (s *ParameterContext) Comma_Comma() antlr.TerminalNode {
-	return s.GetToken(KParserComma_Comma, 0)
+	return s.GetToken(FeelParserComma_Comma, 0)
 }
 
 func (s *ParameterContext) Comma_Comma_Comma() antlr.TerminalNode {
-	return s.GetToken(KParserComma_Comma_Comma, 0)
+	return s.GetToken(FeelParserComma_Comma_Comma, 0)
 }
 
 func (s *ParameterContext) GetRuleContext() antlr.RuleContext {
@@ -12081,7 +12081,7 @@ func (s *ParameterContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *ParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitParameter(s)
 
 	default:
@@ -12089,9 +12089,9 @@ func (s *ParameterContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Parameter() (localctx IParameterContext) {
+func (p *FeelParser) Parameter() (localctx IParameterContext) {
 	localctx = NewParameterContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 90, KParserRULE_parameter)
+	p.EnterRule(localctx, 90, FeelParserRULE_parameter)
 	var _la int
 
 	defer func() {
@@ -12115,7 +12115,7 @@ func (p *KParser) Parameter() (localctx IParameterContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserSharp {
+	if _la == FeelParserSharp {
 		{
 			p.SetState(1182)
 			p.AnnotationSupport()
@@ -12130,10 +12130,10 @@ func (p *KParser) Parameter() (localctx IParameterContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1186)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
@@ -12141,12 +12141,12 @@ func (p *KParser) Parameter() (localctx IParameterContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserComma_Comma_Comma || _la == KParserComma_Comma {
+	if _la == FeelParserComma_Comma_Comma || _la == FeelParserComma_Comma {
 		{
 			p.SetState(1189)
 			_la = p.GetTokenStream().LA(1)
 
-			if !(_la == KParserComma_Comma_Comma || _la == KParserComma_Comma) {
+			if !(_la == FeelParserComma_Comma_Comma || _la == FeelParserComma_Comma) {
 				p.GetErrorHandler().RecoverInline(p)
 			} else {
 				p.GetErrorHandler().ReportMatch(p)
@@ -12163,10 +12163,10 @@ func (p *KParser) Parameter() (localctx IParameterContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserColon {
+	if _la == FeelParserColon {
 		{
 			p.SetState(1193)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 		{
 			p.SetState(1194)
@@ -12197,7 +12197,7 @@ type FunctionSupportStatementContext struct {
 func NewEmptyFunctionSupportStatementContext() *FunctionSupportStatementContext {
 	var p = new(FunctionSupportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_functionSupportStatement
+	p.RuleIndex = FeelParserRULE_functionSupportStatement
 	return p
 }
 
@@ -12209,7 +12209,7 @@ func NewFunctionSupportStatementContext(parser antlr.Parser, parent antlr.Parser
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_functionSupportStatement
+	p.RuleIndex = FeelParserRULE_functionSupportStatement
 
 	return p
 }
@@ -12437,7 +12437,7 @@ func (s *FunctionSupportStatementContext) AnnotationStatement() IAnnotationState
 }
 
 func (s *FunctionSupportStatementContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *FunctionSupportStatementContext) GetRuleContext() antlr.RuleContext {
@@ -12450,7 +12450,7 @@ func (s *FunctionSupportStatementContext) ToStringTree(ruleNames []string, recog
 
 func (s *FunctionSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitFunctionSupportStatement(s)
 
 	default:
@@ -12458,9 +12458,9 @@ func (s *FunctionSupportStatementContext) Accept(visitor antlr.ParseTreeVisitor)
 	}
 }
 
-func (p *KParser) FunctionSupportStatement() (localctx IFunctionSupportStatementContext) {
+func (p *FeelParser) FunctionSupportStatement() (localctx IFunctionSupportStatementContext) {
 	localctx = NewFunctionSupportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 92, KParserRULE_functionSupportStatement)
+	p.EnterRule(localctx, 92, FeelParserRULE_functionSupportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -12639,7 +12639,7 @@ func (p *KParser) FunctionSupportStatement() (localctx IFunctionSupportStatement
 		p.EnterOuterAlt(localctx, 23)
 		{
 			p.SetState(1219)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -12666,7 +12666,7 @@ type JudgeCaseStatementContext struct {
 func NewEmptyJudgeCaseStatementContext() *JudgeCaseStatementContext {
 	var p = new(JudgeCaseStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeCaseStatement
+	p.RuleIndex = FeelParserRULE_judgeCaseStatement
 	return p
 }
 
@@ -12678,7 +12678,7 @@ func NewJudgeCaseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeCaseStatement
+	p.RuleIndex = FeelParserRULE_judgeCaseStatement
 
 	return p
 }
@@ -12686,7 +12686,7 @@ func NewJudgeCaseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *JudgeCaseStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *JudgeCaseStatementContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *JudgeCaseStatementContext) Expression() IExpressionContext {
@@ -12700,7 +12700,7 @@ func (s *JudgeCaseStatementContext) Expression() IExpressionContext {
 }
 
 func (s *JudgeCaseStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *JudgeCaseStatementContext) End() IEndContext {
@@ -12746,7 +12746,7 @@ func (s *JudgeCaseStatementContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *JudgeCaseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeCaseStatement(s)
 
 	default:
@@ -12754,9 +12754,9 @@ func (s *JudgeCaseStatementContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) JudgeCaseStatement() (localctx IJudgeCaseStatementContext) {
+func (p *FeelParser) JudgeCaseStatement() (localctx IJudgeCaseStatementContext) {
 	localctx = NewJudgeCaseStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 94, KParserRULE_judgeCaseStatement)
+	p.EnterRule(localctx, 94, FeelParserRULE_judgeCaseStatement)
 	var _la int
 
 	defer func() {
@@ -12778,7 +12778,7 @@ func (p *KParser) JudgeCaseStatement() (localctx IJudgeCaseStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1222)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(1223)
@@ -12786,13 +12786,13 @@ func (p *KParser) JudgeCaseStatement() (localctx IJudgeCaseStatementContext) {
 	}
 	{
 		p.SetState(1224)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	p.SetState(1226)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+	for ok := true; ok; ok = (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 		{
 			p.SetState(1225)
 			p.CaseStatement()
@@ -12829,7 +12829,7 @@ type CaseStatementContext struct {
 func NewEmptyCaseStatementContext() *CaseStatementContext {
 	var p = new(CaseStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_caseStatement
+	p.RuleIndex = FeelParserRULE_caseStatement
 	return p
 }
 
@@ -12841,7 +12841,7 @@ func NewCaseStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_caseStatement
+	p.RuleIndex = FeelParserRULE_caseStatement
 
 	return p
 }
@@ -12947,7 +12947,7 @@ func (s *CaseStatementContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *CaseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCaseStatement(s)
 
 	default:
@@ -12955,9 +12955,9 @@ func (s *CaseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) CaseStatement() (localctx ICaseStatementContext) {
+func (p *FeelParser) CaseStatement() (localctx ICaseStatementContext) {
 	localctx = NewCaseStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 96, KParserRULE_caseStatement)
+	p.EnterRule(localctx, 96, FeelParserRULE_caseStatement)
 	var _la int
 
 	defer func() {
@@ -12987,7 +12987,7 @@ func (p *KParser) CaseStatement() (localctx ICaseStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1233)
 			p.More()
@@ -13048,7 +13048,7 @@ type CaseExprStatementContext struct {
 func NewEmptyCaseExprStatementContext() *CaseExprStatementContext {
 	var p = new(CaseExprStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_caseExprStatement
+	p.RuleIndex = FeelParserRULE_caseExprStatement
 	return p
 }
 
@@ -13060,7 +13060,7 @@ func NewCaseExprStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_caseExprStatement
+	p.RuleIndex = FeelParserRULE_caseExprStatement
 
 	return p
 }
@@ -13068,7 +13068,7 @@ func NewCaseExprStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *CaseExprStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CaseExprStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *CaseExprStatementContext) Expression() IExpressionContext {
@@ -13111,7 +13111,7 @@ func (s *CaseExprStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *CaseExprStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCaseExprStatement(s)
 
 	default:
@@ -13119,9 +13119,9 @@ func (s *CaseExprStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) CaseExprStatement() (localctx ICaseExprStatementContext) {
+func (p *FeelParser) CaseExprStatement() (localctx ICaseExprStatementContext) {
 	localctx = NewCaseExprStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 98, KParserRULE_caseExprStatement)
+	p.EnterRule(localctx, 98, FeelParserRULE_caseExprStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -13146,7 +13146,7 @@ func (p *KParser) CaseExprStatement() (localctx ICaseExprStatementContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(1250)
-			p.Match(KParserDiscard)
+			p.Match(FeelParserDiscard)
 		}
 
 	case 2:
@@ -13162,16 +13162,16 @@ func (p *KParser) CaseExprStatement() (localctx ICaseExprStatementContext) {
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
-		case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+		case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 			{
 				p.SetState(1252)
 				p.Id()
 			}
 
-		case KParserDiscard:
+		case FeelParserDiscard:
 			{
 				p.SetState(1253)
-				p.Match(KParserDiscard)
+				p.Match(FeelParserDiscard)
 			}
 
 		default:
@@ -13206,7 +13206,7 @@ type JudgeStatementContext struct {
 func NewEmptyJudgeStatementContext() *JudgeStatementContext {
 	var p = new(JudgeStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeStatement
+	p.RuleIndex = FeelParserRULE_judgeStatement
 	return p
 }
 
@@ -13218,7 +13218,7 @@ func NewJudgeStatementContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeStatement
+	p.RuleIndex = FeelParserRULE_judgeStatement
 
 	return p
 }
@@ -13288,7 +13288,7 @@ func (s *JudgeStatementContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *JudgeStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeStatement(s)
 
 	default:
@@ -13296,9 +13296,9 @@ func (s *JudgeStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) JudgeStatement() (localctx IJudgeStatementContext) {
+func (p *FeelParser) JudgeStatement() (localctx IJudgeStatementContext) {
 	localctx = NewJudgeStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 100, KParserRULE_judgeStatement)
+	p.EnterRule(localctx, 100, FeelParserRULE_judgeStatement)
 	var _la int
 
 	defer func() {
@@ -13363,7 +13363,7 @@ func (p *KParser) JudgeStatement() (localctx IJudgeStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+		for (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 			{
 				p.SetState(1270)
 				p.JudgeElseIfStatement()
@@ -13402,7 +13402,7 @@ type JudgeElseStatementContext struct {
 func NewEmptyJudgeElseStatementContext() *JudgeElseStatementContext {
 	var p = new(JudgeElseStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeElseStatement
+	p.RuleIndex = FeelParserRULE_judgeElseStatement
 	return p
 }
 
@@ -13414,7 +13414,7 @@ func NewJudgeElseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeElseStatement
+	p.RuleIndex = FeelParserRULE_judgeElseStatement
 
 	return p
 }
@@ -13422,7 +13422,7 @@ func NewJudgeElseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *JudgeElseStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *JudgeElseStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *JudgeElseStatementContext) Left_brace() ILeft_braceContext {
@@ -13478,7 +13478,7 @@ func (s *JudgeElseStatementContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *JudgeElseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeElseStatement(s)
 
 	default:
@@ -13486,9 +13486,9 @@ func (s *JudgeElseStatementContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) JudgeElseStatement() (localctx IJudgeElseStatementContext) {
+func (p *FeelParser) JudgeElseStatement() (localctx IJudgeElseStatementContext) {
 	localctx = NewJudgeElseStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 102, KParserRULE_judgeElseStatement)
+	p.EnterRule(localctx, 102, FeelParserRULE_judgeElseStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -13511,7 +13511,7 @@ func (p *KParser) JudgeElseStatement() (localctx IJudgeElseStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1280)
-		p.Match(KParserDiscard)
+		p.Match(FeelParserDiscard)
 	}
 	{
 		p.SetState(1281)
@@ -13560,7 +13560,7 @@ type JudgeIfStatementContext struct {
 func NewEmptyJudgeIfStatementContext() *JudgeIfStatementContext {
 	var p = new(JudgeIfStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeIfStatement
+	p.RuleIndex = FeelParserRULE_judgeIfStatement
 	return p
 }
 
@@ -13572,7 +13572,7 @@ func NewJudgeIfStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeIfStatement
+	p.RuleIndex = FeelParserRULE_judgeIfStatement
 
 	return p
 }
@@ -13580,7 +13580,7 @@ func NewJudgeIfStatementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *JudgeIfStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *JudgeIfStatementContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *JudgeIfStatementContext) Expression() IExpressionContext {
@@ -13646,7 +13646,7 @@ func (s *JudgeIfStatementContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *JudgeIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeIfStatement(s)
 
 	default:
@@ -13654,9 +13654,9 @@ func (s *JudgeIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) JudgeIfStatement() (localctx IJudgeIfStatementContext) {
+func (p *FeelParser) JudgeIfStatement() (localctx IJudgeIfStatementContext) {
 	localctx = NewJudgeIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 104, KParserRULE_judgeIfStatement)
+	p.EnterRule(localctx, 104, FeelParserRULE_judgeIfStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -13679,7 +13679,7 @@ func (p *KParser) JudgeIfStatement() (localctx IJudgeIfStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1290)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(1291)
@@ -13732,7 +13732,7 @@ type JudgeElseIfStatementContext struct {
 func NewEmptyJudgeElseIfStatementContext() *JudgeElseIfStatementContext {
 	var p = new(JudgeElseIfStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeElseIfStatement
+	p.RuleIndex = FeelParserRULE_judgeElseIfStatement
 	return p
 }
 
@@ -13744,7 +13744,7 @@ func NewJudgeElseIfStatementContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeElseIfStatement
+	p.RuleIndex = FeelParserRULE_judgeElseIfStatement
 
 	return p
 }
@@ -13814,7 +13814,7 @@ func (s *JudgeElseIfStatementContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *JudgeElseIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeElseIfStatement(s)
 
 	default:
@@ -13822,9 +13822,9 @@ func (s *JudgeElseIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) JudgeElseIfStatement() (localctx IJudgeElseIfStatementContext) {
+func (p *FeelParser) JudgeElseIfStatement() (localctx IJudgeElseIfStatementContext) {
 	localctx = NewJudgeElseIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 106, KParserRULE_judgeElseIfStatement)
+	p.EnterRule(localctx, 106, FeelParserRULE_judgeElseIfStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -13896,7 +13896,7 @@ type LoopStatementContext struct {
 func NewEmptyLoopStatementContext() *LoopStatementContext {
 	var p = new(LoopStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopStatement
+	p.RuleIndex = FeelParserRULE_loopStatement
 	return p
 }
 
@@ -13908,7 +13908,7 @@ func NewLoopStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopStatement
+	p.RuleIndex = FeelParserRULE_loopStatement
 
 	return p
 }
@@ -13916,7 +13916,7 @@ func NewLoopStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 func (s *LoopStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopStatementContext) Id() IIdContext {
@@ -13930,7 +13930,7 @@ func (s *LoopStatementContext) Id() IIdContext {
 }
 
 func (s *LoopStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *LoopStatementContext) IteratorStatement() IIteratorStatementContext {
@@ -13974,7 +13974,7 @@ func (s *LoopStatementContext) End() IEndContext {
 }
 
 func (s *LoopStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *LoopStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -14020,7 +14020,7 @@ func (s *LoopStatementContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *LoopStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopStatement(s)
 
 	default:
@@ -14028,9 +14028,9 @@ func (s *LoopStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) LoopStatement() (localctx ILoopStatementContext) {
+func (p *FeelParser) LoopStatement() (localctx ILoopStatementContext) {
 	localctx = NewLoopStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 108, KParserRULE_loopStatement)
+	p.EnterRule(localctx, 108, FeelParserRULE_loopStatement)
 	var _la int
 
 	defer func() {
@@ -14054,7 +14054,7 @@ func (p *KParser) LoopStatement() (localctx ILoopStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1311)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(1312)
@@ -14064,16 +14064,16 @@ func (p *KParser) LoopStatement() (localctx ILoopStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1313)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(1316)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(1317)
@@ -14107,7 +14107,7 @@ func (p *KParser) LoopStatement() (localctx ILoopStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserDiscard {
+	if _la == FeelParserDiscard {
 		{
 			p.SetState(1326)
 			p.LoopElseStatement()
@@ -14141,7 +14141,7 @@ type LoopEachStatementContext struct {
 func NewEmptyLoopEachStatementContext() *LoopEachStatementContext {
 	var p = new(LoopEachStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopEachStatement
+	p.RuleIndex = FeelParserRULE_loopEachStatement
 	return p
 }
 
@@ -14153,7 +14153,7 @@ func NewLoopEachStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopEachStatement
+	p.RuleIndex = FeelParserRULE_loopEachStatement
 
 	return p
 }
@@ -14161,7 +14161,7 @@ func NewLoopEachStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *LoopEachStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopEachStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopEachStatementContext) AllId() []IIdContext {
@@ -14188,7 +14188,7 @@ func (s *LoopEachStatementContext) Id(i int) IIdContext {
 }
 
 func (s *LoopEachStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *LoopEachStatementContext) Expression() IExpressionContext {
@@ -14252,7 +14252,7 @@ func (s *LoopEachStatementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *LoopEachStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *LoopEachStatementContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -14298,7 +14298,7 @@ func (s *LoopEachStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *LoopEachStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopEachStatement(s)
 
 	default:
@@ -14306,9 +14306,9 @@ func (s *LoopEachStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) LoopEachStatement() (localctx ILoopEachStatementContext) {
+func (p *FeelParser) LoopEachStatement() (localctx ILoopEachStatementContext) {
 	localctx = NewLoopEachStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 110, KParserRULE_loopEachStatement)
+	p.EnterRule(localctx, 110, FeelParserRULE_loopEachStatement)
 	var _la int
 
 	defer func() {
@@ -14332,13 +14332,13 @@ func (p *KParser) LoopEachStatement() (localctx ILoopEachStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1331)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	p.SetState(1336)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserLeft_Brack {
+	if _la == FeelParserLeft_Brack {
 		{
 			p.SetState(1332)
 			p.Left_brack()
@@ -14361,16 +14361,16 @@ func (p *KParser) LoopEachStatement() (localctx ILoopEachStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1339)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(1342)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(1343)
@@ -14404,7 +14404,7 @@ func (p *KParser) LoopEachStatement() (localctx ILoopEachStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserDiscard {
+	if _la == FeelParserDiscard {
 		{
 			p.SetState(1352)
 			p.LoopElseStatement()
@@ -14438,7 +14438,7 @@ type LoopCaseStatementContext struct {
 func NewEmptyLoopCaseStatementContext() *LoopCaseStatementContext {
 	var p = new(LoopCaseStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopCaseStatement
+	p.RuleIndex = FeelParserRULE_loopCaseStatement
 	return p
 }
 
@@ -14450,7 +14450,7 @@ func NewLoopCaseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopCaseStatement
+	p.RuleIndex = FeelParserRULE_loopCaseStatement
 
 	return p
 }
@@ -14458,7 +14458,7 @@ func NewLoopCaseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *LoopCaseStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopCaseStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopCaseStatementContext) Expression() IExpressionContext {
@@ -14544,7 +14544,7 @@ func (s *LoopCaseStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *LoopCaseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopCaseStatement(s)
 
 	default:
@@ -14552,9 +14552,9 @@ func (s *LoopCaseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) LoopCaseStatement() (localctx ILoopCaseStatementContext) {
+func (p *FeelParser) LoopCaseStatement() (localctx ILoopCaseStatementContext) {
 	localctx = NewLoopCaseStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 112, KParserRULE_loopCaseStatement)
+	p.EnterRule(localctx, 112, FeelParserRULE_loopCaseStatement)
 	var _la int
 
 	defer func() {
@@ -14578,7 +14578,7 @@ func (p *KParser) LoopCaseStatement() (localctx ILoopCaseStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1357)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(1358)
@@ -14612,7 +14612,7 @@ func (p *KParser) LoopCaseStatement() (localctx ILoopCaseStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserDiscard {
+	if _la == FeelParserDiscard {
 		{
 			p.SetState(1367)
 			p.LoopElseStatement()
@@ -14646,7 +14646,7 @@ type LoopElseStatementContext struct {
 func NewEmptyLoopElseStatementContext() *LoopElseStatementContext {
 	var p = new(LoopElseStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopElseStatement
+	p.RuleIndex = FeelParserRULE_loopElseStatement
 	return p
 }
 
@@ -14658,7 +14658,7 @@ func NewLoopElseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopElseStatement
+	p.RuleIndex = FeelParserRULE_loopElseStatement
 
 	return p
 }
@@ -14666,7 +14666,7 @@ func NewLoopElseStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *LoopElseStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopElseStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *LoopElseStatementContext) Left_brace() ILeft_braceContext {
@@ -14722,7 +14722,7 @@ func (s *LoopElseStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *LoopElseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopElseStatement(s)
 
 	default:
@@ -14730,9 +14730,9 @@ func (s *LoopElseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) LoopElseStatement() (localctx ILoopElseStatementContext) {
+func (p *FeelParser) LoopElseStatement() (localctx ILoopElseStatementContext) {
 	localctx = NewLoopElseStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 114, KParserRULE_loopElseStatement)
+	p.EnterRule(localctx, 114, FeelParserRULE_loopElseStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -14755,7 +14755,7 @@ func (p *KParser) LoopElseStatement() (localctx ILoopElseStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1372)
-		p.Match(KParserDiscard)
+		p.Match(FeelParserDiscard)
 	}
 	{
 		p.SetState(1373)
@@ -14804,7 +14804,7 @@ type LoopJumpStatementContext struct {
 func NewEmptyLoopJumpStatementContext() *LoopJumpStatementContext {
 	var p = new(LoopJumpStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopJumpStatement
+	p.RuleIndex = FeelParserRULE_loopJumpStatement
 	return p
 }
 
@@ -14816,7 +14816,7 @@ func NewLoopJumpStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopJumpStatement
+	p.RuleIndex = FeelParserRULE_loopJumpStatement
 
 	return p
 }
@@ -14824,11 +14824,11 @@ func NewLoopJumpStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *LoopJumpStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopJumpStatementContext) Tilde() antlr.TerminalNode {
-	return s.GetToken(KParserTilde, 0)
+	return s.GetToken(FeelParserTilde, 0)
 }
 
 func (s *LoopJumpStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopJumpStatementContext) End() IEndContext {
@@ -14851,7 +14851,7 @@ func (s *LoopJumpStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *LoopJumpStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopJumpStatement(s)
 
 	default:
@@ -14859,9 +14859,9 @@ func (s *LoopJumpStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) LoopJumpStatement() (localctx ILoopJumpStatementContext) {
+func (p *FeelParser) LoopJumpStatement() (localctx ILoopJumpStatementContext) {
 	localctx = NewLoopJumpStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 116, KParserRULE_loopJumpStatement)
+	p.EnterRule(localctx, 116, FeelParserRULE_loopJumpStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -14882,11 +14882,11 @@ func (p *KParser) LoopJumpStatement() (localctx ILoopJumpStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1382)
-		p.Match(KParserTilde)
+		p.Match(FeelParserTilde)
 	}
 	{
 		p.SetState(1383)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(1384)
@@ -14915,7 +14915,7 @@ type LoopContinueStatementContext struct {
 func NewEmptyLoopContinueStatementContext() *LoopContinueStatementContext {
 	var p = new(LoopContinueStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopContinueStatement
+	p.RuleIndex = FeelParserRULE_loopContinueStatement
 	return p
 }
 
@@ -14927,7 +14927,7 @@ func NewLoopContinueStatementContext(parser antlr.Parser, parent antlr.ParserRul
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopContinueStatement
+	p.RuleIndex = FeelParserRULE_loopContinueStatement
 
 	return p
 }
@@ -14935,11 +14935,11 @@ func NewLoopContinueStatementContext(parser antlr.Parser, parent antlr.ParserRul
 func (s *LoopContinueStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopContinueStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *LoopContinueStatementContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopContinueStatementContext) End() IEndContext {
@@ -14962,7 +14962,7 @@ func (s *LoopContinueStatementContext) ToStringTree(ruleNames []string, recog an
 
 func (s *LoopContinueStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopContinueStatement(s)
 
 	default:
@@ -14970,9 +14970,9 @@ func (s *LoopContinueStatementContext) Accept(visitor antlr.ParseTreeVisitor) in
 	}
 }
 
-func (p *KParser) LoopContinueStatement() (localctx ILoopContinueStatementContext) {
+func (p *FeelParser) LoopContinueStatement() (localctx ILoopContinueStatementContext) {
 	localctx = NewLoopContinueStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 118, KParserRULE_loopContinueStatement)
+	p.EnterRule(localctx, 118, FeelParserRULE_loopContinueStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -14993,11 +14993,11 @@ func (p *KParser) LoopContinueStatement() (localctx ILoopContinueStatementContex
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1386)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(1387)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(1388)
@@ -15026,7 +15026,7 @@ type CheckStatementContext struct {
 func NewEmptyCheckStatementContext() *CheckStatementContext {
 	var p = new(CheckStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_checkStatement
+	p.RuleIndex = FeelParserRULE_checkStatement
 	return p
 }
 
@@ -15038,7 +15038,7 @@ func NewCheckStatementContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_checkStatement
+	p.RuleIndex = FeelParserRULE_checkStatement
 
 	return p
 }
@@ -15046,7 +15046,7 @@ func NewCheckStatementContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *CheckStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CheckStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *CheckStatementContext) Left_brace() ILeft_braceContext {
@@ -15145,7 +15145,7 @@ func (s *CheckStatementContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *CheckStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCheckStatement(s)
 
 	default:
@@ -15153,9 +15153,9 @@ func (s *CheckStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) CheckStatement() (localctx ICheckStatementContext) {
+func (p *FeelParser) CheckStatement() (localctx ICheckStatementContext) {
 	localctx = NewCheckStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 120, KParserRULE_checkStatement)
+	p.EnterRule(localctx, 120, FeelParserRULE_checkStatement)
 	var _la int
 
 	defer func() {
@@ -15183,7 +15183,7 @@ func (p *KParser) CheckStatement() (localctx ICheckStatementContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(1390)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 		{
 			p.SetState(1391)
@@ -15213,7 +15213,7 @@ func (p *KParser) CheckStatement() (localctx ICheckStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0 {
+		for ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0 {
 			{
 				p.SetState(1399)
 				p.CheckErrorStatement()
@@ -15236,7 +15236,7 @@ func (p *KParser) CheckStatement() (localctx ICheckStatementContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(1408)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 		{
 			p.SetState(1409)
@@ -15266,7 +15266,7 @@ func (p *KParser) CheckStatement() (localctx ICheckStatementContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for ok := true; ok; ok = (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0) {
+		for ok := true; ok; ok = (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0) {
 			{
 				p.SetState(1417)
 				p.CheckErrorStatement()
@@ -15305,7 +15305,7 @@ type UsingStatementContext struct {
 func NewEmptyUsingStatementContext() *UsingStatementContext {
 	var p = new(UsingStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_usingStatement
+	p.RuleIndex = FeelParserRULE_usingStatement
 	return p
 }
 
@@ -15317,7 +15317,7 @@ func NewUsingStatementContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_usingStatement
+	p.RuleIndex = FeelParserRULE_usingStatement
 
 	return p
 }
@@ -15325,11 +15325,11 @@ func NewUsingStatementContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *UsingStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *UsingStatementContext) AllBang() []antlr.TerminalNode {
-	return s.GetTokens(KParserBang)
+	return s.GetTokens(FeelParserBang)
 }
 
 func (s *UsingStatementContext) Bang(i int) antlr.TerminalNode {
-	return s.GetToken(KParserBang, i)
+	return s.GetToken(FeelParserBang, i)
 }
 
 func (s *UsingStatementContext) AllConstId() []IConstIdContext {
@@ -15356,7 +15356,7 @@ func (s *UsingStatementContext) ConstId(i int) IConstIdContext {
 }
 
 func (s *UsingStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *UsingStatementContext) TupleExpression() ITupleExpressionContext {
@@ -15455,7 +15455,7 @@ func (s *UsingStatementContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *UsingStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitUsingStatement(s)
 
 	default:
@@ -15463,9 +15463,9 @@ func (s *UsingStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) UsingStatement() (localctx IUsingStatementContext) {
+func (p *FeelParser) UsingStatement() (localctx IUsingStatementContext) {
 	localctx = NewUsingStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 122, KParserRULE_usingStatement)
+	p.EnterRule(localctx, 122, FeelParserRULE_usingStatement)
 	var _la int
 
 	defer func() {
@@ -15489,7 +15489,7 @@ func (p *KParser) UsingStatement() (localctx IUsingStatementContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1426)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	{
 		p.SetState(1427)
@@ -15499,7 +15499,7 @@ func (p *KParser) UsingStatement() (localctx IUsingStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1428)
 			p.More()
@@ -15517,16 +15517,16 @@ func (p *KParser) UsingStatement() (localctx IUsingStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1436)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(1439)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(1440)
@@ -15583,7 +15583,7 @@ type CheckErrorStatementContext struct {
 func NewEmptyCheckErrorStatementContext() *CheckErrorStatementContext {
 	var p = new(CheckErrorStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_checkErrorStatement
+	p.RuleIndex = FeelParserRULE_checkErrorStatement
 	return p
 }
 
@@ -15595,7 +15595,7 @@ func NewCheckErrorStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_checkErrorStatement
+	p.RuleIndex = FeelParserRULE_checkErrorStatement
 
 	return p
 }
@@ -15675,7 +15675,7 @@ func (s *CheckErrorStatementContext) ToStringTree(ruleNames []string, recog antl
 
 func (s *CheckErrorStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCheckErrorStatement(s)
 
 	default:
@@ -15683,9 +15683,9 @@ func (s *CheckErrorStatementContext) Accept(visitor antlr.ParseTreeVisitor) inte
 	}
 }
 
-func (p *KParser) CheckErrorStatement() (localctx ICheckErrorStatementContext) {
+func (p *FeelParser) CheckErrorStatement() (localctx ICheckErrorStatementContext) {
 	localctx = NewCheckErrorStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 124, KParserRULE_checkErrorStatement)
+	p.EnterRule(localctx, 124, FeelParserRULE_checkErrorStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -15773,7 +15773,7 @@ type CheckFinallyStatmentContext struct {
 func NewEmptyCheckFinallyStatmentContext() *CheckFinallyStatmentContext {
 	var p = new(CheckFinallyStatmentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_checkFinallyStatment
+	p.RuleIndex = FeelParserRULE_checkFinallyStatment
 	return p
 }
 
@@ -15785,7 +15785,7 @@ func NewCheckFinallyStatmentContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_checkFinallyStatment
+	p.RuleIndex = FeelParserRULE_checkFinallyStatment
 
 	return p
 }
@@ -15793,7 +15793,7 @@ func NewCheckFinallyStatmentContext(parser antlr.Parser, parent antlr.ParserRule
 func (s *CheckFinallyStatmentContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CheckFinallyStatmentContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *CheckFinallyStatmentContext) Left_brace() ILeft_braceContext {
@@ -15849,7 +15849,7 @@ func (s *CheckFinallyStatmentContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *CheckFinallyStatmentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCheckFinallyStatment(s)
 
 	default:
@@ -15857,9 +15857,9 @@ func (s *CheckFinallyStatmentContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) CheckFinallyStatment() (localctx ICheckFinallyStatmentContext) {
+func (p *FeelParser) CheckFinallyStatment() (localctx ICheckFinallyStatmentContext) {
 	localctx = NewCheckFinallyStatmentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 126, KParserRULE_checkFinallyStatment)
+	p.EnterRule(localctx, 126, FeelParserRULE_checkFinallyStatment)
 
 	defer func() {
 		p.ExitRule()
@@ -15882,7 +15882,7 @@ func (p *KParser) CheckFinallyStatment() (localctx ICheckFinallyStatmentContext)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1466)
-		p.Match(KParserDiscard)
+		p.Match(FeelParserDiscard)
 	}
 	{
 		p.SetState(1467)
@@ -15931,7 +15931,7 @@ type CheckReportStatementContext struct {
 func NewEmptyCheckReportStatementContext() *CheckReportStatementContext {
 	var p = new(CheckReportStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_checkReportStatement
+	p.RuleIndex = FeelParserRULE_checkReportStatement
 	return p
 }
 
@@ -15943,7 +15943,7 @@ func NewCheckReportStatementContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_checkReportStatement
+	p.RuleIndex = FeelParserRULE_checkReportStatement
 
 	return p
 }
@@ -15951,11 +15951,11 @@ func NewCheckReportStatementContext(parser antlr.Parser, parent antlr.ParserRule
 func (s *CheckReportStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CheckReportStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *CheckReportStatementContext) Left_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Arrow, 0)
+	return s.GetToken(FeelParserLeft_Arrow, 0)
 }
 
 func (s *CheckReportStatementContext) Expression() IExpressionContext {
@@ -15988,7 +15988,7 @@ func (s *CheckReportStatementContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *CheckReportStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCheckReportStatement(s)
 
 	default:
@@ -15996,9 +15996,9 @@ func (s *CheckReportStatementContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) CheckReportStatement() (localctx ICheckReportStatementContext) {
+func (p *FeelParser) CheckReportStatement() (localctx ICheckReportStatementContext) {
 	localctx = NewCheckReportStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 128, KParserRULE_checkReportStatement)
+	p.EnterRule(localctx, 128, FeelParserRULE_checkReportStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -16019,11 +16019,11 @@ func (p *KParser) CheckReportStatement() (localctx ICheckReportStatementContext)
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1476)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	{
 		p.SetState(1477)
-		p.Match(KParserLeft_Arrow)
+		p.Match(FeelParserLeft_Arrow)
 	}
 	{
 		p.SetState(1478)
@@ -16056,7 +16056,7 @@ type IteratorStatementContext struct {
 func NewEmptyIteratorStatementContext() *IteratorStatementContext {
 	var p = new(IteratorStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_iteratorStatement
+	p.RuleIndex = FeelParserRULE_iteratorStatement
 	return p
 }
 
@@ -16068,7 +16068,7 @@ func NewIteratorStatementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_iteratorStatement
+	p.RuleIndex = FeelParserRULE_iteratorStatement
 
 	return p
 }
@@ -16099,19 +16099,19 @@ func (s *IteratorStatementContext) Expression(i int) IExpressionContext {
 }
 
 func (s *IteratorStatementContext) Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot, 0)
 }
 
 func (s *IteratorStatementContext) Dot_Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot_Dot, 0)
 }
 
 func (s *IteratorStatementContext) Dot_Dot_Less() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Less, 0)
+	return s.GetToken(FeelParserDot_Dot_Less, 0)
 }
 
 func (s *IteratorStatementContext) Dot_Dot_Greater() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Greater, 0)
+	return s.GetToken(FeelParserDot_Dot_Greater, 0)
 }
 
 func (s *IteratorStatementContext) Left_paren() ILeft_parenContext {
@@ -16144,7 +16144,7 @@ func (s *IteratorStatementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *IteratorStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitIteratorStatement(s)
 
 	default:
@@ -16152,9 +16152,9 @@ func (s *IteratorStatementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) IteratorStatement() (localctx IIteratorStatementContext) {
+func (p *FeelParser) IteratorStatement() (localctx IIteratorStatementContext) {
 	localctx = NewIteratorStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 130, KParserRULE_iteratorStatement)
+	p.EnterRule(localctx, 130, FeelParserRULE_iteratorStatement)
 	var _la int
 
 	defer func() {
@@ -16182,7 +16182,7 @@ func (p *KParser) IteratorStatement() (localctx IIteratorStatementContext) {
 		p.SetState(1482)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<KParserDot_Dot_Dot)|(1<<KParserDot_Dot_Less)|(1<<KParserDot_Dot_Greater)|(1<<KParserDot_Dot))) != 0) {
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FeelParserDot_Dot_Dot)|(1<<FeelParserDot_Dot_Less)|(1<<FeelParserDot_Dot_Greater)|(1<<FeelParserDot_Dot))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -16234,7 +16234,7 @@ type VariableDeclaredStatementContext struct {
 func NewEmptyVariableDeclaredStatementContext() *VariableDeclaredStatementContext {
 	var p = new(VariableDeclaredStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_variableDeclaredStatement
+	p.RuleIndex = FeelParserRULE_variableDeclaredStatement
 	return p
 }
 
@@ -16246,7 +16246,7 @@ func NewVariableDeclaredStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_variableDeclaredStatement
+	p.RuleIndex = FeelParserRULE_variableDeclaredStatement
 
 	return p
 }
@@ -16264,7 +16264,7 @@ func (s *VariableDeclaredStatementContext) Id() IIdContext {
 }
 
 func (s *VariableDeclaredStatementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *VariableDeclaredStatementContext) TypeType() ITypeTypeContext {
@@ -16297,7 +16297,7 @@ func (s *VariableDeclaredStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *VariableDeclaredStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitVariableDeclaredStatement(s)
 
 	default:
@@ -16305,9 +16305,9 @@ func (s *VariableDeclaredStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) VariableDeclaredStatement() (localctx IVariableDeclaredStatementContext) {
+func (p *FeelParser) VariableDeclaredStatement() (localctx IVariableDeclaredStatementContext) {
 	localctx = NewVariableDeclaredStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 132, KParserRULE_variableDeclaredStatement)
+	p.EnterRule(localctx, 132, FeelParserRULE_variableDeclaredStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -16332,7 +16332,7 @@ func (p *KParser) VariableDeclaredStatement() (localctx IVariableDeclaredStateme
 	}
 	{
 		p.SetState(1492)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 	{
 		p.SetState(1493)
@@ -16365,7 +16365,7 @@ type ConstantDeclaredStatementContext struct {
 func NewEmptyConstantDeclaredStatementContext() *ConstantDeclaredStatementContext {
 	var p = new(ConstantDeclaredStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_constantDeclaredStatement
+	p.RuleIndex = FeelParserRULE_constantDeclaredStatement
 	return p
 }
 
@@ -16377,7 +16377,7 @@ func NewConstantDeclaredStatementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_constantDeclaredStatement
+	p.RuleIndex = FeelParserRULE_constantDeclaredStatement
 
 	return p
 }
@@ -16424,7 +16424,7 @@ func (s *ConstantDeclaredStatementContext) ToStringTree(ruleNames []string, reco
 
 func (s *ConstantDeclaredStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitConstantDeclaredStatement(s)
 
 	default:
@@ -16432,9 +16432,9 @@ func (s *ConstantDeclaredStatementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) ConstantDeclaredStatement() (localctx IConstantDeclaredStatementContext) {
+func (p *FeelParser) ConstantDeclaredStatement() (localctx IConstantDeclaredStatementContext) {
 	localctx = NewConstantDeclaredStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 134, KParserRULE_constantDeclaredStatement)
+	p.EnterRule(localctx, 134, FeelParserRULE_constantDeclaredStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -16488,7 +16488,7 @@ type VarStatementContext struct {
 func NewEmptyVarStatementContext() *VarStatementContext {
 	var p = new(VarStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_varStatement
+	p.RuleIndex = FeelParserRULE_varStatement
 	return p
 }
 
@@ -16500,7 +16500,7 @@ func NewVarStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_varStatement
+	p.RuleIndex = FeelParserRULE_varStatement
 
 	return p
 }
@@ -16531,7 +16531,7 @@ func (s *VarStatementContext) VarId(i int) IVarIdContext {
 }
 
 func (s *VarStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *VarStatementContext) TupleExpression() ITupleExpressionContext {
@@ -16587,7 +16587,7 @@ func (s *VarStatementContext) ToStringTree(ruleNames []string, recog antlr.Recog
 
 func (s *VarStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitVarStatement(s)
 
 	default:
@@ -16595,9 +16595,9 @@ func (s *VarStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *KParser) VarStatement() (localctx IVarStatementContext) {
+func (p *FeelParser) VarStatement() (localctx IVarStatementContext) {
 	localctx = NewVarStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 136, KParserRULE_varStatement)
+	p.EnterRule(localctx, 136, FeelParserRULE_varStatement)
 	var _la int
 
 	defer func() {
@@ -16625,7 +16625,7 @@ func (p *KParser) VarStatement() (localctx IVarStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1501)
 			p.More()
@@ -16641,7 +16641,7 @@ func (p *KParser) VarStatement() (localctx IVarStatementContext) {
 	}
 	{
 		p.SetState(1509)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(1510)
@@ -16674,7 +16674,7 @@ type BindStatementContext struct {
 func NewEmptyBindStatementContext() *BindStatementContext {
 	var p = new(BindStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bindStatement
+	p.RuleIndex = FeelParserRULE_bindStatement
 	return p
 }
 
@@ -16686,7 +16686,7 @@ func NewBindStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bindStatement
+	p.RuleIndex = FeelParserRULE_bindStatement
 
 	return p
 }
@@ -16717,7 +16717,7 @@ func (s *BindStatementContext) ConstId(i int) IConstIdContext {
 }
 
 func (s *BindStatementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *BindStatementContext) TupleExpression() ITupleExpressionContext {
@@ -16773,7 +16773,7 @@ func (s *BindStatementContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *BindStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBindStatement(s)
 
 	default:
@@ -16781,9 +16781,9 @@ func (s *BindStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) BindStatement() (localctx IBindStatementContext) {
+func (p *FeelParser) BindStatement() (localctx IBindStatementContext) {
 	localctx = NewBindStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 138, KParserRULE_bindStatement)
+	p.EnterRule(localctx, 138, FeelParserRULE_bindStatement)
 	var _la int
 
 	defer func() {
@@ -16811,7 +16811,7 @@ func (p *KParser) BindStatement() (localctx IBindStatementContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1514)
 			p.More()
@@ -16827,7 +16827,7 @@ func (p *KParser) BindStatement() (localctx IBindStatementContext) {
 	}
 	{
 		p.SetState(1522)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(1523)
@@ -16860,7 +16860,7 @@ type AssignStatementContext struct {
 func NewEmptyAssignStatementContext() *AssignStatementContext {
 	var p = new(AssignStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_assignStatement
+	p.RuleIndex = FeelParserRULE_assignStatement
 	return p
 }
 
@@ -16872,7 +16872,7 @@ func NewAssignStatementContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_assignStatement
+	p.RuleIndex = FeelParserRULE_assignStatement
 
 	return p
 }
@@ -16932,7 +16932,7 @@ func (s *AssignStatementContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *AssignStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAssignStatement(s)
 
 	default:
@@ -16940,9 +16940,9 @@ func (s *AssignStatementContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) AssignStatement() (localctx IAssignStatementContext) {
+func (p *FeelParser) AssignStatement() (localctx IAssignStatementContext) {
 	localctx = NewAssignStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 140, KParserRULE_assignStatement)
+	p.EnterRule(localctx, 140, FeelParserRULE_assignStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -17000,7 +17000,7 @@ type ExpressionStatementContext struct {
 func NewEmptyExpressionStatementContext() *ExpressionStatementContext {
 	var p = new(ExpressionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_expressionStatement
+	p.RuleIndex = FeelParserRULE_expressionStatement
 	return p
 }
 
@@ -17012,7 +17012,7 @@ func NewExpressionStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_expressionStatement
+	p.RuleIndex = FeelParserRULE_expressionStatement
 
 	return p
 }
@@ -17049,7 +17049,7 @@ func (s *ExpressionStatementContext) ToStringTree(ruleNames []string, recog antl
 
 func (s *ExpressionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitExpressionStatement(s)
 
 	default:
@@ -17057,9 +17057,9 @@ func (s *ExpressionStatementContext) Accept(visitor antlr.ParseTreeVisitor) inte
 	}
 }
 
-func (p *KParser) ExpressionStatement() (localctx IExpressionStatementContext) {
+func (p *FeelParser) ExpressionStatement() (localctx IExpressionStatementContext) {
 	localctx = NewExpressionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 142, KParserRULE_expressionStatement)
+	p.EnterRule(localctx, 142, FeelParserRULE_expressionStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -17109,7 +17109,7 @@ type AnnotationStatementContext struct {
 func NewEmptyAnnotationStatementContext() *AnnotationStatementContext {
 	var p = new(AnnotationStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_annotationStatement
+	p.RuleIndex = FeelParserRULE_annotationStatement
 	return p
 }
 
@@ -17121,7 +17121,7 @@ func NewAnnotationStatementContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_annotationStatement
+	p.RuleIndex = FeelParserRULE_annotationStatement
 
 	return p
 }
@@ -17158,7 +17158,7 @@ func (s *AnnotationStatementContext) ToStringTree(ruleNames []string, recog antl
 
 func (s *AnnotationStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAnnotationStatement(s)
 
 	default:
@@ -17166,9 +17166,9 @@ func (s *AnnotationStatementContext) Accept(visitor antlr.ParseTreeVisitor) inte
 	}
 }
 
-func (p *KParser) AnnotationStatement() (localctx IAnnotationStatementContext) {
+func (p *FeelParser) AnnotationStatement() (localctx IAnnotationStatementContext) {
 	localctx = NewAnnotationStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 144, KParserRULE_annotationStatement)
+	p.EnterRule(localctx, 144, FeelParserRULE_annotationStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -17218,7 +17218,7 @@ type VarIdContext struct {
 func NewEmptyVarIdContext() *VarIdContext {
 	var p = new(VarIdContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_varId
+	p.RuleIndex = FeelParserRULE_varId
 	return p
 }
 
@@ -17230,7 +17230,7 @@ func NewVarIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_varId
+	p.RuleIndex = FeelParserRULE_varId
 
 	return p
 }
@@ -17248,7 +17248,7 @@ func (s *VarIdContext) Id() IIdContext {
 }
 
 func (s *VarIdContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *VarIdContext) TypeType() ITypeTypeContext {
@@ -17262,7 +17262,7 @@ func (s *VarIdContext) TypeType() ITypeTypeContext {
 }
 
 func (s *VarIdContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *VarIdContext) GetRuleContext() antlr.RuleContext {
@@ -17275,7 +17275,7 @@ func (s *VarIdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 
 func (s *VarIdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitVarId(s)
 
 	default:
@@ -17283,9 +17283,9 @@ func (s *VarIdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) VarId() (localctx IVarIdContext) {
+func (p *FeelParser) VarId() (localctx IVarIdContext) {
 	localctx = NewVarIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 146, KParserRULE_varId)
+	p.EnterRule(localctx, 146, FeelParserRULE_varId)
 	var _la int
 
 	defer func() {
@@ -17308,7 +17308,7 @@ func (p *KParser) VarId() (localctx IVarIdContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(1537)
@@ -17316,13 +17316,13 @@ func (p *KParser) VarId() (localctx IVarIdContext) {
 		}
 		{
 			p.SetState(1538)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 		p.SetState(1540)
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(KParserLeft_Paren-39))|(1<<(KParserLeft_Brack-39))|(1<<(KParserQuestion-39))|(1<<(KParserTypeI8-39))|(1<<(KParserTypeU8-39))|(1<<(KParserTypeI16-39))|(1<<(KParserTypeU16-39))|(1<<(KParserTypeI32-39))|(1<<(KParserTypeU32-39))|(1<<(KParserTypeI64-39))|(1<<(KParserTypeU64-39))|(1<<(KParserTypeF32-39))|(1<<(KParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(KParserTypeChr-71))|(1<<(KParserTypeStr-71))|(1<<(KParserTypeBool-71))|(1<<(KParserTypeInt-71))|(1<<(KParserTypeNum-71))|(1<<(KParserTypeByte-71))|(1<<(KParserTypeAny-71))|(1<<(KParserIDPrivate-71))|(1<<(KParserIDPublic-71)))) != 0) {
+		if (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FeelParserLeft_Paren-39))|(1<<(FeelParserLeft_Brack-39))|(1<<(FeelParserQuestion-39))|(1<<(FeelParserTypeI8-39))|(1<<(FeelParserTypeU8-39))|(1<<(FeelParserTypeI16-39))|(1<<(FeelParserTypeU16-39))|(1<<(FeelParserTypeI32-39))|(1<<(FeelParserTypeU32-39))|(1<<(FeelParserTypeI64-39))|(1<<(FeelParserTypeU64-39))|(1<<(FeelParserTypeF32-39))|(1<<(FeelParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(FeelParserTypeChr-71))|(1<<(FeelParserTypeStr-71))|(1<<(FeelParserTypeBool-71))|(1<<(FeelParserTypeInt-71))|(1<<(FeelParserTypeNum-71))|(1<<(FeelParserTypeByte-71))|(1<<(FeelParserTypeAny-71))|(1<<(FeelParserIDPrivate-71))|(1<<(FeelParserIDPublic-71)))) != 0) {
 			{
 				p.SetState(1539)
 				p.TypeType()
@@ -17330,11 +17330,11 @@ func (p *KParser) VarId() (localctx IVarIdContext) {
 
 		}
 
-	case KParserDiscard:
+	case FeelParserDiscard:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(1542)
-			p.Match(KParserDiscard)
+			p.Match(FeelParserDiscard)
 		}
 
 	default:
@@ -17363,7 +17363,7 @@ type ConstIdContext struct {
 func NewEmptyConstIdContext() *ConstIdContext {
 	var p = new(ConstIdContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_constId
+	p.RuleIndex = FeelParserRULE_constId
 	return p
 }
 
@@ -17375,7 +17375,7 @@ func NewConstIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_constId
+	p.RuleIndex = FeelParserRULE_constId
 
 	return p
 }
@@ -17403,7 +17403,7 @@ func (s *ConstIdContext) TypeType() ITypeTypeContext {
 }
 
 func (s *ConstIdContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *ConstIdContext) GetRuleContext() antlr.RuleContext {
@@ -17416,7 +17416,7 @@ func (s *ConstIdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *ConstIdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitConstId(s)
 
 	default:
@@ -17424,9 +17424,9 @@ func (s *ConstIdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) ConstId() (localctx IConstIdContext) {
+func (p *FeelParser) ConstId() (localctx IConstIdContext) {
 	localctx = NewConstIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 148, KParserRULE_constId)
+	p.EnterRule(localctx, 148, FeelParserRULE_constId)
 	var _la int
 
 	defer func() {
@@ -17449,7 +17449,7 @@ func (p *KParser) ConstId() (localctx IConstIdContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(1545)
@@ -17459,7 +17459,7 @@ func (p *KParser) ConstId() (localctx IConstIdContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(KParserLeft_Paren-39))|(1<<(KParserLeft_Brack-39))|(1<<(KParserQuestion-39))|(1<<(KParserTypeI8-39))|(1<<(KParserTypeU8-39))|(1<<(KParserTypeI16-39))|(1<<(KParserTypeU16-39))|(1<<(KParserTypeI32-39))|(1<<(KParserTypeU32-39))|(1<<(KParserTypeI64-39))|(1<<(KParserTypeU64-39))|(1<<(KParserTypeF32-39))|(1<<(KParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(KParserTypeChr-71))|(1<<(KParserTypeStr-71))|(1<<(KParserTypeBool-71))|(1<<(KParserTypeInt-71))|(1<<(KParserTypeNum-71))|(1<<(KParserTypeByte-71))|(1<<(KParserTypeAny-71))|(1<<(KParserIDPrivate-71))|(1<<(KParserIDPublic-71)))) != 0) {
+		if (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FeelParserLeft_Paren-39))|(1<<(FeelParserLeft_Brack-39))|(1<<(FeelParserQuestion-39))|(1<<(FeelParserTypeI8-39))|(1<<(FeelParserTypeU8-39))|(1<<(FeelParserTypeI16-39))|(1<<(FeelParserTypeU16-39))|(1<<(FeelParserTypeI32-39))|(1<<(FeelParserTypeU32-39))|(1<<(FeelParserTypeI64-39))|(1<<(FeelParserTypeU64-39))|(1<<(FeelParserTypeF32-39))|(1<<(FeelParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(FeelParserTypeChr-71))|(1<<(FeelParserTypeStr-71))|(1<<(FeelParserTypeBool-71))|(1<<(FeelParserTypeInt-71))|(1<<(FeelParserTypeNum-71))|(1<<(FeelParserTypeByte-71))|(1<<(FeelParserTypeAny-71))|(1<<(FeelParserIDPrivate-71))|(1<<(FeelParserIDPublic-71)))) != 0) {
 			{
 				p.SetState(1546)
 				p.TypeType()
@@ -17467,11 +17467,11 @@ func (p *KParser) ConstId() (localctx IConstIdContext) {
 
 		}
 
-	case KParserDiscard:
+	case FeelParserDiscard:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(1549)
-			p.Match(KParserDiscard)
+			p.Match(FeelParserDiscard)
 		}
 
 	default:
@@ -17500,7 +17500,7 @@ type TupleExpressionContext struct {
 func NewEmptyTupleExpressionContext() *TupleExpressionContext {
 	var p = new(TupleExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_tupleExpression
+	p.RuleIndex = FeelParserRULE_tupleExpression
 	return p
 }
 
@@ -17512,7 +17512,7 @@ func NewTupleExpressionContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_tupleExpression
+	p.RuleIndex = FeelParserRULE_tupleExpression
 
 	return p
 }
@@ -17575,7 +17575,7 @@ func (s *TupleExpressionContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *TupleExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTupleExpression(s)
 
 	default:
@@ -17583,9 +17583,9 @@ func (s *TupleExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) TupleExpression() (localctx ITupleExpressionContext) {
+func (p *FeelParser) TupleExpression() (localctx ITupleExpressionContext) {
 	localctx = NewTupleExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 150, KParserRULE_tupleExpression)
+	p.EnterRule(localctx, 150, FeelParserRULE_tupleExpression)
 	var _la int
 
 	defer func() {
@@ -17613,7 +17613,7 @@ func (p *KParser) TupleExpression() (localctx ITupleExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1553)
 			p.More()
@@ -17657,7 +17657,7 @@ type PrimaryExpressionContext struct {
 func NewEmptyPrimaryExpressionContext() *PrimaryExpressionContext {
 	var p = new(PrimaryExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_primaryExpression
+	p.RuleIndex = FeelParserRULE_primaryExpression
 	return p
 }
 
@@ -17669,7 +17669,7 @@ func NewPrimaryExpressionContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_primaryExpression
+	p.RuleIndex = FeelParserRULE_primaryExpression
 
 	return p
 }
@@ -17721,7 +17721,7 @@ func (s *PrimaryExpressionContext) Right_brack() IRight_brackContext {
 }
 
 func (s *PrimaryExpressionContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *PrimaryExpressionContext) Left_paren() ILeft_parenContext {
@@ -17774,7 +17774,7 @@ func (s *PrimaryExpressionContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *PrimaryExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPrimaryExpression(s)
 
 	default:
@@ -17782,9 +17782,9 @@ func (s *PrimaryExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) PrimaryExpression() (localctx IPrimaryExpressionContext) {
+func (p *FeelParser) PrimaryExpression() (localctx IPrimaryExpressionContext) {
 	localctx = NewPrimaryExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 152, KParserRULE_primaryExpression)
+	p.EnterRule(localctx, 152, FeelParserRULE_primaryExpression)
 
 	defer func() {
 		p.ExitRule()
@@ -17806,7 +17806,7 @@ func (p *KParser) PrimaryExpression() (localctx IPrimaryExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(1561)
@@ -17825,24 +17825,24 @@ func (p *KParser) PrimaryExpression() (localctx IPrimaryExpressionContext) {
 			p.Right_brack()
 		}
 
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(1566)
 			p.Id()
 		}
 
-	case KParserDiscard:
+	case FeelParserDiscard:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(1567)
 
-			var _m = p.Match(KParserDiscard)
+			var _m = p.Match(FeelParserDiscard)
 
 			localctx.(*PrimaryExpressionContext).t = _m
 		}
 
-	case KParserLeft_Paren:
+	case FeelParserLeft_Paren:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(1568)
@@ -17857,7 +17857,7 @@ func (p *KParser) PrimaryExpression() (localctx IPrimaryExpressionContext) {
 			p.Right_paren()
 		}
 
-	case KParserNilLiteral, KParserTrueLiteral, KParserFalseLiteral, KParserUndefinedLiteral, KParserFloatLiteral, KParserDecimalLiteral, KParserBinaryLiteral, KParserOctalLiteral, KParserHexLiteral, KParserQuote_Quote_Quote_Open, KParserQuote_Open, KParserCharLiteral:
+	case FeelParserNilLiteral, FeelParserTrueLiteral, FeelParserFalseLiteral, FeelParserUndefinedLiteral, FeelParserFloatLiteral, FeelParserDecimalLiteral, FeelParserBinaryLiteral, FeelParserOctalLiteral, FeelParserHexLiteral, FeelParserQuote_Quote_Quote_Open, FeelParserQuote_Open, FeelParserCharLiteral:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(1572)
@@ -17897,7 +17897,7 @@ type ExpressionContext struct {
 func NewEmptyExpressionContext() *ExpressionContext {
 	var p = new(ExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_expression
+	p.RuleIndex = FeelParserRULE_expression
 	return p
 }
 
@@ -17909,7 +17909,7 @@ func NewExpressionContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_expression
+	p.RuleIndex = FeelParserRULE_expression
 
 	return p
 }
@@ -18214,11 +18214,11 @@ func (s *ExpressionContext) Logic() ILogicContext {
 }
 
 func (s *ExpressionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *ExpressionContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *ExpressionContext) OrElse() IOrElseContext {
@@ -18301,7 +18301,7 @@ func (s *ExpressionContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitExpression(s)
 
 	default:
@@ -18309,18 +18309,18 @@ func (s *ExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Expression() (localctx IExpressionContext) {
+func (p *FeelParser) Expression() (localctx IExpressionContext) {
 	return p.expression(0)
 }
 
-func (p *KParser) expression(_p int) (localctx IExpressionContext) {
+func (p *FeelParser) expression(_p int) (localctx IExpressionContext) {
 	var _parentctx antlr.ParserRuleContext = p.GetParserRuleContext()
 	_parentState := p.GetState()
 	localctx = NewExpressionContext(p, p.GetParserRuleContext(), _parentState)
 	var _prevctx IExpressionContext = localctx
 	var _ antlr.ParserRuleContext = _prevctx // TODO: To prevent unused variable warning.
 	_startState := 154
-	p.EnterRecursionRule(localctx, 154, KParserRULE_expression, _p)
+	p.EnterRecursionRule(localctx, 154, FeelParserRULE_expression, _p)
 
 	defer func() {
 		p.UnrollRecursionContexts(_parentctx)
@@ -18475,7 +18475,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 			switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 181, p.GetParserRuleContext()) {
 			case 1:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1597)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 10)) {
@@ -18492,7 +18492,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 2:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1601)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 9)) {
@@ -18509,7 +18509,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 3:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1605)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 8)) {
@@ -18526,7 +18526,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 4:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1609)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 7)) {
@@ -18543,7 +18543,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 5:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1613)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 6)) {
@@ -18560,7 +18560,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 6:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1617)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 3)) {
@@ -18577,7 +18577,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 7:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1621)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 2)) {
@@ -18594,7 +18594,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 8:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1625)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 1)) {
@@ -18611,7 +18611,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 9:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1629)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 19)) {
@@ -18620,14 +18620,14 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 				{
 					p.SetState(1630)
 
-					var _m = p.Match(KParserBang)
+					var _m = p.Match(FeelParserBang)
 
 					localctx.(*ExpressionContext).op = _m
 				}
 
 			case 10:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1631)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 18)) {
@@ -18636,14 +18636,14 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 				{
 					p.SetState(1632)
 
-					var _m = p.Match(KParserQuestion)
+					var _m = p.Match(FeelParserQuestion)
 
 					localctx.(*ExpressionContext).op = _m
 				}
 
 			case 11:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1633)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 17)) {
@@ -18656,7 +18656,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 12:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1635)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 16)) {
@@ -18669,7 +18669,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 13:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1637)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 14)) {
@@ -18682,7 +18682,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 14:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1639)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 13)) {
@@ -18695,7 +18695,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 15:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1641)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 12)) {
@@ -18708,7 +18708,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 16:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1643)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 11)) {
@@ -18721,7 +18721,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 17:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1645)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 5)) {
@@ -18734,7 +18734,7 @@ func (p *KParser) expression(_p int) (localctx IExpressionContext) {
 
 			case 18:
 				localctx = NewExpressionContext(p, _parentctx, _parentState)
-				p.PushNewRecursionContext(localctx, _startState, KParserRULE_expression)
+				p.PushNewRecursionContext(localctx, _startState, FeelParserRULE_expression)
 				p.SetState(1647)
 
 				if !(p.Precpred(p.GetParserRuleContext(), 4)) {
@@ -18775,7 +18775,7 @@ type CallExpressionContext struct {
 func NewEmptyCallExpressionContext() *CallExpressionContext {
 	var p = new(CallExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callExpression
+	p.RuleIndex = FeelParserRULE_callExpression
 	return p
 }
 
@@ -18787,7 +18787,7 @@ func NewCallExpressionContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callExpression
+	p.RuleIndex = FeelParserRULE_callExpression
 
 	return p
 }
@@ -18845,7 +18845,7 @@ func (s *CallExpressionContext) Right_brack() IRight_brackContext {
 }
 
 func (s *CallExpressionContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *CallExpressionContext) CallFunc() ICallFuncContext {
@@ -18878,7 +18878,7 @@ func (s *CallExpressionContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *CallExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallExpression(s)
 
 	default:
@@ -18886,9 +18886,9 @@ func (s *CallExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) CallExpression() (localctx ICallExpressionContext) {
+func (p *FeelParser) CallExpression() (localctx ICallExpressionContext) {
 	localctx = NewCallExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 156, KParserRULE_callExpression)
+	p.EnterRule(localctx, 156, FeelParserRULE_callExpression)
 	var _la int
 
 	defer func() {
@@ -18916,10 +18916,10 @@ func (p *KParser) CallExpression() (localctx ICallExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(1655)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -18927,13 +18927,13 @@ func (p *KParser) CallExpression() (localctx ICallExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(1658)
 			p.Id()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		{
 			p.SetState(1659)
 			p.Left_brack()
@@ -18993,7 +18993,7 @@ type TupleContext struct {
 func NewEmptyTupleContext() *TupleContext {
 	var p = new(TupleContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_tuple
+	p.RuleIndex = FeelParserRULE_tuple
 	return p
 }
 
@@ -19005,7 +19005,7 @@ func NewTupleContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_tuple
+	p.RuleIndex = FeelParserRULE_tuple
 
 	return p
 }
@@ -19088,7 +19088,7 @@ func (s *TupleContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 
 func (s *TupleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTuple(s)
 
 	default:
@@ -19096,9 +19096,9 @@ func (s *TupleContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Tuple() (localctx ITupleContext) {
+func (p *FeelParser) Tuple() (localctx ITupleContext) {
 	localctx = NewTupleContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 158, KParserRULE_tuple)
+	p.EnterRule(localctx, 158, FeelParserRULE_tuple)
 	var _la int
 
 	defer func() {
@@ -19126,7 +19126,7 @@ func (p *KParser) Tuple() (localctx ITupleContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 		{
 			p.SetState(1671)
 			p.expression(0)
@@ -19135,7 +19135,7 @@ func (p *KParser) Tuple() (localctx ITupleContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == KParserComma {
+		for _la == FeelParserComma {
 			{
 				p.SetState(1672)
 				p.More()
@@ -19178,7 +19178,7 @@ type ExpressionListContext struct {
 func NewEmptyExpressionListContext() *ExpressionListContext {
 	var p = new(ExpressionListContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_expressionList
+	p.RuleIndex = FeelParserRULE_expressionList
 	return p
 }
 
@@ -19190,7 +19190,7 @@ func NewExpressionListContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_expressionList
+	p.RuleIndex = FeelParserRULE_expressionList
 
 	return p
 }
@@ -19253,7 +19253,7 @@ func (s *ExpressionListContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *ExpressionListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitExpressionList(s)
 
 	default:
@@ -19261,9 +19261,9 @@ func (s *ExpressionListContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) ExpressionList() (localctx IExpressionListContext) {
+func (p *FeelParser) ExpressionList() (localctx IExpressionListContext) {
 	localctx = NewExpressionListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 160, KParserRULE_expressionList)
+	p.EnterRule(localctx, 160, FeelParserRULE_expressionList)
 	var _la int
 
 	defer func() {
@@ -19291,7 +19291,7 @@ func (p *KParser) ExpressionList() (localctx IExpressionListContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1685)
 			p.More()
@@ -19328,7 +19328,7 @@ type AnnotationSupportContext struct {
 func NewEmptyAnnotationSupportContext() *AnnotationSupportContext {
 	var p = new(AnnotationSupportContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_annotationSupport
+	p.RuleIndex = FeelParserRULE_annotationSupport
 	return p
 }
 
@@ -19340,7 +19340,7 @@ func NewAnnotationSupportContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_annotationSupport
+	p.RuleIndex = FeelParserRULE_annotationSupport
 
 	return p
 }
@@ -19367,7 +19367,7 @@ func (s *AnnotationSupportContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *AnnotationSupportContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAnnotationSupport(s)
 
 	default:
@@ -19375,9 +19375,9 @@ func (s *AnnotationSupportContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) AnnotationSupport() (localctx IAnnotationSupportContext) {
+func (p *FeelParser) AnnotationSupport() (localctx IAnnotationSupportContext) {
 	localctx = NewAnnotationSupportContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 162, KParserRULE_annotationSupport)
+	p.EnterRule(localctx, 162, FeelParserRULE_annotationSupport)
 
 	defer func() {
 		p.ExitRule()
@@ -19423,7 +19423,7 @@ type AnnotationContext struct {
 func NewEmptyAnnotationContext() *AnnotationContext {
 	var p = new(AnnotationContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_annotation
+	p.RuleIndex = FeelParserRULE_annotation
 	return p
 }
 
@@ -19435,7 +19435,7 @@ func NewAnnotationContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_annotation
+	p.RuleIndex = FeelParserRULE_annotation
 
 	return p
 }
@@ -19462,7 +19462,7 @@ func (s *AnnotationContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *AnnotationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAnnotation(s)
 
 	default:
@@ -19470,9 +19470,9 @@ func (s *AnnotationContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Annotation() (localctx IAnnotationContext) {
+func (p *FeelParser) Annotation() (localctx IAnnotationContext) {
 	localctx = NewAnnotationContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 164, KParserRULE_annotation)
+	p.EnterRule(localctx, 164, FeelParserRULE_annotation)
 
 	defer func() {
 		p.ExitRule()
@@ -19518,7 +19518,7 @@ type AnnotationListContext struct {
 func NewEmptyAnnotationListContext() *AnnotationListContext {
 	var p = new(AnnotationListContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_annotationList
+	p.RuleIndex = FeelParserRULE_annotationList
 	return p
 }
 
@@ -19530,7 +19530,7 @@ func NewAnnotationListContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_annotationList
+	p.RuleIndex = FeelParserRULE_annotationList
 
 	return p
 }
@@ -19584,11 +19584,11 @@ func (s *AnnotationListContext) AnnotationString(i int) IAnnotationStringContext
 }
 
 func (s *AnnotationListContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *AnnotationListContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *AnnotationListContext) GetRuleContext() antlr.RuleContext {
@@ -19601,7 +19601,7 @@ func (s *AnnotationListContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *AnnotationListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAnnotationList(s)
 
 	default:
@@ -19609,9 +19609,9 @@ func (s *AnnotationListContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) AnnotationList() (localctx IAnnotationListContext) {
+func (p *FeelParser) AnnotationList() (localctx IAnnotationListContext) {
 	localctx = NewAnnotationListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 166, KParserRULE_annotationList)
+	p.EnterRule(localctx, 166, FeelParserRULE_annotationList)
 	var _la int
 
 	defer func() {
@@ -19635,7 +19635,7 @@ func (p *KParser) AnnotationList() (localctx IAnnotationListContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ok := true; ok; ok = _la == KParserSharp {
+	for ok := true; ok; ok = _la == FeelParserSharp {
 		p.SetState(1699)
 		p.GetErrorHandler().Sync(p)
 		switch p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 189, p.GetParserRuleContext()) {
@@ -19656,10 +19656,10 @@ func (p *KParser) AnnotationList() (localctx IAnnotationListContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserNew_Line {
+		if _la == FeelParserNew_Line {
 			{
 				p.SetState(1701)
-				p.Match(KParserNew_Line)
+				p.Match(FeelParserNew_Line)
 			}
 
 		}
@@ -19691,7 +19691,7 @@ type AnnotationItemContext struct {
 func NewEmptyAnnotationItemContext() *AnnotationItemContext {
 	var p = new(AnnotationItemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_annotationItem
+	p.RuleIndex = FeelParserRULE_annotationItem
 	return p
 }
 
@@ -19703,7 +19703,7 @@ func NewAnnotationItemContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_annotationItem
+	p.RuleIndex = FeelParserRULE_annotationItem
 
 	return p
 }
@@ -19711,7 +19711,7 @@ func NewAnnotationItemContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *AnnotationItemContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *AnnotationItemContext) Sharp() antlr.TerminalNode {
-	return s.GetToken(KParserSharp, 0)
+	return s.GetToken(FeelParserSharp, 0)
 }
 
 func (s *AnnotationItemContext) AllId() []IIdContext {
@@ -19738,7 +19738,7 @@ func (s *AnnotationItemContext) Id(i int) IIdContext {
 }
 
 func (s *AnnotationItemContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *AnnotationItemContext) Tuple() ITupleContext {
@@ -19771,7 +19771,7 @@ func (s *AnnotationItemContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *AnnotationItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAnnotationItem(s)
 
 	default:
@@ -19779,9 +19779,9 @@ func (s *AnnotationItemContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) AnnotationItem() (localctx IAnnotationItemContext) {
+func (p *FeelParser) AnnotationItem() (localctx IAnnotationItemContext) {
 	localctx = NewAnnotationItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 168, KParserRULE_annotationItem)
+	p.EnterRule(localctx, 168, FeelParserRULE_annotationItem)
 
 	defer func() {
 		p.ExitRule()
@@ -19802,7 +19802,7 @@ func (p *KParser) AnnotationItem() (localctx IAnnotationItemContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1708)
-		p.Match(KParserSharp)
+		p.Match(FeelParserSharp)
 	}
 	p.SetState(1712)
 	p.GetErrorHandler().Sync(p)
@@ -19814,7 +19814,7 @@ func (p *KParser) AnnotationItem() (localctx IAnnotationItemContext) {
 		}
 		{
 			p.SetState(1710)
-			p.Match(KParserRight_Arrow)
+			p.Match(FeelParserRight_Arrow)
 		}
 
 	}
@@ -19861,7 +19861,7 @@ type AnnotationStringContext struct {
 func NewEmptyAnnotationStringContext() *AnnotationStringContext {
 	var p = new(AnnotationStringContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_annotationString
+	p.RuleIndex = FeelParserRULE_annotationString
 	return p
 }
 
@@ -19873,7 +19873,7 @@ func NewAnnotationStringContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_annotationString
+	p.RuleIndex = FeelParserRULE_annotationString
 
 	return p
 }
@@ -19881,7 +19881,7 @@ func NewAnnotationStringContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *AnnotationStringContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *AnnotationStringContext) Sharp() antlr.TerminalNode {
-	return s.GetToken(KParserSharp, 0)
+	return s.GetToken(FeelParserSharp, 0)
 }
 
 func (s *AnnotationStringContext) StringExpr() IStringExprContext {
@@ -19914,7 +19914,7 @@ func (s *AnnotationStringContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *AnnotationStringContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAnnotationString(s)
 
 	default:
@@ -19922,9 +19922,9 @@ func (s *AnnotationStringContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) AnnotationString() (localctx IAnnotationStringContext) {
+func (p *FeelParser) AnnotationString() (localctx IAnnotationStringContext) {
 	localctx = NewAnnotationStringContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 170, KParserRULE_annotationString)
+	p.EnterRule(localctx, 170, FeelParserRULE_annotationString)
 
 	defer func() {
 		p.ExitRule()
@@ -19945,19 +19945,19 @@ func (p *KParser) AnnotationString() (localctx IAnnotationStringContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1719)
-		p.Match(KParserSharp)
+		p.Match(FeelParserSharp)
 	}
 	p.SetState(1722)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserQuote_Open:
+	case FeelParserQuote_Open:
 		{
 			p.SetState(1720)
 			p.StringExpr()
 		}
 
-	case KParserQuote_Quote_Quote_Open:
+	case FeelParserQuote_Quote_Quote_Open:
 		{
 			p.SetState(1721)
 			p.RawStringExpr()
@@ -19989,7 +19989,7 @@ type CallFuncContext struct {
 func NewEmptyCallFuncContext() *CallFuncContext {
 	var p = new(CallFuncContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callFunc
+	p.RuleIndex = FeelParserRULE_callFunc
 	return p
 }
 
@@ -20001,7 +20001,7 @@ func NewCallFuncContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callFunc
+	p.RuleIndex = FeelParserRULE_callFunc
 
 	return p
 }
@@ -20038,7 +20038,7 @@ func (s *CallFuncContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *CallFuncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallFunc(s)
 
 	default:
@@ -20046,9 +20046,9 @@ func (s *CallFuncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) CallFunc() (localctx ICallFuncContext) {
+func (p *FeelParser) CallFunc() (localctx ICallFuncContext) {
 	localctx = NewCallFuncContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 172, KParserRULE_callFunc)
+	p.EnterRule(localctx, 172, FeelParserRULE_callFunc)
 
 	defer func() {
 		p.ExitRule()
@@ -20071,13 +20071,13 @@ func (p *KParser) CallFunc() (localctx ICallFuncContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserLeft_Paren:
+	case FeelParserLeft_Paren:
 		{
 			p.SetState(1724)
 			p.Tuple()
 		}
 
-	case KParserLeft_Brace:
+	case FeelParserLeft_Brace:
 		{
 			p.SetState(1725)
 			p.Lambda()
@@ -20109,7 +20109,7 @@ type CallAsyncContext struct {
 func NewEmptyCallAsyncContext() *CallAsyncContext {
 	var p = new(CallAsyncContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callAsync
+	p.RuleIndex = FeelParserRULE_callAsync
 	return p
 }
 
@@ -20121,7 +20121,7 @@ func NewCallAsyncContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callAsync
+	p.RuleIndex = FeelParserRULE_callAsync
 
 	return p
 }
@@ -20129,7 +20129,7 @@ func NewCallAsyncContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *CallAsyncContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CallAsyncContext) Right_Wave() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Wave, 0)
+	return s.GetToken(FeelParserRight_Wave, 0)
 }
 
 func (s *CallAsyncContext) Expression() IExpressionContext {
@@ -20152,7 +20152,7 @@ func (s *CallAsyncContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *CallAsyncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallAsync(s)
 
 	default:
@@ -20160,9 +20160,9 @@ func (s *CallAsyncContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) CallAsync() (localctx ICallAsyncContext) {
+func (p *FeelParser) CallAsync() (localctx ICallAsyncContext) {
 	localctx = NewCallAsyncContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 174, KParserRULE_callAsync)
+	p.EnterRule(localctx, 174, FeelParserRULE_callAsync)
 
 	defer func() {
 		p.ExitRule()
@@ -20183,7 +20183,7 @@ func (p *KParser) CallAsync() (localctx ICallAsyncContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1728)
-		p.Match(KParserRight_Wave)
+		p.Match(FeelParserRight_Wave)
 	}
 	{
 		p.SetState(1729)
@@ -20212,7 +20212,7 @@ type CallAwaitContext struct {
 func NewEmptyCallAwaitContext() *CallAwaitContext {
 	var p = new(CallAwaitContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callAwait
+	p.RuleIndex = FeelParserRULE_callAwait
 	return p
 }
 
@@ -20224,7 +20224,7 @@ func NewCallAwaitContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callAwait
+	p.RuleIndex = FeelParserRULE_callAwait
 
 	return p
 }
@@ -20232,7 +20232,7 @@ func NewCallAwaitContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *CallAwaitContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CallAwaitContext) Right_Wave() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Wave, 0)
+	return s.GetToken(FeelParserRight_Wave, 0)
 }
 
 func (s *CallAwaitContext) Tuple() ITupleContext {
@@ -20265,7 +20265,7 @@ func (s *CallAwaitContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *CallAwaitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallAwait(s)
 
 	default:
@@ -20273,9 +20273,9 @@ func (s *CallAwaitContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) CallAwait() (localctx ICallAwaitContext) {
+func (p *FeelParser) CallAwait() (localctx ICallAwaitContext) {
 	localctx = NewCallAwaitContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 176, KParserRULE_callAwait)
+	p.EnterRule(localctx, 176, FeelParserRULE_callAwait)
 
 	defer func() {
 		p.ExitRule()
@@ -20296,19 +20296,19 @@ func (p *KParser) CallAwait() (localctx ICallAwaitContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1731)
-		p.Match(KParserRight_Wave)
+		p.Match(FeelParserRight_Wave)
 	}
 	p.SetState(1734)
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserLeft_Paren:
+	case FeelParserLeft_Paren:
 		{
 			p.SetState(1732)
 			p.Tuple()
 		}
 
-	case KParserLeft_Brace:
+	case FeelParserLeft_Brace:
 		{
 			p.SetState(1733)
 			p.Lambda()
@@ -20340,7 +20340,7 @@ type CallChannelContext struct {
 func NewEmptyCallChannelContext() *CallChannelContext {
 	var p = new(CallChannelContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callChannel
+	p.RuleIndex = FeelParserRULE_callChannel
 	return p
 }
 
@@ -20352,7 +20352,7 @@ func NewCallChannelContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callChannel
+	p.RuleIndex = FeelParserRULE_callChannel
 
 	return p
 }
@@ -20360,7 +20360,7 @@ func NewCallChannelContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *CallChannelContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CallChannelContext) Left_Wave() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Wave, 0)
+	return s.GetToken(FeelParserLeft_Wave, 0)
 }
 
 func (s *CallChannelContext) Expression() IExpressionContext {
@@ -20383,7 +20383,7 @@ func (s *CallChannelContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *CallChannelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallChannel(s)
 
 	default:
@@ -20391,9 +20391,9 @@ func (s *CallChannelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) CallChannel() (localctx ICallChannelContext) {
+func (p *FeelParser) CallChannel() (localctx ICallChannelContext) {
 	localctx = NewCallChannelContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 178, KParserRULE_callChannel)
+	p.EnterRule(localctx, 178, FeelParserRULE_callChannel)
 
 	defer func() {
 		p.ExitRule()
@@ -20414,7 +20414,7 @@ func (p *KParser) CallChannel() (localctx ICallChannelContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1736)
-		p.Match(KParserLeft_Wave)
+		p.Match(FeelParserLeft_Wave)
 	}
 	{
 		p.SetState(1737)
@@ -20443,7 +20443,7 @@ type TransferContext struct {
 func NewEmptyTransferContext() *TransferContext {
 	var p = new(TransferContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_transfer
+	p.RuleIndex = FeelParserRULE_transfer
 	return p
 }
 
@@ -20455,7 +20455,7 @@ func NewTransferContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_transfer
+	p.RuleIndex = FeelParserRULE_transfer
 
 	return p
 }
@@ -20463,7 +20463,7 @@ func NewTransferContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *TransferContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *TransferContext) Left_Wave() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Wave, 0)
+	return s.GetToken(FeelParserLeft_Wave, 0)
 }
 
 func (s *TransferContext) GetRuleContext() antlr.RuleContext {
@@ -20476,7 +20476,7 @@ func (s *TransferContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *TransferContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTransfer(s)
 
 	default:
@@ -20484,9 +20484,9 @@ func (s *TransferContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Transfer() (localctx ITransferContext) {
+func (p *FeelParser) Transfer() (localctx ITransferContext) {
 	localctx = NewTransferContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 180, KParserRULE_transfer)
+	p.EnterRule(localctx, 180, FeelParserRULE_transfer)
 
 	defer func() {
 		p.ExitRule()
@@ -20507,7 +20507,7 @@ func (p *KParser) Transfer() (localctx ITransferContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1739)
-		p.Match(KParserLeft_Wave)
+		p.Match(FeelParserLeft_Wave)
 	}
 
 	return localctx
@@ -20532,7 +20532,7 @@ type CallElementContext struct {
 func NewEmptyCallElementContext() *CallElementContext {
 	var p = new(CallElementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callElement
+	p.RuleIndex = FeelParserRULE_callElement
 	return p
 }
 
@@ -20544,7 +20544,7 @@ func NewCallElementContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callElement
+	p.RuleIndex = FeelParserRULE_callElement
 
 	return p
 }
@@ -20601,7 +20601,7 @@ func (s *CallElementContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *CallElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallElement(s)
 
 	default:
@@ -20609,9 +20609,9 @@ func (s *CallElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) CallElement() (localctx ICallElementContext) {
+func (p *FeelParser) CallElement() (localctx ICallElementContext) {
 	localctx = NewCallElementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 182, KParserRULE_callElement)
+	p.EnterRule(localctx, 182, FeelParserRULE_callElement)
 
 	defer func() {
 		p.ExitRule()
@@ -20677,7 +20677,7 @@ type CallPkgContext struct {
 func NewEmptyCallPkgContext() *CallPkgContext {
 	var p = new(CallPkgContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callPkg
+	p.RuleIndex = FeelParserRULE_callPkg
 	return p
 }
 
@@ -20689,7 +20689,7 @@ func NewCallPkgContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callPkg
+	p.RuleIndex = FeelParserRULE_callPkg
 
 	return p
 }
@@ -20766,7 +20766,7 @@ func (s *CallPkgContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *CallPkgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallPkg(s)
 
 	default:
@@ -20774,9 +20774,9 @@ func (s *CallPkgContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) CallPkg() (localctx ICallPkgContext) {
+func (p *FeelParser) CallPkg() (localctx ICallPkgContext) {
 	localctx = NewCallPkgContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 184, KParserRULE_callPkg)
+	p.EnterRule(localctx, 184, FeelParserRULE_callPkg)
 
 	defer func() {
 		p.ExitRule()
@@ -20852,7 +20852,7 @@ type CallNewContext struct {
 func NewEmptyCallNewContext() *CallNewContext {
 	var p = new(CallNewContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_callNew
+	p.RuleIndex = FeelParserRULE_callNew
 	return p
 }
 
@@ -20864,7 +20864,7 @@ func NewCallNewContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_callNew
+	p.RuleIndex = FeelParserRULE_callNew
 
 	return p
 }
@@ -20902,11 +20902,11 @@ func (s *CallNewContext) Right_paren() IRight_parenContext {
 }
 
 func (s *CallNewContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *CallNewContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *CallNewContext) ExpressionList() IExpressionListContext {
@@ -20929,7 +20929,7 @@ func (s *CallNewContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *CallNewContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCallNew(s)
 
 	default:
@@ -20937,9 +20937,9 @@ func (s *CallNewContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) CallNew() (localctx ICallNewContext) {
+func (p *FeelParser) CallNew() (localctx ICallNewContext) {
 	localctx = NewCallNewContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 186, KParserRULE_callNew)
+	p.EnterRule(localctx, 186, FeelParserRULE_callNew)
 	var _la int
 
 	defer func() {
@@ -20973,7 +20973,7 @@ func (p *KParser) CallNew() (localctx ICallNewContext) {
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 199, p.GetParserRuleContext()) == 1 {
 		{
 			p.SetState(1759)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -20981,7 +20981,7 @@ func (p *KParser) CallNew() (localctx ICallNewContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+	if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 		{
 			p.SetState(1762)
 			p.ExpressionList()
@@ -20992,10 +20992,10 @@ func (p *KParser) CallNew() (localctx ICallNewContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(1765)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -21026,7 +21026,7 @@ type OrElseContext struct {
 func NewEmptyOrElseContext() *OrElseContext {
 	var p = new(OrElseContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_orElse
+	p.RuleIndex = FeelParserRULE_orElse
 	return p
 }
 
@@ -21038,7 +21038,7 @@ func NewOrElseContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_orElse
+	p.RuleIndex = FeelParserRULE_orElse
 
 	return p
 }
@@ -21046,11 +21046,11 @@ func NewOrElseContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 func (s *OrElseContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *OrElseContext) AllQuestion() []antlr.TerminalNode {
-	return s.GetTokens(KParserQuestion)
+	return s.GetTokens(FeelParserQuestion)
 }
 
 func (s *OrElseContext) Question(i int) antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, i)
+	return s.GetToken(FeelParserQuestion, i)
 }
 
 func (s *OrElseContext) Expression() IExpressionContext {
@@ -21073,7 +21073,7 @@ func (s *OrElseContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 
 func (s *OrElseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitOrElse(s)
 
 	default:
@@ -21081,9 +21081,9 @@ func (s *OrElseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) OrElse() (localctx IOrElseContext) {
+func (p *FeelParser) OrElse() (localctx IOrElseContext) {
 	localctx = NewOrElseContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 188, KParserRULE_orElse)
+	p.EnterRule(localctx, 188, FeelParserRULE_orElse)
 
 	defer func() {
 		p.ExitRule()
@@ -21104,11 +21104,11 @@ func (p *KParser) OrElse() (localctx IOrElseContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(1770)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(1771)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(1772)
@@ -21137,7 +21137,7 @@ type TypeConversionContext struct {
 func NewEmptyTypeConversionContext() *TypeConversionContext {
 	var p = new(TypeConversionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeConversion
+	p.RuleIndex = FeelParserRULE_typeConversion
 	return p
 }
 
@@ -21149,7 +21149,7 @@ func NewTypeConversionContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeConversion
+	p.RuleIndex = FeelParserRULE_typeConversion
 
 	return p
 }
@@ -21167,7 +21167,7 @@ func (s *TypeConversionContext) TypeType() ITypeTypeContext {
 }
 
 func (s *TypeConversionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *TypeConversionContext) GetRuleContext() antlr.RuleContext {
@@ -21180,7 +21180,7 @@ func (s *TypeConversionContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *TypeConversionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeConversion(s)
 
 	default:
@@ -21188,9 +21188,9 @@ func (s *TypeConversionContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) TypeConversion() (localctx ITypeConversionContext) {
+func (p *FeelParser) TypeConversion() (localctx ITypeConversionContext) {
 	localctx = NewTypeConversionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 190, KParserRULE_typeConversion)
+	p.EnterRule(localctx, 190, FeelParserRULE_typeConversion)
 
 	defer func() {
 		p.ExitRule()
@@ -21215,7 +21215,7 @@ func (p *KParser) TypeConversion() (localctx ITypeConversionContext) {
 	}
 	{
 		p.SetState(1775)
-		p.Match(KParserBang)
+		p.Match(FeelParserBang)
 	}
 
 	return localctx
@@ -21240,7 +21240,7 @@ type TypeCheckContext struct {
 func NewEmptyTypeCheckContext() *TypeCheckContext {
 	var p = new(TypeCheckContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeCheck
+	p.RuleIndex = FeelParserRULE_typeCheck
 	return p
 }
 
@@ -21252,7 +21252,7 @@ func NewTypeCheckContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeCheck
+	p.RuleIndex = FeelParserRULE_typeCheck
 
 	return p
 }
@@ -21270,7 +21270,7 @@ func (s *TypeCheckContext) TypeType() ITypeTypeContext {
 }
 
 func (s *TypeCheckContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *TypeCheckContext) GetRuleContext() antlr.RuleContext {
@@ -21283,7 +21283,7 @@ func (s *TypeCheckContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *TypeCheckContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeCheck(s)
 
 	default:
@@ -21291,9 +21291,9 @@ func (s *TypeCheckContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeCheck() (localctx ITypeCheckContext) {
+func (p *FeelParser) TypeCheck() (localctx ITypeCheckContext) {
 	localctx = NewTypeCheckContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 192, KParserRULE_typeCheck)
+	p.EnterRule(localctx, 192, FeelParserRULE_typeCheck)
 
 	defer func() {
 		p.ExitRule()
@@ -21318,7 +21318,7 @@ func (p *KParser) TypeCheck() (localctx ITypeCheckContext) {
 	}
 	{
 		p.SetState(1778)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 
 	return localctx
@@ -21343,7 +21343,7 @@ type PkgAssignContext struct {
 func NewEmptyPkgAssignContext() *PkgAssignContext {
 	var p = new(PkgAssignContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_pkgAssign
+	p.RuleIndex = FeelParserRULE_pkgAssign
 	return p
 }
 
@@ -21355,7 +21355,7 @@ func NewPkgAssignContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_pkgAssign
+	p.RuleIndex = FeelParserRULE_pkgAssign
 
 	return p
 }
@@ -21418,7 +21418,7 @@ func (s *PkgAssignContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *PkgAssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPkgAssign(s)
 
 	default:
@@ -21426,9 +21426,9 @@ func (s *PkgAssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) PkgAssign() (localctx IPkgAssignContext) {
+func (p *FeelParser) PkgAssign() (localctx IPkgAssignContext) {
 	localctx = NewPkgAssignContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 194, KParserRULE_pkgAssign)
+	p.EnterRule(localctx, 194, FeelParserRULE_pkgAssign)
 
 	defer func() {
 		p.ExitRule()
@@ -21496,7 +21496,7 @@ type PkgAssignElementContext struct {
 func NewEmptyPkgAssignElementContext() *PkgAssignElementContext {
 	var p = new(PkgAssignElementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_pkgAssignElement
+	p.RuleIndex = FeelParserRULE_pkgAssignElement
 	return p
 }
 
@@ -21508,7 +21508,7 @@ func NewPkgAssignElementContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_pkgAssignElement
+	p.RuleIndex = FeelParserRULE_pkgAssignElement
 
 	return p
 }
@@ -21526,7 +21526,7 @@ func (s *PkgAssignElementContext) Name() INameContext {
 }
 
 func (s *PkgAssignElementContext) Equal() antlr.TerminalNode {
-	return s.GetToken(KParserEqual, 0)
+	return s.GetToken(FeelParserEqual, 0)
 }
 
 func (s *PkgAssignElementContext) Expression() IExpressionContext {
@@ -21549,7 +21549,7 @@ func (s *PkgAssignElementContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *PkgAssignElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPkgAssignElement(s)
 
 	default:
@@ -21557,9 +21557,9 @@ func (s *PkgAssignElementContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) PkgAssignElement() (localctx IPkgAssignElementContext) {
+func (p *FeelParser) PkgAssignElement() (localctx IPkgAssignElementContext) {
 	localctx = NewPkgAssignElementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 196, KParserRULE_pkgAssignElement)
+	p.EnterRule(localctx, 196, FeelParserRULE_pkgAssignElement)
 
 	defer func() {
 		p.ExitRule()
@@ -21584,7 +21584,7 @@ func (p *KParser) PkgAssignElement() (localctx IPkgAssignElementContext) {
 	}
 	{
 		p.SetState(1791)
-		p.Match(KParserEqual)
+		p.Match(FeelParserEqual)
 	}
 	{
 		p.SetState(1792)
@@ -21613,7 +21613,7 @@ type ListAssignContext struct {
 func NewEmptyListAssignContext() *ListAssignContext {
 	var p = new(ListAssignContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_listAssign
+	p.RuleIndex = FeelParserRULE_listAssign
 	return p
 }
 
@@ -21625,7 +21625,7 @@ func NewListAssignContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_listAssign
+	p.RuleIndex = FeelParserRULE_listAssign
 
 	return p
 }
@@ -21688,7 +21688,7 @@ func (s *ListAssignContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *ListAssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitListAssign(s)
 
 	default:
@@ -21696,9 +21696,9 @@ func (s *ListAssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) ListAssign() (localctx IListAssignContext) {
+func (p *FeelParser) ListAssign() (localctx IListAssignContext) {
 	localctx = NewListAssignContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 198, KParserRULE_listAssign)
+	p.EnterRule(localctx, 198, FeelParserRULE_listAssign)
 
 	defer func() {
 		p.ExitRule()
@@ -21766,7 +21766,7 @@ type DictionaryAssignContext struct {
 func NewEmptyDictionaryAssignContext() *DictionaryAssignContext {
 	var p = new(DictionaryAssignContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_dictionaryAssign
+	p.RuleIndex = FeelParserRULE_dictionaryAssign
 	return p
 }
 
@@ -21778,7 +21778,7 @@ func NewDictionaryAssignContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_dictionaryAssign
+	p.RuleIndex = FeelParserRULE_dictionaryAssign
 
 	return p
 }
@@ -21841,7 +21841,7 @@ func (s *DictionaryAssignContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *DictionaryAssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitDictionaryAssign(s)
 
 	default:
@@ -21849,9 +21849,9 @@ func (s *DictionaryAssignContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) DictionaryAssign() (localctx IDictionaryAssignContext) {
+func (p *FeelParser) DictionaryAssign() (localctx IDictionaryAssignContext) {
 	localctx = NewDictionaryAssignContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 200, KParserRULE_dictionaryAssign)
+	p.EnterRule(localctx, 200, FeelParserRULE_dictionaryAssign)
 
 	defer func() {
 		p.ExitRule()
@@ -21919,7 +21919,7 @@ type ListContext struct {
 func NewEmptyListContext() *ListContext {
 	var p = new(ListContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_list
+	p.RuleIndex = FeelParserRULE_list
 	return p
 }
 
@@ -21931,7 +21931,7 @@ func NewListContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_list
+	p.RuleIndex = FeelParserRULE_list
 
 	return p
 }
@@ -22014,7 +22014,7 @@ func (s *ListContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 
 func (s *ListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitList(s)
 
 	default:
@@ -22022,9 +22022,9 @@ func (s *ListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) List() (localctx IListContext) {
+func (p *FeelParser) List() (localctx IListContext) {
 	localctx = NewListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 202, KParserRULE_list)
+	p.EnterRule(localctx, 202, FeelParserRULE_list)
 
 	defer func() {
 		p.ExitRule()
@@ -22100,7 +22100,7 @@ type DictionaryContext struct {
 func NewEmptyDictionaryContext() *DictionaryContext {
 	var p = new(DictionaryContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_dictionary
+	p.RuleIndex = FeelParserRULE_dictionary
 	return p
 }
 
@@ -22112,7 +22112,7 @@ func NewDictionaryContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_dictionary
+	p.RuleIndex = FeelParserRULE_dictionary
 
 	return p
 }
@@ -22195,7 +22195,7 @@ func (s *DictionaryContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *DictionaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitDictionary(s)
 
 	default:
@@ -22203,9 +22203,9 @@ func (s *DictionaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Dictionary() (localctx IDictionaryContext) {
+func (p *FeelParser) Dictionary() (localctx IDictionaryContext) {
 	localctx = NewDictionaryContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 204, KParserRULE_dictionary)
+	p.EnterRule(localctx, 204, FeelParserRULE_dictionary)
 
 	defer func() {
 		p.ExitRule()
@@ -22281,7 +22281,7 @@ type DictionaryElementContext struct {
 func NewEmptyDictionaryElementContext() *DictionaryElementContext {
 	var p = new(DictionaryElementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_dictionaryElement
+	p.RuleIndex = FeelParserRULE_dictionaryElement
 	return p
 }
 
@@ -22293,7 +22293,7 @@ func NewDictionaryElementContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_dictionaryElement
+	p.RuleIndex = FeelParserRULE_dictionaryElement
 
 	return p
 }
@@ -22344,7 +22344,7 @@ func (s *DictionaryElementContext) Right_brack() IRight_brackContext {
 }
 
 func (s *DictionaryElementContext) Equal() antlr.TerminalNode {
-	return s.GetToken(KParserEqual, 0)
+	return s.GetToken(FeelParserEqual, 0)
 }
 
 func (s *DictionaryElementContext) GetRuleContext() antlr.RuleContext {
@@ -22357,7 +22357,7 @@ func (s *DictionaryElementContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *DictionaryElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitDictionaryElement(s)
 
 	default:
@@ -22365,9 +22365,9 @@ func (s *DictionaryElementContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) DictionaryElement() (localctx IDictionaryElementContext) {
+func (p *FeelParser) DictionaryElement() (localctx IDictionaryElementContext) {
 	localctx = NewDictionaryElementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 206, KParserRULE_dictionaryElement)
+	p.EnterRule(localctx, 206, FeelParserRULE_dictionaryElement)
 
 	defer func() {
 		p.ExitRule()
@@ -22400,7 +22400,7 @@ func (p *KParser) DictionaryElement() (localctx IDictionaryElementContext) {
 	}
 	{
 		p.SetState(1841)
-		p.Match(KParserEqual)
+		p.Match(FeelParserEqual)
 	}
 	{
 		p.SetState(1842)
@@ -22429,7 +22429,7 @@ type SliceContext struct {
 func NewEmptySliceContext() *SliceContext {
 	var p = new(SliceContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_slice
+	p.RuleIndex = FeelParserRULE_slice
 	return p
 }
 
@@ -22441,7 +22441,7 @@ func NewSliceContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_slice
+	p.RuleIndex = FeelParserRULE_slice
 
 	return p
 }
@@ -22488,7 +22488,7 @@ func (s *SliceContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 
 func (s *SliceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitSlice(s)
 
 	default:
@@ -22496,9 +22496,9 @@ func (s *SliceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Slice() (localctx ISliceContext) {
+func (p *FeelParser) Slice() (localctx ISliceContext) {
 	localctx = NewSliceContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 208, KParserRULE_slice)
+	p.EnterRule(localctx, 208, FeelParserRULE_slice)
 
 	defer func() {
 		p.ExitRule()
@@ -22564,7 +22564,7 @@ type SliceFullContext struct {
 func NewEmptySliceFullContext() *SliceFullContext {
 	var p = new(SliceFullContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_sliceFull
+	p.RuleIndex = FeelParserRULE_sliceFull
 	return p
 }
 
@@ -22576,7 +22576,7 @@ func NewSliceFullContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_sliceFull
+	p.RuleIndex = FeelParserRULE_sliceFull
 
 	return p
 }
@@ -22607,19 +22607,19 @@ func (s *SliceFullContext) Expression(i int) IExpressionContext {
 }
 
 func (s *SliceFullContext) Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot, 0)
 }
 
 func (s *SliceFullContext) Dot_Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot_Dot, 0)
 }
 
 func (s *SliceFullContext) Dot_Dot_Less() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Less, 0)
+	return s.GetToken(FeelParserDot_Dot_Less, 0)
 }
 
 func (s *SliceFullContext) Dot_Dot_Greater() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Greater, 0)
+	return s.GetToken(FeelParserDot_Dot_Greater, 0)
 }
 
 func (s *SliceFullContext) GetRuleContext() antlr.RuleContext {
@@ -22632,7 +22632,7 @@ func (s *SliceFullContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *SliceFullContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitSliceFull(s)
 
 	default:
@@ -22640,9 +22640,9 @@ func (s *SliceFullContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) SliceFull() (localctx ISliceFullContext) {
+func (p *FeelParser) SliceFull() (localctx ISliceFullContext) {
 	localctx = NewSliceFullContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 210, KParserRULE_sliceFull)
+	p.EnterRule(localctx, 210, FeelParserRULE_sliceFull)
 	var _la int
 
 	defer func() {
@@ -22670,7 +22670,7 @@ func (p *KParser) SliceFull() (localctx ISliceFullContext) {
 		p.SetState(1850)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<KParserDot_Dot_Dot)|(1<<KParserDot_Dot_Less)|(1<<KParserDot_Dot_Greater)|(1<<KParserDot_Dot))) != 0) {
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FeelParserDot_Dot_Dot)|(1<<FeelParserDot_Dot_Less)|(1<<FeelParserDot_Dot_Greater)|(1<<FeelParserDot_Dot))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -22704,7 +22704,7 @@ type SliceStartContext struct {
 func NewEmptySliceStartContext() *SliceStartContext {
 	var p = new(SliceStartContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_sliceStart
+	p.RuleIndex = FeelParserRULE_sliceStart
 	return p
 }
 
@@ -22716,7 +22716,7 @@ func NewSliceStartContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_sliceStart
+	p.RuleIndex = FeelParserRULE_sliceStart
 
 	return p
 }
@@ -22734,19 +22734,19 @@ func (s *SliceStartContext) Expression() IExpressionContext {
 }
 
 func (s *SliceStartContext) Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot, 0)
 }
 
 func (s *SliceStartContext) Dot_Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot_Dot, 0)
 }
 
 func (s *SliceStartContext) Dot_Dot_Less() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Less, 0)
+	return s.GetToken(FeelParserDot_Dot_Less, 0)
 }
 
 func (s *SliceStartContext) Dot_Dot_Greater() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Greater, 0)
+	return s.GetToken(FeelParserDot_Dot_Greater, 0)
 }
 
 func (s *SliceStartContext) GetRuleContext() antlr.RuleContext {
@@ -22759,7 +22759,7 @@ func (s *SliceStartContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *SliceStartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitSliceStart(s)
 
 	default:
@@ -22767,9 +22767,9 @@ func (s *SliceStartContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) SliceStart() (localctx ISliceStartContext) {
+func (p *FeelParser) SliceStart() (localctx ISliceStartContext) {
 	localctx = NewSliceStartContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 212, KParserRULE_sliceStart)
+	p.EnterRule(localctx, 212, FeelParserRULE_sliceStart)
 	var _la int
 
 	defer func() {
@@ -22797,7 +22797,7 @@ func (p *KParser) SliceStart() (localctx ISliceStartContext) {
 		p.SetState(1854)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<KParserDot_Dot_Dot)|(1<<KParserDot_Dot_Less)|(1<<KParserDot_Dot_Greater)|(1<<KParserDot_Dot))) != 0) {
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FeelParserDot_Dot_Dot)|(1<<FeelParserDot_Dot_Less)|(1<<FeelParserDot_Dot_Greater)|(1<<FeelParserDot_Dot))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -22827,7 +22827,7 @@ type SliceEndContext struct {
 func NewEmptySliceEndContext() *SliceEndContext {
 	var p = new(SliceEndContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_sliceEnd
+	p.RuleIndex = FeelParserRULE_sliceEnd
 	return p
 }
 
@@ -22839,7 +22839,7 @@ func NewSliceEndContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_sliceEnd
+	p.RuleIndex = FeelParserRULE_sliceEnd
 
 	return p
 }
@@ -22857,19 +22857,19 @@ func (s *SliceEndContext) Expression() IExpressionContext {
 }
 
 func (s *SliceEndContext) Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot, 0)
 }
 
 func (s *SliceEndContext) Dot_Dot_Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Dot, 0)
+	return s.GetToken(FeelParserDot_Dot_Dot, 0)
 }
 
 func (s *SliceEndContext) Dot_Dot_Less() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Less, 0)
+	return s.GetToken(FeelParserDot_Dot_Less, 0)
 }
 
 func (s *SliceEndContext) Dot_Dot_Greater() antlr.TerminalNode {
-	return s.GetToken(KParserDot_Dot_Greater, 0)
+	return s.GetToken(FeelParserDot_Dot_Greater, 0)
 }
 
 func (s *SliceEndContext) GetRuleContext() antlr.RuleContext {
@@ -22882,7 +22882,7 @@ func (s *SliceEndContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *SliceEndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitSliceEnd(s)
 
 	default:
@@ -22890,9 +22890,9 @@ func (s *SliceEndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) SliceEnd() (localctx ISliceEndContext) {
+func (p *FeelParser) SliceEnd() (localctx ISliceEndContext) {
 	localctx = NewSliceEndContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 214, KParserRULE_sliceEnd)
+	p.EnterRule(localctx, 214, FeelParserRULE_sliceEnd)
 	var _la int
 
 	defer func() {
@@ -22916,7 +22916,7 @@ func (p *KParser) SliceEnd() (localctx ISliceEndContext) {
 		p.SetState(1856)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<KParserDot_Dot_Dot)|(1<<KParserDot_Dot_Less)|(1<<KParserDot_Dot_Greater)|(1<<KParserDot_Dot))) != 0) {
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FeelParserDot_Dot_Dot)|(1<<FeelParserDot_Dot_Less)|(1<<FeelParserDot_Dot_Greater)|(1<<FeelParserDot_Dot))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -22950,7 +22950,7 @@ type NameSpaceItemContext struct {
 func NewEmptyNameSpaceItemContext() *NameSpaceItemContext {
 	var p = new(NameSpaceItemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_nameSpaceItem
+	p.RuleIndex = FeelParserRULE_nameSpaceItem
 	return p
 }
 
@@ -22962,7 +22962,7 @@ func NewNameSpaceItemContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_nameSpaceItem
+	p.RuleIndex = FeelParserRULE_nameSpaceItem
 
 	return p
 }
@@ -23016,11 +23016,11 @@ func (s *NameSpaceItemContext) Call(i int) ICallContext {
 }
 
 func (s *NameSpaceItemContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *NameSpaceItemContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *NameSpaceItemContext) GetRuleContext() antlr.RuleContext {
@@ -23033,7 +23033,7 @@ func (s *NameSpaceItemContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *NameSpaceItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNameSpaceItem(s)
 
 	default:
@@ -23041,9 +23041,9 @@ func (s *NameSpaceItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) NameSpaceItem() (localctx INameSpaceItemContext) {
+func (p *FeelParser) NameSpaceItem() (localctx INameSpaceItemContext) {
 	localctx = NewNameSpaceItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 216, KParserRULE_nameSpaceItem)
+	p.EnterRule(localctx, 216, FeelParserRULE_nameSpaceItem)
 	var _la int
 
 	defer func() {
@@ -23083,10 +23083,10 @@ func (p *KParser) NameSpaceItem() (localctx INameSpaceItemContext) {
 			p.GetErrorHandler().Sync(p)
 			_la = p.GetTokenStream().LA(1)
 
-			if _la == KParserNew_Line {
+			if _la == FeelParserNew_Line {
 				{
 					p.SetState(1861)
-					p.Match(KParserNew_Line)
+					p.Match(FeelParserNew_Line)
 				}
 
 			}
@@ -23123,7 +23123,7 @@ type NameContext struct {
 func NewEmptyNameContext() *NameContext {
 	var p = new(NameContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_name
+	p.RuleIndex = FeelParserRULE_name
 	return p
 }
 
@@ -23135,7 +23135,7 @@ func NewNameContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_name
+	p.RuleIndex = FeelParserRULE_name
 
 	return p
 }
@@ -23189,11 +23189,11 @@ func (s *NameContext) Call(i int) ICallContext {
 }
 
 func (s *NameContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *NameContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *NameContext) GetRuleContext() antlr.RuleContext {
@@ -23206,7 +23206,7 @@ func (s *NameContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 
 func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitName(s)
 
 	default:
@@ -23214,9 +23214,9 @@ func (s *NameContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Name() (localctx INameContext) {
+func (p *FeelParser) Name() (localctx INameContext) {
 	localctx = NewNameContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 218, KParserRULE_name)
+	p.EnterRule(localctx, 218, FeelParserRULE_name)
 	var _la int
 
 	defer func() {
@@ -23244,7 +23244,7 @@ func (p *KParser) Name() (localctx INameContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserDot {
+	for _la == FeelParserDot {
 		{
 			p.SetState(1872)
 			p.Call()
@@ -23253,10 +23253,10 @@ func (p *KParser) Name() (localctx INameContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if _la == KParserNew_Line {
+		if _la == FeelParserNew_Line {
 			{
 				p.SetState(1873)
-				p.Match(KParserNew_Line)
+				p.Match(FeelParserNew_Line)
 			}
 
 		}
@@ -23292,7 +23292,7 @@ type TemplateDefineContext struct {
 func NewEmptyTemplateDefineContext() *TemplateDefineContext {
 	var p = new(TemplateDefineContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_templateDefine
+	p.RuleIndex = FeelParserRULE_templateDefine
 	return p
 }
 
@@ -23304,7 +23304,7 @@ func NewTemplateDefineContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_templateDefine
+	p.RuleIndex = FeelParserRULE_templateDefine
 
 	return p
 }
@@ -23344,7 +23344,7 @@ func (s *TemplateDefineContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *TemplateDefineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTemplateDefine(s)
 
 	default:
@@ -23352,9 +23352,9 @@ func (s *TemplateDefineContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) TemplateDefine() (localctx ITemplateDefineContext) {
+func (p *FeelParser) TemplateDefine() (localctx ITemplateDefineContext) {
 	localctx = NewTemplateDefineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 220, KParserRULE_templateDefine)
+	p.EnterRule(localctx, 220, FeelParserRULE_templateDefine)
 	var _la int
 
 	defer func() {
@@ -23378,7 +23378,7 @@ func (p *KParser) TemplateDefine() (localctx ITemplateDefineContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(KParserLeft_Paren-39))|(1<<(KParserTypeI8-39))|(1<<(KParserTypeU8-39))|(1<<(KParserTypeI16-39))|(1<<(KParserTypeU16-39))|(1<<(KParserTypeI32-39))|(1<<(KParserTypeU32-39))|(1<<(KParserTypeI64-39))|(1<<(KParserTypeU64-39))|(1<<(KParserTypeF32-39))|(1<<(KParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(KParserTypeChr-71))|(1<<(KParserTypeStr-71))|(1<<(KParserTypeBool-71))|(1<<(KParserTypeInt-71))|(1<<(KParserTypeNum-71))|(1<<(KParserTypeByte-71))|(1<<(KParserTypeAny-71))|(1<<(KParserIDPrivate-71))|(1<<(KParserIDPublic-71)))) != 0) {
+	for (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FeelParserLeft_Paren-39))|(1<<(FeelParserTypeI8-39))|(1<<(FeelParserTypeU8-39))|(1<<(FeelParserTypeI16-39))|(1<<(FeelParserTypeU16-39))|(1<<(FeelParserTypeI32-39))|(1<<(FeelParserTypeU32-39))|(1<<(FeelParserTypeI64-39))|(1<<(FeelParserTypeU64-39))|(1<<(FeelParserTypeF32-39))|(1<<(FeelParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(FeelParserTypeChr-71))|(1<<(FeelParserTypeStr-71))|(1<<(FeelParserTypeBool-71))|(1<<(FeelParserTypeInt-71))|(1<<(FeelParserTypeNum-71))|(1<<(FeelParserTypeByte-71))|(1<<(FeelParserTypeAny-71))|(1<<(FeelParserIDPrivate-71))|(1<<(FeelParserIDPublic-71)))) != 0) {
 		{
 			p.SetState(1883)
 			p.TemplateDefineItem()
@@ -23411,7 +23411,7 @@ type TemplateDefineItemContext struct {
 func NewEmptyTemplateDefineItemContext() *TemplateDefineItemContext {
 	var p = new(TemplateDefineItemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_templateDefineItem
+	p.RuleIndex = FeelParserRULE_templateDefineItem
 	return p
 }
 
@@ -23423,7 +23423,7 @@ func NewTemplateDefineItemContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_templateDefineItem
+	p.RuleIndex = FeelParserRULE_templateDefineItem
 
 	return p
 }
@@ -23483,7 +23483,7 @@ func (s *TemplateDefineItemContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *TemplateDefineItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTemplateDefineItem(s)
 
 	default:
@@ -23491,9 +23491,9 @@ func (s *TemplateDefineItemContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) TemplateDefineItem() (localctx ITemplateDefineItemContext) {
+func (p *FeelParser) TemplateDefineItem() (localctx ITemplateDefineItemContext) {
 	localctx = NewTemplateDefineItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 222, KParserRULE_templateDefineItem)
+	p.EnterRule(localctx, 222, FeelParserRULE_templateDefineItem)
 
 	defer func() {
 		p.ExitRule()
@@ -23515,14 +23515,14 @@ func (p *KParser) TemplateDefineItem() (localctx ITemplateDefineItemContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(1889)
 			p.Id()
 		}
 
-	case KParserLeft_Paren:
+	case FeelParserLeft_Paren:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(1890)
@@ -23567,7 +23567,7 @@ type TemplateCallContext struct {
 func NewEmptyTemplateCallContext() *TemplateCallContext {
 	var p = new(TemplateCallContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_templateCall
+	p.RuleIndex = FeelParserRULE_templateCall
 	return p
 }
 
@@ -23579,7 +23579,7 @@ func NewTemplateCallContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_templateCall
+	p.RuleIndex = FeelParserRULE_templateCall
 
 	return p
 }
@@ -23619,7 +23619,7 @@ func (s *TemplateCallContext) ToStringTree(ruleNames []string, recog antlr.Recog
 
 func (s *TemplateCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTemplateCall(s)
 
 	default:
@@ -23627,9 +23627,9 @@ func (s *TemplateCallContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *KParser) TemplateCall() (localctx ITemplateCallContext) {
+func (p *FeelParser) TemplateCall() (localctx ITemplateCallContext) {
 	localctx = NewTemplateCallContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 224, KParserRULE_templateCall)
+	p.EnterRule(localctx, 224, FeelParserRULE_templateCall)
 	var _la int
 
 	defer func() {
@@ -23653,7 +23653,7 @@ func (p *KParser) TemplateCall() (localctx ITemplateCallContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(KParserLeft_Paren-39))|(1<<(KParserLeft_Brack-39))|(1<<(KParserQuestion-39))|(1<<(KParserTypeI8-39))|(1<<(KParserTypeU8-39))|(1<<(KParserTypeI16-39))|(1<<(KParserTypeU16-39))|(1<<(KParserTypeI32-39))|(1<<(KParserTypeU32-39))|(1<<(KParserTypeI64-39))|(1<<(KParserTypeU64-39))|(1<<(KParserTypeF32-39))|(1<<(KParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(KParserTypeChr-71))|(1<<(KParserTypeStr-71))|(1<<(KParserTypeBool-71))|(1<<(KParserTypeInt-71))|(1<<(KParserTypeNum-71))|(1<<(KParserTypeByte-71))|(1<<(KParserTypeAny-71))|(1<<(KParserIDPrivate-71))|(1<<(KParserIDPublic-71)))) != 0) {
+	for (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FeelParserLeft_Paren-39))|(1<<(FeelParserLeft_Brack-39))|(1<<(FeelParserQuestion-39))|(1<<(FeelParserTypeI8-39))|(1<<(FeelParserTypeU8-39))|(1<<(FeelParserTypeI16-39))|(1<<(FeelParserTypeU16-39))|(1<<(FeelParserTypeI32-39))|(1<<(FeelParserTypeU32-39))|(1<<(FeelParserTypeI64-39))|(1<<(FeelParserTypeU64-39))|(1<<(FeelParserTypeF32-39))|(1<<(FeelParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(FeelParserTypeChr-71))|(1<<(FeelParserTypeStr-71))|(1<<(FeelParserTypeBool-71))|(1<<(FeelParserTypeInt-71))|(1<<(FeelParserTypeNum-71))|(1<<(FeelParserTypeByte-71))|(1<<(FeelParserTypeAny-71))|(1<<(FeelParserIDPrivate-71))|(1<<(FeelParserIDPublic-71)))) != 0) {
 		{
 			p.SetState(1897)
 			p.TypeType()
@@ -23693,7 +23693,7 @@ type LambdaContext struct {
 func NewEmptyLambdaContext() *LambdaContext {
 	var p = new(LambdaContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_lambda
+	p.RuleIndex = FeelParserRULE_lambda
 	return p
 }
 
@@ -23705,7 +23705,7 @@ func NewLambdaContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_lambda
+	p.RuleIndex = FeelParserRULE_lambda
 
 	return p
 }
@@ -23747,11 +23747,11 @@ func (s *LambdaContext) Right_brace() IRight_braceContext {
 }
 
 func (s *LambdaContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *LambdaContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *LambdaContext) LambdaIn() ILambdaInContext {
@@ -23765,11 +23765,11 @@ func (s *LambdaContext) LambdaIn() ILambdaInContext {
 }
 
 func (s *LambdaContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *LambdaContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *LambdaContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -23805,7 +23805,7 @@ func (s *LambdaContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 
 func (s *LambdaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLambda(s)
 
 	default:
@@ -23813,9 +23813,9 @@ func (s *LambdaContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Lambda() (localctx ILambdaContext) {
+func (p *FeelParser) Lambda() (localctx ILambdaContext) {
 	localctx = NewLambdaContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 226, KParserRULE_lambda)
+	p.EnterRule(localctx, 226, FeelParserRULE_lambda)
 	var _la int
 
 	defer func() {
@@ -23849,7 +23849,7 @@ func (p *KParser) Lambda() (localctx ILambdaContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0 {
+		if ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0 {
 			{
 				p.SetState(1904)
 				p.LambdaIn()
@@ -23865,7 +23865,7 @@ func (p *KParser) Lambda() (localctx ILambdaContext) {
 
 			_la = p.GetTokenStream().LA(1)
 
-			if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+			if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 				var _ri = p.GetErrorHandler().RecoverInline(p)
 
 				localctx.(*LambdaContext).t = _ri
@@ -23878,10 +23878,10 @@ func (p *KParser) Lambda() (localctx ILambdaContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for _la == KParserNew_Line {
+		for _la == FeelParserNew_Line {
 			{
 				p.SetState(1908)
-				p.Match(KParserNew_Line)
+				p.Match(FeelParserNew_Line)
 			}
 
 			p.SetState(1913)
@@ -23907,7 +23907,7 @@ func (p *KParser) Lambda() (localctx ILambdaContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0 {
+		if ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0 {
 			{
 				p.SetState(1918)
 				p.LambdaIn()
@@ -23923,7 +23923,7 @@ func (p *KParser) Lambda() (localctx ILambdaContext) {
 
 			_la = p.GetTokenStream().LA(1)
 
-			if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+			if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 				var _ri = p.GetErrorHandler().RecoverInline(p)
 
 				localctx.(*LambdaContext).t = _ri
@@ -23940,7 +23940,7 @@ func (p *KParser) Lambda() (localctx ILambdaContext) {
 			if _alt == 1 {
 				{
 					p.SetState(1922)
-					p.Match(KParserNew_Line)
+					p.Match(FeelParserNew_Line)
 				}
 
 			}
@@ -23993,7 +23993,7 @@ type LambdaInContext struct {
 func NewEmptyLambdaInContext() *LambdaInContext {
 	var p = new(LambdaInContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_lambdaIn
+	p.RuleIndex = FeelParserRULE_lambdaIn
 	return p
 }
 
@@ -24005,7 +24005,7 @@ func NewLambdaInContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_lambdaIn
+	p.RuleIndex = FeelParserRULE_lambdaIn
 
 	return p
 }
@@ -24068,7 +24068,7 @@ func (s *LambdaInContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *LambdaInContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLambdaIn(s)
 
 	default:
@@ -24076,9 +24076,9 @@ func (s *LambdaInContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) LambdaIn() (localctx ILambdaInContext) {
+func (p *FeelParser) LambdaIn() (localctx ILambdaInContext) {
 	localctx = NewLambdaInContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 228, KParserRULE_lambdaIn)
+	p.EnterRule(localctx, 228, FeelParserRULE_lambdaIn)
 	var _la int
 
 	defer func() {
@@ -24106,7 +24106,7 @@ func (p *KParser) LambdaIn() (localctx ILambdaInContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(1939)
 			p.More()
@@ -24143,7 +24143,7 @@ type PkgAnonymousContext struct {
 func NewEmptyPkgAnonymousContext() *PkgAnonymousContext {
 	var p = new(PkgAnonymousContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_pkgAnonymous
+	p.RuleIndex = FeelParserRULE_pkgAnonymous
 	return p
 }
 
@@ -24155,7 +24155,7 @@ func NewPkgAnonymousContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_pkgAnonymous
+	p.RuleIndex = FeelParserRULE_pkgAnonymous
 
 	return p
 }
@@ -24182,7 +24182,7 @@ func (s *PkgAnonymousContext) ToStringTree(ruleNames []string, recog antlr.Recog
 
 func (s *PkgAnonymousContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPkgAnonymous(s)
 
 	default:
@@ -24190,9 +24190,9 @@ func (s *PkgAnonymousContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *KParser) PkgAnonymous() (localctx IPkgAnonymousContext) {
+func (p *FeelParser) PkgAnonymous() (localctx IPkgAnonymousContext) {
 	localctx = NewPkgAnonymousContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 230, KParserRULE_pkgAnonymous)
+	p.EnterRule(localctx, 230, FeelParserRULE_pkgAnonymous)
 
 	defer func() {
 		p.ExitRule()
@@ -24238,7 +24238,7 @@ type PkgAnonymousAssignContext struct {
 func NewEmptyPkgAnonymousAssignContext() *PkgAnonymousAssignContext {
 	var p = new(PkgAnonymousAssignContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_pkgAnonymousAssign
+	p.RuleIndex = FeelParserRULE_pkgAnonymousAssign
 	return p
 }
 
@@ -24250,7 +24250,7 @@ func NewPkgAnonymousAssignContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_pkgAnonymousAssign
+	p.RuleIndex = FeelParserRULE_pkgAnonymousAssign
 
 	return p
 }
@@ -24333,7 +24333,7 @@ func (s *PkgAnonymousAssignContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *PkgAnonymousAssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPkgAnonymousAssign(s)
 
 	default:
@@ -24341,9 +24341,9 @@ func (s *PkgAnonymousAssignContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) PkgAnonymousAssign() (localctx IPkgAnonymousAssignContext) {
+func (p *FeelParser) PkgAnonymousAssign() (localctx IPkgAnonymousAssignContext) {
 	localctx = NewPkgAnonymousAssignContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 232, KParserRULE_pkgAnonymousAssign)
+	p.EnterRule(localctx, 232, FeelParserRULE_pkgAnonymousAssign)
 
 	defer func() {
 		p.ExitRule()
@@ -24426,7 +24426,7 @@ type PkgAnonymousAssignElementContext struct {
 func NewEmptyPkgAnonymousAssignElementContext() *PkgAnonymousAssignElementContext {
 	var p = new(PkgAnonymousAssignElementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_pkgAnonymousAssignElement
+	p.RuleIndex = FeelParserRULE_pkgAnonymousAssignElement
 	return p
 }
 
@@ -24438,7 +24438,7 @@ func NewPkgAnonymousAssignElementContext(parser antlr.Parser, parent antlr.Parse
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_pkgAnonymousAssignElement
+	p.RuleIndex = FeelParserRULE_pkgAnonymousAssignElement
 
 	return p
 }
@@ -24470,11 +24470,11 @@ func (s *PkgAnonymousAssignElementContext) Expression() IExpressionContext {
 }
 
 func (s *PkgAnonymousAssignElementContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *PkgAnonymousAssignElementContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *PkgAnonymousAssignElementContext) GetRuleContext() antlr.RuleContext {
@@ -24487,7 +24487,7 @@ func (s *PkgAnonymousAssignElementContext) ToStringTree(ruleNames []string, reco
 
 func (s *PkgAnonymousAssignElementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPkgAnonymousAssignElement(s)
 
 	default:
@@ -24495,9 +24495,9 @@ func (s *PkgAnonymousAssignElementContext) Accept(visitor antlr.ParseTreeVisitor
 	}
 }
 
-func (p *KParser) PkgAnonymousAssignElement() (localctx IPkgAnonymousAssignElementContext) {
+func (p *FeelParser) PkgAnonymousAssignElement() (localctx IPkgAnonymousAssignElementContext) {
 	localctx = NewPkgAnonymousAssignElementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 234, KParserRULE_pkgAnonymousAssignElement)
+	p.EnterRule(localctx, 234, FeelParserRULE_pkgAnonymousAssignElement)
 	var _la int
 
 	defer func() {
@@ -24525,17 +24525,17 @@ func (p *KParser) PkgAnonymousAssignElement() (localctx IPkgAnonymousAssignEleme
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1962)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(1965)
 
-		var _m = p.Match(KParserColon)
+		var _m = p.Match(FeelParserColon)
 
 		localctx.(*PkgAnonymousAssignElementContext).t = _m
 	}
@@ -24587,7 +24587,7 @@ type FunctionExpressionContext struct {
 func NewEmptyFunctionExpressionContext() *FunctionExpressionContext {
 	var p = new(FunctionExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_functionExpression
+	p.RuleIndex = FeelParserRULE_functionExpression
 	return p
 }
 
@@ -24599,7 +24599,7 @@ func NewFunctionExpressionContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_functionExpression
+	p.RuleIndex = FeelParserRULE_functionExpression
 
 	return p
 }
@@ -24679,19 +24679,19 @@ func (s *FunctionExpressionContext) Right_brace() IRight_braceContext {
 }
 
 func (s *FunctionExpressionContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *FunctionExpressionContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *FunctionExpressionContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *FunctionExpressionContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *FunctionExpressionContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -24718,11 +24718,11 @@ func (s *FunctionExpressionContext) FunctionSupportStatement(i int) IFunctionSup
 }
 
 func (s *FunctionExpressionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *FunctionExpressionContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *FunctionExpressionContext) GetRuleContext() antlr.RuleContext {
@@ -24735,7 +24735,7 @@ func (s *FunctionExpressionContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *FunctionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitFunctionExpression(s)
 
 	default:
@@ -24743,9 +24743,9 @@ func (s *FunctionExpressionContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) FunctionExpression() (localctx IFunctionExpressionContext) {
+func (p *FeelParser) FunctionExpression() (localctx IFunctionExpressionContext) {
 	localctx = NewFunctionExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 236, KParserRULE_functionExpression)
+	p.EnterRule(localctx, 236, FeelParserRULE_functionExpression)
 	var _la int
 
 	defer func() {
@@ -24784,7 +24784,7 @@ func (p *KParser) FunctionExpression() (localctx IFunctionExpressionContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*FunctionExpressionContext).t = _ri
@@ -24797,11 +24797,11 @@ func (p *KParser) FunctionExpression() (localctx IFunctionExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(1971)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*FunctionExpressionContext).b = _m
 		}
@@ -24811,11 +24811,11 @@ func (p *KParser) FunctionExpression() (localctx IFunctionExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(1974)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*FunctionExpressionContext).y = _m
 		}
@@ -24825,10 +24825,10 @@ func (p *KParser) FunctionExpression() (localctx IFunctionExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(1977)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(1982)
@@ -24890,7 +24890,7 @@ type PlusMinusContext struct {
 func NewEmptyPlusMinusContext() *PlusMinusContext {
 	var p = new(PlusMinusContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_plusMinus
+	p.RuleIndex = FeelParserRULE_plusMinus
 	return p
 }
 
@@ -24902,7 +24902,7 @@ func NewPlusMinusContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_plusMinus
+	p.RuleIndex = FeelParserRULE_plusMinus
 
 	return p
 }
@@ -24939,7 +24939,7 @@ func (s *PlusMinusContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *PlusMinusContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPlusMinus(s)
 
 	default:
@@ -24947,9 +24947,9 @@ func (s *PlusMinusContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) PlusMinus() (localctx IPlusMinusContext) {
+func (p *FeelParser) PlusMinus() (localctx IPlusMinusContext) {
 	localctx = NewPlusMinusContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 238, KParserRULE_plusMinus)
+	p.EnterRule(localctx, 238, FeelParserRULE_plusMinus)
 
 	defer func() {
 		p.ExitRule()
@@ -24999,7 +24999,7 @@ type NegateContext struct {
 func NewEmptyNegateContext() *NegateContext {
 	var p = new(NegateContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_negate
+	p.RuleIndex = FeelParserRULE_negate
 	return p
 }
 
@@ -25011,7 +25011,7 @@ func NewNegateContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_negate
+	p.RuleIndex = FeelParserRULE_negate
 
 	return p
 }
@@ -25048,7 +25048,7 @@ func (s *NegateContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 
 func (s *NegateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNegate(s)
 
 	default:
@@ -25056,9 +25056,9 @@ func (s *NegateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Negate() (localctx INegateContext) {
+func (p *FeelParser) Negate() (localctx INegateContext) {
 	localctx = NewNegateContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 240, KParserRULE_negate)
+	p.EnterRule(localctx, 240, FeelParserRULE_negate)
 
 	defer func() {
 		p.ExitRule()
@@ -25108,7 +25108,7 @@ type BitwiseNotExpressionContext struct {
 func NewEmptyBitwiseNotExpressionContext() *BitwiseNotExpressionContext {
 	var p = new(BitwiseNotExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseNotExpression
+	p.RuleIndex = FeelParserRULE_bitwiseNotExpression
 	return p
 }
 
@@ -25120,7 +25120,7 @@ func NewBitwiseNotExpressionContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseNotExpression
+	p.RuleIndex = FeelParserRULE_bitwiseNotExpression
 
 	return p
 }
@@ -25157,7 +25157,7 @@ func (s *BitwiseNotExpressionContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *BitwiseNotExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseNotExpression(s)
 
 	default:
@@ -25165,9 +25165,9 @@ func (s *BitwiseNotExpressionContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) BitwiseNotExpression() (localctx IBitwiseNotExpressionContext) {
+func (p *FeelParser) BitwiseNotExpression() (localctx IBitwiseNotExpressionContext) {
 	localctx = NewBitwiseNotExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 242, KParserRULE_bitwiseNotExpression)
+	p.EnterRule(localctx, 242, FeelParserRULE_bitwiseNotExpression)
 
 	defer func() {
 		p.ExitRule()
@@ -25217,7 +25217,7 @@ type LinqContext struct {
 func NewEmptyLinqContext() *LinqContext {
 	var p = new(LinqContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_linq
+	p.RuleIndex = FeelParserRULE_linq
 	return p
 }
 
@@ -25229,7 +25229,7 @@ func NewLinqContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_linq
+	p.RuleIndex = FeelParserRULE_linq
 
 	return p
 }
@@ -25247,7 +25247,7 @@ func (s *LinqContext) LinqHeadItem() ILinqHeadItemContext {
 }
 
 func (s *LinqContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *LinqContext) Id() IIdContext {
@@ -25271,11 +25271,11 @@ func (s *LinqContext) Expression() IExpressionContext {
 }
 
 func (s *LinqContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *LinqContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *LinqContext) AllLinqItem() []ILinqItemContext {
@@ -25311,7 +25311,7 @@ func (s *LinqContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 
 func (s *LinqContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLinq(s)
 
 	default:
@@ -25319,9 +25319,9 @@ func (s *LinqContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Linq() (localctx ILinqContext) {
+func (p *FeelParser) Linq() (localctx ILinqContext) {
 	localctx = NewLinqContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 244, KParserRULE_linq)
+	p.EnterRule(localctx, 244, FeelParserRULE_linq)
 	var _la int
 
 	defer func() {
@@ -25349,16 +25349,16 @@ func (p *KParser) Linq() (localctx ILinqContext) {
 	}
 	{
 		p.SetState(2004)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	p.SetState(2006)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2005)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -25386,10 +25386,10 @@ func (p *KParser) Linq() (localctx ILinqContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2015)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -25420,7 +25420,7 @@ type LinqHeadItemContext struct {
 func NewEmptyLinqHeadItemContext() *LinqHeadItemContext {
 	var p = new(LinqHeadItemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_linqHeadItem
+	p.RuleIndex = FeelParserRULE_linqHeadItem
 	return p
 }
 
@@ -25432,7 +25432,7 @@ func NewLinqHeadItemContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_linqHeadItem
+	p.RuleIndex = FeelParserRULE_linqHeadItem
 
 	return p
 }
@@ -25440,7 +25440,7 @@ func NewLinqHeadItemContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *LinqHeadItemContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LinqHeadItemContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LinqHeadItemContext) Id() IIdContext {
@@ -25454,7 +25454,7 @@ func (s *LinqHeadItemContext) Id() IIdContext {
 }
 
 func (s *LinqHeadItemContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *LinqHeadItemContext) Expression() IExpressionContext {
@@ -25468,7 +25468,7 @@ func (s *LinqHeadItemContext) Expression() IExpressionContext {
 }
 
 func (s *LinqHeadItemContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *LinqHeadItemContext) GetRuleContext() antlr.RuleContext {
@@ -25481,7 +25481,7 @@ func (s *LinqHeadItemContext) ToStringTree(ruleNames []string, recog antlr.Recog
 
 func (s *LinqHeadItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLinqHeadItem(s)
 
 	default:
@@ -25489,9 +25489,9 @@ func (s *LinqHeadItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *KParser) LinqHeadItem() (localctx ILinqHeadItemContext) {
+func (p *FeelParser) LinqHeadItem() (localctx ILinqHeadItemContext) {
 	localctx = NewLinqHeadItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 246, KParserRULE_linqHeadItem)
+	p.EnterRule(localctx, 246, FeelParserRULE_linqHeadItem)
 	var _la int
 
 	defer func() {
@@ -25513,7 +25513,7 @@ func (p *KParser) LinqHeadItem() (localctx ILinqHeadItemContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2020)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(2021)
@@ -25523,16 +25523,16 @@ func (p *KParser) LinqHeadItem() (localctx ILinqHeadItemContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(2022)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(2025)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(2026)
@@ -25561,7 +25561,7 @@ type LinqItemContext struct {
 func NewEmptyLinqItemContext() *LinqItemContext {
 	var p = new(LinqItemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_linqItem
+	p.RuleIndex = FeelParserRULE_linqItem
 	return p
 }
 
@@ -25573,7 +25573,7 @@ func NewLinqItemContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_linqItem
+	p.RuleIndex = FeelParserRULE_linqItem
 
 	return p
 }
@@ -25581,7 +25581,7 @@ func NewLinqItemContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 func (s *LinqItemContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LinqItemContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *LinqItemContext) LinqHeadItem() ILinqHeadItemContext {
@@ -25605,7 +25605,7 @@ func (s *LinqItemContext) Id() IIdContext {
 }
 
 func (s *LinqItemContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *LinqItemContext) Expression() IExpressionContext {
@@ -25628,7 +25628,7 @@ func (s *LinqItemContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *LinqItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLinqItem(s)
 
 	default:
@@ -25636,9 +25636,9 @@ func (s *LinqItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) LinqItem() (localctx ILinqItemContext) {
+func (p *FeelParser) LinqItem() (localctx ILinqItemContext) {
 	localctx = NewLinqItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 248, KParserRULE_linqItem)
+	p.EnterRule(localctx, 248, FeelParserRULE_linqItem)
 	var _la int
 
 	defer func() {
@@ -25662,13 +25662,13 @@ func (p *KParser) LinqItem() (localctx ILinqItemContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserAt:
+	case FeelParserAt:
 		{
 			p.SetState(2028)
 			p.LinqHeadItem()
 		}
 
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		{
 			p.SetState(2029)
 			p.Id()
@@ -25677,7 +25677,7 @@ func (p *KParser) LinqItem() (localctx ILinqItemContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(KParserRight_Wave-27))|(1<<(KParserLeft_Wave-27))|(1<<(KParserTilde_Tilde-27))|(1<<(KParserLeft_Paren-27))|(1<<(KParserLeft_Brace-27))|(1<<(KParserLeft_Brack-27))|(1<<(KParserQuestion-27))|(1<<(KParserAt-27))|(1<<(KParserBang-27))|(1<<(KParserTilde-27))|(1<<(KParserAdd-27))|(1<<(KParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserNilLiteral-61))|(1<<(KParserTrueLiteral-61))|(1<<(KParserFalseLiteral-61))|(1<<(KParserUndefinedLiteral-61))|(1<<(KParserFloatLiteral-61))|(1<<(KParserDecimalLiteral-61))|(1<<(KParserBinaryLiteral-61))|(1<<(KParserOctalLiteral-61))|(1<<(KParserHexLiteral-61))|(1<<(KParserQuote_Quote_Quote_Open-61))|(1<<(KParserQuote_Open-61))|(1<<(KParserCharLiteral-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61))|(1<<(KParserDiscard-61)))) != 0) {
+		if (((_la-27)&-(0x1f+1)) == 0 && ((1<<uint((_la-27)))&((1<<(FeelParserRight_Wave-27))|(1<<(FeelParserLeft_Wave-27))|(1<<(FeelParserTilde_Tilde-27))|(1<<(FeelParserLeft_Paren-27))|(1<<(FeelParserLeft_Brace-27))|(1<<(FeelParserLeft_Brack-27))|(1<<(FeelParserQuestion-27))|(1<<(FeelParserAt-27))|(1<<(FeelParserBang-27))|(1<<(FeelParserTilde-27))|(1<<(FeelParserAdd-27))|(1<<(FeelParserSub-27)))) != 0) || (((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserNilLiteral-61))|(1<<(FeelParserTrueLiteral-61))|(1<<(FeelParserFalseLiteral-61))|(1<<(FeelParserUndefinedLiteral-61))|(1<<(FeelParserFloatLiteral-61))|(1<<(FeelParserDecimalLiteral-61))|(1<<(FeelParserBinaryLiteral-61))|(1<<(FeelParserOctalLiteral-61))|(1<<(FeelParserHexLiteral-61))|(1<<(FeelParserQuote_Quote_Quote_Open-61))|(1<<(FeelParserQuote_Open-61))|(1<<(FeelParserCharLiteral-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61))|(1<<(FeelParserDiscard-61)))) != 0) {
 			{
 				p.SetState(2030)
 				p.expression(0)
@@ -25690,16 +25690,16 @@ func (p *KParser) LinqItem() (localctx ILinqItemContext) {
 	}
 	{
 		p.SetState(2035)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	p.SetState(2037)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2036)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -25726,7 +25726,7 @@ type JudgeExpressionContext struct {
 func NewEmptyJudgeExpressionContext() *JudgeExpressionContext {
 	var p = new(JudgeExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeExpression
+	p.RuleIndex = FeelParserRULE_judgeExpression
 	return p
 }
 
@@ -25738,7 +25738,7 @@ func NewJudgeExpressionContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeExpression
+	p.RuleIndex = FeelParserRULE_judgeExpression
 
 	return p
 }
@@ -25798,7 +25798,7 @@ func (s *JudgeExpressionContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *JudgeExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeExpression(s)
 
 	default:
@@ -25806,9 +25806,9 @@ func (s *JudgeExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) JudgeExpression() (localctx IJudgeExpressionContext) {
+func (p *FeelParser) JudgeExpression() (localctx IJudgeExpressionContext) {
 	localctx = NewJudgeExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 250, KParserRULE_judgeExpression)
+	p.EnterRule(localctx, 250, FeelParserRULE_judgeExpression)
 
 	defer func() {
 		p.ExitRule()
@@ -25876,7 +25876,7 @@ type JudgeExpressionElseStatementContext struct {
 func NewEmptyJudgeExpressionElseStatementContext() *JudgeExpressionElseStatementContext {
 	var p = new(JudgeExpressionElseStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeExpressionElseStatement
+	p.RuleIndex = FeelParserRULE_judgeExpressionElseStatement
 	return p
 }
 
@@ -25888,7 +25888,7 @@ func NewJudgeExpressionElseStatementContext(parser antlr.Parser, parent antlr.Pa
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeExpressionElseStatement
+	p.RuleIndex = FeelParserRULE_judgeExpressionElseStatement
 
 	return p
 }
@@ -25896,7 +25896,7 @@ func NewJudgeExpressionElseStatementContext(parser antlr.Parser, parent antlr.Pa
 func (s *JudgeExpressionElseStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *JudgeExpressionElseStatementContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *JudgeExpressionElseStatementContext) Left_brace() ILeft_braceContext {
@@ -25962,7 +25962,7 @@ func (s *JudgeExpressionElseStatementContext) ToStringTree(ruleNames []string, r
 
 func (s *JudgeExpressionElseStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeExpressionElseStatement(s)
 
 	default:
@@ -25970,9 +25970,9 @@ func (s *JudgeExpressionElseStatementContext) Accept(visitor antlr.ParseTreeVisi
 	}
 }
 
-func (p *KParser) JudgeExpressionElseStatement() (localctx IJudgeExpressionElseStatementContext) {
+func (p *FeelParser) JudgeExpressionElseStatement() (localctx IJudgeExpressionElseStatementContext) {
 	localctx = NewJudgeExpressionElseStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 252, KParserRULE_judgeExpressionElseStatement)
+	p.EnterRule(localctx, 252, FeelParserRULE_judgeExpressionElseStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -25995,7 +25995,7 @@ func (p *KParser) JudgeExpressionElseStatement() (localctx IJudgeExpressionElseS
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2048)
-		p.Match(KParserDiscard)
+		p.Match(FeelParserDiscard)
 	}
 	{
 		p.SetState(2049)
@@ -26048,7 +26048,7 @@ type JudgeExpressionIfStatementContext struct {
 func NewEmptyJudgeExpressionIfStatementContext() *JudgeExpressionIfStatementContext {
 	var p = new(JudgeExpressionIfStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeExpressionIfStatement
+	p.RuleIndex = FeelParserRULE_judgeExpressionIfStatement
 	return p
 }
 
@@ -26060,7 +26060,7 @@ func NewJudgeExpressionIfStatementContext(parser antlr.Parser, parent antlr.Pars
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeExpressionIfStatement
+	p.RuleIndex = FeelParserRULE_judgeExpressionIfStatement
 
 	return p
 }
@@ -26068,11 +26068,11 @@ func NewJudgeExpressionIfStatementContext(parser antlr.Parser, parent antlr.Pars
 func (s *JudgeExpressionIfStatementContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *JudgeExpressionIfStatementContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *JudgeExpressionIfStatementContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *JudgeExpressionIfStatementContext) Expression() IExpressionContext {
@@ -26148,7 +26148,7 @@ func (s *JudgeExpressionIfStatementContext) ToStringTree(ruleNames []string, rec
 
 func (s *JudgeExpressionIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeExpressionIfStatement(s)
 
 	default:
@@ -26156,9 +26156,9 @@ func (s *JudgeExpressionIfStatementContext) Accept(visitor antlr.ParseTreeVisito
 	}
 }
 
-func (p *KParser) JudgeExpressionIfStatement() (localctx IJudgeExpressionIfStatementContext) {
+func (p *FeelParser) JudgeExpressionIfStatement() (localctx IJudgeExpressionIfStatementContext) {
 	localctx = NewJudgeExpressionIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 254, KParserRULE_judgeExpressionIfStatement)
+	p.EnterRule(localctx, 254, FeelParserRULE_judgeExpressionIfStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -26181,11 +26181,11 @@ func (p *KParser) JudgeExpressionIfStatement() (localctx IJudgeExpressionIfState
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2059)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(2060)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(2061)
@@ -26242,7 +26242,7 @@ type JudgeExpressionElseIfStatementContext struct {
 func NewEmptyJudgeExpressionElseIfStatementContext() *JudgeExpressionElseIfStatementContext {
 	var p = new(JudgeExpressionElseIfStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeExpressionElseIfStatement
+	p.RuleIndex = FeelParserRULE_judgeExpressionElseIfStatement
 	return p
 }
 
@@ -26254,7 +26254,7 @@ func NewJudgeExpressionElseIfStatementContext(parser antlr.Parser, parent antlr.
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeExpressionElseIfStatement
+	p.RuleIndex = FeelParserRULE_judgeExpressionElseIfStatement
 
 	return p
 }
@@ -26334,7 +26334,7 @@ func (s *JudgeExpressionElseIfStatementContext) ToStringTree(ruleNames []string,
 
 func (s *JudgeExpressionElseIfStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeExpressionElseIfStatement(s)
 
 	default:
@@ -26342,9 +26342,9 @@ func (s *JudgeExpressionElseIfStatementContext) Accept(visitor antlr.ParseTreeVi
 	}
 }
 
-func (p *KParser) JudgeExpressionElseIfStatement() (localctx IJudgeExpressionElseIfStatementContext) {
+func (p *FeelParser) JudgeExpressionElseIfStatement() (localctx IJudgeExpressionElseIfStatementContext) {
 	localctx = NewJudgeExpressionElseIfStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 256, KParserRULE_judgeExpressionElseIfStatement)
+	p.EnterRule(localctx, 256, FeelParserRULE_judgeExpressionElseIfStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -26420,7 +26420,7 @@ type JudgeCaseExpressionContext struct {
 func NewEmptyJudgeCaseExpressionContext() *JudgeCaseExpressionContext {
 	var p = new(JudgeCaseExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_judgeCaseExpression
+	p.RuleIndex = FeelParserRULE_judgeCaseExpression
 	return p
 }
 
@@ -26432,7 +26432,7 @@ func NewJudgeCaseExpressionContext(parser antlr.Parser, parent antlr.ParserRuleC
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_judgeCaseExpression
+	p.RuleIndex = FeelParserRULE_judgeCaseExpression
 
 	return p
 }
@@ -26440,7 +26440,7 @@ func NewJudgeCaseExpressionContext(parser antlr.Parser, parent antlr.ParserRuleC
 func (s *JudgeCaseExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *JudgeCaseExpressionContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *JudgeCaseExpressionContext) Expression() IExpressionContext {
@@ -26454,11 +26454,11 @@ func (s *JudgeCaseExpressionContext) Expression() IExpressionContext {
 }
 
 func (s *JudgeCaseExpressionContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *JudgeCaseExpressionContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *JudgeCaseExpressionContext) AllCaseExpressionStatement() []ICaseExpressionStatementContext {
@@ -26494,7 +26494,7 @@ func (s *JudgeCaseExpressionContext) ToStringTree(ruleNames []string, recog antl
 
 func (s *JudgeCaseExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitJudgeCaseExpression(s)
 
 	default:
@@ -26502,9 +26502,9 @@ func (s *JudgeCaseExpressionContext) Accept(visitor antlr.ParseTreeVisitor) inte
 	}
 }
 
-func (p *KParser) JudgeCaseExpression() (localctx IJudgeCaseExpressionContext) {
+func (p *FeelParser) JudgeCaseExpression() (localctx IJudgeCaseExpressionContext) {
 	localctx = NewJudgeCaseExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 258, KParserRULE_judgeCaseExpression)
+	p.EnterRule(localctx, 258, FeelParserRULE_judgeCaseExpression)
 
 	defer func() {
 		p.ExitRule()
@@ -26527,7 +26527,7 @@ func (p *KParser) JudgeCaseExpression() (localctx IJudgeCaseExpressionContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2083)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(2084)
@@ -26535,11 +26535,11 @@ func (p *KParser) JudgeCaseExpression() (localctx IJudgeCaseExpressionContext) {
 	}
 	{
 		p.SetState(2085)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(2086)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	p.SetState(2088)
 	p.GetErrorHandler().Sync(p)
@@ -26583,7 +26583,7 @@ type CaseExpressionStatementContext struct {
 func NewEmptyCaseExpressionStatementContext() *CaseExpressionStatementContext {
 	var p = new(CaseExpressionStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_caseExpressionStatement
+	p.RuleIndex = FeelParserRULE_caseExpressionStatement
 	return p
 }
 
@@ -26595,7 +26595,7 @@ func NewCaseExpressionStatementContext(parser antlr.Parser, parent antlr.ParserR
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_caseExpressionStatement
+	p.RuleIndex = FeelParserRULE_caseExpressionStatement
 
 	return p
 }
@@ -26711,7 +26711,7 @@ func (s *CaseExpressionStatementContext) ToStringTree(ruleNames []string, recog 
 
 func (s *CaseExpressionStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCaseExpressionStatement(s)
 
 	default:
@@ -26719,9 +26719,9 @@ func (s *CaseExpressionStatementContext) Accept(visitor antlr.ParseTreeVisitor) 
 	}
 }
 
-func (p *KParser) CaseExpressionStatement() (localctx ICaseExpressionStatementContext) {
+func (p *FeelParser) CaseExpressionStatement() (localctx ICaseExpressionStatementContext) {
 	localctx = NewCaseExpressionStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 260, KParserRULE_caseExpressionStatement)
+	p.EnterRule(localctx, 260, FeelParserRULE_caseExpressionStatement)
 	var _la int
 
 	defer func() {
@@ -26751,7 +26751,7 @@ func (p *KParser) CaseExpressionStatement() (localctx ICaseExpressionStatementCo
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(2093)
 			p.More()
@@ -26816,7 +26816,7 @@ type LoopExpressionContext struct {
 func NewEmptyLoopExpressionContext() *LoopExpressionContext {
 	var p = new(LoopExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopExpression
+	p.RuleIndex = FeelParserRULE_loopExpression
 	return p
 }
 
@@ -26828,7 +26828,7 @@ func NewLoopExpressionContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopExpression
+	p.RuleIndex = FeelParserRULE_loopExpression
 
 	return p
 }
@@ -26836,7 +26836,7 @@ func NewLoopExpressionContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *LoopExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopExpressionContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopExpressionContext) Id() IIdContext {
@@ -26850,7 +26850,7 @@ func (s *LoopExpressionContext) Id() IIdContext {
 }
 
 func (s *LoopExpressionContext) Colon() antlr.TerminalNode {
-	return s.GetToken(KParserColon, 0)
+	return s.GetToken(FeelParserColon, 0)
 }
 
 func (s *LoopExpressionContext) IteratorStatement() IIteratorStatementContext {
@@ -26864,7 +26864,7 @@ func (s *LoopExpressionContext) IteratorStatement() IIteratorStatementContext {
 }
 
 func (s *LoopExpressionContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *LoopExpressionContext) Left_brace() ILeft_braceContext {
@@ -26898,7 +26898,7 @@ func (s *LoopExpressionContext) Right_brace() IRight_braceContext {
 }
 
 func (s *LoopExpressionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *LoopExpressionContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -26944,7 +26944,7 @@ func (s *LoopExpressionContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *LoopExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopExpression(s)
 
 	default:
@@ -26952,9 +26952,9 @@ func (s *LoopExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) LoopExpression() (localctx ILoopExpressionContext) {
+func (p *FeelParser) LoopExpression() (localctx ILoopExpressionContext) {
 	localctx = NewLoopExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 262, KParserRULE_loopExpression)
+	p.EnterRule(localctx, 262, FeelParserRULE_loopExpression)
 	var _la int
 
 	defer func() {
@@ -26978,7 +26978,7 @@ func (p *KParser) LoopExpression() (localctx ILoopExpressionContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2111)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	{
 		p.SetState(2112)
@@ -26988,16 +26988,16 @@ func (p *KParser) LoopExpression() (localctx ILoopExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(2113)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(2116)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(2117)
@@ -27005,7 +27005,7 @@ func (p *KParser) LoopExpression() (localctx ILoopExpressionContext) {
 	}
 	{
 		p.SetState(2118)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(2119)
@@ -27068,7 +27068,7 @@ type LoopEachExpressionContext struct {
 func NewEmptyLoopEachExpressionContext() *LoopEachExpressionContext {
 	var p = new(LoopEachExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopEachExpression
+	p.RuleIndex = FeelParserRULE_loopEachExpression
 	return p
 }
 
@@ -27080,7 +27080,7 @@ func NewLoopEachExpressionContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopEachExpression
+	p.RuleIndex = FeelParserRULE_loopEachExpression
 
 	return p
 }
@@ -27088,7 +27088,7 @@ func NewLoopEachExpressionContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *LoopEachExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopEachExpressionContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *LoopEachExpressionContext) AllId() []IIdContext {
@@ -27115,11 +27115,11 @@ func (s *LoopEachExpressionContext) Id(i int) IIdContext {
 }
 
 func (s *LoopEachExpressionContext) AllColon() []antlr.TerminalNode {
-	return s.GetTokens(KParserColon)
+	return s.GetTokens(FeelParserColon)
 }
 
 func (s *LoopEachExpressionContext) Colon(i int) antlr.TerminalNode {
-	return s.GetToken(KParserColon, i)
+	return s.GetToken(FeelParserColon, i)
 }
 
 func (s *LoopEachExpressionContext) Expression() IExpressionContext {
@@ -27133,7 +27133,7 @@ func (s *LoopEachExpressionContext) Expression() IExpressionContext {
 }
 
 func (s *LoopEachExpressionContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *LoopEachExpressionContext) Left_brace() ILeft_braceContext {
@@ -27167,7 +27167,7 @@ func (s *LoopEachExpressionContext) Right_brace() IRight_braceContext {
 }
 
 func (s *LoopEachExpressionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *LoopEachExpressionContext) AllFunctionSupportStatement() []IFunctionSupportStatementContext {
@@ -27213,7 +27213,7 @@ func (s *LoopEachExpressionContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *LoopEachExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopEachExpression(s)
 
 	default:
@@ -27221,9 +27221,9 @@ func (s *LoopEachExpressionContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) LoopEachExpression() (localctx ILoopEachExpressionContext) {
+func (p *FeelParser) LoopEachExpression() (localctx ILoopEachExpressionContext) {
 	localctx = NewLoopEachExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 264, KParserRULE_loopEachExpression)
+	p.EnterRule(localctx, 264, FeelParserRULE_loopEachExpression)
 	var _la int
 
 	defer func() {
@@ -27247,7 +27247,7 @@ func (p *KParser) LoopEachExpression() (localctx ILoopEachExpressionContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2131)
-		p.Match(KParserAt)
+		p.Match(FeelParserAt)
 	}
 	p.SetState(2135)
 	p.GetErrorHandler().Sync(p)
@@ -27259,7 +27259,7 @@ func (p *KParser) LoopEachExpression() (localctx ILoopEachExpressionContext) {
 		}
 		{
 			p.SetState(2133)
-			p.Match(KParserColon)
+			p.Match(FeelParserColon)
 		}
 
 	}
@@ -27271,16 +27271,16 @@ func (p *KParser) LoopEachExpression() (localctx ILoopEachExpressionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(2138)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 
 	}
 	{
 		p.SetState(2141)
-		p.Match(KParserColon)
+		p.Match(FeelParserColon)
 	}
 	{
 		p.SetState(2142)
@@ -27288,7 +27288,7 @@ func (p *KParser) LoopEachExpression() (localctx ILoopEachExpressionContext) {
 	}
 	{
 		p.SetState(2143)
-		p.Match(KParserRight_Arrow)
+		p.Match(FeelParserRight_Arrow)
 	}
 	{
 		p.SetState(2144)
@@ -27351,7 +27351,7 @@ type LoopElseExpressionContext struct {
 func NewEmptyLoopElseExpressionContext() *LoopElseExpressionContext {
 	var p = new(LoopElseExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_loopElseExpression
+	p.RuleIndex = FeelParserRULE_loopElseExpression
 	return p
 }
 
@@ -27363,7 +27363,7 @@ func NewLoopElseExpressionContext(parser antlr.Parser, parent antlr.ParserRuleCo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_loopElseExpression
+	p.RuleIndex = FeelParserRULE_loopElseExpression
 
 	return p
 }
@@ -27371,7 +27371,7 @@ func NewLoopElseExpressionContext(parser antlr.Parser, parent antlr.ParserRuleCo
 func (s *LoopElseExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *LoopElseExpressionContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *LoopElseExpressionContext) Left_brace() ILeft_braceContext {
@@ -27437,7 +27437,7 @@ func (s *LoopElseExpressionContext) ToStringTree(ruleNames []string, recog antlr
 
 func (s *LoopElseExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLoopElseExpression(s)
 
 	default:
@@ -27445,9 +27445,9 @@ func (s *LoopElseExpressionContext) Accept(visitor antlr.ParseTreeVisitor) inter
 	}
 }
 
-func (p *KParser) LoopElseExpression() (localctx ILoopElseExpressionContext) {
+func (p *FeelParser) LoopElseExpression() (localctx ILoopElseExpressionContext) {
 	localctx = NewLoopElseExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 266, KParserRULE_loopElseExpression)
+	p.EnterRule(localctx, 266, FeelParserRULE_loopElseExpression)
 
 	defer func() {
 		p.ExitRule()
@@ -27470,7 +27470,7 @@ func (p *KParser) LoopElseExpression() (localctx ILoopElseExpressionContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2156)
-		p.Match(KParserDiscard)
+		p.Match(FeelParserDiscard)
 	}
 	{
 		p.SetState(2157)
@@ -27523,7 +27523,7 @@ type CheckExpressionContext struct {
 func NewEmptyCheckExpressionContext() *CheckExpressionContext {
 	var p = new(CheckExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_checkExpression
+	p.RuleIndex = FeelParserRULE_checkExpression
 	return p
 }
 
@@ -27535,7 +27535,7 @@ func NewCheckExpressionContext(parser antlr.Parser, parent antlr.ParserRuleConte
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_checkExpression
+	p.RuleIndex = FeelParserRULE_checkExpression
 
 	return p
 }
@@ -27543,11 +27543,11 @@ func NewCheckExpressionContext(parser antlr.Parser, parent antlr.ParserRuleConte
 func (s *CheckExpressionContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CheckExpressionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *CheckExpressionContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *CheckExpressionContext) Left_brace() ILeft_braceContext {
@@ -27646,7 +27646,7 @@ func (s *CheckExpressionContext) ToStringTree(ruleNames []string, recog antlr.Re
 
 func (s *CheckExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCheckExpression(s)
 
 	default:
@@ -27654,9 +27654,9 @@ func (s *CheckExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interfac
 	}
 }
 
-func (p *KParser) CheckExpression() (localctx ICheckExpressionContext) {
+func (p *FeelParser) CheckExpression() (localctx ICheckExpressionContext) {
 	localctx = NewCheckExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 268, KParserRULE_checkExpression)
+	p.EnterRule(localctx, 268, FeelParserRULE_checkExpression)
 	var _la int
 
 	defer func() {
@@ -27684,11 +27684,11 @@ func (p *KParser) CheckExpression() (localctx ICheckExpressionContext) {
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2167)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 		{
 			p.SetState(2168)
-			p.Match(KParserRight_Arrow)
+			p.Match(FeelParserRight_Arrow)
 		}
 		{
 			p.SetState(2169)
@@ -27722,7 +27722,7 @@ func (p *KParser) CheckExpression() (localctx ICheckExpressionContext) {
 		p.GetErrorHandler().Sync(p)
 		_la = p.GetTokenStream().LA(1)
 
-		for ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(KParserTypeI8-61))|(1<<(KParserTypeU8-61))|(1<<(KParserTypeI16-61))|(1<<(KParserTypeU16-61))|(1<<(KParserTypeI32-61))|(1<<(KParserTypeU32-61))|(1<<(KParserTypeI64-61))|(1<<(KParserTypeU64-61))|(1<<(KParserTypeF32-61))|(1<<(KParserTypeF64-61))|(1<<(KParserTypeChr-61))|(1<<(KParserTypeStr-61))|(1<<(KParserTypeBool-61))|(1<<(KParserTypeInt-61))|(1<<(KParserTypeNum-61))|(1<<(KParserTypeByte-61))|(1<<(KParserTypeAny-61))|(1<<(KParserIDPrivate-61))|(1<<(KParserIDPublic-61)))) != 0 {
+		for ((_la-61)&-(0x1f+1)) == 0 && ((1<<uint((_la-61)))&((1<<(FeelParserTypeI8-61))|(1<<(FeelParserTypeU8-61))|(1<<(FeelParserTypeI16-61))|(1<<(FeelParserTypeU16-61))|(1<<(FeelParserTypeI32-61))|(1<<(FeelParserTypeU32-61))|(1<<(FeelParserTypeI64-61))|(1<<(FeelParserTypeU64-61))|(1<<(FeelParserTypeF32-61))|(1<<(FeelParserTypeF64-61))|(1<<(FeelParserTypeChr-61))|(1<<(FeelParserTypeStr-61))|(1<<(FeelParserTypeBool-61))|(1<<(FeelParserTypeInt-61))|(1<<(FeelParserTypeNum-61))|(1<<(FeelParserTypeByte-61))|(1<<(FeelParserTypeAny-61))|(1<<(FeelParserIDPrivate-61))|(1<<(FeelParserIDPublic-61)))) != 0 {
 			{
 				p.SetState(2178)
 				p.CheckErrorExpression()
@@ -27741,11 +27741,11 @@ func (p *KParser) CheckExpression() (localctx ICheckExpressionContext) {
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2186)
-			p.Match(KParserBang)
+			p.Match(FeelParserBang)
 		}
 		{
 			p.SetState(2187)
-			p.Match(KParserRight_Arrow)
+			p.Match(FeelParserRight_Arrow)
 		}
 		{
 			p.SetState(2188)
@@ -27819,7 +27819,7 @@ type CheckErrorExpressionContext struct {
 func NewEmptyCheckErrorExpressionContext() *CheckErrorExpressionContext {
 	var p = new(CheckErrorExpressionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_checkErrorExpression
+	p.RuleIndex = FeelParserRULE_checkErrorExpression
 	return p
 }
 
@@ -27831,7 +27831,7 @@ func NewCheckErrorExpressionContext(parser antlr.Parser, parent antlr.ParserRule
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_checkErrorExpression
+	p.RuleIndex = FeelParserRULE_checkErrorExpression
 
 	return p
 }
@@ -27921,7 +27921,7 @@ func (s *CheckErrorExpressionContext) ToStringTree(ruleNames []string, recog ant
 
 func (s *CheckErrorExpressionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCheckErrorExpression(s)
 
 	default:
@@ -27929,9 +27929,9 @@ func (s *CheckErrorExpressionContext) Accept(visitor antlr.ParseTreeVisitor) int
 	}
 }
 
-func (p *KParser) CheckErrorExpression() (localctx ICheckErrorExpressionContext) {
+func (p *FeelParser) CheckErrorExpression() (localctx ICheckErrorExpressionContext) {
 	localctx = NewCheckErrorExpressionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 270, KParserRULE_checkErrorExpression)
+	p.EnterRule(localctx, 270, FeelParserRULE_checkErrorExpression)
 
 	defer func() {
 		p.ExitRule()
@@ -28030,7 +28030,7 @@ type DataStatementContext struct {
 func NewEmptyDataStatementContext() *DataStatementContext {
 	var p = new(DataStatementContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_dataStatement
+	p.RuleIndex = FeelParserRULE_dataStatement
 	return p
 }
 
@@ -28042,7 +28042,7 @@ func NewDataStatementContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_dataStatement
+	p.RuleIndex = FeelParserRULE_dataStatement
 
 	return p
 }
@@ -28094,15 +28094,15 @@ func (s *DataStatementContext) StringExpr() IStringExprContext {
 }
 
 func (s *DataStatementContext) CharLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserCharLiteral, 0)
+	return s.GetToken(FeelParserCharLiteral, 0)
 }
 
 func (s *DataStatementContext) TrueLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserTrueLiteral, 0)
+	return s.GetToken(FeelParserTrueLiteral, 0)
 }
 
 func (s *DataStatementContext) FalseLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserFalseLiteral, 0)
+	return s.GetToken(FeelParserFalseLiteral, 0)
 }
 
 func (s *DataStatementContext) NilExpr() INilExprContext {
@@ -28116,7 +28116,7 @@ func (s *DataStatementContext) NilExpr() INilExprContext {
 }
 
 func (s *DataStatementContext) UndefinedLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserUndefinedLiteral, 0)
+	return s.GetToken(FeelParserUndefinedLiteral, 0)
 }
 
 func (s *DataStatementContext) GetRuleContext() antlr.RuleContext {
@@ -28129,7 +28129,7 @@ func (s *DataStatementContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *DataStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitDataStatement(s)
 
 	default:
@@ -28137,9 +28137,9 @@ func (s *DataStatementContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) DataStatement() (localctx IDataStatementContext) {
+func (p *FeelParser) DataStatement() (localctx IDataStatementContext) {
 	localctx = NewDataStatementContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 272, KParserRULE_dataStatement)
+	p.EnterRule(localctx, 272, FeelParserRULE_dataStatement)
 
 	defer func() {
 		p.ExitRule()
@@ -28161,77 +28161,77 @@ func (p *KParser) DataStatement() (localctx IDataStatementContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserFloatLiteral:
+	case FeelParserFloatLiteral:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2220)
 			p.FloatExpr()
 		}
 
-	case KParserDecimalLiteral, KParserBinaryLiteral, KParserOctalLiteral, KParserHexLiteral:
+	case FeelParserDecimalLiteral, FeelParserBinaryLiteral, FeelParserOctalLiteral, FeelParserHexLiteral:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2221)
 			p.IntegerExpr()
 		}
 
-	case KParserQuote_Quote_Quote_Open:
+	case FeelParserQuote_Quote_Quote_Open:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(2222)
 			p.RawStringExpr()
 		}
 
-	case KParserQuote_Open:
+	case FeelParserQuote_Open:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(2223)
 			p.StringExpr()
 		}
 
-	case KParserCharLiteral:
+	case FeelParserCharLiteral:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(2224)
 
-			var _m = p.Match(KParserCharLiteral)
+			var _m = p.Match(FeelParserCharLiteral)
 
 			localctx.(*DataStatementContext).t = _m
 		}
 
-	case KParserTrueLiteral:
+	case FeelParserTrueLiteral:
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(2225)
 
-			var _m = p.Match(KParserTrueLiteral)
+			var _m = p.Match(FeelParserTrueLiteral)
 
 			localctx.(*DataStatementContext).t = _m
 		}
 
-	case KParserFalseLiteral:
+	case FeelParserFalseLiteral:
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(2226)
 
-			var _m = p.Match(KParserFalseLiteral)
+			var _m = p.Match(FeelParserFalseLiteral)
 
 			localctx.(*DataStatementContext).t = _m
 		}
 
-	case KParserNilLiteral:
+	case FeelParserNilLiteral:
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(2227)
 			p.NilExpr()
 		}
 
-	case KParserUndefinedLiteral:
+	case FeelParserUndefinedLiteral:
 		p.EnterOuterAlt(localctx, 9)
 		{
 			p.SetState(2228)
 
-			var _m = p.Match(KParserUndefinedLiteral)
+			var _m = p.Match(FeelParserUndefinedLiteral)
 
 			localctx.(*DataStatementContext).t = _m
 		}
@@ -28262,7 +28262,7 @@ type StringExprContext struct {
 func NewEmptyStringExprContext() *StringExprContext {
 	var p = new(StringExprContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_stringExpr
+	p.RuleIndex = FeelParserRULE_stringExpr
 	return p
 }
 
@@ -28274,7 +28274,7 @@ func NewStringExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_stringExpr
+	p.RuleIndex = FeelParserRULE_stringExpr
 
 	return p
 }
@@ -28282,11 +28282,11 @@ func NewStringExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *StringExprContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *StringExprContext) Quote_Open() antlr.TerminalNode {
-	return s.GetToken(KParserQuote_Open, 0)
+	return s.GetToken(FeelParserQuote_Open, 0)
 }
 
 func (s *StringExprContext) Quote_Close() antlr.TerminalNode {
-	return s.GetToken(KParserQuote_Close, 0)
+	return s.GetToken(FeelParserQuote_Close, 0)
 }
 
 func (s *StringExprContext) AllStringContent() []IStringContentContext {
@@ -28345,7 +28345,7 @@ func (s *StringExprContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *StringExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitStringExpr(s)
 
 	default:
@@ -28353,9 +28353,9 @@ func (s *StringExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) StringExpr() (localctx IStringExprContext) {
+func (p *FeelParser) StringExpr() (localctx IStringExprContext) {
 	localctx = NewStringExprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 274, KParserRULE_stringExpr)
+	p.EnterRule(localctx, 274, FeelParserRULE_stringExpr)
 	var _la int
 
 	defer func() {
@@ -28377,24 +28377,24 @@ func (p *KParser) StringExpr() (localctx IStringExprContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2231)
-		p.Match(KParserQuote_Open)
+		p.Match(FeelParserQuote_Open)
 	}
 	p.SetState(2236)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserString_Template_Open || _la == KParserTextLiteral {
+	for _la == FeelParserString_Template_Open || _la == FeelParserTextLiteral {
 		p.SetState(2234)
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
-		case KParserTextLiteral:
+		case FeelParserTextLiteral:
 			{
 				p.SetState(2232)
 				p.StringContent()
 			}
 
-		case KParserString_Template_Open:
+		case FeelParserString_Template_Open:
 			{
 				p.SetState(2233)
 				p.StringTemplate()
@@ -28410,7 +28410,7 @@ func (p *KParser) StringExpr() (localctx IStringExprContext) {
 	}
 	{
 		p.SetState(2239)
-		p.Match(KParserQuote_Close)
+		p.Match(FeelParserQuote_Close)
 	}
 
 	return localctx
@@ -28435,7 +28435,7 @@ type StringContentContext struct {
 func NewEmptyStringContentContext() *StringContentContext {
 	var p = new(StringContentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_stringContent
+	p.RuleIndex = FeelParserRULE_stringContent
 	return p
 }
 
@@ -28447,7 +28447,7 @@ func NewStringContentContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_stringContent
+	p.RuleIndex = FeelParserRULE_stringContent
 
 	return p
 }
@@ -28455,7 +28455,7 @@ func NewStringContentContext(parser antlr.Parser, parent antlr.ParserRuleContext
 func (s *StringContentContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *StringContentContext) TextLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserTextLiteral, 0)
+	return s.GetToken(FeelParserTextLiteral, 0)
 }
 
 func (s *StringContentContext) GetRuleContext() antlr.RuleContext {
@@ -28468,7 +28468,7 @@ func (s *StringContentContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *StringContentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitStringContent(s)
 
 	default:
@@ -28476,9 +28476,9 @@ func (s *StringContentContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) StringContent() (localctx IStringContentContext) {
+func (p *FeelParser) StringContent() (localctx IStringContentContext) {
 	localctx = NewStringContentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 276, KParserRULE_stringContent)
+	p.EnterRule(localctx, 276, FeelParserRULE_stringContent)
 
 	defer func() {
 		p.ExitRule()
@@ -28499,7 +28499,7 @@ func (p *KParser) StringContent() (localctx IStringContentContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2241)
-		p.Match(KParserTextLiteral)
+		p.Match(FeelParserTextLiteral)
 	}
 
 	return localctx
@@ -28524,7 +28524,7 @@ type StringTemplateContext struct {
 func NewEmptyStringTemplateContext() *StringTemplateContext {
 	var p = new(StringTemplateContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_stringTemplate
+	p.RuleIndex = FeelParserRULE_stringTemplate
 	return p
 }
 
@@ -28536,7 +28536,7 @@ func NewStringTemplateContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_stringTemplate
+	p.RuleIndex = FeelParserRULE_stringTemplate
 
 	return p
 }
@@ -28544,7 +28544,7 @@ func NewStringTemplateContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *StringTemplateContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *StringTemplateContext) String_Template_Open() antlr.TerminalNode {
-	return s.GetToken(KParserString_Template_Open, 0)
+	return s.GetToken(FeelParserString_Template_Open, 0)
 }
 
 func (s *StringTemplateContext) AllExpression() []IExpressionContext {
@@ -28571,7 +28571,7 @@ func (s *StringTemplateContext) Expression(i int) IExpressionContext {
 }
 
 func (s *StringTemplateContext) Right_Brace() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Brace, 0)
+	return s.GetToken(FeelParserRight_Brace, 0)
 }
 
 func (s *StringTemplateContext) AllEnd() []IEndContext {
@@ -28607,7 +28607,7 @@ func (s *StringTemplateContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *StringTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitStringTemplate(s)
 
 	default:
@@ -28615,9 +28615,9 @@ func (s *StringTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) StringTemplate() (localctx IStringTemplateContext) {
+func (p *FeelParser) StringTemplate() (localctx IStringTemplateContext) {
 	localctx = NewStringTemplateContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 278, KParserRULE_stringTemplate)
+	p.EnterRule(localctx, 278, FeelParserRULE_stringTemplate)
 
 	defer func() {
 		p.ExitRule()
@@ -28640,7 +28640,7 @@ func (p *KParser) StringTemplate() (localctx IStringTemplateContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2243)
-		p.Match(KParserString_Template_Open)
+		p.Match(FeelParserString_Template_Open)
 	}
 	p.SetState(2249)
 	p.GetErrorHandler().Sync(p)
@@ -28668,7 +28668,7 @@ func (p *KParser) StringTemplate() (localctx IStringTemplateContext) {
 	}
 	{
 		p.SetState(2253)
-		p.Match(KParserRight_Brace)
+		p.Match(FeelParserRight_Brace)
 	}
 
 	return localctx
@@ -28693,7 +28693,7 @@ type RawStringExprContext struct {
 func NewEmptyRawStringExprContext() *RawStringExprContext {
 	var p = new(RawStringExprContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_rawStringExpr
+	p.RuleIndex = FeelParserRULE_rawStringExpr
 	return p
 }
 
@@ -28705,7 +28705,7 @@ func NewRawStringExprContext(parser antlr.Parser, parent antlr.ParserRuleContext
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_rawStringExpr
+	p.RuleIndex = FeelParserRULE_rawStringExpr
 
 	return p
 }
@@ -28713,11 +28713,11 @@ func NewRawStringExprContext(parser antlr.Parser, parent antlr.ParserRuleContext
 func (s *RawStringExprContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *RawStringExprContext) Quote_Quote_Quote_Open() antlr.TerminalNode {
-	return s.GetToken(KParserQuote_Quote_Quote_Open, 0)
+	return s.GetToken(FeelParserQuote_Quote_Quote_Open, 0)
 }
 
 func (s *RawStringExprContext) Quote_Quote_Quote_Close() antlr.TerminalNode {
-	return s.GetToken(KParserQuote_Quote_Quote_Close, 0)
+	return s.GetToken(FeelParserQuote_Quote_Quote_Close, 0)
 }
 
 func (s *RawStringExprContext) AllRawStringContent() []IRawStringContentContext {
@@ -28767,11 +28767,11 @@ func (s *RawStringExprContext) RawStringTemplate(i int) IRawStringTemplateContex
 }
 
 func (s *RawStringExprContext) AllRaw_Quote() []antlr.TerminalNode {
-	return s.GetTokens(KParserRaw_Quote)
+	return s.GetTokens(FeelParserRaw_Quote)
 }
 
 func (s *RawStringExprContext) Raw_Quote(i int) antlr.TerminalNode {
-	return s.GetToken(KParserRaw_Quote, i)
+	return s.GetToken(FeelParserRaw_Quote, i)
 }
 
 func (s *RawStringExprContext) GetRuleContext() antlr.RuleContext {
@@ -28784,7 +28784,7 @@ func (s *RawStringExprContext) ToStringTree(ruleNames []string, recog antlr.Reco
 
 func (s *RawStringExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitRawStringExpr(s)
 
 	default:
@@ -28792,9 +28792,9 @@ func (s *RawStringExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{
 	}
 }
 
-func (p *KParser) RawStringExpr() (localctx IRawStringExprContext) {
+func (p *FeelParser) RawStringExpr() (localctx IRawStringExprContext) {
 	localctx = NewRawStringExprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 280, KParserRULE_rawStringExpr)
+	p.EnterRule(localctx, 280, FeelParserRULE_rawStringExpr)
 	var _la int
 
 	defer func() {
@@ -28816,33 +28816,33 @@ func (p *KParser) RawStringExpr() (localctx IRawStringExprContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2255)
-		p.Match(KParserQuote_Quote_Quote_Open)
+		p.Match(FeelParserQuote_Quote_Quote_Open)
 	}
 	p.SetState(2261)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for ((_la-102)&-(0x1f+1)) == 0 && ((1<<uint((_la-102)))&((1<<(KParserRaw_Quote-102))|(1<<(KParserRaw_String_Template_Open-102))|(1<<(KParserRawTextLiteral-102)))) != 0 {
+	for ((_la-102)&-(0x1f+1)) == 0 && ((1<<uint((_la-102)))&((1<<(FeelParserRaw_Quote-102))|(1<<(FeelParserRaw_String_Template_Open-102))|(1<<(FeelParserRawTextLiteral-102)))) != 0 {
 		p.SetState(2259)
 		p.GetErrorHandler().Sync(p)
 
 		switch p.GetTokenStream().LA(1) {
-		case KParserRawTextLiteral:
+		case FeelParserRawTextLiteral:
 			{
 				p.SetState(2256)
 				p.RawStringContent()
 			}
 
-		case KParserRaw_String_Template_Open:
+		case FeelParserRaw_String_Template_Open:
 			{
 				p.SetState(2257)
 				p.RawStringTemplate()
 			}
 
-		case KParserRaw_Quote:
+		case FeelParserRaw_Quote:
 			{
 				p.SetState(2258)
-				p.Match(KParserRaw_Quote)
+				p.Match(FeelParserRaw_Quote)
 			}
 
 		default:
@@ -28855,7 +28855,7 @@ func (p *KParser) RawStringExpr() (localctx IRawStringExprContext) {
 	}
 	{
 		p.SetState(2264)
-		p.Match(KParserQuote_Quote_Quote_Close)
+		p.Match(FeelParserQuote_Quote_Quote_Close)
 	}
 
 	return localctx
@@ -28880,7 +28880,7 @@ type RawStringContentContext struct {
 func NewEmptyRawStringContentContext() *RawStringContentContext {
 	var p = new(RawStringContentContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_rawStringContent
+	p.RuleIndex = FeelParserRULE_rawStringContent
 	return p
 }
 
@@ -28892,7 +28892,7 @@ func NewRawStringContentContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_rawStringContent
+	p.RuleIndex = FeelParserRULE_rawStringContent
 
 	return p
 }
@@ -28900,7 +28900,7 @@ func NewRawStringContentContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *RawStringContentContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *RawStringContentContext) RawTextLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserRawTextLiteral, 0)
+	return s.GetToken(FeelParserRawTextLiteral, 0)
 }
 
 func (s *RawStringContentContext) GetRuleContext() antlr.RuleContext {
@@ -28913,7 +28913,7 @@ func (s *RawStringContentContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *RawStringContentContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitRawStringContent(s)
 
 	default:
@@ -28921,9 +28921,9 @@ func (s *RawStringContentContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) RawStringContent() (localctx IRawStringContentContext) {
+func (p *FeelParser) RawStringContent() (localctx IRawStringContentContext) {
 	localctx = NewRawStringContentContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 282, KParserRULE_rawStringContent)
+	p.EnterRule(localctx, 282, FeelParserRULE_rawStringContent)
 
 	defer func() {
 		p.ExitRule()
@@ -28944,7 +28944,7 @@ func (p *KParser) RawStringContent() (localctx IRawStringContentContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2266)
-		p.Match(KParserRawTextLiteral)
+		p.Match(FeelParserRawTextLiteral)
 	}
 
 	return localctx
@@ -28969,7 +28969,7 @@ type RawStringTemplateContext struct {
 func NewEmptyRawStringTemplateContext() *RawStringTemplateContext {
 	var p = new(RawStringTemplateContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_rawStringTemplate
+	p.RuleIndex = FeelParserRULE_rawStringTemplate
 	return p
 }
 
@@ -28981,7 +28981,7 @@ func NewRawStringTemplateContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_rawStringTemplate
+	p.RuleIndex = FeelParserRULE_rawStringTemplate
 
 	return p
 }
@@ -28989,7 +28989,7 @@ func NewRawStringTemplateContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *RawStringTemplateContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *RawStringTemplateContext) Raw_String_Template_Open() antlr.TerminalNode {
-	return s.GetToken(KParserRaw_String_Template_Open, 0)
+	return s.GetToken(FeelParserRaw_String_Template_Open, 0)
 }
 
 func (s *RawStringTemplateContext) AllExpression() []IExpressionContext {
@@ -29016,15 +29016,15 @@ func (s *RawStringTemplateContext) Expression(i int) IExpressionContext {
 }
 
 func (s *RawStringTemplateContext) Right_Brace() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Brace, 0)
+	return s.GetToken(FeelParserRight_Brace, 0)
 }
 
 func (s *RawStringTemplateContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *RawStringTemplateContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *RawStringTemplateContext) AllEnd() []IEndContext {
@@ -29060,7 +29060,7 @@ func (s *RawStringTemplateContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *RawStringTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitRawStringTemplate(s)
 
 	default:
@@ -29068,9 +29068,9 @@ func (s *RawStringTemplateContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) RawStringTemplate() (localctx IRawStringTemplateContext) {
+func (p *FeelParser) RawStringTemplate() (localctx IRawStringTemplateContext) {
 	localctx = NewRawStringTemplateContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 284, KParserRULE_rawStringTemplate)
+	p.EnterRule(localctx, 284, FeelParserRULE_rawStringTemplate)
 	var _la int
 
 	defer func() {
@@ -29094,16 +29094,16 @@ func (p *KParser) RawStringTemplate() (localctx IRawStringTemplateContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2268)
-		p.Match(KParserRaw_String_Template_Open)
+		p.Match(FeelParserRaw_String_Template_Open)
 	}
 	p.SetState(2272)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(2269)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(2274)
@@ -29138,10 +29138,10 @@ func (p *KParser) RawStringTemplate() (localctx IRawStringTemplateContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(2284)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(2289)
@@ -29150,7 +29150,7 @@ func (p *KParser) RawStringTemplate() (localctx IRawStringTemplateContext) {
 	}
 	{
 		p.SetState(2290)
-		p.Match(KParserRight_Brace)
+		p.Match(FeelParserRight_Brace)
 	}
 
 	return localctx
@@ -29175,7 +29175,7 @@ type FloatExprContext struct {
 func NewEmptyFloatExprContext() *FloatExprContext {
 	var p = new(FloatExprContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_floatExpr
+	p.RuleIndex = FeelParserRULE_floatExpr
 	return p
 }
 
@@ -29187,7 +29187,7 @@ func NewFloatExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_floatExpr
+	p.RuleIndex = FeelParserRULE_floatExpr
 
 	return p
 }
@@ -29195,7 +29195,7 @@ func NewFloatExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *FloatExprContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *FloatExprContext) FloatLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserFloatLiteral, 0)
+	return s.GetToken(FeelParserFloatLiteral, 0)
 }
 
 func (s *FloatExprContext) GetRuleContext() antlr.RuleContext {
@@ -29208,7 +29208,7 @@ func (s *FloatExprContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *FloatExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitFloatExpr(s)
 
 	default:
@@ -29216,9 +29216,9 @@ func (s *FloatExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) FloatExpr() (localctx IFloatExprContext) {
+func (p *FeelParser) FloatExpr() (localctx IFloatExprContext) {
 	localctx = NewFloatExprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 286, KParserRULE_floatExpr)
+	p.EnterRule(localctx, 286, FeelParserRULE_floatExpr)
 
 	defer func() {
 		p.ExitRule()
@@ -29239,7 +29239,7 @@ func (p *KParser) FloatExpr() (localctx IFloatExprContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2292)
-		p.Match(KParserFloatLiteral)
+		p.Match(FeelParserFloatLiteral)
 	}
 
 	return localctx
@@ -29264,7 +29264,7 @@ type IntegerExprContext struct {
 func NewEmptyIntegerExprContext() *IntegerExprContext {
 	var p = new(IntegerExprContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_integerExpr
+	p.RuleIndex = FeelParserRULE_integerExpr
 	return p
 }
 
@@ -29276,7 +29276,7 @@ func NewIntegerExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_integerExpr
+	p.RuleIndex = FeelParserRULE_integerExpr
 
 	return p
 }
@@ -29284,19 +29284,19 @@ func NewIntegerExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *IntegerExprContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *IntegerExprContext) DecimalLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserDecimalLiteral, 0)
+	return s.GetToken(FeelParserDecimalLiteral, 0)
 }
 
 func (s *IntegerExprContext) BinaryLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserBinaryLiteral, 0)
+	return s.GetToken(FeelParserBinaryLiteral, 0)
 }
 
 func (s *IntegerExprContext) OctalLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserOctalLiteral, 0)
+	return s.GetToken(FeelParserOctalLiteral, 0)
 }
 
 func (s *IntegerExprContext) HexLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserHexLiteral, 0)
+	return s.GetToken(FeelParserHexLiteral, 0)
 }
 
 func (s *IntegerExprContext) GetRuleContext() antlr.RuleContext {
@@ -29309,7 +29309,7 @@ func (s *IntegerExprContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *IntegerExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitIntegerExpr(s)
 
 	default:
@@ -29317,9 +29317,9 @@ func (s *IntegerExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) IntegerExpr() (localctx IIntegerExprContext) {
+func (p *FeelParser) IntegerExpr() (localctx IIntegerExprContext) {
 	localctx = NewIntegerExprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 288, KParserRULE_integerExpr)
+	p.EnterRule(localctx, 288, FeelParserRULE_integerExpr)
 	var _la int
 
 	defer func() {
@@ -29343,7 +29343,7 @@ func (p *KParser) IntegerExpr() (localctx IIntegerExprContext) {
 		p.SetState(2294)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-83)&-(0x1f+1)) == 0 && ((1<<uint((_la-83)))&((1<<(KParserDecimalLiteral-83))|(1<<(KParserBinaryLiteral-83))|(1<<(KParserOctalLiteral-83))|(1<<(KParserHexLiteral-83)))) != 0) {
+		if !(((_la-83)&-(0x1f+1)) == 0 && ((1<<uint((_la-83)))&((1<<(FeelParserDecimalLiteral-83))|(1<<(FeelParserBinaryLiteral-83))|(1<<(FeelParserOctalLiteral-83))|(1<<(FeelParserHexLiteral-83)))) != 0) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -29373,7 +29373,7 @@ type TypeNotNullContext struct {
 func NewEmptyTypeNotNullContext() *TypeNotNullContext {
 	var p = new(TypeNotNullContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeNotNull
+	p.RuleIndex = FeelParserRULE_typeNotNull
 	return p
 }
 
@@ -29385,7 +29385,7 @@ func NewTypeNotNullContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeNotNull
+	p.RuleIndex = FeelParserRULE_typeNotNull
 
 	return p
 }
@@ -29512,7 +29512,7 @@ func (s *TypeNotNullContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *TypeNotNullContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeNotNull(s)
 
 	default:
@@ -29520,9 +29520,9 @@ func (s *TypeNotNullContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) TypeNotNull() (localctx ITypeNotNullContext) {
+func (p *FeelParser) TypeNotNull() (localctx ITypeNotNullContext) {
 	localctx = NewTypeNotNullContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 290, KParserRULE_typeNotNull)
+	p.EnterRule(localctx, 290, FeelParserRULE_typeNotNull)
 
 	defer func() {
 		p.ExitRule()
@@ -29644,7 +29644,7 @@ type TypeTypeContext struct {
 func NewEmptyTypeTypeContext() *TypeTypeContext {
 	var p = new(TypeTypeContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeType
+	p.RuleIndex = FeelParserRULE_typeType
 	return p
 }
 
@@ -29656,7 +29656,7 @@ func NewTypeTypeContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeType
+	p.RuleIndex = FeelParserRULE_typeType
 
 	return p
 }
@@ -29693,7 +29693,7 @@ func (s *TypeTypeContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *TypeTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeType(s)
 
 	default:
@@ -29701,9 +29701,9 @@ func (s *TypeTypeContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeType() (localctx ITypeTypeContext) {
+func (p *FeelParser) TypeType() (localctx ITypeTypeContext) {
 	localctx = NewTypeTypeContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 292, KParserRULE_typeType)
+	p.EnterRule(localctx, 292, FeelParserRULE_typeType)
 
 	defer func() {
 		p.ExitRule()
@@ -29725,14 +29725,14 @@ func (p *KParser) TypeType() (localctx ITypeTypeContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserLeft_Paren, KParserLeft_Brack, KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserLeft_Paren, FeelParserLeft_Brack, FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2309)
 			p.TypeNotNull()
 		}
 
-	case KParserQuestion:
+	case FeelParserQuestion:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2310)
@@ -29765,7 +29765,7 @@ type TypeNullableContext struct {
 func NewEmptyTypeNullableContext() *TypeNullableContext {
 	var p = new(TypeNullableContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeNullable
+	p.RuleIndex = FeelParserRULE_typeNullable
 	return p
 }
 
@@ -29777,7 +29777,7 @@ func NewTypeNullableContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeNullable
+	p.RuleIndex = FeelParserRULE_typeNullable
 
 	return p
 }
@@ -29785,7 +29785,7 @@ func NewTypeNullableContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 func (s *TypeNullableContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *TypeNullableContext) Question() antlr.TerminalNode {
-	return s.GetToken(KParserQuestion, 0)
+	return s.GetToken(FeelParserQuestion, 0)
 }
 
 func (s *TypeNullableContext) TypeNotNull() ITypeNotNullContext {
@@ -29808,7 +29808,7 @@ func (s *TypeNullableContext) ToStringTree(ruleNames []string, recog antlr.Recog
 
 func (s *TypeNullableContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeNullable(s)
 
 	default:
@@ -29816,9 +29816,9 @@ func (s *TypeNullableContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *KParser) TypeNullable() (localctx ITypeNullableContext) {
+func (p *FeelParser) TypeNullable() (localctx ITypeNullableContext) {
 	localctx = NewTypeNullableContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 294, KParserRULE_typeNullable)
+	p.EnterRule(localctx, 294, FeelParserRULE_typeNullable)
 
 	defer func() {
 		p.ExitRule()
@@ -29839,7 +29839,7 @@ func (p *KParser) TypeNullable() (localctx ITypeNullableContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2313)
-		p.Match(KParserQuestion)
+		p.Match(FeelParserQuestion)
 	}
 	{
 		p.SetState(2314)
@@ -29868,7 +29868,7 @@ type TypeArrayContext struct {
 func NewEmptyTypeArrayContext() *TypeArrayContext {
 	var p = new(TypeArrayContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeArray
+	p.RuleIndex = FeelParserRULE_typeArray
 	return p
 }
 
@@ -29880,7 +29880,7 @@ func NewTypeArrayContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeArray
+	p.RuleIndex = FeelParserRULE_typeArray
 
 	return p
 }
@@ -29898,7 +29898,7 @@ func (s *TypeArrayContext) Left_brack() ILeft_brackContext {
 }
 
 func (s *TypeArrayContext) Comma() antlr.TerminalNode {
-	return s.GetToken(KParserComma, 0)
+	return s.GetToken(FeelParserComma, 0)
 }
 
 func (s *TypeArrayContext) Right_brack() IRight_brackContext {
@@ -29931,7 +29931,7 @@ func (s *TypeArrayContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *TypeArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeArray(s)
 
 	default:
@@ -29939,9 +29939,9 @@ func (s *TypeArrayContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeArray() (localctx ITypeArrayContext) {
+func (p *FeelParser) TypeArray() (localctx ITypeArrayContext) {
 	localctx = NewTypeArrayContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 296, KParserRULE_typeArray)
+	p.EnterRule(localctx, 296, FeelParserRULE_typeArray)
 
 	defer func() {
 		p.ExitRule()
@@ -29966,7 +29966,7 @@ func (p *KParser) TypeArray() (localctx ITypeArrayContext) {
 	}
 	{
 		p.SetState(2317)
-		p.Match(KParserComma)
+		p.Match(FeelParserComma)
 	}
 	{
 		p.SetState(2318)
@@ -29999,7 +29999,7 @@ type TypeListContext struct {
 func NewEmptyTypeListContext() *TypeListContext {
 	var p = new(TypeListContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeList
+	p.RuleIndex = FeelParserRULE_typeList
 	return p
 }
 
@@ -30011,7 +30011,7 @@ func NewTypeListContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeList
+	p.RuleIndex = FeelParserRULE_typeList
 
 	return p
 }
@@ -30058,7 +30058,7 @@ func (s *TypeListContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *TypeListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeList(s)
 
 	default:
@@ -30066,9 +30066,9 @@ func (s *TypeListContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeList() (localctx ITypeListContext) {
+func (p *FeelParser) TypeList() (localctx ITypeListContext) {
 	localctx = NewTypeListContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 298, KParserRULE_typeList)
+	p.EnterRule(localctx, 298, FeelParserRULE_typeList)
 
 	defer func() {
 		p.ExitRule()
@@ -30122,7 +30122,7 @@ type TypeSetContext struct {
 func NewEmptyTypeSetContext() *TypeSetContext {
 	var p = new(TypeSetContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeSet
+	p.RuleIndex = FeelParserRULE_typeSet
 	return p
 }
 
@@ -30134,7 +30134,7 @@ func NewTypeSetContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeSet
+	p.RuleIndex = FeelParserRULE_typeSet
 
 	return p
 }
@@ -30172,7 +30172,7 @@ func (s *TypeSetContext) Right_brack() IRight_brackContext {
 }
 
 func (s *TypeSetContext) Discard() antlr.TerminalNode {
-	return s.GetToken(KParserDiscard, 0)
+	return s.GetToken(FeelParserDiscard, 0)
 }
 
 func (s *TypeSetContext) GetRuleContext() antlr.RuleContext {
@@ -30185,7 +30185,7 @@ func (s *TypeSetContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *TypeSetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeSet(s)
 
 	default:
@@ -30193,9 +30193,9 @@ func (s *TypeSetContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeSet() (localctx ITypeSetContext) {
+func (p *FeelParser) TypeSet() (localctx ITypeSetContext) {
 	localctx = NewTypeSetContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 300, KParserRULE_typeSet)
+	p.EnterRule(localctx, 300, FeelParserRULE_typeSet)
 
 	defer func() {
 		p.ExitRule()
@@ -30228,7 +30228,7 @@ func (p *KParser) TypeSet() (localctx ITypeSetContext) {
 	}
 	{
 		p.SetState(2328)
-		p.Match(KParserDiscard)
+		p.Match(FeelParserDiscard)
 	}
 
 	return localctx
@@ -30253,7 +30253,7 @@ type TypeDictionaryContext struct {
 func NewEmptyTypeDictionaryContext() *TypeDictionaryContext {
 	var p = new(TypeDictionaryContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeDictionary
+	p.RuleIndex = FeelParserRULE_typeDictionary
 	return p
 }
 
@@ -30265,7 +30265,7 @@ func NewTypeDictionaryContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeDictionary
+	p.RuleIndex = FeelParserRULE_typeDictionary
 
 	return p
 }
@@ -30325,7 +30325,7 @@ func (s *TypeDictionaryContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *TypeDictionaryContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeDictionary(s)
 
 	default:
@@ -30333,9 +30333,9 @@ func (s *TypeDictionaryContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) TypeDictionary() (localctx ITypeDictionaryContext) {
+func (p *FeelParser) TypeDictionary() (localctx ITypeDictionaryContext) {
 	localctx = NewTypeDictionaryContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 302, KParserRULE_typeDictionary)
+	p.EnterRule(localctx, 302, FeelParserRULE_typeDictionary)
 
 	defer func() {
 		p.ExitRule()
@@ -30393,7 +30393,7 @@ type TypeStackContext struct {
 func NewEmptyTypeStackContext() *TypeStackContext {
 	var p = new(TypeStackContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeStack
+	p.RuleIndex = FeelParserRULE_typeStack
 	return p
 }
 
@@ -30405,7 +30405,7 @@ func NewTypeStackContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeStack
+	p.RuleIndex = FeelParserRULE_typeStack
 
 	return p
 }
@@ -30423,7 +30423,7 @@ func (s *TypeStackContext) Left_brack() ILeft_brackContext {
 }
 
 func (s *TypeStackContext) Greater() antlr.TerminalNode {
-	return s.GetToken(KParserGreater, 0)
+	return s.GetToken(FeelParserGreater, 0)
 }
 
 func (s *TypeStackContext) Right_brack() IRight_brackContext {
@@ -30456,7 +30456,7 @@ func (s *TypeStackContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *TypeStackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeStack(s)
 
 	default:
@@ -30464,9 +30464,9 @@ func (s *TypeStackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeStack() (localctx ITypeStackContext) {
+func (p *FeelParser) TypeStack() (localctx ITypeStackContext) {
 	localctx = NewTypeStackContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 304, KParserRULE_typeStack)
+	p.EnterRule(localctx, 304, FeelParserRULE_typeStack)
 
 	defer func() {
 		p.ExitRule()
@@ -30491,7 +30491,7 @@ func (p *KParser) TypeStack() (localctx ITypeStackContext) {
 	}
 	{
 		p.SetState(2336)
-		p.Match(KParserGreater)
+		p.Match(FeelParserGreater)
 	}
 	{
 		p.SetState(2337)
@@ -30524,7 +30524,7 @@ type TypeQueueContext struct {
 func NewEmptyTypeQueueContext() *TypeQueueContext {
 	var p = new(TypeQueueContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeQueue
+	p.RuleIndex = FeelParserRULE_typeQueue
 	return p
 }
 
@@ -30536,7 +30536,7 @@ func NewTypeQueueContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeQueue
+	p.RuleIndex = FeelParserRULE_typeQueue
 
 	return p
 }
@@ -30554,7 +30554,7 @@ func (s *TypeQueueContext) Left_brack() ILeft_brackContext {
 }
 
 func (s *TypeQueueContext) Less() antlr.TerminalNode {
-	return s.GetToken(KParserLess, 0)
+	return s.GetToken(FeelParserLess, 0)
 }
 
 func (s *TypeQueueContext) Right_brack() IRight_brackContext {
@@ -30587,7 +30587,7 @@ func (s *TypeQueueContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *TypeQueueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeQueue(s)
 
 	default:
@@ -30595,9 +30595,9 @@ func (s *TypeQueueContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeQueue() (localctx ITypeQueueContext) {
+func (p *FeelParser) TypeQueue() (localctx ITypeQueueContext) {
 	localctx = NewTypeQueueContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 306, KParserRULE_typeQueue)
+	p.EnterRule(localctx, 306, FeelParserRULE_typeQueue)
 
 	defer func() {
 		p.ExitRule()
@@ -30622,7 +30622,7 @@ func (p *KParser) TypeQueue() (localctx ITypeQueueContext) {
 	}
 	{
 		p.SetState(2341)
-		p.Match(KParserLess)
+		p.Match(FeelParserLess)
 	}
 	{
 		p.SetState(2342)
@@ -30655,7 +30655,7 @@ type TypeChannelContext struct {
 func NewEmptyTypeChannelContext() *TypeChannelContext {
 	var p = new(TypeChannelContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeChannel
+	p.RuleIndex = FeelParserRULE_typeChannel
 	return p
 }
 
@@ -30667,7 +30667,7 @@ func NewTypeChannelContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeChannel
+	p.RuleIndex = FeelParserRULE_typeChannel
 
 	return p
 }
@@ -30685,7 +30685,7 @@ func (s *TypeChannelContext) Left_brack() ILeft_brackContext {
 }
 
 func (s *TypeChannelContext) Tilde() antlr.TerminalNode {
-	return s.GetToken(KParserTilde, 0)
+	return s.GetToken(FeelParserTilde, 0)
 }
 
 func (s *TypeChannelContext) Right_brack() IRight_brackContext {
@@ -30718,7 +30718,7 @@ func (s *TypeChannelContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *TypeChannelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeChannel(s)
 
 	default:
@@ -30726,9 +30726,9 @@ func (s *TypeChannelContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) TypeChannel() (localctx ITypeChannelContext) {
+func (p *FeelParser) TypeChannel() (localctx ITypeChannelContext) {
 	localctx = NewTypeChannelContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 308, KParserRULE_typeChannel)
+	p.EnterRule(localctx, 308, FeelParserRULE_typeChannel)
 
 	defer func() {
 		p.ExitRule()
@@ -30753,7 +30753,7 @@ func (p *KParser) TypeChannel() (localctx ITypeChannelContext) {
 	}
 	{
 		p.SetState(2346)
-		p.Match(KParserTilde)
+		p.Match(FeelParserTilde)
 	}
 	{
 		p.SetState(2347)
@@ -30786,7 +30786,7 @@ type TypePackageContext struct {
 func NewEmptyTypePackageContext() *TypePackageContext {
 	var p = new(TypePackageContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typePackage
+	p.RuleIndex = FeelParserRULE_typePackage
 	return p
 }
 
@@ -30798,7 +30798,7 @@ func NewTypePackageContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typePackage
+	p.RuleIndex = FeelParserRULE_typePackage
 
 	return p
 }
@@ -30855,7 +30855,7 @@ func (s *TypePackageContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *TypePackageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypePackage(s)
 
 	default:
@@ -30863,9 +30863,9 @@ func (s *TypePackageContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) TypePackage() (localctx ITypePackageContext) {
+func (p *FeelParser) TypePackage() (localctx ITypePackageContext) {
 	localctx = NewTypePackageContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 310, KParserRULE_typePackage)
+	p.EnterRule(localctx, 310, FeelParserRULE_typePackage)
 
 	defer func() {
 		p.ExitRule()
@@ -30887,14 +30887,14 @@ func (p *KParser) TypePackage() (localctx ITypePackageContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte, KParserTypeAny, KParserIDPrivate, KParserIDPublic:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte, FeelParserTypeAny, FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2350)
 			p.NameSpaceItem()
 		}
 
-	case KParserLeft_Brack:
+	case FeelParserLeft_Brack:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2351)
@@ -30960,7 +30960,7 @@ type TypeFunctionContext struct {
 func NewEmptyTypeFunctionContext() *TypeFunctionContext {
 	var p = new(TypeFunctionContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeFunction
+	p.RuleIndex = FeelParserRULE_typeFunction
 	return p
 }
 
@@ -30972,7 +30972,7 @@ func NewTypeFunctionContext(parser antlr.Parser, parent antlr.ParserRuleContext,
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeFunction
+	p.RuleIndex = FeelParserRULE_typeFunction
 
 	return p
 }
@@ -31035,27 +31035,27 @@ func (s *TypeFunctionContext) Right_paren() IRight_parenContext {
 }
 
 func (s *TypeFunctionContext) Right_Arrow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Arrow, 0)
+	return s.GetToken(FeelParserRight_Arrow, 0)
 }
 
 func (s *TypeFunctionContext) Right_Flow() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Flow, 0)
+	return s.GetToken(FeelParserRight_Flow, 0)
 }
 
 func (s *TypeFunctionContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *TypeFunctionContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *TypeFunctionContext) Bang() antlr.TerminalNode {
-	return s.GetToken(KParserBang, 0)
+	return s.GetToken(FeelParserBang, 0)
 }
 
 func (s *TypeFunctionContext) At() antlr.TerminalNode {
-	return s.GetToken(KParserAt, 0)
+	return s.GetToken(FeelParserAt, 0)
 }
 
 func (s *TypeFunctionContext) GetRuleContext() antlr.RuleContext {
@@ -31068,7 +31068,7 @@ func (s *TypeFunctionContext) ToStringTree(ruleNames []string, recog antlr.Recog
 
 func (s *TypeFunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeFunction(s)
 
 	default:
@@ -31076,9 +31076,9 @@ func (s *TypeFunctionContext) Accept(visitor antlr.ParseTreeVisitor) interface{}
 	}
 }
 
-func (p *KParser) TypeFunction() (localctx ITypeFunctionContext) {
+func (p *FeelParser) TypeFunction() (localctx ITypeFunctionContext) {
 	localctx = NewTypeFunctionContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 312, KParserRULE_typeFunction)
+	p.EnterRule(localctx, 312, FeelParserRULE_typeFunction)
 	var _la int
 
 	defer func() {
@@ -31115,7 +31115,7 @@ func (p *KParser) TypeFunction() (localctx ITypeFunctionContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserRight_Flow || _la == KParserRight_Arrow) {
+		if !(_la == FeelParserRight_Flow || _la == FeelParserRight_Arrow) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*TypeFunctionContext).t = _ri
@@ -31128,11 +31128,11 @@ func (p *KParser) TypeFunction() (localctx ITypeFunctionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserBang {
+	if _la == FeelParserBang {
 		{
 			p.SetState(2361)
 
-			var _m = p.Match(KParserBang)
+			var _m = p.Match(FeelParserBang)
 
 			localctx.(*TypeFunctionContext).b = _m
 		}
@@ -31142,11 +31142,11 @@ func (p *KParser) TypeFunction() (localctx ITypeFunctionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserAt {
+	if _la == FeelParserAt {
 		{
 			p.SetState(2364)
 
-			var _m = p.Match(KParserAt)
+			var _m = p.Match(FeelParserAt)
 
 			localctx.(*TypeFunctionContext).y = _m
 		}
@@ -31156,10 +31156,10 @@ func (p *KParser) TypeFunction() (localctx ITypeFunctionContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(2367)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(2372)
@@ -31197,7 +31197,7 @@ type TypeAnyContext struct {
 func NewEmptyTypeAnyContext() *TypeAnyContext {
 	var p = new(TypeAnyContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeAny
+	p.RuleIndex = FeelParserRULE_typeAny
 	return p
 }
 
@@ -31209,7 +31209,7 @@ func NewTypeAnyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeAny
+	p.RuleIndex = FeelParserRULE_typeAny
 
 	return p
 }
@@ -31217,7 +31217,7 @@ func NewTypeAnyContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *TypeAnyContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *TypeAnyContext) TypeAny() antlr.TerminalNode {
-	return s.GetToken(KParserTypeAny, 0)
+	return s.GetToken(FeelParserTypeAny, 0)
 }
 
 func (s *TypeAnyContext) GetRuleContext() antlr.RuleContext {
@@ -31230,7 +31230,7 @@ func (s *TypeAnyContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *TypeAnyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeAny(s)
 
 	default:
@@ -31238,9 +31238,9 @@ func (s *TypeAnyContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeAny() (localctx ITypeAnyContext) {
+func (p *FeelParser) TypeAny() (localctx ITypeAnyContext) {
 	localctx = NewTypeAnyContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 314, KParserRULE_typeAny)
+	p.EnterRule(localctx, 314, FeelParserRULE_typeAny)
 
 	defer func() {
 		p.ExitRule()
@@ -31261,7 +31261,7 @@ func (p *KParser) TypeAny() (localctx ITypeAnyContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2376)
-		p.Match(KParserTypeAny)
+		p.Match(FeelParserTypeAny)
 	}
 
 	return localctx
@@ -31286,7 +31286,7 @@ type TypeFunctionParameterClauseContext struct {
 func NewEmptyTypeFunctionParameterClauseContext() *TypeFunctionParameterClauseContext {
 	var p = new(TypeFunctionParameterClauseContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeFunctionParameterClause
+	p.RuleIndex = FeelParserRULE_typeFunctionParameterClause
 	return p
 }
 
@@ -31298,7 +31298,7 @@ func NewTypeFunctionParameterClauseContext(parser antlr.Parser, parent antlr.Par
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeFunctionParameterClause
+	p.RuleIndex = FeelParserRULE_typeFunctionParameterClause
 
 	return p
 }
@@ -31361,7 +31361,7 @@ func (s *TypeFunctionParameterClauseContext) ToStringTree(ruleNames []string, re
 
 func (s *TypeFunctionParameterClauseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeFunctionParameterClause(s)
 
 	default:
@@ -31369,9 +31369,9 @@ func (s *TypeFunctionParameterClauseContext) Accept(visitor antlr.ParseTreeVisit
 	}
 }
 
-func (p *KParser) TypeFunctionParameterClause() (localctx ITypeFunctionParameterClauseContext) {
+func (p *FeelParser) TypeFunctionParameterClause() (localctx ITypeFunctionParameterClauseContext) {
 	localctx = NewTypeFunctionParameterClauseContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 316, KParserRULE_typeFunctionParameterClause)
+	p.EnterRule(localctx, 316, FeelParserRULE_typeFunctionParameterClause)
 	var _la int
 
 	defer func() {
@@ -31395,7 +31395,7 @@ func (p *KParser) TypeFunctionParameterClause() (localctx ITypeFunctionParameter
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(KParserLeft_Paren-39))|(1<<(KParserLeft_Brack-39))|(1<<(KParserQuestion-39))|(1<<(KParserTypeI8-39))|(1<<(KParserTypeU8-39))|(1<<(KParserTypeI16-39))|(1<<(KParserTypeU16-39))|(1<<(KParserTypeI32-39))|(1<<(KParserTypeU32-39))|(1<<(KParserTypeI64-39))|(1<<(KParserTypeU64-39))|(1<<(KParserTypeF32-39))|(1<<(KParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(KParserTypeChr-71))|(1<<(KParserTypeStr-71))|(1<<(KParserTypeBool-71))|(1<<(KParserTypeInt-71))|(1<<(KParserTypeNum-71))|(1<<(KParserTypeByte-71))|(1<<(KParserTypeAny-71))|(1<<(KParserIDPrivate-71))|(1<<(KParserIDPublic-71)))) != 0) {
+	if (((_la-39)&-(0x1f+1)) == 0 && ((1<<uint((_la-39)))&((1<<(FeelParserLeft_Paren-39))|(1<<(FeelParserLeft_Brack-39))|(1<<(FeelParserQuestion-39))|(1<<(FeelParserTypeI8-39))|(1<<(FeelParserTypeU8-39))|(1<<(FeelParserTypeI16-39))|(1<<(FeelParserTypeU16-39))|(1<<(FeelParserTypeI32-39))|(1<<(FeelParserTypeU32-39))|(1<<(FeelParserTypeI64-39))|(1<<(FeelParserTypeU64-39))|(1<<(FeelParserTypeF32-39))|(1<<(FeelParserTypeF64-39)))) != 0) || (((_la-71)&-(0x1f+1)) == 0 && ((1<<uint((_la-71)))&((1<<(FeelParserTypeChr-71))|(1<<(FeelParserTypeStr-71))|(1<<(FeelParserTypeBool-71))|(1<<(FeelParserTypeInt-71))|(1<<(FeelParserTypeNum-71))|(1<<(FeelParserTypeByte-71))|(1<<(FeelParserTypeAny-71))|(1<<(FeelParserIDPrivate-71))|(1<<(FeelParserIDPublic-71)))) != 0) {
 		{
 			p.SetState(2378)
 			p.TypeType()
@@ -31406,7 +31406,7 @@ func (p *KParser) TypeFunctionParameterClause() (localctx ITypeFunctionParameter
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserComma {
+	for _la == FeelParserComma {
 		{
 			p.SetState(2381)
 			p.More()
@@ -31450,7 +31450,7 @@ type TypeBasicContext struct {
 func NewEmptyTypeBasicContext() *TypeBasicContext {
 	var p = new(TypeBasicContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_typeBasic
+	p.RuleIndex = FeelParserRULE_typeBasic
 	return p
 }
 
@@ -31462,7 +31462,7 @@ func NewTypeBasicContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_typeBasic
+	p.RuleIndex = FeelParserRULE_typeBasic
 
 	return p
 }
@@ -31474,67 +31474,67 @@ func (s *TypeBasicContext) GetT() antlr.Token { return s.t }
 func (s *TypeBasicContext) SetT(v antlr.Token) { s.t = v }
 
 func (s *TypeBasicContext) TypeI8() antlr.TerminalNode {
-	return s.GetToken(KParserTypeI8, 0)
+	return s.GetToken(FeelParserTypeI8, 0)
 }
 
 func (s *TypeBasicContext) TypeU8() antlr.TerminalNode {
-	return s.GetToken(KParserTypeU8, 0)
+	return s.GetToken(FeelParserTypeU8, 0)
 }
 
 func (s *TypeBasicContext) TypeI16() antlr.TerminalNode {
-	return s.GetToken(KParserTypeI16, 0)
+	return s.GetToken(FeelParserTypeI16, 0)
 }
 
 func (s *TypeBasicContext) TypeU16() antlr.TerminalNode {
-	return s.GetToken(KParserTypeU16, 0)
+	return s.GetToken(FeelParserTypeU16, 0)
 }
 
 func (s *TypeBasicContext) TypeI32() antlr.TerminalNode {
-	return s.GetToken(KParserTypeI32, 0)
+	return s.GetToken(FeelParserTypeI32, 0)
 }
 
 func (s *TypeBasicContext) TypeU32() antlr.TerminalNode {
-	return s.GetToken(KParserTypeU32, 0)
+	return s.GetToken(FeelParserTypeU32, 0)
 }
 
 func (s *TypeBasicContext) TypeI64() antlr.TerminalNode {
-	return s.GetToken(KParserTypeI64, 0)
+	return s.GetToken(FeelParserTypeI64, 0)
 }
 
 func (s *TypeBasicContext) TypeU64() antlr.TerminalNode {
-	return s.GetToken(KParserTypeU64, 0)
+	return s.GetToken(FeelParserTypeU64, 0)
 }
 
 func (s *TypeBasicContext) TypeF32() antlr.TerminalNode {
-	return s.GetToken(KParserTypeF32, 0)
+	return s.GetToken(FeelParserTypeF32, 0)
 }
 
 func (s *TypeBasicContext) TypeF64() antlr.TerminalNode {
-	return s.GetToken(KParserTypeF64, 0)
+	return s.GetToken(FeelParserTypeF64, 0)
 }
 
 func (s *TypeBasicContext) TypeChr() antlr.TerminalNode {
-	return s.GetToken(KParserTypeChr, 0)
+	return s.GetToken(FeelParserTypeChr, 0)
 }
 
 func (s *TypeBasicContext) TypeStr() antlr.TerminalNode {
-	return s.GetToken(KParserTypeStr, 0)
+	return s.GetToken(FeelParserTypeStr, 0)
 }
 
 func (s *TypeBasicContext) TypeBool() antlr.TerminalNode {
-	return s.GetToken(KParserTypeBool, 0)
+	return s.GetToken(FeelParserTypeBool, 0)
 }
 
 func (s *TypeBasicContext) TypeInt() antlr.TerminalNode {
-	return s.GetToken(KParserTypeInt, 0)
+	return s.GetToken(FeelParserTypeInt, 0)
 }
 
 func (s *TypeBasicContext) TypeNum() antlr.TerminalNode {
-	return s.GetToken(KParserTypeNum, 0)
+	return s.GetToken(FeelParserTypeNum, 0)
 }
 
 func (s *TypeBasicContext) TypeByte() antlr.TerminalNode {
-	return s.GetToken(KParserTypeByte, 0)
+	return s.GetToken(FeelParserTypeByte, 0)
 }
 
 func (s *TypeBasicContext) GetRuleContext() antlr.RuleContext {
@@ -31547,7 +31547,7 @@ func (s *TypeBasicContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *TypeBasicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitTypeBasic(s)
 
 	default:
@@ -31555,9 +31555,9 @@ func (s *TypeBasicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) TypeBasic() (localctx ITypeBasicContext) {
+func (p *FeelParser) TypeBasic() (localctx ITypeBasicContext) {
 	localctx = NewTypeBasicContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 318, KParserRULE_typeBasic)
+	p.EnterRule(localctx, 318, FeelParserRULE_typeBasic)
 
 	defer func() {
 		p.ExitRule()
@@ -31579,162 +31579,162 @@ func (p *KParser) TypeBasic() (localctx ITypeBasicContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTypeI8:
+	case FeelParserTypeI8:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2389)
 
-			var _m = p.Match(KParserTypeI8)
+			var _m = p.Match(FeelParserTypeI8)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeU8:
+	case FeelParserTypeU8:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2390)
 
-			var _m = p.Match(KParserTypeU8)
+			var _m = p.Match(FeelParserTypeU8)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeI16:
+	case FeelParserTypeI16:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(2391)
 
-			var _m = p.Match(KParserTypeI16)
+			var _m = p.Match(FeelParserTypeI16)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeU16:
+	case FeelParserTypeU16:
 		p.EnterOuterAlt(localctx, 4)
 		{
 			p.SetState(2392)
 
-			var _m = p.Match(KParserTypeU16)
+			var _m = p.Match(FeelParserTypeU16)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeI32:
+	case FeelParserTypeI32:
 		p.EnterOuterAlt(localctx, 5)
 		{
 			p.SetState(2393)
 
-			var _m = p.Match(KParserTypeI32)
+			var _m = p.Match(FeelParserTypeI32)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeU32:
+	case FeelParserTypeU32:
 		p.EnterOuterAlt(localctx, 6)
 		{
 			p.SetState(2394)
 
-			var _m = p.Match(KParserTypeU32)
+			var _m = p.Match(FeelParserTypeU32)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeI64:
+	case FeelParserTypeI64:
 		p.EnterOuterAlt(localctx, 7)
 		{
 			p.SetState(2395)
 
-			var _m = p.Match(KParserTypeI64)
+			var _m = p.Match(FeelParserTypeI64)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeU64:
+	case FeelParserTypeU64:
 		p.EnterOuterAlt(localctx, 8)
 		{
 			p.SetState(2396)
 
-			var _m = p.Match(KParserTypeU64)
+			var _m = p.Match(FeelParserTypeU64)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeF32:
+	case FeelParserTypeF32:
 		p.EnterOuterAlt(localctx, 9)
 		{
 			p.SetState(2397)
 
-			var _m = p.Match(KParserTypeF32)
+			var _m = p.Match(FeelParserTypeF32)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeF64:
+	case FeelParserTypeF64:
 		p.EnterOuterAlt(localctx, 10)
 		{
 			p.SetState(2398)
 
-			var _m = p.Match(KParserTypeF64)
+			var _m = p.Match(FeelParserTypeF64)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeChr:
+	case FeelParserTypeChr:
 		p.EnterOuterAlt(localctx, 11)
 		{
 			p.SetState(2399)
 
-			var _m = p.Match(KParserTypeChr)
+			var _m = p.Match(FeelParserTypeChr)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeStr:
+	case FeelParserTypeStr:
 		p.EnterOuterAlt(localctx, 12)
 		{
 			p.SetState(2400)
 
-			var _m = p.Match(KParserTypeStr)
+			var _m = p.Match(FeelParserTypeStr)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeBool:
+	case FeelParserTypeBool:
 		p.EnterOuterAlt(localctx, 13)
 		{
 			p.SetState(2401)
 
-			var _m = p.Match(KParserTypeBool)
+			var _m = p.Match(FeelParserTypeBool)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeInt:
+	case FeelParserTypeInt:
 		p.EnterOuterAlt(localctx, 14)
 		{
 			p.SetState(2402)
 
-			var _m = p.Match(KParserTypeInt)
+			var _m = p.Match(FeelParserTypeInt)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeNum:
+	case FeelParserTypeNum:
 		p.EnterOuterAlt(localctx, 15)
 		{
 			p.SetState(2403)
 
-			var _m = p.Match(KParserTypeNum)
+			var _m = p.Match(FeelParserTypeNum)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
 
-	case KParserTypeByte:
+	case FeelParserTypeByte:
 		p.EnterOuterAlt(localctx, 16)
 		{
 			p.SetState(2404)
 
-			var _m = p.Match(KParserTypeByte)
+			var _m = p.Match(FeelParserTypeByte)
 
 			localctx.(*TypeBasicContext).t = _m
 		}
@@ -31765,7 +31765,7 @@ type NilExprContext struct {
 func NewEmptyNilExprContext() *NilExprContext {
 	var p = new(NilExprContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_nilExpr
+	p.RuleIndex = FeelParserRULE_nilExpr
 	return p
 }
 
@@ -31777,7 +31777,7 @@ func NewNilExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_nilExpr
+	p.RuleIndex = FeelParserRULE_nilExpr
 
 	return p
 }
@@ -31785,7 +31785,7 @@ func NewNilExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 func (s *NilExprContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *NilExprContext) NilLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserNilLiteral, 0)
+	return s.GetToken(FeelParserNilLiteral, 0)
 }
 
 func (s *NilExprContext) GetRuleContext() antlr.RuleContext {
@@ -31798,7 +31798,7 @@ func (s *NilExprContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *NilExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitNilExpr(s)
 
 	default:
@@ -31806,9 +31806,9 @@ func (s *NilExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) NilExpr() (localctx INilExprContext) {
+func (p *FeelParser) NilExpr() (localctx INilExprContext) {
 	localctx = NewNilExprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 320, KParserRULE_nilExpr)
+	p.EnterRule(localctx, 320, FeelParserRULE_nilExpr)
 
 	defer func() {
 		p.ExitRule()
@@ -31829,7 +31829,7 @@ func (p *KParser) NilExpr() (localctx INilExprContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2407)
-		p.Match(KParserNilLiteral)
+		p.Match(FeelParserNilLiteral)
 	}
 
 	return localctx
@@ -31861,7 +31861,7 @@ type BoolExprContext struct {
 func NewEmptyBoolExprContext() *BoolExprContext {
 	var p = new(BoolExprContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_boolExpr
+	p.RuleIndex = FeelParserRULE_boolExpr
 	return p
 }
 
@@ -31873,7 +31873,7 @@ func NewBoolExprContext(parser antlr.Parser, parent antlr.ParserRuleContext, inv
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_boolExpr
+	p.RuleIndex = FeelParserRULE_boolExpr
 
 	return p
 }
@@ -31885,11 +31885,11 @@ func (s *BoolExprContext) GetT() antlr.Token { return s.t }
 func (s *BoolExprContext) SetT(v antlr.Token) { s.t = v }
 
 func (s *BoolExprContext) TrueLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserTrueLiteral, 0)
+	return s.GetToken(FeelParserTrueLiteral, 0)
 }
 
 func (s *BoolExprContext) FalseLiteral() antlr.TerminalNode {
-	return s.GetToken(KParserFalseLiteral, 0)
+	return s.GetToken(FeelParserFalseLiteral, 0)
 }
 
 func (s *BoolExprContext) GetRuleContext() antlr.RuleContext {
@@ -31902,7 +31902,7 @@ func (s *BoolExprContext) ToStringTree(ruleNames []string, recog antlr.Recognize
 
 func (s *BoolExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBoolExpr(s)
 
 	default:
@@ -31910,9 +31910,9 @@ func (s *BoolExprContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) BoolExpr() (localctx IBoolExprContext) {
+func (p *FeelParser) BoolExpr() (localctx IBoolExprContext) {
 	localctx = NewBoolExprContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 322, KParserRULE_boolExpr)
+	p.EnterRule(localctx, 322, FeelParserRULE_boolExpr)
 
 	defer func() {
 		p.ExitRule()
@@ -31934,22 +31934,22 @@ func (p *KParser) BoolExpr() (localctx IBoolExprContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserTrueLiteral:
+	case FeelParserTrueLiteral:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2409)
 
-			var _m = p.Match(KParserTrueLiteral)
+			var _m = p.Match(FeelParserTrueLiteral)
 
 			localctx.(*BoolExprContext).t = _m
 		}
 
-	case KParserFalseLiteral:
+	case FeelParserFalseLiteral:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2410)
 
-			var _m = p.Match(KParserFalseLiteral)
+			var _m = p.Match(FeelParserFalseLiteral)
 
 			localctx.(*BoolExprContext).t = _m
 		}
@@ -31980,7 +31980,7 @@ type BitwiseContext struct {
 func NewEmptyBitwiseContext() *BitwiseContext {
 	var p = new(BitwiseContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwise
+	p.RuleIndex = FeelParserRULE_bitwise
 	return p
 }
 
@@ -31992,7 +31992,7 @@ func NewBitwiseContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwise
+	p.RuleIndex = FeelParserRULE_bitwise
 
 	return p
 }
@@ -32050,7 +32050,7 @@ func (s *BitwiseContext) BitwiseRightShift() IBitwiseRightShiftContext {
 }
 
 func (s *BitwiseContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *BitwiseContext) GetRuleContext() antlr.RuleContext {
@@ -32063,7 +32063,7 @@ func (s *BitwiseContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *BitwiseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwise(s)
 
 	default:
@@ -32071,9 +32071,9 @@ func (s *BitwiseContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Bitwise() (localctx IBitwiseContext) {
+func (p *FeelParser) Bitwise() (localctx IBitwiseContext) {
 	localctx = NewBitwiseContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 324, KParserRULE_bitwise)
+	p.EnterRule(localctx, 324, FeelParserRULE_bitwise)
 	var _la int
 
 	defer func() {
@@ -32097,31 +32097,31 @@ func (p *KParser) Bitwise() (localctx IBitwiseContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserAnd_And:
+	case FeelParserAnd_And:
 		{
 			p.SetState(2413)
 			p.BitwiseAnd()
 		}
 
-	case KParserOr_Or:
+	case FeelParserOr_Or:
 		{
 			p.SetState(2414)
 			p.BitwiseOr()
 		}
 
-	case KParserCaret_Caret:
+	case FeelParserCaret_Caret:
 		{
 			p.SetState(2415)
 			p.BitwiseXor()
 		}
 
-	case KParserLess_Less:
+	case FeelParserLess_Less:
 		{
 			p.SetState(2416)
 			p.BitwiseLeftShift()
 		}
 
-	case KParserGreater_Greater:
+	case FeelParserGreater_Greater:
 		{
 			p.SetState(2417)
 			p.BitwiseRightShift()
@@ -32134,10 +32134,10 @@ func (p *KParser) Bitwise() (localctx IBitwiseContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2420)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -32164,7 +32164,7 @@ type BitwiseAndContext struct {
 func NewEmptyBitwiseAndContext() *BitwiseAndContext {
 	var p = new(BitwiseAndContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseAnd
+	p.RuleIndex = FeelParserRULE_bitwiseAnd
 	return p
 }
 
@@ -32176,7 +32176,7 @@ func NewBitwiseAndContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseAnd
+	p.RuleIndex = FeelParserRULE_bitwiseAnd
 
 	return p
 }
@@ -32184,7 +32184,7 @@ func NewBitwiseAndContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *BitwiseAndContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BitwiseAndContext) And_And() antlr.TerminalNode {
-	return s.GetToken(KParserAnd_And, 0)
+	return s.GetToken(FeelParserAnd_And, 0)
 }
 
 func (s *BitwiseAndContext) GetRuleContext() antlr.RuleContext {
@@ -32197,7 +32197,7 @@ func (s *BitwiseAndContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *BitwiseAndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseAnd(s)
 
 	default:
@@ -32205,9 +32205,9 @@ func (s *BitwiseAndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) BitwiseAnd() (localctx IBitwiseAndContext) {
+func (p *FeelParser) BitwiseAnd() (localctx IBitwiseAndContext) {
 	localctx = NewBitwiseAndContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 326, KParserRULE_bitwiseAnd)
+	p.EnterRule(localctx, 326, FeelParserRULE_bitwiseAnd)
 
 	defer func() {
 		p.ExitRule()
@@ -32228,7 +32228,7 @@ func (p *KParser) BitwiseAnd() (localctx IBitwiseAndContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2423)
-		p.Match(KParserAnd_And)
+		p.Match(FeelParserAnd_And)
 	}
 
 	return localctx
@@ -32253,7 +32253,7 @@ type BitwiseOrContext struct {
 func NewEmptyBitwiseOrContext() *BitwiseOrContext {
 	var p = new(BitwiseOrContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseOr
+	p.RuleIndex = FeelParserRULE_bitwiseOr
 	return p
 }
 
@@ -32265,7 +32265,7 @@ func NewBitwiseOrContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseOr
+	p.RuleIndex = FeelParserRULE_bitwiseOr
 
 	return p
 }
@@ -32273,7 +32273,7 @@ func NewBitwiseOrContext(parser antlr.Parser, parent antlr.ParserRuleContext, in
 func (s *BitwiseOrContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BitwiseOrContext) Or_Or() antlr.TerminalNode {
-	return s.GetToken(KParserOr_Or, 0)
+	return s.GetToken(FeelParserOr_Or, 0)
 }
 
 func (s *BitwiseOrContext) GetRuleContext() antlr.RuleContext {
@@ -32286,7 +32286,7 @@ func (s *BitwiseOrContext) ToStringTree(ruleNames []string, recog antlr.Recogniz
 
 func (s *BitwiseOrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseOr(s)
 
 	default:
@@ -32294,9 +32294,9 @@ func (s *BitwiseOrContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) BitwiseOr() (localctx IBitwiseOrContext) {
+func (p *FeelParser) BitwiseOr() (localctx IBitwiseOrContext) {
 	localctx = NewBitwiseOrContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 328, KParserRULE_bitwiseOr)
+	p.EnterRule(localctx, 328, FeelParserRULE_bitwiseOr)
 
 	defer func() {
 		p.ExitRule()
@@ -32317,7 +32317,7 @@ func (p *KParser) BitwiseOr() (localctx IBitwiseOrContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2425)
-		p.Match(KParserOr_Or)
+		p.Match(FeelParserOr_Or)
 	}
 
 	return localctx
@@ -32342,7 +32342,7 @@ type BitwiseNotContext struct {
 func NewEmptyBitwiseNotContext() *BitwiseNotContext {
 	var p = new(BitwiseNotContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseNot
+	p.RuleIndex = FeelParserRULE_bitwiseNot
 	return p
 }
 
@@ -32354,7 +32354,7 @@ func NewBitwiseNotContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseNot
+	p.RuleIndex = FeelParserRULE_bitwiseNot
 
 	return p
 }
@@ -32362,7 +32362,7 @@ func NewBitwiseNotContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *BitwiseNotContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BitwiseNotContext) Tilde_Tilde() antlr.TerminalNode {
-	return s.GetToken(KParserTilde_Tilde, 0)
+	return s.GetToken(FeelParserTilde_Tilde, 0)
 }
 
 func (s *BitwiseNotContext) GetRuleContext() antlr.RuleContext {
@@ -32375,7 +32375,7 @@ func (s *BitwiseNotContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *BitwiseNotContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseNot(s)
 
 	default:
@@ -32383,9 +32383,9 @@ func (s *BitwiseNotContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) BitwiseNot() (localctx IBitwiseNotContext) {
+func (p *FeelParser) BitwiseNot() (localctx IBitwiseNotContext) {
 	localctx = NewBitwiseNotContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 330, KParserRULE_bitwiseNot)
+	p.EnterRule(localctx, 330, FeelParserRULE_bitwiseNot)
 
 	defer func() {
 		p.ExitRule()
@@ -32406,7 +32406,7 @@ func (p *KParser) BitwiseNot() (localctx IBitwiseNotContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2427)
-		p.Match(KParserTilde_Tilde)
+		p.Match(FeelParserTilde_Tilde)
 	}
 
 	return localctx
@@ -32431,7 +32431,7 @@ type BitwiseXorContext struct {
 func NewEmptyBitwiseXorContext() *BitwiseXorContext {
 	var p = new(BitwiseXorContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseXor
+	p.RuleIndex = FeelParserRULE_bitwiseXor
 	return p
 }
 
@@ -32443,7 +32443,7 @@ func NewBitwiseXorContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseXor
+	p.RuleIndex = FeelParserRULE_bitwiseXor
 
 	return p
 }
@@ -32451,7 +32451,7 @@ func NewBitwiseXorContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *BitwiseXorContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BitwiseXorContext) Caret_Caret() antlr.TerminalNode {
-	return s.GetToken(KParserCaret_Caret, 0)
+	return s.GetToken(FeelParserCaret_Caret, 0)
 }
 
 func (s *BitwiseXorContext) GetRuleContext() antlr.RuleContext {
@@ -32464,7 +32464,7 @@ func (s *BitwiseXorContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *BitwiseXorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseXor(s)
 
 	default:
@@ -32472,9 +32472,9 @@ func (s *BitwiseXorContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) BitwiseXor() (localctx IBitwiseXorContext) {
+func (p *FeelParser) BitwiseXor() (localctx IBitwiseXorContext) {
 	localctx = NewBitwiseXorContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 332, KParserRULE_bitwiseXor)
+	p.EnterRule(localctx, 332, FeelParserRULE_bitwiseXor)
 
 	defer func() {
 		p.ExitRule()
@@ -32495,7 +32495,7 @@ func (p *KParser) BitwiseXor() (localctx IBitwiseXorContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2429)
-		p.Match(KParserCaret_Caret)
+		p.Match(FeelParserCaret_Caret)
 	}
 
 	return localctx
@@ -32520,7 +32520,7 @@ type BitwiseLeftShiftContext struct {
 func NewEmptyBitwiseLeftShiftContext() *BitwiseLeftShiftContext {
 	var p = new(BitwiseLeftShiftContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseLeftShift
+	p.RuleIndex = FeelParserRULE_bitwiseLeftShift
 	return p
 }
 
@@ -32532,7 +32532,7 @@ func NewBitwiseLeftShiftContext(parser antlr.Parser, parent antlr.ParserRuleCont
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseLeftShift
+	p.RuleIndex = FeelParserRULE_bitwiseLeftShift
 
 	return p
 }
@@ -32540,7 +32540,7 @@ func NewBitwiseLeftShiftContext(parser antlr.Parser, parent antlr.ParserRuleCont
 func (s *BitwiseLeftShiftContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BitwiseLeftShiftContext) Less_Less() antlr.TerminalNode {
-	return s.GetToken(KParserLess_Less, 0)
+	return s.GetToken(FeelParserLess_Less, 0)
 }
 
 func (s *BitwiseLeftShiftContext) GetRuleContext() antlr.RuleContext {
@@ -32553,7 +32553,7 @@ func (s *BitwiseLeftShiftContext) ToStringTree(ruleNames []string, recog antlr.R
 
 func (s *BitwiseLeftShiftContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseLeftShift(s)
 
 	default:
@@ -32561,9 +32561,9 @@ func (s *BitwiseLeftShiftContext) Accept(visitor antlr.ParseTreeVisitor) interfa
 	}
 }
 
-func (p *KParser) BitwiseLeftShift() (localctx IBitwiseLeftShiftContext) {
+func (p *FeelParser) BitwiseLeftShift() (localctx IBitwiseLeftShiftContext) {
 	localctx = NewBitwiseLeftShiftContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 334, KParserRULE_bitwiseLeftShift)
+	p.EnterRule(localctx, 334, FeelParserRULE_bitwiseLeftShift)
 
 	defer func() {
 		p.ExitRule()
@@ -32584,7 +32584,7 @@ func (p *KParser) BitwiseLeftShift() (localctx IBitwiseLeftShiftContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2431)
-		p.Match(KParserLess_Less)
+		p.Match(FeelParserLess_Less)
 	}
 
 	return localctx
@@ -32609,7 +32609,7 @@ type BitwiseRightShiftContext struct {
 func NewEmptyBitwiseRightShiftContext() *BitwiseRightShiftContext {
 	var p = new(BitwiseRightShiftContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_bitwiseRightShift
+	p.RuleIndex = FeelParserRULE_bitwiseRightShift
 	return p
 }
 
@@ -32621,7 +32621,7 @@ func NewBitwiseRightShiftContext(parser antlr.Parser, parent antlr.ParserRuleCon
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_bitwiseRightShift
+	p.RuleIndex = FeelParserRULE_bitwiseRightShift
 
 	return p
 }
@@ -32629,7 +32629,7 @@ func NewBitwiseRightShiftContext(parser antlr.Parser, parent antlr.ParserRuleCon
 func (s *BitwiseRightShiftContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *BitwiseRightShiftContext) Greater_Greater() antlr.TerminalNode {
-	return s.GetToken(KParserGreater_Greater, 0)
+	return s.GetToken(FeelParserGreater_Greater, 0)
 }
 
 func (s *BitwiseRightShiftContext) GetRuleContext() antlr.RuleContext {
@@ -32642,7 +32642,7 @@ func (s *BitwiseRightShiftContext) ToStringTree(ruleNames []string, recog antlr.
 
 func (s *BitwiseRightShiftContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitBitwiseRightShift(s)
 
 	default:
@@ -32650,9 +32650,9 @@ func (s *BitwiseRightShiftContext) Accept(visitor antlr.ParseTreeVisitor) interf
 	}
 }
 
-func (p *KParser) BitwiseRightShift() (localctx IBitwiseRightShiftContext) {
+func (p *FeelParser) BitwiseRightShift() (localctx IBitwiseRightShiftContext) {
 	localctx = NewBitwiseRightShiftContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 336, KParserRULE_bitwiseRightShift)
+	p.EnterRule(localctx, 336, FeelParserRULE_bitwiseRightShift)
 
 	defer func() {
 		p.ExitRule()
@@ -32673,7 +32673,7 @@ func (p *KParser) BitwiseRightShift() (localctx IBitwiseRightShiftContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2433)
-		p.Match(KParserGreater_Greater)
+		p.Match(FeelParserGreater_Greater)
 	}
 
 	return localctx
@@ -32698,7 +32698,7 @@ type CompareCombineContext struct {
 func NewEmptyCompareCombineContext() *CompareCombineContext {
 	var p = new(CompareCombineContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_compareCombine
+	p.RuleIndex = FeelParserRULE_compareCombine
 	return p
 }
 
@@ -32710,7 +32710,7 @@ func NewCompareCombineContext(parser antlr.Parser, parent antlr.ParserRuleContex
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_compareCombine
+	p.RuleIndex = FeelParserRULE_compareCombine
 
 	return p
 }
@@ -32718,7 +32718,7 @@ func NewCompareCombineContext(parser antlr.Parser, parent antlr.ParserRuleContex
 func (s *CompareCombineContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *CompareCombineContext) Combine_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserCombine_Equal, 0)
+	return s.GetToken(FeelParserCombine_Equal, 0)
 }
 
 func (s *CompareCombineContext) GetRuleContext() antlr.RuleContext {
@@ -32731,7 +32731,7 @@ func (s *CompareCombineContext) ToStringTree(ruleNames []string, recog antlr.Rec
 
 func (s *CompareCombineContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCompareCombine(s)
 
 	default:
@@ -32739,9 +32739,9 @@ func (s *CompareCombineContext) Accept(visitor antlr.ParseTreeVisitor) interface
 	}
 }
 
-func (p *KParser) CompareCombine() (localctx ICompareCombineContext) {
+func (p *FeelParser) CompareCombine() (localctx ICompareCombineContext) {
 	localctx = NewCompareCombineContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 338, KParserRULE_compareCombine)
+	p.EnterRule(localctx, 338, FeelParserRULE_compareCombine)
 
 	defer func() {
 		p.ExitRule()
@@ -32762,7 +32762,7 @@ func (p *KParser) CompareCombine() (localctx ICompareCombineContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2435)
-		p.Match(KParserCombine_Equal)
+		p.Match(FeelParserCombine_Equal)
 	}
 
 	return localctx
@@ -32794,7 +32794,7 @@ type CompareContext struct {
 func NewEmptyCompareContext() *CompareContext {
 	var p = new(CompareContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_compare
+	p.RuleIndex = FeelParserRULE_compare
 	return p
 }
 
@@ -32806,7 +32806,7 @@ func NewCompareContext(parser antlr.Parser, parent antlr.ParserRuleContext, invo
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_compare
+	p.RuleIndex = FeelParserRULE_compare
 
 	return p
 }
@@ -32818,31 +32818,31 @@ func (s *CompareContext) GetOp() antlr.Token { return s.op }
 func (s *CompareContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *CompareContext) Equal_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserEqual_Equal, 0)
+	return s.GetToken(FeelParserEqual_Equal, 0)
 }
 
 func (s *CompareContext) Not_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserNot_Equal, 0)
+	return s.GetToken(FeelParserNot_Equal, 0)
 }
 
 func (s *CompareContext) Less_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserLess_Equal, 0)
+	return s.GetToken(FeelParserLess_Equal, 0)
 }
 
 func (s *CompareContext) Greater_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserGreater_Equal, 0)
+	return s.GetToken(FeelParserGreater_Equal, 0)
 }
 
 func (s *CompareContext) Less() antlr.TerminalNode {
-	return s.GetToken(KParserLess, 0)
+	return s.GetToken(FeelParserLess, 0)
 }
 
 func (s *CompareContext) Greater() antlr.TerminalNode {
-	return s.GetToken(KParserGreater, 0)
+	return s.GetToken(FeelParserGreater, 0)
 }
 
 func (s *CompareContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *CompareContext) GetRuleContext() antlr.RuleContext {
@@ -32855,7 +32855,7 @@ func (s *CompareContext) ToStringTree(ruleNames []string, recog antlr.Recognizer
 
 func (s *CompareContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCompare(s)
 
 	default:
@@ -32863,9 +32863,9 @@ func (s *CompareContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Compare() (localctx ICompareContext) {
+func (p *FeelParser) Compare() (localctx ICompareContext) {
 	localctx = NewCompareContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 340, KParserRULE_compare)
+	p.EnterRule(localctx, 340, FeelParserRULE_compare)
 	var _la int
 
 	defer func() {
@@ -32894,7 +32894,7 @@ func (p *KParser) Compare() (localctx ICompareContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-8)&-(0x1f+1)) == 0 && ((1<<uint((_la-8)))&((1<<(KParserEqual_Equal-8))|(1<<(KParserLess_Equal-8))|(1<<(KParserGreater_Equal-8))|(1<<(KParserNot_Equal-8))|(1<<(KParserLess-8))|(1<<(KParserGreater-8)))) != 0) {
+		if !(((_la-8)&-(0x1f+1)) == 0 && ((1<<uint((_la-8)))&((1<<(FeelParserEqual_Equal-8))|(1<<(FeelParserLess_Equal-8))|(1<<(FeelParserGreater_Equal-8))|(1<<(FeelParserNot_Equal-8))|(1<<(FeelParserLess-8))|(1<<(FeelParserGreater-8)))) != 0) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*CompareContext).op = _ri
@@ -32907,10 +32907,10 @@ func (p *KParser) Compare() (localctx ICompareContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2438)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -32944,7 +32944,7 @@ type LogicContext struct {
 func NewEmptyLogicContext() *LogicContext {
 	var p = new(LogicContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_logic
+	p.RuleIndex = FeelParserRULE_logic
 	return p
 }
 
@@ -32956,7 +32956,7 @@ func NewLogicContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoki
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_logic
+	p.RuleIndex = FeelParserRULE_logic
 
 	return p
 }
@@ -32968,15 +32968,15 @@ func (s *LogicContext) GetOp() antlr.Token { return s.op }
 func (s *LogicContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *LogicContext) And() antlr.TerminalNode {
-	return s.GetToken(KParserAnd, 0)
+	return s.GetToken(FeelParserAnd, 0)
 }
 
 func (s *LogicContext) Or() antlr.TerminalNode {
-	return s.GetToken(KParserOr, 0)
+	return s.GetToken(FeelParserOr, 0)
 }
 
 func (s *LogicContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *LogicContext) GetRuleContext() antlr.RuleContext {
@@ -32989,7 +32989,7 @@ func (s *LogicContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) 
 
 func (s *LogicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLogic(s)
 
 	default:
@@ -32997,9 +32997,9 @@ func (s *LogicContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Logic() (localctx ILogicContext) {
+func (p *FeelParser) Logic() (localctx ILogicContext) {
 	localctx = NewLogicContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 342, KParserRULE_logic)
+	p.EnterRule(localctx, 342, FeelParserRULE_logic)
 	var _la int
 
 	defer func() {
@@ -33028,7 +33028,7 @@ func (p *KParser) Logic() (localctx ILogicContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserAnd || _la == KParserOr) {
+		if !(_la == FeelParserAnd || _la == FeelParserOr) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*LogicContext).op = _ri
@@ -33041,10 +33041,10 @@ func (p *KParser) Logic() (localctx ILogicContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2442)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -33078,7 +33078,7 @@ type AssignContext struct {
 func NewEmptyAssignContext() *AssignContext {
 	var p = new(AssignContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_assign
+	p.RuleIndex = FeelParserRULE_assign
 	return p
 }
 
@@ -33090,7 +33090,7 @@ func NewAssignContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_assign
+	p.RuleIndex = FeelParserRULE_assign
 
 	return p
 }
@@ -33102,35 +33102,35 @@ func (s *AssignContext) GetOp() antlr.Token { return s.op }
 func (s *AssignContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *AssignContext) Equal() antlr.TerminalNode {
-	return s.GetToken(KParserEqual, 0)
+	return s.GetToken(FeelParserEqual, 0)
 }
 
 func (s *AssignContext) Add_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserAdd_Equal, 0)
+	return s.GetToken(FeelParserAdd_Equal, 0)
 }
 
 func (s *AssignContext) Sub_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserSub_Equal, 0)
+	return s.GetToken(FeelParserSub_Equal, 0)
 }
 
 func (s *AssignContext) Mul_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserMul_Equal, 0)
+	return s.GetToken(FeelParserMul_Equal, 0)
 }
 
 func (s *AssignContext) Div_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserDiv_Equal, 0)
+	return s.GetToken(FeelParserDiv_Equal, 0)
 }
 
 func (s *AssignContext) Mod_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserMod_Equal, 0)
+	return s.GetToken(FeelParserMod_Equal, 0)
 }
 
 func (s *AssignContext) Pow_Equal() antlr.TerminalNode {
-	return s.GetToken(KParserPow_Equal, 0)
+	return s.GetToken(FeelParserPow_Equal, 0)
 }
 
 func (s *AssignContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *AssignContext) GetRuleContext() antlr.RuleContext {
@@ -33143,7 +33143,7 @@ func (s *AssignContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 
 func (s *AssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAssign(s)
 
 	default:
@@ -33151,9 +33151,9 @@ func (s *AssignContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Assign() (localctx IAssignContext) {
+func (p *FeelParser) Assign() (localctx IAssignContext) {
 	localctx = NewAssignContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 344, KParserRULE_assign)
+	p.EnterRule(localctx, 344, FeelParserRULE_assign)
 	var _la int
 
 	defer func() {
@@ -33182,7 +33182,7 @@ func (p *KParser) Assign() (localctx IAssignContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<KParserAdd_Equal)|(1<<KParserSub_Equal)|(1<<KParserMul_Equal)|(1<<KParserDiv_Equal)|(1<<KParserMod_Equal)|(1<<KParserPow_Equal)|(1<<KParserEqual))) != 0) {
+		if !(((_la)&-(0x1f+1)) == 0 && ((1<<uint(_la))&((1<<FeelParserAdd_Equal)|(1<<FeelParserSub_Equal)|(1<<FeelParserMul_Equal)|(1<<FeelParserDiv_Equal)|(1<<FeelParserMod_Equal)|(1<<FeelParserPow_Equal)|(1<<FeelParserEqual))) != 0) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*AssignContext).op = _ri
@@ -33195,10 +33195,10 @@ func (p *KParser) Assign() (localctx IAssignContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2446)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -33232,7 +33232,7 @@ type AddContext struct {
 func NewEmptyAddContext() *AddContext {
 	var p = new(AddContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_add
+	p.RuleIndex = FeelParserRULE_add
 	return p
 }
 
@@ -33244,7 +33244,7 @@ func NewAddContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_add
+	p.RuleIndex = FeelParserRULE_add
 
 	return p
 }
@@ -33256,15 +33256,15 @@ func (s *AddContext) GetOp() antlr.Token { return s.op }
 func (s *AddContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *AddContext) Add() antlr.TerminalNode {
-	return s.GetToken(KParserAdd, 0)
+	return s.GetToken(FeelParserAdd, 0)
 }
 
 func (s *AddContext) Sub() antlr.TerminalNode {
-	return s.GetToken(KParserSub, 0)
+	return s.GetToken(FeelParserSub, 0)
 }
 
 func (s *AddContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *AddContext) GetRuleContext() antlr.RuleContext {
@@ -33277,7 +33277,7 @@ func (s *AddContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) st
 
 func (s *AddContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitAdd(s)
 
 	default:
@@ -33285,9 +33285,9 @@ func (s *AddContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Add() (localctx IAddContext) {
+func (p *FeelParser) Add() (localctx IAddContext) {
 	localctx = NewAddContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 346, KParserRULE_add)
+	p.EnterRule(localctx, 346, FeelParserRULE_add)
 	var _la int
 
 	defer func() {
@@ -33316,7 +33316,7 @@ func (p *KParser) Add() (localctx IAddContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserAdd || _la == KParserSub) {
+		if !(_la == FeelParserAdd || _la == FeelParserSub) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*AddContext).op = _ri
@@ -33329,10 +33329,10 @@ func (p *KParser) Add() (localctx IAddContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2450)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -33366,7 +33366,7 @@ type MulContext struct {
 func NewEmptyMulContext() *MulContext {
 	var p = new(MulContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_mul
+	p.RuleIndex = FeelParserRULE_mul
 	return p
 }
 
@@ -33378,7 +33378,7 @@ func NewMulContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_mul
+	p.RuleIndex = FeelParserRULE_mul
 
 	return p
 }
@@ -33390,19 +33390,19 @@ func (s *MulContext) GetOp() antlr.Token { return s.op }
 func (s *MulContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *MulContext) Mul() antlr.TerminalNode {
-	return s.GetToken(KParserMul, 0)
+	return s.GetToken(FeelParserMul, 0)
 }
 
 func (s *MulContext) Div() antlr.TerminalNode {
-	return s.GetToken(KParserDiv, 0)
+	return s.GetToken(FeelParserDiv, 0)
 }
 
 func (s *MulContext) Mod() antlr.TerminalNode {
-	return s.GetToken(KParserMod, 0)
+	return s.GetToken(FeelParserMod, 0)
 }
 
 func (s *MulContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *MulContext) GetRuleContext() antlr.RuleContext {
@@ -33415,7 +33415,7 @@ func (s *MulContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) st
 
 func (s *MulContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitMul(s)
 
 	default:
@@ -33423,9 +33423,9 @@ func (s *MulContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Mul() (localctx IMulContext) {
+func (p *FeelParser) Mul() (localctx IMulContext) {
 	localctx = NewMulContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 348, KParserRULE_mul)
+	p.EnterRule(localctx, 348, FeelParserRULE_mul)
 	var _la int
 
 	defer func() {
@@ -33454,7 +33454,7 @@ func (p *KParser) Mul() (localctx IMulContext) {
 
 		_la = p.GetTokenStream().LA(1)
 
-		if !(((_la-53)&-(0x1f+1)) == 0 && ((1<<uint((_la-53)))&((1<<(KParserMul-53))|(1<<(KParserDiv-53))|(1<<(KParserMod-53)))) != 0) {
+		if !(((_la-53)&-(0x1f+1)) == 0 && ((1<<uint((_la-53)))&((1<<(FeelParserMul-53))|(1<<(FeelParserDiv-53))|(1<<(FeelParserMod-53)))) != 0) {
 			var _ri = p.GetErrorHandler().RecoverInline(p)
 
 			localctx.(*MulContext).op = _ri
@@ -33467,10 +33467,10 @@ func (p *KParser) Mul() (localctx IMulContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2454)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -33497,7 +33497,7 @@ type PowContext struct {
 func NewEmptyPowContext() *PowContext {
 	var p = new(PowContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_pow
+	p.RuleIndex = FeelParserRULE_pow
 	return p
 }
 
@@ -33509,7 +33509,7 @@ func NewPowContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_pow
+	p.RuleIndex = FeelParserRULE_pow
 
 	return p
 }
@@ -33517,11 +33517,11 @@ func NewPowContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 func (s *PowContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *PowContext) Caret() antlr.TerminalNode {
-	return s.GetToken(KParserCaret, 0)
+	return s.GetToken(FeelParserCaret, 0)
 }
 
 func (s *PowContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *PowContext) GetRuleContext() antlr.RuleContext {
@@ -33534,7 +33534,7 @@ func (s *PowContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) st
 
 func (s *PowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitPow(s)
 
 	default:
@@ -33542,9 +33542,9 @@ func (s *PowContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Pow() (localctx IPowContext) {
+func (p *FeelParser) Pow() (localctx IPowContext) {
 	localctx = NewPowContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 350, KParserRULE_pow)
+	p.EnterRule(localctx, 350, FeelParserRULE_pow)
 	var _la int
 
 	defer func() {
@@ -33566,16 +33566,16 @@ func (p *KParser) Pow() (localctx IPowContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2457)
-		p.Match(KParserCaret)
+		p.Match(FeelParserCaret)
 	}
 	p.SetState(2459)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	if _la == KParserNew_Line {
+	if _la == FeelParserNew_Line {
 		{
 			p.SetState(2458)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -33609,7 +33609,7 @@ type CallContext struct {
 func NewEmptyCallContext() *CallContext {
 	var p = new(CallContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_call
+	p.RuleIndex = FeelParserRULE_call
 	return p
 }
 
@@ -33621,7 +33621,7 @@ func NewCallContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_call
+	p.RuleIndex = FeelParserRULE_call
 
 	return p
 }
@@ -33633,11 +33633,11 @@ func (s *CallContext) GetOp() antlr.Token { return s.op }
 func (s *CallContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *CallContext) Dot() antlr.TerminalNode {
-	return s.GetToken(KParserDot, 0)
+	return s.GetToken(FeelParserDot, 0)
 }
 
 func (s *CallContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *CallContext) GetRuleContext() antlr.RuleContext {
@@ -33650,7 +33650,7 @@ func (s *CallContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 
 func (s *CallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitCall(s)
 
 	default:
@@ -33658,9 +33658,9 @@ func (s *CallContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Call() (localctx ICallContext) {
+func (p *FeelParser) Call() (localctx ICallContext) {
 	localctx = NewCallContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 352, KParserRULE_call)
+	p.EnterRule(localctx, 352, FeelParserRULE_call)
 
 	defer func() {
 		p.ExitRule()
@@ -33682,7 +33682,7 @@ func (p *KParser) Call() (localctx ICallContext) {
 	{
 		p.SetState(2461)
 
-		var _m = p.Match(KParserDot)
+		var _m = p.Match(FeelParserDot)
 
 		localctx.(*CallContext).op = _m
 	}
@@ -33692,7 +33692,7 @@ func (p *KParser) Call() (localctx ICallContext) {
 	if p.GetInterpreter().AdaptivePredict(p.GetTokenStream(), 284, p.GetParserRuleContext()) == 1 {
 		{
 			p.SetState(2462)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 	}
@@ -33726,7 +33726,7 @@ type WaveContext struct {
 func NewEmptyWaveContext() *WaveContext {
 	var p = new(WaveContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_wave
+	p.RuleIndex = FeelParserRULE_wave
 	return p
 }
 
@@ -33738,7 +33738,7 @@ func NewWaveContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_wave
+	p.RuleIndex = FeelParserRULE_wave
 
 	return p
 }
@@ -33750,7 +33750,7 @@ func (s *WaveContext) GetOp() antlr.Token { return s.op }
 func (s *WaveContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *WaveContext) Tilde() antlr.TerminalNode {
-	return s.GetToken(KParserTilde, 0)
+	return s.GetToken(FeelParserTilde, 0)
 }
 
 func (s *WaveContext) GetRuleContext() antlr.RuleContext {
@@ -33763,7 +33763,7 @@ func (s *WaveContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 
 func (s *WaveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitWave(s)
 
 	default:
@@ -33771,9 +33771,9 @@ func (s *WaveContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Wave() (localctx IWaveContext) {
+func (p *FeelParser) Wave() (localctx IWaveContext) {
 	localctx = NewWaveContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 354, KParserRULE_wave)
+	p.EnterRule(localctx, 354, FeelParserRULE_wave)
 
 	defer func() {
 		p.ExitRule()
@@ -33795,7 +33795,7 @@ func (p *KParser) Wave() (localctx IWaveContext) {
 	{
 		p.SetState(2465)
 
-		var _m = p.Match(KParserTilde)
+		var _m = p.Match(FeelParserTilde)
 
 		localctx.(*WaveContext).op = _m
 	}
@@ -33822,7 +33822,7 @@ type IdContext struct {
 func NewEmptyIdContext() *IdContext {
 	var p = new(IdContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_id
+	p.RuleIndex = FeelParserRULE_id
 	return p
 }
 
@@ -33834,7 +33834,7 @@ func NewIdContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokingS
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_id
+	p.RuleIndex = FeelParserRULE_id
 
 	return p
 }
@@ -33861,7 +33861,7 @@ func (s *IdContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) str
 
 func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitId(s)
 
 	default:
@@ -33869,9 +33869,9 @@ func (s *IdContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Id() (localctx IIdContext) {
+func (p *FeelParser) Id() (localctx IIdContext) {
 	localctx = NewIdContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 356, KParserRULE_id)
+	p.EnterRule(localctx, 356, FeelParserRULE_id)
 
 	defer func() {
 		p.ExitRule()
@@ -33924,7 +33924,7 @@ type IdItemContext struct {
 func NewEmptyIdItemContext() *IdItemContext {
 	var p = new(IdItemContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_idItem
+	p.RuleIndex = FeelParserRULE_idItem
 	return p
 }
 
@@ -33936,7 +33936,7 @@ func NewIdItemContext(parser antlr.Parser, parent antlr.ParserRuleContext, invok
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_idItem
+	p.RuleIndex = FeelParserRULE_idItem
 
 	return p
 }
@@ -33948,11 +33948,11 @@ func (s *IdItemContext) GetOp() antlr.Token { return s.op }
 func (s *IdItemContext) SetOp(v antlr.Token) { s.op = v }
 
 func (s *IdItemContext) IDPublic() antlr.TerminalNode {
-	return s.GetToken(KParserIDPublic, 0)
+	return s.GetToken(FeelParserIDPublic, 0)
 }
 
 func (s *IdItemContext) IDPrivate() antlr.TerminalNode {
-	return s.GetToken(KParserIDPrivate, 0)
+	return s.GetToken(FeelParserIDPrivate, 0)
 }
 
 func (s *IdItemContext) TypeBasic() ITypeBasicContext {
@@ -33985,7 +33985,7 @@ func (s *IdItemContext) ToStringTree(ruleNames []string, recog antlr.Recognizer)
 
 func (s *IdItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitIdItem(s)
 
 	default:
@@ -33993,9 +33993,9 @@ func (s *IdItemContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) IdItem() (localctx IIdItemContext) {
+func (p *FeelParser) IdItem() (localctx IIdItemContext) {
 	localctx = NewIdItemContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 358, KParserRULE_idItem)
+	p.EnterRule(localctx, 358, FeelParserRULE_idItem)
 	var _la int
 
 	defer func() {
@@ -34018,7 +34018,7 @@ func (p *KParser) IdItem() (localctx IIdItemContext) {
 	p.GetErrorHandler().Sync(p)
 
 	switch p.GetTokenStream().LA(1) {
-	case KParserIDPrivate, KParserIDPublic:
+	case FeelParserIDPrivate, FeelParserIDPublic:
 		p.EnterOuterAlt(localctx, 1)
 		{
 			p.SetState(2469)
@@ -34029,7 +34029,7 @@ func (p *KParser) IdItem() (localctx IIdItemContext) {
 
 			_la = p.GetTokenStream().LA(1)
 
-			if !(_la == KParserIDPrivate || _la == KParserIDPublic) {
+			if !(_la == FeelParserIDPrivate || _la == FeelParserIDPublic) {
 				var _ri = p.GetErrorHandler().RecoverInline(p)
 
 				localctx.(*IdItemContext).op = _ri
@@ -34039,14 +34039,14 @@ func (p *KParser) IdItem() (localctx IIdItemContext) {
 			}
 		}
 
-	case KParserTypeI8, KParserTypeU8, KParserTypeI16, KParserTypeU16, KParserTypeI32, KParserTypeU32, KParserTypeI64, KParserTypeU64, KParserTypeF32, KParserTypeF64, KParserTypeChr, KParserTypeStr, KParserTypeBool, KParserTypeInt, KParserTypeNum, KParserTypeByte:
+	case FeelParserTypeI8, FeelParserTypeU8, FeelParserTypeI16, FeelParserTypeU16, FeelParserTypeI32, FeelParserTypeU32, FeelParserTypeI64, FeelParserTypeU64, FeelParserTypeF32, FeelParserTypeF64, FeelParserTypeChr, FeelParserTypeStr, FeelParserTypeBool, FeelParserTypeInt, FeelParserTypeNum, FeelParserTypeByte:
 		p.EnterOuterAlt(localctx, 2)
 		{
 			p.SetState(2470)
 			p.TypeBasic()
 		}
 
-	case KParserTypeAny:
+	case FeelParserTypeAny:
 		p.EnterOuterAlt(localctx, 3)
 		{
 			p.SetState(2471)
@@ -34079,7 +34079,7 @@ type EndContext struct {
 func NewEmptyEndContext() *EndContext {
 	var p = new(EndContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_end
+	p.RuleIndex = FeelParserRULE_end
 	return p
 }
 
@@ -34091,7 +34091,7 @@ func NewEndContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_end
+	p.RuleIndex = FeelParserRULE_end
 
 	return p
 }
@@ -34099,11 +34099,11 @@ func NewEndContext(parser antlr.Parser, parent antlr.ParserRuleContext, invoking
 func (s *EndContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *EndContext) Semi() antlr.TerminalNode {
-	return s.GetToken(KParserSemi, 0)
+	return s.GetToken(FeelParserSemi, 0)
 }
 
 func (s *EndContext) New_Line() antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, 0)
+	return s.GetToken(FeelParserNew_Line, 0)
 }
 
 func (s *EndContext) GetRuleContext() antlr.RuleContext {
@@ -34116,7 +34116,7 @@ func (s *EndContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) st
 
 func (s *EndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitEnd(s)
 
 	default:
@@ -34124,9 +34124,9 @@ func (s *EndContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) End() (localctx IEndContext) {
+func (p *FeelParser) End() (localctx IEndContext) {
 	localctx = NewEndContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 360, KParserRULE_end)
+	p.EnterRule(localctx, 360, FeelParserRULE_end)
 	var _la int
 
 	defer func() {
@@ -34150,7 +34150,7 @@ func (p *KParser) End() (localctx IEndContext) {
 		p.SetState(2474)
 		_la = p.GetTokenStream().LA(1)
 
-		if !(_la == KParserSemi || _la == KParserNew_Line) {
+		if !(_la == FeelParserSemi || _la == FeelParserNew_Line) {
 			p.GetErrorHandler().RecoverInline(p)
 		} else {
 			p.GetErrorHandler().ReportMatch(p)
@@ -34180,7 +34180,7 @@ type MoreContext struct {
 func NewEmptyMoreContext() *MoreContext {
 	var p = new(MoreContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_more
+	p.RuleIndex = FeelParserRULE_more
 	return p
 }
 
@@ -34192,7 +34192,7 @@ func NewMoreContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_more
+	p.RuleIndex = FeelParserRULE_more
 
 	return p
 }
@@ -34200,15 +34200,15 @@ func NewMoreContext(parser antlr.Parser, parent antlr.ParserRuleContext, invokin
 func (s *MoreContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *MoreContext) Comma() antlr.TerminalNode {
-	return s.GetToken(KParserComma, 0)
+	return s.GetToken(FeelParserComma, 0)
 }
 
 func (s *MoreContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *MoreContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *MoreContext) GetRuleContext() antlr.RuleContext {
@@ -34221,7 +34221,7 @@ func (s *MoreContext) ToStringTree(ruleNames []string, recog antlr.Recognizer) s
 
 func (s *MoreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitMore(s)
 
 	default:
@@ -34229,9 +34229,9 @@ func (s *MoreContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) More() (localctx IMoreContext) {
+func (p *FeelParser) More() (localctx IMoreContext) {
 	localctx = NewMoreContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 362, KParserRULE_more)
+	p.EnterRule(localctx, 362, FeelParserRULE_more)
 	var _la int
 
 	defer func() {
@@ -34253,16 +34253,16 @@ func (p *KParser) More() (localctx IMoreContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2476)
-		p.Match(KParserComma)
+		p.Match(FeelParserComma)
 	}
 	p.SetState(2480)
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(2477)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(2482)
@@ -34292,7 +34292,7 @@ type Left_braceContext struct {
 func NewEmptyLeft_braceContext() *Left_braceContext {
 	var p = new(Left_braceContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_left_brace
+	p.RuleIndex = FeelParserRULE_left_brace
 	return p
 }
 
@@ -34304,7 +34304,7 @@ func NewLeft_braceContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_left_brace
+	p.RuleIndex = FeelParserRULE_left_brace
 
 	return p
 }
@@ -34312,15 +34312,15 @@ func NewLeft_braceContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *Left_braceContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Left_braceContext) Left_Brace() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Brace, 0)
+	return s.GetToken(FeelParserLeft_Brace, 0)
 }
 
 func (s *Left_braceContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *Left_braceContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *Left_braceContext) GetRuleContext() antlr.RuleContext {
@@ -34333,7 +34333,7 @@ func (s *Left_braceContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *Left_braceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLeft_brace(s)
 
 	default:
@@ -34341,9 +34341,9 @@ func (s *Left_braceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Left_brace() (localctx ILeft_braceContext) {
+func (p *FeelParser) Left_brace() (localctx ILeft_braceContext) {
 	localctx = NewLeft_braceContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 364, KParserRULE_left_brace)
+	p.EnterRule(localctx, 364, FeelParserRULE_left_brace)
 
 	defer func() {
 		p.ExitRule()
@@ -34366,7 +34366,7 @@ func (p *KParser) Left_brace() (localctx ILeft_braceContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2483)
-		p.Match(KParserLeft_Brace)
+		p.Match(FeelParserLeft_Brace)
 	}
 	p.SetState(2487)
 	p.GetErrorHandler().Sync(p)
@@ -34376,7 +34376,7 @@ func (p *KParser) Left_brace() (localctx ILeft_braceContext) {
 		if _alt == 1 {
 			{
 				p.SetState(2484)
-				p.Match(KParserNew_Line)
+				p.Match(FeelParserNew_Line)
 			}
 
 		}
@@ -34407,7 +34407,7 @@ type Right_braceContext struct {
 func NewEmptyRight_braceContext() *Right_braceContext {
 	var p = new(Right_braceContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_right_brace
+	p.RuleIndex = FeelParserRULE_right_brace
 	return p
 }
 
@@ -34419,7 +34419,7 @@ func NewRight_braceContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_right_brace
+	p.RuleIndex = FeelParserRULE_right_brace
 
 	return p
 }
@@ -34427,15 +34427,15 @@ func NewRight_braceContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *Right_braceContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Right_braceContext) Right_Brace() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Brace, 0)
+	return s.GetToken(FeelParserRight_Brace, 0)
 }
 
 func (s *Right_braceContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *Right_braceContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *Right_braceContext) GetRuleContext() antlr.RuleContext {
@@ -34448,7 +34448,7 @@ func (s *Right_braceContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *Right_braceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitRight_brace(s)
 
 	default:
@@ -34456,9 +34456,9 @@ func (s *Right_braceContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) Right_brace() (localctx IRight_braceContext) {
+func (p *FeelParser) Right_brace() (localctx IRight_braceContext) {
 	localctx = NewRight_braceContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 366, KParserRULE_right_brace)
+	p.EnterRule(localctx, 366, FeelParserRULE_right_brace)
 	var _la int
 
 	defer func() {
@@ -34482,10 +34482,10 @@ func (p *KParser) Right_brace() (localctx IRight_braceContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(2490)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(2495)
@@ -34494,7 +34494,7 @@ func (p *KParser) Right_brace() (localctx IRight_braceContext) {
 	}
 	{
 		p.SetState(2496)
-		p.Match(KParserRight_Brace)
+		p.Match(FeelParserRight_Brace)
 	}
 
 	return localctx
@@ -34519,7 +34519,7 @@ type Left_parenContext struct {
 func NewEmptyLeft_parenContext() *Left_parenContext {
 	var p = new(Left_parenContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_left_paren
+	p.RuleIndex = FeelParserRULE_left_paren
 	return p
 }
 
@@ -34531,7 +34531,7 @@ func NewLeft_parenContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_left_paren
+	p.RuleIndex = FeelParserRULE_left_paren
 
 	return p
 }
@@ -34539,7 +34539,7 @@ func NewLeft_parenContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *Left_parenContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Left_parenContext) Left_Paren() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Paren, 0)
+	return s.GetToken(FeelParserLeft_Paren, 0)
 }
 
 func (s *Left_parenContext) GetRuleContext() antlr.RuleContext {
@@ -34552,7 +34552,7 @@ func (s *Left_parenContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *Left_parenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLeft_paren(s)
 
 	default:
@@ -34560,9 +34560,9 @@ func (s *Left_parenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Left_paren() (localctx ILeft_parenContext) {
+func (p *FeelParser) Left_paren() (localctx ILeft_parenContext) {
 	localctx = NewLeft_parenContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 368, KParserRULE_left_paren)
+	p.EnterRule(localctx, 368, FeelParserRULE_left_paren)
 
 	defer func() {
 		p.ExitRule()
@@ -34583,7 +34583,7 @@ func (p *KParser) Left_paren() (localctx ILeft_parenContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2498)
-		p.Match(KParserLeft_Paren)
+		p.Match(FeelParserLeft_Paren)
 	}
 
 	return localctx
@@ -34608,7 +34608,7 @@ type Right_parenContext struct {
 func NewEmptyRight_parenContext() *Right_parenContext {
 	var p = new(Right_parenContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_right_paren
+	p.RuleIndex = FeelParserRULE_right_paren
 	return p
 }
 
@@ -34620,7 +34620,7 @@ func NewRight_parenContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_right_paren
+	p.RuleIndex = FeelParserRULE_right_paren
 
 	return p
 }
@@ -34628,7 +34628,7 @@ func NewRight_parenContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *Right_parenContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Right_parenContext) Right_Paren() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Paren, 0)
+	return s.GetToken(FeelParserRight_Paren, 0)
 }
 
 func (s *Right_parenContext) GetRuleContext() antlr.RuleContext {
@@ -34641,7 +34641,7 @@ func (s *Right_parenContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *Right_parenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitRight_paren(s)
 
 	default:
@@ -34649,9 +34649,9 @@ func (s *Right_parenContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) Right_paren() (localctx IRight_parenContext) {
+func (p *FeelParser) Right_paren() (localctx IRight_parenContext) {
 	localctx = NewRight_parenContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 370, KParserRULE_right_paren)
+	p.EnterRule(localctx, 370, FeelParserRULE_right_paren)
 
 	defer func() {
 		p.ExitRule()
@@ -34672,7 +34672,7 @@ func (p *KParser) Right_paren() (localctx IRight_parenContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2500)
-		p.Match(KParserRight_Paren)
+		p.Match(FeelParserRight_Paren)
 	}
 
 	return localctx
@@ -34697,7 +34697,7 @@ type Left_brackContext struct {
 func NewEmptyLeft_brackContext() *Left_brackContext {
 	var p = new(Left_brackContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_left_brack
+	p.RuleIndex = FeelParserRULE_left_brack
 	return p
 }
 
@@ -34709,7 +34709,7 @@ func NewLeft_brackContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_left_brack
+	p.RuleIndex = FeelParserRULE_left_brack
 
 	return p
 }
@@ -34717,15 +34717,15 @@ func NewLeft_brackContext(parser antlr.Parser, parent antlr.ParserRuleContext, i
 func (s *Left_brackContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Left_brackContext) Left_Brack() antlr.TerminalNode {
-	return s.GetToken(KParserLeft_Brack, 0)
+	return s.GetToken(FeelParserLeft_Brack, 0)
 }
 
 func (s *Left_brackContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *Left_brackContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *Left_brackContext) GetRuleContext() antlr.RuleContext {
@@ -34738,7 +34738,7 @@ func (s *Left_brackContext) ToStringTree(ruleNames []string, recog antlr.Recogni
 
 func (s *Left_brackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitLeft_brack(s)
 
 	default:
@@ -34746,9 +34746,9 @@ func (s *Left_brackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	}
 }
 
-func (p *KParser) Left_brack() (localctx ILeft_brackContext) {
+func (p *FeelParser) Left_brack() (localctx ILeft_brackContext) {
 	localctx = NewLeft_brackContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 372, KParserRULE_left_brack)
+	p.EnterRule(localctx, 372, FeelParserRULE_left_brack)
 
 	defer func() {
 		p.ExitRule()
@@ -34771,7 +34771,7 @@ func (p *KParser) Left_brack() (localctx ILeft_brackContext) {
 	p.EnterOuterAlt(localctx, 1)
 	{
 		p.SetState(2502)
-		p.Match(KParserLeft_Brack)
+		p.Match(FeelParserLeft_Brack)
 	}
 	p.SetState(2506)
 	p.GetErrorHandler().Sync(p)
@@ -34781,7 +34781,7 @@ func (p *KParser) Left_brack() (localctx ILeft_brackContext) {
 		if _alt == 1 {
 			{
 				p.SetState(2503)
-				p.Match(KParserNew_Line)
+				p.Match(FeelParserNew_Line)
 			}
 
 		}
@@ -34812,7 +34812,7 @@ type Right_brackContext struct {
 func NewEmptyRight_brackContext() *Right_brackContext {
 	var p = new(Right_brackContext)
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(nil, -1)
-	p.RuleIndex = KParserRULE_right_brack
+	p.RuleIndex = FeelParserRULE_right_brack
 	return p
 }
 
@@ -34824,7 +34824,7 @@ func NewRight_brackContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 	p.BaseParserRuleContext = antlr.NewBaseParserRuleContext(parent, invokingState)
 
 	p.parser = parser
-	p.RuleIndex = KParserRULE_right_brack
+	p.RuleIndex = FeelParserRULE_right_brack
 
 	return p
 }
@@ -34832,15 +34832,15 @@ func NewRight_brackContext(parser antlr.Parser, parent antlr.ParserRuleContext, 
 func (s *Right_brackContext) GetParser() antlr.Parser { return s.parser }
 
 func (s *Right_brackContext) Right_Brack() antlr.TerminalNode {
-	return s.GetToken(KParserRight_Brack, 0)
+	return s.GetToken(FeelParserRight_Brack, 0)
 }
 
 func (s *Right_brackContext) AllNew_Line() []antlr.TerminalNode {
-	return s.GetTokens(KParserNew_Line)
+	return s.GetTokens(FeelParserNew_Line)
 }
 
 func (s *Right_brackContext) New_Line(i int) antlr.TerminalNode {
-	return s.GetToken(KParserNew_Line, i)
+	return s.GetToken(FeelParserNew_Line, i)
 }
 
 func (s *Right_brackContext) GetRuleContext() antlr.RuleContext {
@@ -34853,7 +34853,7 @@ func (s *Right_brackContext) ToStringTree(ruleNames []string, recog antlr.Recogn
 
 func (s *Right_brackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} {
 	switch t := visitor.(type) {
-	case KParserVisitor:
+	case FeelParserVisitor:
 		return t.VisitRight_brack(s)
 
 	default:
@@ -34861,9 +34861,9 @@ func (s *Right_brackContext) Accept(visitor antlr.ParseTreeVisitor) interface{} 
 	}
 }
 
-func (p *KParser) Right_brack() (localctx IRight_brackContext) {
+func (p *FeelParser) Right_brack() (localctx IRight_brackContext) {
 	localctx = NewRight_brackContext(p, p.GetParserRuleContext(), p.GetState())
-	p.EnterRule(localctx, 374, KParserRULE_right_brack)
+	p.EnterRule(localctx, 374, FeelParserRULE_right_brack)
 	var _la int
 
 	defer func() {
@@ -34887,10 +34887,10 @@ func (p *KParser) Right_brack() (localctx IRight_brackContext) {
 	p.GetErrorHandler().Sync(p)
 	_la = p.GetTokenStream().LA(1)
 
-	for _la == KParserNew_Line {
+	for _la == FeelParserNew_Line {
 		{
 			p.SetState(2509)
-			p.Match(KParserNew_Line)
+			p.Match(FeelParserNew_Line)
 		}
 
 		p.SetState(2514)
@@ -34899,13 +34899,13 @@ func (p *KParser) Right_brack() (localctx IRight_brackContext) {
 	}
 	{
 		p.SetState(2515)
-		p.Match(KParserRight_Brack)
+		p.Match(FeelParserRight_Brack)
 	}
 
 	return localctx
 }
 
-func (p *KParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
+func (p *FeelParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) bool {
 	switch ruleIndex {
 	case 77:
 		var t *ExpressionContext = nil
@@ -34919,7 +34919,7 @@ func (p *KParser) Sempred(localctx antlr.RuleContext, ruleIndex, predIndex int) 
 	}
 }
 
-func (p *KParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
+func (p *FeelParser) Expression_Sempred(localctx antlr.RuleContext, predIndex int) bool {
 	switch predIndex {
 	case 0:
 		return p.Precpred(p.GetParserRuleContext(), 10)

@@ -1,7 +1,7 @@
 package visitor
 
 import (
-	parser "github.com/kulics-works/k-go/parser/generate"
+	parser "github.com/kulics-works/feel-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -69,7 +69,7 @@ func (me *KVisitor) VisitTypeFunction(ctx *parser.TypeFunctionContext) any {
 	obj := ""
 	in := me.Visit(ctx.TypeFunctionParameterClause(0)).(string)
 	out := me.Visit(ctx.TypeFunctionParameterClause(1)).(string)
-	if ctx.GetT().GetTokenType() == parser.KLexerRight_Arrow {
+	if ctx.GetT().GetTokenType() == parser.FeelLexerRight_Arrow {
 		obj = Func + "(" + in + ")" + "(" + out + ")"
 	} else {
 		obj = Func + "(" + in + ")" + "(" + out + ")"
@@ -97,37 +97,37 @@ func (me *KVisitor) VisitTypeFunctionParameterClause(ctx *parser.TypeFunctionPar
 func (me *KVisitor) VisitTypeBasic(ctx *parser.TypeBasicContext) any {
 	obj := ""
 	switch ctx.GetT().GetTokenType() {
-	case parser.KLexerTypeI8:
+	case parser.FeelLexerTypeI8:
 		obj = I8
-	case parser.KLexerTypeU8:
+	case parser.FeelLexerTypeU8:
 		obj = U8
-	case parser.KLexerTypeI16:
+	case parser.FeelLexerTypeI16:
 		obj = I16
-	case parser.KLexerTypeU16:
+	case parser.FeelLexerTypeU16:
 		obj = U16
-	case parser.KLexerTypeI32:
+	case parser.FeelLexerTypeI32:
 		obj = I32
-	case parser.KLexerTypeU32:
+	case parser.FeelLexerTypeU32:
 		obj = U32
-	case parser.KLexerTypeI64:
+	case parser.FeelLexerTypeI64:
 		obj = I64
-	case parser.KLexerTypeU64:
+	case parser.FeelLexerTypeU64:
 		obj = U64
-	case parser.KLexerTypeF32:
+	case parser.FeelLexerTypeF32:
 		obj = F32
-	case parser.KLexerTypeF64:
+	case parser.FeelLexerTypeF64:
 		obj = F64
-	case parser.KLexerTypeChr:
+	case parser.FeelLexerTypeChr:
 		obj = Chr
-	case parser.KLexerTypeStr:
+	case parser.FeelLexerTypeStr:
 		obj = Str
-	case parser.KLexerTypeBool:
+	case parser.FeelLexerTypeBool:
 		obj = Bool
-	case parser.KLexerTypeInt:
+	case parser.FeelLexerTypeInt:
 		obj = Int
-	case parser.KLexerTypeNum:
+	case parser.FeelLexerTypeNum:
 		obj = Num
-	case parser.KLexerTypeByte:
+	case parser.FeelLexerTypeByte:
 		obj = Byte
 	default:
 		obj = Any

@@ -1,6 +1,6 @@
 package visitor
 
-import parser "github.com/kulics-works/k-go/parser/generate"
+import parser "github.com/kulics-works/feel-go/parser/generate"
 
 type Iterator struct {
 	Begin Result

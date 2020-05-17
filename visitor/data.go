@@ -1,7 +1,7 @@
 package visitor
 
 import (
-	parser "github.com/kulics-works/k-go/parser/generate"
+	parser "github.com/kulics-works/feel-go/parser/generate"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -79,9 +79,9 @@ func (me *KVisitor) VisitExpression(ctx *parser.ExpressionContext) any {
 			e2 := me.Visit(ctx.GetChild(1).(antlr.ParseTree)).(Result)
 			r.Text = "go " + r.Text + e2.Text
 		} else if ctx.GetOp() != nil {
-			if ctx.GetOp().GetTokenType() == parser.KLexerBang {
+			if ctx.GetOp().GetTokenType() == parser.FeelLexerBang {
 				r.Text = "*" + r.Text
-			} else if ctx.GetOp().GetTokenType() == parser.KLexerQuestion {
+			} else if ctx.GetOp().GetTokenType() == parser.FeelLexerQuestion {
 				r.Text = "&" + r.Text
 			}
 		}
@@ -145,7 +145,7 @@ func (me *KVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext)
 			return me.Visit(ctx.DataStatement())
 		} else if _, ok := c.(*parser.IdContext); ok {
 			return me.Visit(ctx.Id())
-		} else if ctx.GetT().GetTokenType() == parser.KLexerDiscard {
+		} else if ctx.GetT().GetTokenType() == parser.FeelLexerDiscard {
 			return Result{Text: "_", Data: "var"}
 		}
 	} else if ctx.GetChildCount() == 2 {
@@ -227,13 +227,13 @@ func (me *KVisitor) VisitDataStatement(ctx *parser.DataStatementContext) any {
 	} else if ctx.StringExpr() != nil {
 		r.Data = Str
 		r.Text = me.Visit(ctx.StringExpr()).(string)
-	} else if ctx.GetT().GetTokenType() == parser.KLexerCharLiteral {
+	} else if ctx.GetT().GetTokenType() == parser.FeelLexerCharLiteral {
 		r.Data = Chr
 		r.Text = ctx.CharLiteral().GetText()
-	} else if ctx.GetT().GetTokenType() == parser.KLexerTrueLiteral {
+	} else if ctx.GetT().GetTokenType() == parser.FeelLexerTrueLiteral {
 		r.Data = Bool
 		r.Text = T
-	} else if ctx.GetT().GetTokenType() == parser.KLexerFalseLiteral {
+	} else if ctx.GetT().GetTokenType() == parser.FeelLexerFalseLiteral {
 		r.Data = Bool
 		r.Text = F
 	}

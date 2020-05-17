@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	parser "github.com/kulics-works/k-go/parser/generate"
+	parser "github.com/kulics-works/feel-go/parser/generate"
 )
 
 const (
@@ -77,7 +77,7 @@ func (me *errorListener) SyntaxError(recognizer antlr.Recognizer, offendingSymbo
 }
 
 type KVisitor struct {
-	parser.BaseKParserVisitor
+	parser.BaseFeelParserVisitor
 
 	AllIDSet     *set_str
 	CurrentIDSet *stack_str
@@ -210,11 +210,11 @@ func (me *KVisitor) VisitIdItem(ctx *parser.IdItemContext) any {
 	} else if ctx.TypeAny() != nil {
 		r.Permission = "public"
 		r.Text += ctx.TypeAny().GetText()
-	} else if ctx.GetOp().GetTokenType() == parser.KLexerIDPublic {
+	} else if ctx.GetOp().GetTokenType() == parser.FeelLexerIDPublic {
 		r.Permission = "public"
 		r.Text += ctx.GetOp().GetText()
 		// r.IsVirtual = r.Text[0].is Upper()
-	} else if ctx.GetOp().GetTokenType() == parser.KLexerIDPrivate {
+	} else if ctx.GetOp().GetTokenType() == parser.FeelLexerIDPrivate {
 		r.Permission = "protected"
 		r.Text += ctx.GetOp().GetText()
 		// r.IsVirtual = r.Text[r.Text.find first({it -> it >< '_'})].is Upper()

@@ -1,7 +1,7 @@
 package visitor
 
 import (
-	parser "github.com/kulics-works/k-go/parser/generate"
+	parser "github.com/kulics-works/feel-go/parser/generate"
 )
 
 func (me *KVisitor) VisitJudgeCaseStatement(ctx *parser.JudgeCaseStatementContext) any {

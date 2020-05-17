@@ -8,8 +8,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	parser "github.com/kulics-works/k-go/parser/generate"
-	"github.com/kulics-works/k-go/visitor"
+	parser "github.com/kulics-works/feel-go/parser/generate"
+	"github.com/kulics-works/feel-go/visitor"
 
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
@@ -35,9 +35,9 @@ func Compiled(dir string) error {
 			fmt.Println(path)
 			InputStream, _ := antlr.NewFileStream(path)
 			// Create the Lexer
-			Lexer := parser.NewKLexer(InputStream)
+			Lexer := parser.NewFeelLexer(InputStream)
 			Tokens := antlr.NewCommonTokenStream(Lexer, antlr.TokenDefaultChannel)
-			Parser := parser.NewKParser(Tokens)
+			Parser := parser.NewFeelParser(Tokens)
 			Parser.BuildParseTrees = true
 			Parser.RemoveErrorListeners()
 			Parser.AddErrorListener(visitor.NewErrorListener(path))

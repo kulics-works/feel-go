@@ -2,7 +2,7 @@ package visitor
 
 import (
 	"github.com/antlr/antlr4/runtime/Go/antlr"
-	parser "github.com/kulics-works/k-go/parser/generate"
+	parser "github.com/kulics-works/feel-go/parser/generate"
 )
 
 func (me *KVisitor) VisitTypeConversion(ctx *parser.TypeConversionContext) any {
@@ -75,16 +75,16 @@ func (me *KVisitor) VisitBitwiseRightShift(ctx *parser.BitwiseRightShiftContext)
 }
 
 func (me *KVisitor) VisitCompare(ctx *parser.CompareContext) any {
-	if ctx.GetOp().GetTokenType() == parser.KParserNot_Equal {
+	if ctx.GetOp().GetTokenType() == parser.FeelParserNot_Equal {
 		return "!="
 	}
 	return ctx.GetOp().GetText()
 }
 
 func (me *KVisitor) VisitLogic(ctx *parser.LogicContext) any {
-	if ctx.GetOp().GetTokenType() == parser.KParserAnd {
+	if ctx.GetOp().GetTokenType() == parser.FeelParserAnd {
 		return "&&"
-	} else if ctx.GetOp().GetTokenType() == parser.KParserOr {
+	} else if ctx.GetOp().GetTokenType() == parser.FeelParserOr {
 		return "||"
 	}
 	return ctx.GetOp().GetText()
