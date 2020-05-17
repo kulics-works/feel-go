@@ -31,7 +31,7 @@ func Compiled(dir string) error {
 		}
 
 		if info.IsDir() {
-		} else if strings.HasSuffix(info.Name(), ".k") {
+		} else if strings.HasSuffix(info.Name(), ".feel") {
 			fmt.Println(path)
 			InputStream, _ := antlr.NewFileStream(path)
 			// Create the Lexer
@@ -46,7 +46,7 @@ func Compiled(dir string) error {
 
 			Visitor := visitor.NewKVisitor()
 			Result := Visitor.Visit(AST)
-			gopath := strings.Replace(path, ".k", ".go", 1)
+			gopath := strings.Replace(path, ".feel", ".go", 1)
 			if err := ioutil.WriteFile(gopath, []byte(Result.(string)), 0644); err != nil {
 				return err
 			}
