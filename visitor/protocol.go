@@ -14,12 +14,8 @@ func (me *KVisitor) VisitProtocolStatement(ctx *parser.ProtocolStatementContext)
 	if ctx.AnnotationSupport() != nil {
 		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
-	for _, item := range ctx.AllProtocolSubStatement() {
+	if item := ctx.ProtocolSubStatement(); item != nil {
 		interfaceProtocol += me.Visit(item).(string)
-	}
-	for _, item := range ctx.AllIncludeStatement() {
-		var r = me.Visit(item).(string)
-		interfaceProtocol += r
 	}
 	obj += "type " + ptclName + " interface"
 	// 泛型

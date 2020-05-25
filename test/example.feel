@@ -2,7 +2,7 @@
 
 -> {
     #: _ package "./project/package path"
-    fmt "fmt"
+    "fmt"
     work : (str->)
 }
 
@@ -96,7 +96,8 @@ human : $ ?me {
     }
 }
 
-man : human \/ $ ?me {
+man : $ ?me {
+    human
     age! int
 
     doSomething : (work str ->) {
@@ -108,7 +109,8 @@ person : $$ {
     sayName (-> n str)
 }
 
-worker : person \/ $$ {
+worker : $$ {
+    person
     doSomething (work str ->)
 }
 

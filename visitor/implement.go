@@ -10,7 +10,7 @@ func (me *KVisitor) VisitImplementStatement(ctx *parser.ImplementStatementContex
 	id := me.Visit(ctx.Id()).(Result)
 	me.self.Type = id.Text
 
-	for _, item := range ctx.AllPackageFieldStatement() {
+	if item := ctx.PackageFieldStatement(); item != nil {
 		var r = me.Visit(item).(Result)
 		obj += r.Text
 		methed += r.Data.(string)

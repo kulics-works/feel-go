@@ -1,6 +1,6 @@
 package main
 
-import fmt "fmt"
+import "fmt"
 
 type work = func(string)
 
@@ -119,8 +119,8 @@ type person interface {
 	sayName() (n string)
 }
 type worker interface {
-	doSomething(work string)
 	person
+	doSomething(work string)
 }
 
 func testProtocol(w worker) (i interface{}) {

@@ -53,7 +53,10 @@ func (me *KVisitor) VisitImportSubStatement(ctx *parser.ImportSubStatementContex
 	if ctx.AnnotationSupport() != nil {
 		obj += me.Visit(ctx.AnnotationSupport()).(string)
 	}
-	ns := me.Visit(ctx.NameSpaceItem()).(str)
+	ns := ""
+	if item := ctx.NameSpaceItem(); item != nil {
+		ns = me.Visit(item).(str)
+	}
 	if ctx.Discard() != nil {
 		obj += ". " + ns
 	} else if ctx.Id() != nil {

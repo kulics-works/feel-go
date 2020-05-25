@@ -22,11 +22,7 @@ func (me *KVisitor) VisitPackageStatement(ctx *parser.PackageStatementContext) a
 	// ctx.packageNewStatement() @ item {
 	// 	Init += "public " id.text " " Visit(item):Str ""
 	// }
-	for _, item := range ctx.AllIncludeStatement() {
-		var r = me.Visit(item).(str)
-		obj += r
-	}
-	for _, item := range ctx.AllPackageFieldStatement() {
+	if item := ctx.PackageFieldStatement(); item != nil {
 		var r = me.Visit(item).(Result)
 		obj += r.Text
 		methed += r.Data.(string)
