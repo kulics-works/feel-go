@@ -36,31 +36,19 @@ func (me *KVisitor) VisitTypeNotNull(ctx *parser.TypeNotNullContext) any {
 	return obj
 }
 
-func (me *KVisitor) VisitTypeArray(ctx *parser.TypeArrayContext) any {
-	return "[]" + me.Visit(ctx.TypeType()).(string)
-}
-
-func (me *KVisitor) VisitTypeList(ctx *parser.TypeListContext) any {
-	return "[]" + me.Visit(ctx.TypeType()).(string)
-}
-
-func (me *KVisitor) VisitTypeSet(ctx *parser.TypeSetContext) any {
-	return "Set[]" + me.Visit(ctx.TypeType()).(string)
-}
-
-func (me *KVisitor) VisitTypeDictionary(ctx *parser.TypeDictionaryContext) any {
-	return "map[" + me.Visit(ctx.TypeType(0)).(string) + "]" + me.Visit(ctx.TypeType(1)).(string)
-}
-
-func (me *KVisitor) VisitTypeChannel(ctx *parser.TypeChannelContext) any {
-	return Chan + me.Visit(ctx.TypeType()).(string)
-}
-
 func (me *KVisitor) VisitTypePackage(ctx *parser.TypePackageContext) any {
 	obj := ""
 	obj += me.Visit(ctx.NameSpaceItem()).(string)
 	if ctx.TemplateCall() != nil {
-		obj += me.Visit(ctx.TemplateCall()).(string)
+		var tmpArr = me.Visit(ctx.TemplateCall()).([]str)
+		switch obj {
+		case "list":
+			obj = "[]" + tmpArr[0]
+		case "dict":
+			obj = "map[" + tmpArr[0] + "]" + tmpArr[1]
+		case "chan":
+			obj = "chan " + tmpArr[0]
+		}
 	}
 	return obj
 }

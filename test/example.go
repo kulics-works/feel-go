@@ -59,7 +59,6 @@ func testJudge() {
 		{
 			a = 0
 		}
-
 	}
 }
 func testLoop() {
@@ -94,6 +93,8 @@ func testLoop() {
 		a -= 1
 		break
 	}
+}
+func test_type(a []int, b map[string]int, c chan int) {
 }
 
 type human struct {
@@ -169,11 +170,10 @@ func test_define() {
 			a = 3
 			fmt.Println(b)
 		}
-
 	}
 }
 func testGo() (v int) {
-	channel := make(chan int, 1)
+	channel := make(chan int)
 	async := func() {
 		fmt.Println("async")
 		channel <- 2

@@ -12,11 +12,14 @@ func (me *KVisitor) VisitJudgeCaseStatement(ctx *parser.JudgeCaseStatementContex
 		r := me.Visit(item).(string)
 		obj += r + Wrap
 	}
+	if item := ctx.CaseElseStatement(); item != nil {
+		obj += me.Visit(item).(str)
+	}
 	obj += BlockRight + Wrap
 	return obj
 }
 
-func (me *KVisitor) VisitCaseExprStatement(ctx *parser.CaseExprStatementContext) any {
+func (me *KVisitor) VisitJudgeCase(ctx *parser.JudgeCaseContext) any {
 	obj := ""
 	if ctx.Expression() != nil {
 		expr := me.Visit(ctx.Expression()).(Result)
@@ -28,22 +31,30 @@ func (me *KVisitor) VisitCaseExprStatement(ctx *parser.CaseExprStatementContext)
 		// }
 		// type := Visit(ctx.typeType()):Str
 		// obj += "case "type" "id" :"Wrap""
-	} else {
-		obj += "default:" + Wrap
 	}
 	return obj
 }
 
 func (me *KVisitor) VisitCaseStatement(ctx *parser.CaseStatementContext) any {
 	obj := ""
-
-	for _, item := range ctx.AllCaseExprStatement() {
+	for _, item := range ctx.AllJudgeCase() {
 		r := me.Visit(item).(string)
 		me.add_current_set()
 		process := BlockLeft + me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement()) + BlockRight
 		obj += r + process + Wrap
 		me.delete_current_set()
 	}
+	return obj
+}
+
+func (me *KVisitor) VisitCaseElseStatement(ctx *parser.CaseElseStatementContext) any {
+	obj := ""
+
+	me.add_current_set()
+	process := BlockLeft + me.ProcessFunctionSupport(ctx.AllFunctionSupportStatement()) + BlockRight
+	obj += "default:" + process + Wrap
+	me.delete_current_set()
+
 	return obj
 }
 

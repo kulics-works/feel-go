@@ -152,6 +152,22 @@ func (me *KVisitor) VisitPrimaryExpression(ctx *parser.PrimaryExpressionContext)
 		id := me.Visit(ctx.Id()).(Result)
 		template := me.Visit(ctx.TemplateCall()).(string)
 		return Result{Text: id.Text + template, Data: id.Text + template}
+	} else if ctx.GetChildCount() == 4 {
+		id := me.Visit(ctx.Id()).(Result)
+		var tmpArr = me.Visit(ctx.TemplateCall()).([]str)
+		var lastId = ""
+		switch id.Text {
+		case "list":
+			lastId = "[]" + tmpArr[0]
+		case "dict":
+			lastId = "map[" + tmpArr[0] + "]" + tmpArr[1]
+		case "chan":
+			lastId = "chan " + tmpArr[0]
+		}
+		return Result{
+			Text: lastId,
+			Data: lastId,
+		}
 	}
 	r := me.Visit(ctx.Expression()).(Result)
 	return Result{Text: "(" + r.Text + ")", Data: r.Data}

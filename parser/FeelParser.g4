@@ -177,10 +177,13 @@ annotationStatement |
 New_Line;
 
 // 条件判断
-judgeCaseStatement: Question expression Colon (caseStatement)+ end;
+judgeCaseStatement: Question expression Colon (caseStatement)+ caseElseStatement end |
+Question expression Colon (caseStatement)+ end;
 // 判断条件声明
-caseStatement: caseExprStatement (more caseExprStatement)* left_brace (functionSupportStatement)* right_brace;
-caseExprStatement: Discard | expression | (id|Discard) typeType;
+caseElseStatement: Discard left_brace (functionSupportStatement)* right_brace;
+caseStatement: judgeCase (more judgeCase)* left_brace (functionSupportStatement)* right_brace;
+judgeCase: expression | (id|Discard) typeType;
+
 // 判断
 judgeStatement:
 judgeIfStatement (judgeElseIfStatement)* judgeElseStatement end
@@ -272,7 +275,6 @@ expression op=Bang | // 取引用
 expression op=Question | // 可空判断
 expression orElse | // 空值替换
 expression callFunc | // 函数调用
-callNew | // 构造类对象
 expression callChannel | // 调用通道
 expression callElement | // 访问元素
 expression callAwait |  // 异步等待调用
@@ -317,8 +319,6 @@ transfer: Left_Wave; // 传递通道值
 callElement: left_brack (slice | expression) right_brack; // 元素调用
 
 callPkg: typeType left_brace (pkgAssign|listAssign|dictionaryAssign)? right_brace; // 新建包
-
-callNew: typeType left_paren New_Line? expressionList? New_Line? right_paren; // 构造类对象
 
 orElse: Question Question expression; // 类型转化
 
@@ -384,32 +384,34 @@ linqHeadItem: At id Bang? Colon expression;
 linqItem: (linqHeadItem | id (expression)?) Right_Arrow New_Line?;
 
 // 判断表达式
-judgeExpression: judgeExpressionIfStatement (judgeExpressionElseIfStatement)* judgeExpressionElseStatement;
+judgeExpression: judgeIfExpression (judgeElseIfExpression)* judgeElseExpression;
 
 // else 判断
-judgeExpressionElseStatement: Discard left_brace (functionSupportStatement)* tupleExpression right_brace;
+judgeElseExpression: Discard left_brace (functionSupportStatement)* tupleExpression right_brace;
 // if 判断
-judgeExpressionIfStatement: Question Right_Arrow expression left_brace (functionSupportStatement)* tupleExpression right_brace;
+judgeIfExpression: Question expression left_brace (functionSupportStatement)* tupleExpression right_brace;
 // else if 判断
-judgeExpressionElseIfStatement: expression left_brace (functionSupportStatement)* tupleExpression right_brace;
+judgeElseIfExpression: expression left_brace (functionSupportStatement)* tupleExpression right_brace;
 
 // 条件判断表达式
-judgeCaseExpression: Question expression Colon Right_Arrow (caseExpressionStatement)+;
+judgeCaseExpression: Question expression Colon (caseExpression)* caseElseExpression;
 // 判断条件声明
-caseExpressionStatement: caseExprStatement (more caseExprStatement)* 
-left_brace (functionSupportStatement)* tupleExpression right_brace;
+caseExpression: judgeCase (more judgeCase)* left_brace (functionSupportStatement)* tupleExpression right_brace;
+
+caseElseExpression: Discard left_brace (functionSupportStatement)* tupleExpression right_brace;
+
+judgeCaseElseExpression: Discard left_brace (functionSupportStatement)* tupleExpression right_brace;
 // 循环
-loopExpression: At id Bang? Colon iteratorStatement Right_Arrow 
-left_brace (functionSupportStatement)* tupleExpression right_brace loopElseExpression?;
+loopExpression: At id Bang? Colon iteratorStatement 
+left_brace (functionSupportStatement)* tupleExpression right_brace loopElseExpression;
 // 集合循环表达式
-loopEachExpression: At (id Colon)? id Bang? Colon expression Right_Arrow 
-left_brace (functionSupportStatement)* tupleExpression right_brace loopElseExpression?;
+loopEachExpression: At (id Colon)? id Bang? Colon expression 
+left_brace (functionSupportStatement)* tupleExpression right_brace loopElseExpression;
 // else 判断
 loopElseExpression: Discard left_brace (functionSupportStatement)* tupleExpression right_brace;
 // 检查
 checkExpression: 
-Bang Right_Arrow left_brace (functionSupportStatement)* tupleExpression right_brace (checkErrorExpression)* checkFinallyStatment |
-Bang Right_Arrow left_brace (functionSupportStatement)* tupleExpression right_brace (checkErrorExpression)+ ;
+Bang left_brace (functionSupportStatement)* tupleExpression right_brace (checkErrorExpression)+ checkFinallyStatment? ;
 // 错误处理
 checkErrorExpression: (id|id typeType) left_brace (functionSupportStatement)* tupleExpression right_brace;
 // 基础数据
@@ -439,13 +441,6 @@ integerExpr: DecimalLiteral | BinaryLiteral | OctalLiteral | HexLiteral;
 // 类型
 typeNotNull:
 typeAny | 
-typeArray | 
-typeList | 
-typeSet | 
-typeDictionary | 
-typeStack | 
-typeQueue | 
-typeChannel | 
 typeBasic | 
 typePackage | 
 typeFunction;
@@ -454,13 +449,6 @@ typeType: typeNotNull | typeNullable;
 
 typeNullable: Question typeNotNull;
 
-typeArray: left_brack Comma right_brack typeType;
-typeList: left_brack right_brack typeType;
-typeSet: left_brack typeType right_brack Discard;
-typeDictionary: left_brack typeType right_brack typeType;
-typeStack: left_brack Greater right_brack typeType;
-typeQueue: left_brack Less right_brack typeType;
-typeChannel: left_brack Tilde right_brack typeType;
 typePackage: nameSpaceItem | left_brack nameSpaceItem templateCall right_brack;
 typeFunction: left_paren typeFunctionParameterClause t=(Right_Arrow|Right_Flow) b=Bang? y=At? New_Line* typeFunctionParameterClause right_paren;
 typeAny: TypeAny;

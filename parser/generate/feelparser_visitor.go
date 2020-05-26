@@ -152,11 +152,14 @@ type FeelParserVisitor interface {
 	// Visit a parse tree produced by FeelParser#judgeCaseStatement.
 	VisitJudgeCaseStatement(ctx *JudgeCaseStatementContext) interface{}
 
+	// Visit a parse tree produced by FeelParser#caseElseStatement.
+	VisitCaseElseStatement(ctx *CaseElseStatementContext) interface{}
+
 	// Visit a parse tree produced by FeelParser#caseStatement.
 	VisitCaseStatement(ctx *CaseStatementContext) interface{}
 
-	// Visit a parse tree produced by FeelParser#caseExprStatement.
-	VisitCaseExprStatement(ctx *CaseExprStatementContext) interface{}
+	// Visit a parse tree produced by FeelParser#judgeCase.
+	VisitJudgeCase(ctx *JudgeCaseContext) interface{}
 
 	// Visit a parse tree produced by FeelParser#judgeStatement.
 	VisitJudgeStatement(ctx *JudgeStatementContext) interface{}
@@ -386,20 +389,26 @@ type FeelParserVisitor interface {
 	// Visit a parse tree produced by FeelParser#judgeExpression.
 	VisitJudgeExpression(ctx *JudgeExpressionContext) interface{}
 
-	// Visit a parse tree produced by FeelParser#judgeExpressionElseStatement.
-	VisitJudgeExpressionElseStatement(ctx *JudgeExpressionElseStatementContext) interface{}
+	// Visit a parse tree produced by FeelParser#judgeElseExpression.
+	VisitJudgeElseExpression(ctx *JudgeElseExpressionContext) interface{}
 
-	// Visit a parse tree produced by FeelParser#judgeExpressionIfStatement.
-	VisitJudgeExpressionIfStatement(ctx *JudgeExpressionIfStatementContext) interface{}
+	// Visit a parse tree produced by FeelParser#judgeIfExpression.
+	VisitJudgeIfExpression(ctx *JudgeIfExpressionContext) interface{}
 
-	// Visit a parse tree produced by FeelParser#judgeExpressionElseIfStatement.
-	VisitJudgeExpressionElseIfStatement(ctx *JudgeExpressionElseIfStatementContext) interface{}
+	// Visit a parse tree produced by FeelParser#judgeElseIfExpression.
+	VisitJudgeElseIfExpression(ctx *JudgeElseIfExpressionContext) interface{}
 
 	// Visit a parse tree produced by FeelParser#judgeCaseExpression.
 	VisitJudgeCaseExpression(ctx *JudgeCaseExpressionContext) interface{}
 
-	// Visit a parse tree produced by FeelParser#caseExpressionStatement.
-	VisitCaseExpressionStatement(ctx *CaseExpressionStatementContext) interface{}
+	// Visit a parse tree produced by FeelParser#caseExpression.
+	VisitCaseExpression(ctx *CaseExpressionContext) interface{}
+
+	// Visit a parse tree produced by FeelParser#caseElseExpression.
+	VisitCaseElseExpression(ctx *CaseElseExpressionContext) interface{}
+
+	// Visit a parse tree produced by FeelParser#judgeCaseElseExpression.
+	VisitJudgeCaseElseExpression(ctx *JudgeCaseElseExpressionContext) interface{}
 
 	// Visit a parse tree produced by FeelParser#loopExpression.
 	VisitLoopExpression(ctx *LoopExpressionContext) interface{}
@@ -451,27 +460,6 @@ type FeelParserVisitor interface {
 
 	// Visit a parse tree produced by FeelParser#typeNullable.
 	VisitTypeNullable(ctx *TypeNullableContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeArray.
-	VisitTypeArray(ctx *TypeArrayContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeList.
-	VisitTypeList(ctx *TypeListContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeSet.
-	VisitTypeSet(ctx *TypeSetContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeDictionary.
-	VisitTypeDictionary(ctx *TypeDictionaryContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeStack.
-	VisitTypeStack(ctx *TypeStackContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeQueue.
-	VisitTypeQueue(ctx *TypeQueueContext) interface{}
-
-	// Visit a parse tree produced by FeelParser#typeChannel.
-	VisitTypeChannel(ctx *TypeChannelContext) interface{}
 
 	// Visit a parse tree produced by FeelParser#typePackage.
 	VisitTypePackage(ctx *TypePackageContext) interface{}

@@ -9,6 +9,9 @@ import (
 func (me *KVisitor) VisitCallExpression(ctx *parser.CallExpressionContext) any {
 	r := me.Visit(ctx.Id()).(Result)
 	r.Text = "." + r.Text
+	if ctx.TemplateCall() != nil {
+		// r.Text += "<" + Visit(context.templateCall()) str! + ">"
+	}
 	if ctx.CallFunc() != nil {
 		e2 := me.Visit(ctx.CallFunc()).(Result)
 		r.Text = r.Text + e2.Text
@@ -88,20 +91,6 @@ func (me *KVisitor) VisitCallFunc(ctx *parser.CallFuncContext) any {
 	} else {
 		r.Text += "(" + me.Visit(ctx.Lambda()).(Result).Text + ")"
 	}
-	return r
-}
-
-func (me *KVisitor) VisitCallNew(ctx *parser.CallNewContext) any {
-	r := Result{Data: me.Visit(ctx.TypeType())}
-	param := ""
-	if ctx.ExpressionList() != nil {
-		param = me.Visit(ctx.ExpressionList()).(Result).Text
-	}
-	r.Text = "make(" + me.Visit(ctx.TypeType()).(string)
-	if param != "" {
-		r.Text += "," + param
-	}
-	r.Text += ")"
 	return r
 }
 
@@ -232,4 +221,12 @@ type DicEle struct {
 	Key   string
 	Value string
 	Text  string
+}
+
+func (me *KVisitor) VisitTemplateCall(ctx *parser.TemplateCallContext) any {
+	var obj = []str{}
+	for i := 0; i < len(ctx.AllTypeType()); i++ {
+		obj = append(obj, me.Visit(ctx.TypeType(i)).(str))
+	}
+	return obj
 }

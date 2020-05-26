@@ -200,11 +200,15 @@ func (v *BaseFeelParserVisitor) VisitJudgeCaseStatement(ctx *JudgeCaseStatementC
 	return v.VisitChildren(ctx)
 }
 
+func (v *BaseFeelParserVisitor) VisitCaseElseStatement(ctx *CaseElseStatementContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
 func (v *BaseFeelParserVisitor) VisitCaseStatement(ctx *CaseStatementContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseFeelParserVisitor) VisitCaseExprStatement(ctx *CaseExprStatementContext) interface{} {
+func (v *BaseFeelParserVisitor) VisitJudgeCase(ctx *JudgeCaseContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -512,15 +516,15 @@ func (v *BaseFeelParserVisitor) VisitJudgeExpression(ctx *JudgeExpressionContext
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseFeelParserVisitor) VisitJudgeExpressionElseStatement(ctx *JudgeExpressionElseStatementContext) interface{} {
+func (v *BaseFeelParserVisitor) VisitJudgeElseExpression(ctx *JudgeElseExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseFeelParserVisitor) VisitJudgeExpressionIfStatement(ctx *JudgeExpressionIfStatementContext) interface{} {
+func (v *BaseFeelParserVisitor) VisitJudgeIfExpression(ctx *JudgeIfExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseFeelParserVisitor) VisitJudgeExpressionElseIfStatement(ctx *JudgeExpressionElseIfStatementContext) interface{} {
+func (v *BaseFeelParserVisitor) VisitJudgeElseIfExpression(ctx *JudgeElseIfExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -528,7 +532,15 @@ func (v *BaseFeelParserVisitor) VisitJudgeCaseExpression(ctx *JudgeCaseExpressio
 	return v.VisitChildren(ctx)
 }
 
-func (v *BaseFeelParserVisitor) VisitCaseExpressionStatement(ctx *CaseExpressionStatementContext) interface{} {
+func (v *BaseFeelParserVisitor) VisitCaseExpression(ctx *CaseExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseFeelParserVisitor) VisitCaseElseExpression(ctx *CaseElseExpressionContext) interface{} {
+	return v.VisitChildren(ctx)
+}
+
+func (v *BaseFeelParserVisitor) VisitJudgeCaseElseExpression(ctx *JudgeCaseElseExpressionContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 
@@ -597,34 +609,6 @@ func (v *BaseFeelParserVisitor) VisitTypeType(ctx *TypeTypeContext) interface{} 
 }
 
 func (v *BaseFeelParserVisitor) VisitTypeNullable(ctx *TypeNullableContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeArray(ctx *TypeArrayContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeList(ctx *TypeListContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeSet(ctx *TypeSetContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeDictionary(ctx *TypeDictionaryContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeStack(ctx *TypeStackContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeQueue(ctx *TypeQueueContext) interface{} {
-	return v.VisitChildren(ctx)
-}
-
-func (v *BaseFeelParserVisitor) VisitTypeChannel(ctx *TypeChannelContext) interface{} {
 	return v.VisitChildren(ctx)
 }
 

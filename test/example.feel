@@ -85,6 +85,9 @@ testLoop : (->) {
     }
 }
 
+test_type : (a [list int], b [dict str int], c [chan int]->) {
+}
+
 human : $ ?me {
     name! str
 
@@ -159,7 +162,7 @@ test_define : (->) {
 }
 
 testGo : (-> v int) {
-    channel : [~]int(1)
+    channel : [chan int](1)
     async : (->) {
         fmt.Println("async")
         channel <~ 2
